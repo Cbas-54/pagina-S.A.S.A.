@@ -1,37 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #f5f5f5;
-  --primary-blue: #003366;
-  --accent-green: #66cc33;
-  --bg-card: rgba(255, 255, 255, 0.05);
-  --border-card: rgba(255, 255, 255, 0.1);
+  /* Familia de Azules */
+  --bg-main: #020C1B;
+  --bg-alt: #05142E;
+  --blue-struct: #003366;
+  --blue-mid: #0A4D99;
+  --blue-light: #1A6DBF;
+
+  /* Familia de Verdes */
+  --green-vibrant: #66CC33;
+  --green-mid: #4DA826;
+  --green-muted: #2D6B18;
+  --green-subtle: rgba(102, 204, 51, 0.08);
+
+  /* Neutros */
+  --text-main: #F0EDE8;
+  --text-sec: #A8B8C8;
+  --divider: rgba(10, 77, 153, 0.4);
+
+  /* Excepción */
+  --gold-seal: #C9A96E;
 }
 
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary-blue);
-  --color-accent: var(--accent-green);
-  --color-card: var(--bg-card);
-  --color-border-muted: var(--border-card);
+  --color-bg-main: var(--bg-main);
+  --color-bg-alt: var(--bg-alt);
+  --color-blue-struct: var(--blue-struct);
+  --color-blue-mid: var(--blue-mid);
+  --color-blue-light: var(--blue-light);
   
-  --font-sans: "Inter", var(--font-geist-sans);
+  --color-green-vibrant: var(--green-vibrant);
+  --color-green-mid: var(--green-mid);
+  --color-green-muted: var(--green-muted);
+  --color-green-subtle: var(--green-subtle);
+
+  --color-text-main: var(--text-main);
+  --color-text-sec: var(--text-sec);
+  --color-divider: var(--divider);
+  --color-gold-seal: var(--gold-seal);
+  
+  --font-sans: "Inter", var(--font-inter);
+  --font-serif: "Playfair Display", var(--font-playfair);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-main);
+  color: var(--text-main);
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
 @layer utilities {
-  .glass {
-    background: var(--bg-card);
+  .glass-blue {
+    background: rgba(10, 77, 153, 0.05); /* blue-mid con opacidad */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border-card);
+    border: 1px solid var(--blue-struct);
   }
 }

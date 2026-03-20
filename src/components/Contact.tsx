@@ -2,107 +2,82 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { EnvelopeSimple, Phone, LinkedinLogo, MapPin, PaperPlaneTilt, IdentificationCard } from "@phosphor-icons/react";
+import { EnvelopeSimple, Phone, IdentificationBadge } from "@phosphor-icons/react";
 
-const Contact = () => {
+const Contacto = () => {
   return (
-    <section id="contacto" className="py-24 px-6 max-w-7xl mx-auto relative">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-full bg-accent/[0.02] -z-10 blur-3xl rounded-full" />
-      
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section className="py-24 px-6 bg-bg-alt">
+      <div className="max-w-5xl mx-auto text-center">
         
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="p-10 glass rounded-[2rem] border border-white/10"
+          transition={{ duration: 0.8 }}
+          className="mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4 italic">¿Listos para destacar?</h2>
-          <p className="text-white/50 mb-10 text-lg">
-            Completa el formulario y un consultor técnico se pondrá en contacto para coordinar una auditoría estratégica de tu cartera inmobiliaria.
+          <h2 className="text-4xl md:text-5xl font-bold font-serif text-text-main mb-6">
+            Llevemos su Agencia al Siguiente Nivel
+          </h2>
+          <p className="text-text-sec text-lg mx-auto max-w-2xl">
+            Conversemos sobre cómo certificar su portfolio y brindar una experiencia 
+            de compra con garantías reales.
           </p>
-
-          <form className="space-y-6">
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-white/40 ml-4">Nombre Completo</label>
-                <input type="text" placeholder="Ej: Juan Pérez" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-accent/40 text-white placeholder:text-white/20 transition-all font-medium" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-white/40 ml-4">Inmobiliaria</label>
-                <input type="text" placeholder="Ej: Global Propiedades" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-accent/40 text-white placeholder:text-white/20 transition-all font-medium" />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-white/40 ml-4">Email de Contacto</label>
-              <input type="email" placeholder="email@empresa.com" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-accent/40 text-white placeholder:text-white/20 transition-all font-medium" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-white/40 ml-4">Mensaje (Opcional)</label>
-              <textarea placeholder="Cuéntanos sobre tu interés..." rows={4} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-accent/40 text-white placeholder:text-white/20 transition-all font-medium resize-none" />
-            </div>
-            
-            <button type="submit" className="group w-full py-5 bg-accent text-primary font-black rounded-2xl hover:bg-accent/90 transition-all flex items-center justify-center gap-3 text-lg">
-              Enviar Solicitud
-              <PaperPlaneTilt size={24} weight="bold" className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </button>
-          </form>
         </motion.div>
 
-        <div className="space-y-12">
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-2">Información Directa</h2>
-            <p className="text-white/40">Consultas técnicas y comerciales.</p>
-          </div>
-
-          <div className="grid gap-6">
-            <div className="flex items-center gap-6 p-6 glass rounded-[1.5rem] border-white/5 group hover:bg-white/[0.04] transition-all">
-              <div className="p-4 rounded-2xl bg-white/5 group-hover:bg-accent/10 group-hover:text-accent transition-all text-white/60">
-                <EnvelopeSimple size={32} weight="duotone" />
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="glass-blue border border-divider p-10 md:p-14 rounded-sm flex flex-col md:flex-row items-center justify-between gap-12 text-left"
+        >
+          <div className="flex-1 space-y-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-bg-main border border-divider flex items-center justify-center shrink-0">
+                <IdentificationBadge size={24} className="text-green-vibrant" />
               </div>
               <div>
-                <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1">Email</p>
-                <p className="text-white font-bold text-lg">maxiovelar@hotmail.com</p>
+                <p className="text-text-main font-serif text-xl font-bold">Lic. Franco Fandiño</p>
+                <p className="text-text-sec text-sm">Mat. COPIME IN-04710 · Mat. APRA 9534</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-6 p-6 glass rounded-[1.5rem] border-white/5 group hover:bg-white/[0.04] transition-all">
-              <div className="p-4 rounded-2xl bg-white/5 group-hover:bg-accent/10 group-hover:text-accent transition-all text-white/60">
-                <Phone size={32} weight="duotone" />
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-bg-main border border-divider flex items-center justify-center shrink-0">
+                <EnvelopeSimple size={24} className="text-green-vibrant" />
               </div>
               <div>
-                <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1">Teléfono</p>
-                <p className="text-white font-bold text-lg">+54 9 221 643 0905</p>
+                <p className="text-text-sec text-sm block mb-1">Email Directo</p>
+                <a href="mailto:info@sasa.com" className="text-text-main hover:text-blue-light transition-colors">
+                  info@sasa.com
+                </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-6 p-6 glass rounded-[1.5rem] border-white/5 group hover:bg-white/[0.04] transition-all">
-              <div className="p-4 rounded-2xl bg-white/5 group-hover:bg-accent/10 group-hover:text-accent transition-all text-white/60">
-                <IdentificationCard size={32} weight="duotone" />
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-bg-main border border-divider flex items-center justify-center shrink-0">
+                <Phone size={24} className="text-green-vibrant" />
               </div>
               <div>
-                <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1">Responsable Técnico</p>
-                <p className="text-white font-bold text-lg">Lic. Maximiliano Martín Ovelar</p>
-                <p className="text-white/30 text-xs">Matricula LHS-007462 PBA</p>
+                <p className="text-text-sec text-sm block mb-1">Línea Directa</p>
+                <a href="tel:+541100000000" className="text-text-main hover:text-blue-light transition-colors">
+                  +54 11 0000-0000
+                </a>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 text-white/20 px-4">
-             <div className="h-px flex-1 bg-white/10" />
-             <div className="text-xs font-bold tracking-widest uppercase italic">Misión S.A.S.A.</div>
-             <div className="h-px flex-1 bg-white/10" />
+          <div className="flex-1 w-full flex justify-center md:justify-end">
+            <button className="w-full md:w-auto px-10 py-6 bg-green-vibrant text-bg-main font-bold text-lg rounded-none border border-transparent transition-all duration-300 hover:bg-transparent hover:text-green-vibrant hover:border-green-vibrant shadow-[0_0_30px_rgba(102,204,51,0.2)] hover:shadow-none">
+              Solicitar Reunión
+            </button>
           </div>
-          
-          <p className="text-center italic text-white/40 text-sm leading-relaxed px-10">
-            "Ser el motor de las ventas del mercado inmobiliario argentino, 
-            posicionando a las inmobiliarias adheridas como referentes de calidad garantizada."
-          </p>
-        </div>
+        </motion.div>
 
       </div>
     </section>
   );
 };
 
-export default Contact;
+export default Contacto;

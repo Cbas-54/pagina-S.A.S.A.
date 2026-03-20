@@ -2,65 +2,53 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, House, ArrowRight } from "@phosphor-icons/react";
 
 const Hero = () => {
   return (
-    <section id="inicio" className="relative flex flex-col items-center justify-center min-vh-100 pt-32 pb-20 px-6 overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[120px] -z-10" />
+    <section id="inicio" className="relative flex flex-col items-center justify-center min-h-screen pt-32 pb-20 px-6 overflow-hidden bg-bg-main relative">
+      
+      {/* Background Breathing Gradient */}
+      <motion.div 
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-blue-struct)_0%,_transparent_50%)] opacity-20 -z-10"
+        animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div 
+        className="absolute top-1/4 right-1/4 bg-[radial-gradient(circle_at_center,_var(--color-green-subtle)_0%,_transparent_40%)] w-[800px] h-[800px] -z-10 rounded-full"
+        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
         className="flex flex-col items-center text-center max-w-4xl"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full glass text-accent-green text-sm font-bold tracking-wider uppercase border border-accent/20">
-          <ShieldCheck size={20} weight="duotone" />
-          Certificación Inmobiliaria de Elite
-        </div>
-
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
-          Transformamos Propiedades en <br />
-          <span className="text-accent underline decoration-accent/30 decoration-8 underline-offset-8">
-            Productos Irresistibles
-          </span>
+        <h2 className="text-4xl md:text-5xl font-bold font-serif tracking-widest text-text-sec mb-4 uppercase">
+          S.A.S.A.
+        </h2>
+        
+        <h1 className="text-5xl md:text-7xl font-serif font-bold text-text-main mb-6 leading-tight">
+          El sistema que transforma propiedades en <br />
+          <span className="italic font-light text-blue-light">productos irresistibles</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-white/60 mb-10 max-w-2xl leading-relaxed">
-          S.A.S.A. es el sistema profesional de auditoría que convierte la incertidumbre técnica en confianza absoluta. 
-          Seguridad, Salud y Accesibilidad certificadas por expertos.
+        <p className="text-lg md:text-xl text-text-sec mb-12 max-w-2xl font-light tracking-wide uppercase">
+          Seguridad Antisiniestral, Salud y Accesibilidad
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <button className="group flex items-center gap-2 px-8 py-4 bg-accent text-primary font-bold rounded-2xl hover:bg-accent/90 transition-all hover:translate-y-[-2px] shadow-lg shadow-accent/10">
-            Comenzar Auditoría
-            <ArrowRight size={20} weight="bold" className="group-hover:translate-x-1 transition-transform" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="flex gap-6"
+        >
+          <button className="px-10 py-5 bg-green-vibrant text-bg-main font-bold text-lg rounded-none hover:bg-green-mid transition-all shadow-[0_0_30px_rgba(102,204,51,0.2)]">
+            Agendar Auditoría Especializada
           </button>
-          
-          <button className="flex items-center gap-2 px-8 py-4 glass text-white font-bold rounded-2xl hover:bg-white/10 transition-all">
-            Ver Certificaciones
-            <House size={20} weight="duotone" />
-          </button>
-        </div>
-      </motion.div>
+        </motion.div>
 
-      {/* Hero Image / Mockup Placeholder */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.4, duration: 1 }}
-        className="mt-20 w-full max-w-5xl aspect-video glass rounded-3xl border border-white/5 relative overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex flex-col items-center gap-4 text-white/30 italic">
-            <ShieldCheck size={80} weight="duotone" />
-            <p>Visualización del Sello S.A.S.A. en Propiedad</p>
-          </div>
-        </div>
       </motion.div>
     </section>
   );

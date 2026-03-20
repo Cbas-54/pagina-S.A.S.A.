@@ -1,38 +1,33 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Pilares from "@/components/Pilares";
 import ProblemSolution from "@/components/ProblemSolution";
+import Pilares from "@/components/Pilares";
+import Beneficios from "@/components/Beneficios";
 import AuditDetails from "@/components/AuditDetails";
+import SelloSASA from "@/components/SelloSASA";
+import Estrategia from "@/components/Estrategia";
+import ModeloNegocio from "@/components/ModeloNegocio";
+import Cierre from "@/components/Cierre";
 import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background selection:bg-accent/30 selection:text-white">
-      {/* Navbar overlay */}
+    <main className="bg-bg-main text-text-main font-sans min-h-screen">
       <Navbar />
+      <Hero />
+      <ProblemSolution />
+      <Pilares />
+      <Beneficios />
+      <AuditDetails />
+      <SelloSASA />
+      <Estrategia />
+      <ModeloNegocio />
+      <Cierre />
+      <Contact />
       
-      {/* Section Content */}
-      <div className="flex flex-col">
-        <Hero />
-        <ProblemSolution />
-        <Pilares />
-        <AuditDetails />
-        <Contact />
-      </div>
-
-      {/* Footer / Credits */}
-      <footer className="py-12 px-6 border-t border-white/5 bg-black/40">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-white/20 text-sm font-medium">
-            © 2026 S.A.S.A. - Seguridad Antisiniestral, Salud y Accesibilidad.
-          </div>
-          <div className="flex items-center gap-6 text-white/40 text-xs font-bold uppercase tracking-widest">
-            <a href="#" className="hover:text-accent transition-colors">Aviso Legal</a>
-            <a href="#" className="hover:text-accent transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-accent transition-colors">Condiciones</a>
-          </div>
-        </div>
+      <footer className="py-8 text-center text-text-sec text-sm border-t border-divider">
+        <p>© {new Date().getFullYear()} S.A.S.A. - Seguridad Antisiniestral, Salud y Accesibilidad.</p>
       </footer>
     </main>
   );
