@@ -75,7 +75,7 @@ const ModeloNegocio = () => {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: i * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
               className="group p-7 bg-bg-main/80 border border-divider rounded-md hover:border-white/10 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(10,77,153,0.15)]"
             >
               <div className={`${m.color} mb-6 transition-all duration-500 group-hover:scale-110`}>

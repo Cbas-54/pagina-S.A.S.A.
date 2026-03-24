@@ -126,7 +126,7 @@ const Estrategia = () => {
                 transition={{
                   delay: i * 0.1,
                   duration: 0.8,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: [0.22, 1, 0.36, 1] as const,
                 }}
                 className="group relative flex flex-col items-center text-center px-4"
               >

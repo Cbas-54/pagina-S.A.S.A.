@@ -107,7 +107,7 @@ const Hero = () => {
                   transition={{ 
                     duration: HERO_TIMINGS.duration, 
                     delay: HERO_TIMINGS.subtitleDelay, 
-                    ease: [...AMDOCS_EASE]
+                    ease: AMDOCS_EASE
                   }}
                   className="text-[21px] font-light text-white mb-2 tracking-normal"
                 >
@@ -123,7 +123,7 @@ const Hero = () => {
                   transition={{ 
                     duration: HERO_TIMINGS.duration, 
                     delay: HERO_TIMINGS.headingDelay, 
-                    ease: [...AMDOCS_EASE] 
+                    ease: AMDOCS_EASE 
                   }}
                   className="text-[45px] font-bold text-white leading-[1.1] tracking-tighter"
                 >

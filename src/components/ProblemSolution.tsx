@@ -85,7 +85,7 @@ const ProblemSolution = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
             className="group relative p-8 md:p-12 rounded-3xl border border-divider/20 bg-bg-main/40 backdrop-blur-md overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-red-danger/20" />
@@ -139,7 +139,7 @@ const ProblemSolution = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
             className="group relative p-8 md:p-12 rounded-3xl border border-blue-mid/30 bg-bg-surface/60 backdrop-blur-md overflow-hidden shadow-2xl"
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-green-vibrant/40" />

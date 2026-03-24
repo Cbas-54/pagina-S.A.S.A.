@@ -24,7 +24,7 @@ const SelloSASA = () => {
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as const }}
           className="flex items-center justify-center"
         >
           <div className="relative">
@@ -84,7 +84,7 @@ const SelloSASA = () => {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
           className="flex flex-col"
         >
           <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-gold-seal/70 mb-4">

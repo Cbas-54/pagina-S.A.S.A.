@@ -140,7 +140,7 @@ const Beneficios = () => {
               transition={{
                 delay: b.delay,
                 duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               className={`bento-item group ${b.span} ${i === 5 ? 'flex flex-col md:flex-row' : 'flex flex-col justify-start'}`}
             >
