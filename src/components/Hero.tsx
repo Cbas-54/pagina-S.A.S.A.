@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion } from "framer-motion";
 import { Crosshair } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useReveal } from "@/context/RevealContext";
@@ -10,30 +10,12 @@ import { Particles } from "@/components/ui/particles";
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [blurValue, setBlurValue] = useState(0);
   const { isReady } = useReveal();
 
-  // ── Scroll-driven blur + fade (Amdocs exit) ──
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
-
-  const scrollOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const scrollBlur = useTransform(scrollYProgress, [0, 0.6], [0, 25]);
-
-  useMotionValueEvent(scrollBlur, "change", (latest) => {
-    setBlurValue(latest);
-  });
-
   return (
-    <div ref={containerRef} className="relative h-[150vh] -mt-20 bg-[#0a0a0a]">
+    <div id="inicio" ref={containerRef} className="relative h-screen bg-[#0a0a0a]">
       <motion.section
-        style={{
-          opacity: scrollOpacity,
-          filter: `blur(${blurValue}px)`,
-        }}
-        className="sticky top-0 h-screen w-full overflow-hidden flex items-center"
+        className="h-full w-full pt-20 overflow-hidden flex items-center"
       >
         {/* ── Background ambiance (Amdocs Curved Horizon - SASA Palette) ── */}
         <motion.div
@@ -47,7 +29,7 @@ const Hero = () => {
           
           {/* Green Particles layer */}
           <Particles
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-10"
             quantity={100}
             staticity={30}
             ease={50}
@@ -58,7 +40,7 @@ const Hero = () => {
 
           {/* Blue Particles layer */}
           <Particles
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-10"
             quantity={80}
             staticity={40}
             ease={70}
@@ -68,30 +50,11 @@ const Hero = () => {
           />
           
           {/* Grid overlay for texture - very subtle */}
-          <div className="absolute inset-0 bg-grid opacity-[0.03] mix-blend-overlay" />
+          <div className="absolute inset-0 bg-grid opacity-[0.03] mix-blend-overlay z-20" />
           
-          {/* 
-            The Massive Solid Planet Curve (SASA Theme - Balanced Green/Blue)
-          */}
-          <div className="absolute -bottom-[285vw] -right-[160vw] w-[300vw] h-[300vw] rounded-full 
-            bg-[#020604] border-t border-t-white/10
-            shadow-[
-              0_-60px_200px_rgba(102,204,51,0.4),  /* SASA Green Inner glow (boosted) */
-              0_-120px_450px_rgba(42,126,230,0.35), /* SASA Blue Outer aura (boosted) */
-              inset_0_40px_100px_rgba(0,0,0,1)
-            ]
-            transform rotate-[10deg] pointer-events-none z-0" 
-          />
-            
-          {/* Atmospheric bright rim - sharp and intense white/green/blue edge */}
-          <div className="absolute -bottom-[285vw] -right-[160vw] w-[300vw] h-[300vw] rounded-full 
-            border-t-[1.5px] border-white/40
-            shadow-[0_-5px_20px_rgba(42,126,230,0.6)] /* Blue-tinted rim glow */
-            transform rotate-[10deg] pointer-events-none z-10" />
-
           {/* Bottom center warm light leak (matched to SASA blue) */}
           <div className="absolute bottom-0 right-[20%] w-[40vw] h-[30vh] 
-            bg-blue-light/20 blur-[130px] rounded-full pointer-events-none" />
+            bg-blue-light/20 blur-[130px] rounded-full pointer-events-none z-20" />
         </motion.div>
 
         {/* ── Content grid ── */}
@@ -158,20 +121,22 @@ const Hero = () => {
             transition={{ duration: HERO_TIMINGS.revealDuration, delay: HERO_TIMINGS.revealDelay, ease: "easeInOut" }}
             className="hidden lg:flex flex-col justify-center items-center relative h-full mt-4 ml-auto lg:mr-10"
           >
-            <div className="flex items-center">
-              <span className="text-[160px] font-bold text-text-main leading-none -mt-4 tracking-tighter">S</span>
-              <div className="relative w-[100px] h-[100px] flex items-center justify-center -mx-1 z-10 mt-2">
-                {/* Globe/Planet representation (SASA Logo as the 'O') */}
-                <div className="absolute inset-0 rounded-full shadow-[0_0_50px_rgba(102,204,51,0.3),inset_0_-8px_20px_rgba(0,0,0,0.8)] border border-white/5" />
+            <div className="flex items-center justify-center">
+              <div className="w-[55px] flex justify-center mr-2">
+                <span className="text-[160px] font-bold text-text-main leading-none tracking-tighter">S</span>
+              </div>
+              <div className="relative w-[130px] h-[130px] flex items-center justify-center z-10">
                 <Image
-                  src="/logo.png"
-                  alt="S.A.S.A. Logo sphere"
+                  src="/logo-new.png"
+                  alt="S.A.S.A. Logo shield"
                   fill
                   className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"
                   priority
                 />
               </div>
-              <span className="text-[160px] font-bold text-text-main leading-none -mt-4 tracking-tighter">A</span>
+              <div className="w-[55px] flex justify-center ml-[-1px]">
+                <span className="text-[160px] font-bold text-text-main leading-none tracking-tighter">A</span>
+              </div>
             </div>
             
             {/* Sub-label under logo like "Agentic Operating System for Telco" */}

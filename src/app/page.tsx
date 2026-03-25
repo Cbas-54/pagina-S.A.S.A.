@@ -8,7 +8,6 @@ import Beneficios from "@/components/Beneficios";
 import AuditDetails from "@/components/AuditDetails";
 import SelloSASA from "@/components/SelloSASA";
 import Estrategia from "@/components/Estrategia";
-import ModeloNegocio from "@/components/ModeloNegocio";
 import Cierre from "@/components/Cierre";
 import Contact from "@/components/Contact";
 import Slogan from "@/components/Slogan";
@@ -41,11 +40,7 @@ export default function Home() {
         <SectionDivider />
         <Estrategia />
         <SectionDivider />
-        <ModeloNegocio />
-        <SectionDivider />
         <Cierre />
-        <SectionDivider />
-        <Contact />
       </div>
 
       <footer className="py-12 px-6 bg-bg-main border-t border-divider/40">
@@ -82,12 +77,14 @@ export default function Home() {
               >
                 Auditoría
               </a>
+              {/* 
               <a
                 href="#contacto"
                 className="hover:text-text-sec transition-colors"
               >
                 Contacto
               </a>
+              */}
             </div>
 
             {/* Credits */}

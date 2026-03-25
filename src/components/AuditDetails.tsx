@@ -167,11 +167,13 @@ const AuditDetails = () => {
             · Firma profesional incluida · Entrega en brochure visual para el
             comprador
           </p>
+          {/* 
           <a href="#contacto">
             <button className="text-green-vibrant text-sm font-bold border border-green-muted/30 px-5 py-2.5 rounded-md hover:bg-green-subtle hover:border-green-muted/50 transition-all shrink-0">
               Solicitar muestra →
             </button>
           </a>
+          */}
         </motion.div>
       </div>
     </section>

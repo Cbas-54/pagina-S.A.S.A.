@@ -32,16 +32,13 @@ const Navbar = () => {
       }`}
     >
       <a href="#inicio" className="flex items-center gap-3 group">
-        <div className="relative">
-          <Image
-            src="/logo.png"
-            alt="SASA Logo"
-            width={40}
-            height={40}
-            className="object-contain relative z-10 transition-transform duration-300 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-green-vibrant/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        </div>
+        <Image
+          src="/logo-new.png"
+          alt="SASA Logo"
+          width={40}
+          height={40}
+          className="object-contain transition-transform duration-300 group-hover:scale-110"
+        />
         <div className="flex flex-col leading-none">
           <span className="text-sm font-black tracking-[0.25em] text-text-main uppercase">
             S.A.S.A.
@@ -53,7 +50,7 @@ const Navbar = () => {
       </a>
 
       <div className="hidden md:flex items-center gap-10 text-[13px] font-medium text-text-sec">
-        {["Inicio", "Pilares", "Auditoría", "Contacto"].map((item) => (
+        {["Inicio", "Pilares", "Auditoría"/*, "Contacto"*/].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase().replace("í", "i")}`}
@@ -64,6 +61,8 @@ const Navbar = () => {
         ))}
       </div>
 
+      
+      {/* 
       <a href="#contacto">
         <motion.button
           whileHover={{ scale: 1.03 }}
@@ -74,6 +73,7 @@ const Navbar = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-green-vibrant to-green-mid opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </motion.button>
       </a>
+      */}
     </motion.nav>
   );
 };
