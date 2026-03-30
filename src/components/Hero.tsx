@@ -55,7 +55,7 @@ const Hero = () => {
                 </motion.h2>
               </div>
 
-              {/* ── "Tu ventaja comprobada en cada cierre." (Midnight Blue / text-main) ── */}
+              {/* ── "Tu ventaja comprobada en cada cierre." (Pure Black) ── */}
               <div className="overflow-hidden pb-4">
                 <motion.h1
                   initial={{ y: "150%" }}
@@ -65,7 +65,7 @@ const Hero = () => {
                     delay: HERO_TIMINGS.headingDelay, 
                     ease: AMDOCS_EASE 
                   }}
-                  className="text-[45px] font-bold text-text-main leading-[1.1] tracking-tighter"
+                  className="text-[45px] font-bold text-black leading-[1.1] tracking-tighter"
                 >
                   tu ventaja comprobada en cada cierre.
                 </motion.h1>
@@ -81,7 +81,7 @@ const Hero = () => {
                 ease: "easeInOut" 
               }}
             >
-              <p className="text-[21px] text-text-sec max-w-[45rem] leading-[1.4] font-light mb-10 mt-2 opacity-90">
+              <p className="text-[21px] text-black max-w-[45rem] leading-[1.4] font-light mb-10 mt-2 opacity-90">
                 Auditorías técnicas exhaustivas donde la seguridad y legalidad se integran en la operación inmobiliaria, para acelerar estrategias de venta. Funcionando sobre cualquier propiedad, SASA eleva las garantías, destraba negociaciones y asegura valor de mercado inmediato.
               </p>
 
@@ -100,7 +100,7 @@ const Hero = () => {
           >
             <div className="flex items-center justify-center">
               <div className="w-[55px] flex justify-center mr-2">
-                <span className="text-[160px] font-bold text-text-main leading-none tracking-tighter">S</span>
+                <span className="text-[160px] font-bold text-black leading-none tracking-tighter">S</span>
               </div>
               <div className="relative w-[130px] h-[130px] flex items-center justify-center z-10">
                 <Image
@@ -112,13 +112,13 @@ const Hero = () => {
                 />
               </div>
               <div className="w-[55px] flex justify-center ml-[-1px]">
-                <span className="text-[160px] font-bold text-text-main leading-none tracking-tighter">A</span>
+                <span className="text-[160px] font-bold text-black leading-none tracking-tighter">A</span>
               </div>
             </div>
             
             <div className="flex items-center gap-3 mt-4 ml-4 whitespace-nowrap">
-              <span className="text-[1.3rem] text-text-sec font-normal tracking-title">Garantías invisibles</span>
-              <span className="px-1.5 py-0 bg-text-main text-white font-bold text-[1.3rem] rounded-[2px] shadow-sm">para ventas tangibles</span>
+              <span className="text-[1.3rem] text-black font-normal tracking-title">Garantías invisibles</span>
+              <span className="px-1.5 py-0 bg-black text-white font-bold text-[1.3rem] rounded-[2px] shadow-sm">para ventas tangibles</span>
             </div>
           </motion.div>
         </div>
