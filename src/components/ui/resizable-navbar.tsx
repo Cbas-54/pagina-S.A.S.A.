@@ -102,7 +102,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         width: visible ? "fit-content" : "100%",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex backdrop-blur-none transition-all duration-300",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex backdrop-blur-none",
         visible && "bg-[#050B1B]/75 border border-white/10 shadow-2xl backdrop-blur-md",
         className,
       )}
@@ -129,9 +129,10 @@ export const NavItems = ({
 
   return (
     <motion.div
+      layout
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition-all duration-300 lg:flex lg:space-x-2",
+        "relative hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium lg:flex lg:space-x-2",
         visible ? "text-white" : "text-black",
         className,
       )}
@@ -152,8 +153,13 @@ export const NavItems = ({
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 30,
+              }}
               className={cn(
-                "absolute inset-0 h-full w-full rounded-full transition-colors duration-200",
+                "absolute inset-0 h-full w-full rounded-full",
                 visible ? "bg-white/10" : "bg-gray-100",
               )}
             />
@@ -185,7 +191,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden transition-all duration-300",
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
         visible && "bg-[#050B1B]/75 border border-white/10 shadow-2xl backdrop-blur-md",
         className,
       )}
