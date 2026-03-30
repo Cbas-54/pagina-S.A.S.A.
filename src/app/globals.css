@@ -541,14 +541,14 @@ body {
 }
 
 .dark {
-  /* ── Surface Elevation System (Original Dark Mode) ── */
-  --bg-main: #020C1B;
-  --bg-alt: #05142E;
-  --bg-elevated: #081B3A;
-  --bg-surface: #0B2244;
+  /* ── Surface Elevation System (Deep Black / Neutral) ── */
+  --bg-main: #0a0a0a;
+  --bg-alt: #0f0f0f;
+  --bg-elevated: #1a1a1a;
+  --bg-surface: #222222;
 
-  /* ── Blues — Structural ── */
-  --blue-struct: #003366;
+  /* ── Blues — Structural (Muted for Neutrality) ── */
+  --blue-struct: #050505;
   --blue-mid: #0A4D99;
   --blue-light: #1A6DBF;
   --blue-glow: #2E8BFF;
@@ -563,8 +563,8 @@ body {
   --text-main: #F0EDE8;
   --text-sec: #8A9BB5;
   --text-ter: #5A6E85;
-  --divider: rgba(10, 77, 153, 0.25);
-  --divider-strong: rgba(10, 77, 153, 0.5);
+  --divider: rgba(255, 255, 255, 0.08);
+  --divider-strong: rgba(255, 255, 255, 0.15);
 
   /* ── Accent ── */
   --gold-seal: #C9A96E;

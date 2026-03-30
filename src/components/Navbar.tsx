@@ -55,7 +55,7 @@ const Navbar = () => {
             alt="SASA Logo"
             width={40}
             height={40}
-            className={`object-contain transition-all duration-500 ${isOverDark ? "" : "brightness-0 opacity-80"}`}
+            className="object-contain transition-all duration-500"
           />
         </div>
         <div className="flex flex-col leading-none">
