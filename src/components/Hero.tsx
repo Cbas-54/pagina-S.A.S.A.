@@ -17,17 +17,18 @@ const Hero = () => {
       <motion.section
         className="h-full w-full pt-20 overflow-hidden flex items-center"
       >
-        {/* ── Background: Architectural Facade (Option 4) ── */}
+        {/* ── Background: Architectural Facade (Option 3 - Smoother) ── */}
         <motion.div
   initial={{ opacity: 0, scale: 1.05 }}
   animate={isReady ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.05 }}
   transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
   className="absolute inset-0 z-0 select-none pointer-events-none"
 >
-  <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/60 z-10" />
+  {/* Escudo de Legibilidad: Gradiente horizontal mejorado */}
+  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
   <Image
-    src="/hero-opt-4.png"
-    alt="SASA Geometric Architectural Facade"
+    src="/hero-opt-3.png"
+    alt="SASA Clean Architectural Perspective"
     fill
     className="object-cover object-center transition-transform duration-1000"
     priority
