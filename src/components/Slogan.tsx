@@ -1,46 +1,96 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 const Slogan = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+  
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start 85%", "end 35%"]
   });
 
-  // Reveal effect: clip-path from left to right
-  const clipPath = useTransform(scrollYProgress, [0, 1], ["inset(0% 100% 0% 0%)", "inset(0% 0% 0% 0%)"]);
-
   const text = "Transformamos incertidumbre técnica en rentabilidad inmediata.";
+  const words = text.split(" ");
 
   return (
-    <section ref={containerRef} className="relative z-20 py-60 px-6 bg-slate-50 overflow-hidden flex items-center justify-center">
-      {/* Decorative background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[400px] bg-blue-mid/[0.05] rounded-full blur-[120px] pointer-events-none" />
-      
-      <div className="max-w-7xl mx-auto text-center relative">
-        {/* Background Text (Ultra subtle stroke/dimmed) */}
-        <h2 className="text-5xl md:text-7xl lg:text-9xl font-serif font-black text-divider/20 uppercase tracking-tighter leading-[0.95] pointer-events-none select-none">
-          {text}
-        </h2>
-        
-        {/* Foreground Text (Premium Gradient Reveal) */}
-        <motion.h2 
-          className="absolute inset-0 text-5xl md:text-7xl lg:text-9xl font-serif font-black uppercase tracking-tighter leading-[0.95] text-transparent bg-clip-text bg-gradient-to-r from-blue-mid via-green-vibrant to-gold-seal drop-shadow-sm select-none"
-          style={{ clipPath }}
-        >
-          {text}
-        </motion.h2>
+    <section ref={containerRef} className="relative z-20 py-48 md:py-64 px-6 overflow-hidden bg-bg-main">
+      {/* Decorative background grid and elements */}
+      <div className="absolute inset-0 -z-10 bg-grid opacity-[0.4]" />
+      <div className="absolute top-0 right-0 p-8 text-[10px] font-mono text-blue-mid/30 tracking-[0.2em] uppercase select-none pointer-events-none hidden md:block">
+        REF: SASA-TR-2024 / AUDIT-SEC
+      </div>
+      <div className="absolute bottom-0 left-0 p-8 text-[10px] font-mono text-blue-mid/30 tracking-[0.2em] uppercase select-none pointer-events-none hidden md:block">
+        COORDS: 34.6037° S, 58.3816° W
+      </div>
 
+      <div className="max-w-6xl mx-auto relative group">
+        {/* Subtle scanning line */}
         <motion.div 
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
+          initial={{ top: "-10%", opacity: 0 }}
+          whileInView={{ top: "110%", opacity: [0, 1, 1, 0] }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: "circOut" }}
-          className="w-32 h-1 bg-gradient-to-r from-blue-mid to-green-vibrant mx-auto mt-16 rounded-full"
+          transition={{ duration: 4, ease: "linear", repeat: Infinity, repeatDelay: 3 }}
+          className="absolute left-[-10%] right-[-10%] h-px bg-gradient-to-r from-transparent via-blue-mid/20 to-transparent z-0 pointer-events-none"
         />
+
+        <div className="flex flex-col items-center">
+          {/* Metadata tag */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-3 px-4 py-1 rounded-full border border-blue-mid/10 bg-blue-mid/[0.02] mb-12"
+          >
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-mid animate-pulse" />
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-mid/60">
+              Technical Proposition
+            </span>
+          </motion.div>
+
+          <h2 className="text-[2.8rem] md:text-[5.5rem] leading-[1.05] tracking-[-0.03em] font-serif font-light text-text-main text-center">
+            {words.map((word, wordIndex) => (
+              <span key={wordIndex} className="inline-block mr-[0.3em] overflow-hidden py-1">
+                <motion.span
+                  initial={{ y: "110%", opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : { y: "110%", opacity: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.22, 1, 0.36, 1],
+                    delay: wordIndex * 0.08
+                  }}
+                  className={`inline-block ${
+                    word.toLowerCase().includes("rentabilidad") || word.toLowerCase().includes("inmediata")
+                      ? "text-blue-mid font-medium italic"
+                      : "text-text-main"
+                  }`}
+                >
+                  {word}
+                </motion.span>
+              </span>
+            ))}
+          </h2>
+
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: "80px", opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, delay: 1, ease: "circOut" }}
+            className="h-1 bg-gradient-to-r from-blue-mid/40 to-green-vibrant/40 mt-16 rounded-full"
+          />
+          
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1.2 }}
+            className="mt-8 text-text-ter text-sm font-mono tracking-widest uppercase opacity-60"
+          >
+            Expertise Técnica & Seguridad Jurídica
+          </motion.p>
+        </div>
       </div>
     </section>
   );
