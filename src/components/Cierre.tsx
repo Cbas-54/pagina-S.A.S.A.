@@ -9,7 +9,8 @@ const Cierre = () => {
     <section className="relative py-32 md:py-40 px-6 overflow-hidden noise-overlay">
       {/* Dramatic gradients */}
       <div className="absolute inset-0 -z-10 bg-bg-main" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(255,255,255,0.02)_0%,transparent_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(0,51,102,0.25)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_40%_40%_at_50%_50%,rgba(102,204,51,0.05)_0%,transparent_70%)]" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Decorative lines */}
