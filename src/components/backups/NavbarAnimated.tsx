@@ -10,8 +10,12 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
+import { useReveal } from "@/context/RevealContext";
+import { motion, AnimatePresence } from "framer-motion";
+import { NAVBAR_TIMINGS } from "@/constants/animations";
 
 export default function Navbar() {
+  const { isReady } = useReveal();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -21,7 +25,16 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 pt-4 opacity-100 translate-y-0">
+    <motion.div
+      initial={{ y: -100, opacity: 0 }}
+      animate={isReady ? { y: 0, opacity: 1 } : { y: -100, opacity: 0 }}
+      transition={{ 
+        duration: NAVBAR_TIMINGS.duration, 
+        delay: NAVBAR_TIMINGS.delay, 
+        ease: NAVBAR_TIMINGS.ease 
+      }}
+      className="fixed top-0 left-0 right-0 z-50 pt-4"
+    >
       <AcerNavbar className="top-0">
         {/* Desktop Navigation */}
         <NavBody>
@@ -59,7 +72,7 @@ export default function Navbar() {
           </MobileNavMenu>
         </MobileNav>
       </AcerNavbar>
-    </div>
+    </motion.div>
   );
 }
 
@@ -73,7 +86,6 @@ const SasaLogo = ({ small = false }: { small?: boolean }) => {
           width={small ? 32 : 40}
           height={small ? 32 : 40}
           className="object-contain"
-          priority
         />
       </div>
     </a>

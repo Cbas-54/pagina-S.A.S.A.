@@ -37,11 +37,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={cn("font-sans", afacad.variable)}>
       <body className={`${inter.variable} ${playfair.variable} antialiased selection:bg-green-vibrant/30 font-semibold`}>
-        <RevealProvider>
-          <SmoothScroll>
-            {children}
-          </SmoothScroll>
-        </RevealProvider>
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
