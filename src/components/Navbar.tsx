@@ -37,15 +37,15 @@ export default function Navbar() {
     >
       <AcerNavbar className="top-0">
         {/* Desktop Navigation */}
-        <NavBody className="border border-white/10">
+        <NavBody>
           <SasaLogo />
-          <NavItems items={navItems} className="text-black" />
+          <NavItems items={navItems} />
           {/* Espacio reservado para equilibrio visual sin botones */}
           <div className="w-40 hidden lg:block" /> 
         </NavBody>
 
         {/* Mobile Navigation */}
-        <MobileNav className="border border-white/10 px-4">
+        <MobileNav className="px-4">
           <MobileNavHeader>
             <SasaLogo small />
             <MobileNavToggle
@@ -64,7 +64,7 @@ export default function Navbar() {
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium text-black py-2 border-b border-gray-100 last:border-0"
+                className="text-lg font-medium py-2 border-b border-gray-100 last:border-0 hover:text-green-vibrant transition-colors"
               >
                 {item.name}
               </a>
