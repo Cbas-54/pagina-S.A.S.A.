@@ -88,16 +88,6 @@ const SasaLogo = ({ small = false }: { small?: boolean }) => {
           className="object-contain"
         />
       </div>
-      <div className="flex flex-col leading-none">
-        <span className="text-[13px] font-black tracking-[0.25em] uppercase text-black uppercase">
-          S.A.S.A.
-        </span>
-        {!small && (
-          <span className="text-[7px] font-medium tracking-[0.12em] uppercase text-black/60 mt-0.5 whitespace-nowrap">
-            Seguridad · Salud · Accesibilidad
-          </span>
-        )}
-      </div>
     </a>
   );
 };
