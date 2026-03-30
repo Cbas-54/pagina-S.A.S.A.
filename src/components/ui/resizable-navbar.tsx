@@ -107,7 +107,14 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         className,
       )}
     >
-      {children}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(
+            child as React.ReactElement<{ visible?: boolean }>,
+            { visible },
+          )
+          : child,
+      )}
     </motion.div>
   );
 };
@@ -136,7 +143,7 @@ export const NavItems = ({
           className={cn(
             "relative px-4 py-2 transition-colors duration-200",
             visible
-              ? "text-white hover:text-white/80"
+              ? "!text-white hover:text-white/80"
               : "text-neutral-600 hover:text-black",
           )}
           key={`link-${idx}`}
@@ -183,7 +190,14 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         className,
       )}
     >
-      {children}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(
+            child as React.ReactElement<{ visible?: boolean }>,
+            { visible },
+          )
+          : child,
+      )}
     </motion.div>
   );
 };
