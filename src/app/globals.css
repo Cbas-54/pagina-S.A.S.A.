@@ -59,7 +59,7 @@
   --radius: 0.625rem;
 }
 
-.dark-theme-override {
+.dark {
   /* ── Surface Elevation System (Original Dark Mode) ── */
   --bg-main: #020C1B;
   --bg-alt: #05142E;
@@ -593,4 +593,16 @@ body {
   --border: var(--divider);
   --input: var(--divider-strong);
   --ring: var(--blue-glow);
+
+  /* Force theme tokens for Tailwind 4 utilities */
+  --color-bg-main: var(--bg-main);
+  --color-text-main: var(--text-main);
+  --color-text-sec: var(--text-sec);
+  --color-text-ter: var(--text-ter);
+  --color-divider: var(--divider);
+  --color-divider-strong: var(--divider-strong);
+
+  /* Base background for the .dark wrapper */
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
 }

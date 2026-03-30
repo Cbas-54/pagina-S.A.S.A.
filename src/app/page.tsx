@@ -63,12 +63,12 @@ export default function Home() {
       </div>
 
       {/* ── Dark Section: Cierre & Footer ── */}
-      <div className="dark">
+      <div className="dark bg-bg-main">
         <section id="experiencia">
           <Cierre />
         </section>
 
-        <footer className="py-12 px-6 bg-bg-main border-t border-divider/40">
+        <footer className="py-12 px-6 border-t border-divider/40">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
               {/* Brand */}
