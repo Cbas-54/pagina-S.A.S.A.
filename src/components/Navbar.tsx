@@ -25,10 +25,11 @@ export default function Navbar() {
       <AcerNavbar className="top-0">
         {/* Desktop Navigation */}
         <NavBody>
-          <SasaLogo />
+          <div className="w-40 flex items-center justify-start">
+            <SasaLogo />
+          </div>
           <NavItems items={navItems} />
-          {/* Espacio reservado para equilibrio visual sin botones */}
-          <div className="w-40 hidden lg:block" /> 
+          <div className="w-40 flex items-center justify-end" /> 
         </NavBody>
 
         {/* Mobile Navigation */}
