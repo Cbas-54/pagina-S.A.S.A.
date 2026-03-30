@@ -2,155 +2,192 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Warning, CheckCircle, ShieldCheck, FileText, ClipboardText, Stamp } from "@phosphor-icons/react";
+import { 
+  ShieldCheck, 
+  Warning, 
+  Lightning, 
+  Wind, 
+  ChartLineUp, 
+  Handshake, 
+  Detective,
+  SealCheck,
+  Buildings
+} from "@phosphor-icons/react";
 
 const ProblemSolution = () => {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
-  const riskMatrix = [
+  const risks = [
     {
-      id: "R-01",
-      risk: "Instalaciones eléctricas sin certificación — riesgo de incendio oculto.",
-      resolution: "Certificación técnica firmada por profesional matriculado.",
-      status: "Certificado"
+      id: "BT-101",
+      title: "Instalaciones de Riesgo",
+      desc: "Cableados sin certificación y tableros fuera de norma ocultos tras el revoque.",
+      solution: "Protocolo de auditoría eléctrica integral con sello de ingeniería.",
+      icon: <Lightning size={28} weight="duotone" className="text-blue-glow" />,
+      grid: "col-span-12 md:col-span-8",
+      color: "blue"
     },
     {
-      id: "R-02",
-      risk: "Falta de ventilación: habitabilidad comprometida, nunca declarada.",
-      resolution: "Checklist visual que el comprador puede leer y confiar.",
-      status: "Validado"
+      id: "BT-102",
+      title: "Habitabilidad",
+      desc: "Vicios de ventilación y humedad no declarados que invalidan la habitabilidad.",
+      solution: "Checklist de estado real para blindaje jurídico inmediato.",
+      icon: <Wind size={28} weight="duotone" className="text-green-vibrant" />,
+      grid: "col-span-12 md:col-span-4",
+      color: "green"
     },
     {
-      id: "R-03",
-      risk: "Comprador teme cometer un error económico irreparable.",
-      resolution: "Eliminación de objeciones mediante auditoría externa.",
-      status: "Blindado"
+      id: "BT-103",
+      title: "Miedo Transaccional",
+      desc: "El comprador paraliza el cierre por temor a vicios ocultos.",
+      solution: "Eliminación de fricción mediante certificación técnica de terceros.",
+      icon: <Detective size={28} weight="duotone" className="text-gold-seal" />,
+      grid: "col-span-12 md:col-span-5",
+      color: "gold"
     },
     {
-      id: "R-04",
-      risk: "Desconfianza hacia la inmobiliaria por falta de garantías.",
-      resolution: "Posicionamiento como referente de calidad técnica.",
-      status: "Garantizado"
-    },
-    {
-      id: "R-05",
-      risk: "Negociaciones que reducen el precio por inseguridad técnica.",
-      resolution: "Cobro del precio justo — confianza absoluta del inversor.",
-      status: "Efectivo"
+      id: "BT-104",
+      title: "Integridad del Precio",
+      desc: "Regateos del 15% basados en supuestas deficiencias técnicas.",
+      solution: "Defensa del valor real del activo mediante evidencia técnica.",
+      icon: <ChartLineUp size={28} weight="duotone" className="text-blue-light" />,
+      grid: "col-span-12 md:col-span-7",
+      color: "blue"
     }
   ];
 
   return (
-    <section id="problema" className="relative py-32 md:py-48 px-6 bg-slate-50 overflow-hidden">
-      {/* Background technical grid */}
-      <div className="absolute inset-0 bg-grid opacity-[0.2]" />
+    <section id="problema" className="relative py-32 md:py-48 px-6 bg-[#050B1B] dark overflow-hidden selection:bg-blue-glow/30">
+      {/* Blueprint Grid Background */}
+      <div className="absolute inset-0 bg-grid opacity-[0.07] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#050B1B] via-transparent to-[#050B1B] pointer-events-none" />
       
-      <div className="max-w-6xl mx-auto relative">
-        <div className="text-center mb-24">
+      {/* Decorative Radiance Blobs */}
+      <div className="absolute top-[20%] right-[-5%] w-[600px] h-[600px] bg-blue-mid/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[10%] left-[-5%] w-[500px] h-[500px] bg-green-subtle/10 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-3xl mb-24">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-blue-mid/20 bg-white mb-6 shadow-sm"
+            className="flex items-center gap-3 mb-8"
           >
-            <ClipboardText size={14} className="text-blue-mid" />
-            <span className="text-[10px] font-mono font-bold tracking-[0.2em] uppercase text-blue-mid">
-              Protocolo de Auditoría v2.1
+            <div className="w-8 h-[1px] bg-blue-glow" />
+            <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-blue-glow/80 font-bold">
+              Risk Matrix Protocol
             </span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-6xl font-serif text-text-main font-light leading-tight mb-6">
-            Matriz de <span className="font-bold">Riesgo & Certificación</span>
-          </h2>
-          <p className="text-text-sec max-w-2xl mx-auto text-sm md:text-base font-sans">
-            Mapeamos los puntos críticos que paralizan el cierre y los transformamos en certezas técnicas inobjetables.
-          </p>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-7xl font-serif text-white font-light leading-[1.05] tracking-tight mb-10"
+          >
+            Donde otros ven dudas, <br />
+            <span className="font-bold italic text-gradient-blue">nosotros vemos certezas.</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-text-sec text-lg md:text-xl font-light leading-relaxed max-w-2xl"
+          >
+            Documentamos, auditamos y certificamos cada metro cuadrado para que el cierre sea inevitable.
+          </motion.p>
         </div>
 
-        {/* Technical Ledger / Form Layout */}
-        <div className="bg-white border border-divider-strong shadow-[0_30px_70px_rgba(15,23,42,0.08)] rounded-[4px] overflow-hidden">
-          {/* Header of the "Document" */}
-          <div className="grid grid-cols-12 border-b border-divider bg-slate-50/50 py-4 px-6 gap-4 text-[10px] font-mono font-bold uppercase tracking-widest text-text-ter">
-            <div className="col-span-1">ID</div>
-            <div className="col-span-5">Riesgo / Incertidumbre Detectada</div>
-            <div className="col-span-4">Resolución Técnica S.A.S.A.</div>
-            <div className="col-span-2 text-right">Efecto</div>
-          </div>
+        {/* Bento Grid */}
+        <div className="grid grid-cols-12 gap-6">
+          {risks.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              onMouseEnter={() => setHoveredIdx(idx)}
+              onMouseLeave={() => setHoveredIdx(null)}
+              className={`${item.grid} relative group rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md overflow-hidden p-8 md:p-10 card-hover`}
+            >
+              {/* Dynamic Aura on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-glow/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              
+              {/* Technical Scan Animation (Láser) */}
+              <AnimatePresence>
+                {hoveredIdx === idx && (
+                  <motion.div
+                    initial={{ top: "-100%" }}
+                    animate={{ top: "100%" }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.5, ease: "linear" }}
+                    className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-blue-glow/40 to-transparent z-40 pointer-events-none shadow-[0_0_15px_rgba(46,139,255,0.4)]"
+                  />
+                )}
+              </AnimatePresence>
 
-          {/* Rows */}
-          <div className="divide-y divide-divider">
-            {riskMatrix.map((item, idx) => (
-              <motion.div
-                key={item.id}
-                onMouseEnter={() => setHoveredIdx(idx)}
-                onMouseLeave={() => setHoveredIdx(null)}
-                className="grid grid-cols-12 gap-4 py-8 px-6 group transition-colors hover:bg-blue-mid/[0.01] items-center"
-              >
-                {/* ID Column */}
-                <div className="col-span-1 text-xs font-mono text-blue-mid font-black">
-                  {item.id}
+              <div className="relative z-10 h-full flex flex-col">
+                <div className="flex justify-between items-start mb-12">
+                  <div className={`p-4 rounded-xl bg-white/[0.03] border border-white/10 group-hover:border-${item.color}-vibrant/20 transition-colors`}>
+                    {item.icon}
+                  </div>
+                  <span className="text-[10px] font-mono text-white/20 tracking-widest font-black uppercase">
+                    {item.id}
+                  </span>
                 </div>
 
-                {/* Risk Column */}
-                <div className="col-span-5">
-                  <p className="text-text-sec text-[15px] leading-relaxed pr-8">
-                    {item.risk}
+                <div className="flex-grow">
+                  <h3 className="text-xl md:text-2xl font-serif text-white font-bold mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-text-sec text-sm md:text-base leading-relaxed mb-8 opacity-80 group-hover:opacity-100 transition-opacity">
+                    {item.desc}
                   </p>
                 </div>
 
-                {/* Resolution Column */}
-                <div className="col-span-4 relative">
-                  <div className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full border border-blue-mid/20 flex items-center justify-center mt-0.5 shrink-0 bg-white group-hover:border-blue-mid/50 transition-colors">
-                      <div className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${hoveredIdx === idx ? 'bg-blue-mid scale-100' : 'bg-transparent scale-50'}`} />
-                    </div>
-                    <p className={`text-[15px] leading-relaxed transition-all duration-500 ${hoveredIdx === idx ? 'text-blue-mid font-bold' : 'text-text-ter'}`}>
-                      {item.resolution}
+                <div className="pt-8 border-t border-white/5 mt-auto">
+                  <div className="flex items-center gap-3">
+                    <SealCheck size={20} className="text-green-vibrant shrink-0" weight="fill" />
+                    <p className="text-sm font-mono text-white/90 group-hover:text-white transition-colors">
+                      {item.solution}
                     </p>
                   </div>
                 </div>
+              </div>
+            </motion.div>
+          ))}
 
-                {/* Status/Badge Column */}
-                <div className="col-span-2 text-right flex justify-end items-center gap-3">
-                  <span className={`text-[10px] font-mono font-black uppercase px-2 py-1 rounded-sm border transition-all duration-500 ${
-                    hoveredIdx === idx 
-                      ? 'bg-blue-mid text-white border-blue-mid' 
-                      : 'bg-slate-100 text-text-ter border-divider'
-                  }`}>
-                    {item.status}
-                  </span>
-                  <div className={`transition-all duration-700 ${hoveredIdx === idx ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-12 scale-90'}`}>
-                    <ShieldCheck size={24} className="text-blue-mid" weight="fill" />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Footer of the "Document" */}
-          <div className="bg-slate-50 p-6 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-divider">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-blue-mid/5 flex items-center justify-center border border-blue-mid/10">
-                <Stamp size={28} className="text-blue-mid opacity-40" />
+          {/* Special Action/Contact Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="col-span-12 relative rounded-2xl border border-divider-strong bg-gradient-to-br from-blue-mid/20 to-green-mid/10 backdrop-blur-xl p-10 flex flex-col md:flex-row items-center justify-between gap-8 group overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-blue-glow/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="relative z-10 flex items-center gap-6">
+              <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center bg-white/5">
+                <Buildings size={32} className="text-white" weight="duotone" />
               </div>
               <div>
-                <p className="text-xs font-mono font-bold text-text-main">FIRMA DIGITAL S.A.S.A.</p>
-                <p className="text-[10px] font-mono text-text-ter">Validación de Activo Inmobiliario</p>
+                <h4 className="text-2xl font-serif text-white font-bold">¿Dudas con un activo específico?</h4>
+                <p className="text-text-sec text-sm">Realizamos diagnósticos preliminares en menos de 48hs.</p>
               </div>
             </div>
-            
-            <div className="text-center md:text-right">
-              <p className="text-text-ter text-xs font-serif italic mb-1">
-                "La seguridad técnica es la base de toda negociación exitosa."
-              </p>
-              <div className="h-px w-24 bg-divider-strong ml-auto" />
-            </div>
-          </div>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative z-10 px-8 py-3.5 bg-blue-glow text-white font-bold rounded-full shadow-[0_0_20px_rgba(46,139,255,0.4)] hover:shadow-[0_0_35px_rgba(46,139,255,0.6)] transition-all"
+            >
+              Agendar Auditoría Ref.
+            </motion.button>
+          </motion.div>
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-mid/[0.03] rounded-full blur-[100px] -z-10" />
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-green-vibrant/[0.03] rounded-full blur-[120px] -z-10" />
       </div>
     </section>
   );
