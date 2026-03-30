@@ -58,7 +58,7 @@ const beneficios = [
     title: "Diferenciación de Mercado",
     text: "S.A.S.A. ofrece una herramienta técnica que su competencia no puede replicar sin el proceso de auditoría oficial.",
     color: "text-gold-seal",
-    span: "md:col-span-12 md:h-[200px] flex-row items-center gap-8",
+    span: "md:col-span-12 md:h-[200px]",
     delay: 0.6,
   },
 ];
@@ -70,71 +70,72 @@ const Beneficios = () => {
     offset: ["start end", "end start"],
   });
 
-  const xLeft = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
-  const xRight = useTransform(scrollYProgress, [0, 1], ["-30%", "0%"]);
+  const xLeft = useTransform(scrollYProgress, [0, 1], ["0%", "-25%"]);
+  const xRight = useTransform(scrollYProgress, [0, 1], ["-25%", "0%"]);
 
   return (
-    <section ref={containerRef} id="beneficios" className="relative py-32 px-6 overflow-hidden">
-      {/* Cinematic Background */}
-      <div className="absolute inset-0 -z-10 bg-bg-main" />
-      <div className="blob blob-blue top-[20%] right-[-10%] opacity-10" />
-      <div className="blob blob-green bottom-[10%] left-[-10%] opacity-5" />
+    <section ref={containerRef} id="beneficios" className="relative py-48 px-6 bg-white overflow-hidden">
+      {/* Dynamic Background Elements */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-mid/[0.015] rounded-full blur-[140px] -z-10 translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-green-vibrant/[0.01] rounded-full blur-[120px] -z-10 -translate-x-1/2 translate-y-1/2" />
 
-      {/* Decorative Parallax Typography (Chevron Effect) */}
-      <div className="absolute top-[15%] left-0 w-[200vw] sm:w-[150vw] overflow-hidden pointer-events-none opacity-5 -z-0">
-        <motion.h2 style={{ x: xLeft }} className="text-[12vw] sm:text-[10vw] font-serif font-black whitespace-nowrap leading-none tracking-tighter text-blue-light uppercase">
-          Certificación · Valor · Transparencia · 
+      {/* Parallax Background Typography - Ultra Subtle */}
+      <div className="absolute top-[20%] left-0 w-[200vw] overflow-hidden pointer-events-none opacity-[0.03] -z-0">
+        <motion.h2 style={{ x: xLeft }} className="text-[14vw] font-serif font-black whitespace-nowrap leading-none tracking-tighter text-blue-mid uppercase">
+          Estrategia · Valor Técnico · Exclusividad · 
         </motion.h2>
       </div>
-      <div className="absolute top-[40%] left-0 w-[200vw] sm:w-[150vw] overflow-hidden pointer-events-none opacity-[0.03] -z-0">
-        <motion.h2 style={{ x: xRight }} className="text-[12vw] sm:text-[10vw] font-serif font-black whitespace-nowrap leading-none tracking-tighter uppercase">
-          Confianza de Mercado · Innovación Técnica
+      <div className="absolute top-[50%] left-0 w-[200vw] overflow-hidden pointer-events-none opacity-[0.02] -z-0">
+        <motion.h2 style={{ x: xRight }} className="text-[14vw] font-serif font-black whitespace-nowrap leading-none tracking-tighter text-text-main uppercase">
+          Confianza Absoluta · Resultados SASA
         </motion.h2>
       </div>
       
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-20 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="max-w-2xl">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mb-28 flex flex-col lg:flex-row lg:items-end justify-between gap-12">
+          <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-mid/10 border border-blue-mid/20 mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-mid/[0.04] border border-blue-mid/10 mb-8"
             >
-              <ShieldCheck size={14} weight="fill" className="text-green-vibrant" />
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-blue-light">
-                Ventajas Competitivas
+              <div className="w-1.5 h-1.5 rounded-full bg-green-vibrant animate-pulse" />
+              <span className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-mid/80">
+                Alianza Estratégica
               </span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-7xl font-serif text-text-main leading-[1.1]"
+              className="text-5xl md:text-8xl font-serif text-text-main leading-[1.05] tracking-tight font-bold"
             >
-              ¿Qué gana su agencia al <br />
+              Lidere el mercado <br />
               <span className="text-gradient-green italic font-light">
-                certificar su cartera?
+                con certeza técnica
               </span>
             </motion.h2>
           </div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-text-sec text-lg max-w-sm font-light leading-relaxed mb-4"
+            className="lg:max-w-sm"
           >
-            Una alianza estratégica que transforma la incertidumbre técnica en una herramienta de cierre imparable.
-          </motion.p>
+            <p className="text-text-sec text-xl font-medium leading-relaxed opacity-80 border-b-2 border-blue-mid/10 pb-6">
+              Invierta en reputación. Ofrezca un activo auditado que se vende solo, eliminando el 90% de las fricciones técnicas del proceso.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Bento Grid */}
-        <div className="bento-grid">
+        {/* Bento Grid Refined */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {beneficios.map((b, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
@@ -142,26 +143,29 @@ const Beneficios = () => {
                 duration: 0.8,
                 ease: [0.22, 1, 0.36, 1] as const,
               }}
-              className={`bento-item group ${b.span} ${i === 5 ? 'flex flex-col md:flex-row' : 'flex flex-col justify-start'}`}
+              className={`relative p-10 md:p-14 rounded-[3rem] border border-divider/10 bg-bg-alt/20 backdrop-blur-sm overflow-hidden transition-all duration-700 hover:border-blue-mid/20 hover:bg-white hover:shadow-[0_40px_100px_rgba(10,77,153,0.08)] group ${b.span} flex flex-col justify-between`}
             >
-              {/* Card Decoration */}
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/[0.05] to-transparent rounded-full -translate-y-16 translate-x-16 blur-2xl group-hover:bg-blue-mid/10 transition-colors duration-700`} />
+              {/* Internal Decoration */}
+              <div className={`absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-white to-transparent rounded-full opacity-50 blur-3xl group-hover:from-blue-mid/10 transition-colors duration-1000`} />
               
-              <div className={`relative z-10 ${i === 5 ? 'w-16 h-16 md:w-20 md:h-20 shrink-0' : 'w-14 h-14'} flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/[0.05] ${b.color} mb-6 transition-all duration-500 group-hover:scale-110 group-hover:border-blue-mid/30 group-hover:bg-blue-mid/5`}>
-                {b.icon}
-              </div>
-              
-              <div className="relative z-10 flex flex-col justify-center">
-                <h4 className={`text-text-main font-bold font-serif ${i === 5 ? 'text-2xl mb-2' : 'text-xl mb-3'} tracking-tight`}>
+              <div>
+                <div className={`w-16 h-16 flex items-center justify-center rounded-[1.5rem] bg-white border border-divider/5 shadow-sm ${b.color} mb-12 transition-all duration-700 group-hover:scale-110 group-hover:shadow-xl group-hover:border-blue-mid/10`}>
+                  {b.icon}
+                </div>
+                
+                <h4 className={`text-text-main font-bold font-serif ${i === 0 || i === 5 ? 'text-3xl lg:text-4xl' : 'text-2xl'} mb-5 tracking-tight`}>
                   {b.title}
                 </h4>
-                <p className={`text-text-sec ${i === 5 ? 'text-base' : 'text-sm'} leading-relaxed font-light max-w-md`}>
+                <p className={`text-text-sec ${i === 0 || i === 5 ? 'text-lg lg:text-xl' : 'text-base font-medium'} leading-relaxed opacity-80 max-w-lg`}>
                   {b.text}
                 </p>
               </div>
 
-              {/* Shine effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-x-full group-hover:translate-x-full transform ease-in-out" />
+              {/* Bottom accent bar */}
+              <div className="mt-12 h-1 w-0 bg-gradient-to-r from-blue-mid to-transparent rounded-full group-hover:w-full transition-all duration-1000 ease-out opacity-20" />
+
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-mid/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-x-full group-hover:translate-x-full transform ease-in-out" />
             </motion.div>
           ))}
         </div>

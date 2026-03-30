@@ -67,13 +67,13 @@ export const TextRevealCard = ({
       onTouchMove={touchMoveHandler}
       ref={cardRef}
       className={cn(
-        "bg-bg-surface border border-divider/20 w-[40rem] rounded-lg p-8 relative overflow-hidden",
+        "bg-white border border-divider/10 w-[40rem] rounded-[2rem] p-10 relative overflow-hidden shadow-2xl shadow-blue-mid/5",
         className
       )}
     >
       {children}
 
-      <div className="h-40  relative flex items-center overflow-hidden">
+      <div className="h-48 relative flex items-center overflow-hidden">
         <motion.div
           style={{
             width: "100%",
@@ -89,13 +89,13 @@ export const TextRevealCard = ({
                 }
           }
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="absolute bg-bg-surface z-20  will-change-transform"
+          className="absolute bg-white z-20 will-change-transform"
         >
           <p
             style={{
-              textShadow: "4px 4px 15px rgba(102, 204, 51, 0.3)", // green glow
+              textShadow: "0 10px 30px rgba(102, 204, 51, 0.2)", // soft green glow
             }}
-            className="text-base sm:text-[3rem] py-10 font-bold text-transparent bg-clip-text bg-gradient-to-b from-green-vibrant to-green-dark"
+            className="text-2xl sm:text-[3.5rem] py-10 font-bold text-transparent bg-clip-text bg-gradient-to-b from-green-vibrant to-green-dark leading-none"
           >
             {revealText}
           </p>
@@ -107,11 +107,11 @@ export const TextRevealCard = ({
             opacity: widthPercentage > 0 ? 1 : 0,
           }}
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="h-40 w-[8px] bg-gradient-to-b from-transparent via-green-vibrant to-transparent absolute z-50 will-change-transform"
+          className="h-48 w-[4px] bg-gradient-to-b from-transparent via-green-vibrant to-transparent absolute z-50 will-change-transform"
         ></motion.div>
 
-        <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
-          <p className="text-base sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-text-ter">
+        <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
+          <p className="text-2xl sm:text-[3.5rem] py-10 font-bold bg-clip-text text-transparent bg-text-ter/20 leading-none">
             {text}
           </p>
           <MemoizedStars />
@@ -129,7 +129,7 @@ export const TextRevealCardTitle = ({
   className?: string;
 }) => {
   return (
-    <h2 className={twMerge("text-text-main font-serif text-lg md:text-2xl font-bold mb-2", className)}>
+    <h2 className={twMerge("text-text-main font-serif text-xl md:text-3xl font-bold mb-3 tracking-tight", className)}>
       {children}
     </h2>
   );
@@ -143,7 +143,7 @@ export const TextRevealCardDescription = ({
   className?: string;
 }) => {
   return (
-    <p className={twMerge("text-text-sec text-sm tracking-wide", className)}>{children}</p>
+    <p className={twMerge("text-text-sec text-sm md:text-base font-medium tracking-wide leading-relaxed", className)}>{children}</p>
   );
 };
 
@@ -156,13 +156,13 @@ const Stars = () => {
 
   const stars = React.useMemo(() => {
     if (!isMounted) return [];
-    return [...Array(80)].map((_, i) => ({
+    return [...Array(60)].map((_, i) => ({
       top: Math.random() * 100,
       left: Math.random() * 100,
-      duration: Math.random() * 10 + 20,
-      opacity: Math.random(),
-      moveX: Math.random() * 4 - 2,
-      moveY: Math.random() * 4 - 2,
+      duration: Math.random() * 8 + 15,
+      opacity: Math.random() * 0.4 + 0.1,
+      moveX: Math.random() * 2 - 1,
+      moveY: Math.random() * 2 - 1,
     }));
   }, [isMounted]);
 
@@ -171,20 +171,20 @@ const Stars = () => {
   }
 
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-0 pointer-events-none">
       {stars.map((star, i) => (
         <motion.span
           key={`star-${i}`}
           animate={{
             top: `calc(${star.top}% + ${star.moveY}px)`,
             left: `calc(${star.left}% + ${star.moveX}px)`,
-            opacity: star.opacity,
-            scale: [1, 1.2, 0],
+            opacity: [star.opacity, star.opacity * 1.5, star.opacity],
+            scale: [1, 1.1, 1],
           }}
           transition={{
             duration: star.duration,
             repeat: Infinity,
-            ease: "linear",
+            ease: "easeInOut",
           }}
           style={{
             position: "absolute",
@@ -192,11 +192,11 @@ const Stars = () => {
             left: `${star.left}%`,
             width: `2px`,
             height: `2px`,
-            backgroundColor: "#66cc33", // green-vibrant
+            backgroundColor: "var(--green-vibrant)", 
             borderRadius: "50%",
             zIndex: 1,
           }}
-          className="inline-block"
+          className="inline-block blur-[0.5px]"
         ></motion.span>
       ))}
     </div>

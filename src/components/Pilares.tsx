@@ -16,12 +16,12 @@ const pilares = [
       "Red de incendio y extintores",
       "Detección de riesgos estructurales",
     ],
-    icon: <ShieldCheck size={36} weight="duotone" />,
-    gradient: "from-blue-mid/25 via-blue-mid/5 to-transparent",
-    borderHover: "group-hover:border-blue-mid/60",
-    iconColor: "text-blue-light",
-    dotColor: "bg-blue-light",
-    glowColor: "rgba(10, 77, 153, 0.3)",
+    icon: <ShieldCheck size={42} weight="duotone" />,
+    gradient: "from-blue-mid/[0.08] via-blue-mid/[0.02] to-transparent",
+    borderHover: "group-hover:border-blue-mid/40",
+    iconColor: "text-blue-mid",
+    dotColor: "bg-blue-mid",
+    glowColor: "rgba(10, 77, 153, 0.08)",
   },
   {
     num: "02",
@@ -34,12 +34,12 @@ const pilares = [
       "Ventilación cruzada verificada",
       "Instalaciones de gas certificadas",
     ],
-    icon: <Heart size={36} weight="duotone" />,
-    gradient: "from-green-muted/25 via-green-muted/5 to-transparent",
-    borderHover: "group-hover:border-green-mid/60",
+    icon: <Heart size={42} weight="duotone" />,
+    gradient: "from-green-vibrant/[0.08] via-green-vibrant/[0.02] to-transparent",
+    borderHover: "group-hover:border-green-vibrant/40",
     iconColor: "text-green-vibrant",
     dotColor: "bg-green-vibrant",
-    glowColor: "rgba(102, 204, 51, 0.2)",
+    glowColor: "rgba(102, 204, 51, 0.08)",
   },
   {
     num: "03",
@@ -52,49 +52,54 @@ const pilares = [
       "Ascensores y escaleras seguras",
       "Señalización y circulación",
     ],
-    icon: <Wheelchair size={36} weight="duotone" />,
-    gradient: "from-blue-struct/30 via-blue-struct/5 to-transparent",
-    borderHover: "group-hover:border-blue-light/50",
-    iconColor: "text-blue-glow",
-    dotColor: "bg-blue-glow",
-    glowColor: "rgba(46, 139, 255, 0.2)",
+    icon: <Wheelchair size={42} weight="duotone" />,
+    gradient: "from-blue-light/[0.1] via-blue-light/[0.02] to-transparent",
+    borderHover: "group-hover:border-blue-light/40",
+    iconColor: "text-blue-light",
+    dotColor: "bg-blue-light",
+    glowColor: "rgba(46, 139, 255, 0.08)",
   },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.15 } },
+  show: { opacity: 1, transition: { staggerChildren: 0.2 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 const Pilares = () => {
   return (
-    <section id="pilares" className="relative py-32 px-6 overflow-hidden noise-overlay">
-      <div className="absolute inset-0 -z-10 bg-bg-main" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(0,51,102,0.25)_0%,transparent_70%)]" />
+    <section id="pilares" className="relative py-40 px-6 overflow-hidden bg-white">
+      <div className="absolute inset-0 -z-10 bg-white" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-divider to-transparent" />
+      
+      {/* Decorative background grid */}
+      <div className="absolute inset-x-0 top-0 h-[500px] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-24"
         >
-          <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-text-ter mb-4">
-            El trípode de la confianza
-          </p>
-          <h2 className="text-4xl md:text-6xl font-bold font-serif text-text-main mb-5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-mid/[0.04] border border-blue-mid/10 mb-6">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-mid/80">
+              El ADN de la Propiedad
+            </span>
+          </div>
+          <h2 className="text-5xl md:text-8xl font-bold font-serif text-text-main mb-8 leading-[1.1] tracking-tight">
             Los Tres Pilares
             <br />
-            <span className="font-light italic text-blue-light/80">del Sello S.A.S.A.</span>
+            <span className="font-light italic text-blue-mid/80">de la confianza definitiva</span>
           </h2>
-          <p className="text-text-sec text-base max-w-2xl mx-auto font-light leading-relaxed">
-            Cada propiedad es auditada profesionalmente en estas tres dimensiones
-            para garantizar que llega al mercado lista para venderse.
+          <p className="text-text-sec text-lg max-w-2xl mx-auto font-medium leading-relaxed opacity-80">
+            Auditamos cada activo en tres dimensiones críticas para asegurar 
+            una transacción sin fricciones y un valor de mercado superior.
           </p>
         </motion.div>
 
@@ -103,64 +108,59 @@ const Pilares = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid md:grid-cols-3 gap-5"
+          className="grid md:grid-cols-3 gap-8"
         >
           {pilares.map((pilar) => (
             <motion.div
               key={pilar.title}
               variants={cardVariants}
-              className={`relative group p-10 bg-bg-alt border border-divider ${pilar.borderHover} rounded-md transition-all duration-500 overflow-hidden cursor-default`}
+              className={`relative group p-12 bg-white border border-divider/15 ${pilar.borderHover} rounded-[2.5rem] transition-all duration-500 overflow-hidden cursor-default shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(10,77,153,0.08)]`}
               style={{
                 // @ts-expect-error css custom property
                 "--glow": pilar.glowColor,
               }}
             >
-              {/* Hover glow */}
+              {/* Internal glow */}
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                 style={{
-                  boxShadow: `inset 0 0 60px ${pilar.glowColor}, 0 20px 60px ${pilar.glowColor}`,
+                  background: `radial-gradient(circle at 50% 0%, ${pilar.glowColor} 0%, transparent 70%)`,
                 }}
               />
 
-              {/* Top gradient wash */}
-              <div
-                className={`absolute top-0 left-0 right-0 h-40 bg-gradient-to-b ${pilar.gradient} -z-0 opacity-60 group-hover:opacity-100 transition-opacity duration-500`}
-              />
-
               {/* Watermark number */}
-              <div className="absolute top-4 right-6 text-[7rem] leading-none font-black font-serif select-none pointer-events-none opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-700 text-text-main">
+              <div className="absolute top-10 right-10 text-[9rem] leading-none font-black font-serif select-none pointer-events-none opacity-[0.02] group-hover:opacity-[0.05] transition-all duration-700 text-text-main group-hover:scale-110">
                 {pilar.num}
               </div>
 
               <div className="relative z-10">
                 {/* Icon */}
                 <div
-                  className={`${pilar.iconColor} mb-7 transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_var(--glow)]`}
+                  className={`${pilar.iconColor} mb-10 transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_8px_15px_var(--glow)]`}
                 >
                   {pilar.icon}
                 </div>
 
                 {/* Titles */}
-                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-text-ter mb-1">
+                <p className="text-[11px] font-black tracking-[0.25em] uppercase text-text-ter mb-2 group-hover:text-blue-mid transition-colors">
                   {pilar.subtitle}
                 </p>
-                <h3 className="text-3xl font-serif font-bold text-text-main mb-4 tracking-tight">
+                <h3 className="text-4xl font-serif font-bold text-text-main mb-6 tracking-tight">
                   {pilar.title}
                 </h3>
-                <p className="text-text-sec leading-relaxed mb-7 text-sm font-light">
+                <p className="text-text-sec leading-relaxed mb-10 text-[15px] font-medium opacity-80 decoration-blue-mid/20">
                   {pilar.description}
                 </p>
 
                 {/* Bullets */}
-                <ul className="space-y-2.5 border-t border-divider pt-6">
+                <ul className="space-y-4 border-t border-divider/10 pt-8">
                   {pilar.bullets.map((b, i) => (
                     <li
                       key={i}
-                      className="flex items-center gap-2.5 text-text-sec text-xs"
+                      className="flex items-center gap-3.5 text-text-main text-sm font-bold"
                     >
                       <span
-                        className={`w-1.5 h-1.5 rounded-full ${pilar.dotColor} shrink-0 opacity-60`}
+                        className={`w-2 h-2 rounded-full ${pilar.dotColor} shrink-0 shadow-sm`}
                       />
                       {b}
                     </li>

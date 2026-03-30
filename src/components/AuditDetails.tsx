@@ -7,11 +7,11 @@ import { Check } from "@phosphor-icons/react";
 const categories = [
   {
     title: "Seguridad Antisiniestral",
-    badge: "5 ítems",
-    color: "text-blue-light",
-    borderColor: "border-blue-mid/20",
+    badge: "05 ítems",
+    color: "text-blue-mid",
+    borderColor: "border-blue-mid/15",
     dotColor: "bg-blue-mid",
-    accentGlow: "rgba(10, 77, 153, 0.15)",
+    accentGlow: "rgba(10, 77, 153, 0.05)",
     items: [
       "Extintores",
       "Detectores de humo",
@@ -22,11 +22,11 @@ const categories = [
   },
   {
     title: "Salud / Habitabilidad",
-    badge: "5 ítems",
+    badge: "05 ítems",
     color: "text-green-vibrant",
-    borderColor: "border-green-muted/30",
-    dotColor: "bg-green-mid",
-    accentGlow: "rgba(102, 204, 51, 0.1)",
+    borderColor: "border-green-vibrant/20",
+    dotColor: "bg-green-vibrant",
+    accentGlow: "rgba(102, 204, 51, 0.05)",
     items: [
       "Humedad capilar/cimientos",
       "Ventilación cruzada",
@@ -36,12 +36,12 @@ const categories = [
     ],
   },
   {
-    title: "Accesibilidad",
-    badge: "5 ítems",
-    color: "text-blue-glow",
-    borderColor: "border-blue-struct/40",
-    dotColor: "bg-blue-glow",
-    accentGlow: "rgba(46, 139, 255, 0.1)",
+    title: "Accesibilidad Inclusiva",
+    badge: "05 ítems",
+    color: "text-blue-light",
+    borderColor: "border-blue-light/25",
+    dotColor: "bg-blue-light",
+    accentGlow: "rgba(46, 139, 255, 0.05)",
     items: [
       "Rampas de acceso",
       "Ascensores adaptados",
@@ -59,59 +59,60 @@ const itemVariants = {
 
 const AuditDetails = () => {
   return (
-    <section id="auditoria" className="relative py-32 px-6 noise-overlay">
-      <div className="absolute inset-0 -z-10 bg-bg-main" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(0,51,102,0.15)_0%,transparent_70%)]" />
+    <section id="auditoria" className="relative py-40 px-6 bg-white overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-white" />
+      <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1200px] h-[1200px] bg-blue-mid/[0.015] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+          className="mb-24 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10"
         >
-          <div>
-            <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-text-ter mb-3">
-              Proceso profesional
-            </p>
-            <h2 className="text-4xl md:text-6xl font-bold font-serif text-text-main leading-tight">
-              Checklist de
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-mid/[0.04] border border-blue-mid/10 mb-6">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-mid/70">
+                Process Audit Standard
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-8xl font-bold font-serif text-text-main leading-[1.05] tracking-tight">
+              Protocolo de
               <br />
-              <span className="font-light italic text-blue-light/80">Auditoría Técnica</span>
+              <span className="font-light italic text-blue-mid/80">Certificación Técnica</span>
             </h2>
           </div>
-          <p className="text-text-sec text-sm max-w-sm font-light leading-relaxed">
-            15 puntos críticos auditados y firmados por profesional matriculado.
-            Todo queda documentado.
+          <p className="text-text-sec text-lg max-w-sm font-medium leading-relaxed opacity-80 decoration-blue-mid/20 underline underline-offset-8">
+            15 puntos críticos auditados bajo normas nacionales por ingenieros matriculados.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-px rounded-lg overflow-hidden bg-divider/30">
+        <div className="grid lg:grid-cols-3 gap-8 rounded-[3rem] overflow-hidden">
           {categories.map((category, catIndex) => (
             <motion.div
               key={category.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: catIndex * 0.1, duration: 0.6 }}
-              className="p-8 md:p-10 bg-bg-alt relative overflow-hidden"
+              transition={{ delay: catIndex * 0.15, duration: 0.8 }}
+              className="p-10 md:p-14 bg-bg-alt/40 border border-divider/10 relative overflow-hidden rounded-[3rem] shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_30px_60px_rgba(10,77,153,0.06)] hover:bg-white"
             >
-              {/* Top accent glow */}
+              {/* Subtle top accent */}
               <div
-                className="absolute top-0 left-0 right-0 h-24 opacity-40"
+                className="absolute top-0 inset-x-0 h-32 opacity-30"
                 style={{
-                  background: `radial-gradient(ellipse at 50% 0%, ${category.accentGlow}, transparent 70%)`,
+                  background: `linear-gradient(to bottom, ${category.accentGlow}, transparent)`,
                 }}
               />
 
               <div className="relative z-10">
                 {/* Header */}
-                <div className="flex items-center justify-between mb-8 pb-5 border-b border-divider">
-                  <h3 className={`text-base font-bold font-serif ${category.color}`}>
+                <div className="flex items-center justify-between mb-12 pb-8 border-b border-divider/10">
+                  <h3 className={`text-xl font-bold font-serif ${category.color} tracking-tight`}>
                     {category.title}
                   </h3>
                   <span
-                    className={`text-[10px] font-bold px-2.5 py-1 border ${category.borderColor} ${category.color} rounded-full opacity-70`}
+                    className={`text-[11px] font-black px-3 py-1 border ${category.borderColor} ${category.color} rounded-full bg-white shadow-sm`}
                   >
                     {category.badge}
                   </span>
@@ -122,27 +123,27 @@ const AuditDetails = () => {
                   whileInView="show"
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{
-                    staggerChildren: 0.06,
-                    delayChildren: catIndex * 0.12,
+                    staggerChildren: 0.08,
+                    delayChildren: catIndex * 0.2,
                   }}
-                  className="space-y-4"
+                  className="space-y-6"
                 >
                   {category.items.map((item, i) => (
                     <motion.li
                       key={i}
                       variants={itemVariants}
-                      className="group/item flex items-center gap-3 hover:translate-x-1 transition-transform duration-300"
+                      className="group/item flex items-center gap-4 hover:translate-x-1.5 transition-transform duration-300"
                     >
                       <div
-                        className={`w-5 h-5 rounded-sm ${category.dotColor}/10 border ${category.borderColor} flex items-center justify-center shrink-0 transition-colors duration-300 group-hover/item:${category.dotColor}/20`}
+                        className={`w-7 h-7 rounded-lg ${category.dotColor}/[0.06] border ${category.borderColor} flex items-center justify-center shrink-0 transition-all duration-300 group-hover/item:${category.dotColor}/20 group-hover/item:scale-110 shadow-sm`}
                       >
                         <Check
-                          size={10}
+                          size={13}
                           weight="bold"
-                          className={`${category.color} opacity-60`}
+                          className={`${category.color}`}
                         />
                       </div>
-                      <span className="text-text-sec text-sm font-light group-hover/item:text-text-main transition-colors duration-300">
+                      <span className="text-text-sec text-[15px] font-medium group-hover/item:text-text-main transition-colors duration-300">
                         {item}
                       </span>
                     </motion.li>
@@ -153,27 +154,24 @@ const AuditDetails = () => {
           ))}
         </div>
 
-        {/* Summary bar */}
+        {/* Summary horizontal card */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-4 p-5 glass-premium flex flex-col md:flex-row items-center justify-between gap-4 rounded-lg shimmer"
+          className="mt-12 p-8 glass-premium flex flex-col md:flex-row items-center justify-center gap-6 rounded-[2.5rem] border border-green-vibrant/10 shadow-[0_20px_50px_rgba(102,204,51,0.05)] overflow-hidden group"
         >
-          <p className="text-text-sec text-sm font-light">
-            <span className="text-green-vibrant font-semibold">
-              15 puntos auditados
-            </span>{" "}
-            · Firma profesional incluida · Entrega en brochure visual para el
-            comprador
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-vibrant/[0.02] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+          <div className="flex items-center gap-3">
+             <div className="w-2.5 h-2.5 rounded-full bg-green-vibrant animate-pulse" />
+             <p className="text-text-main text-base font-bold tracking-tight">
+               Firma técnica profesional habilitada en cada reporte.
+             </p>
+          </div>
+          <div className="hidden md:block h-6 w-px bg-divider/10" />
+          <p className="text-text-sec text-base font-medium opacity-80">
+            Documentación lista para anexar al boleto de compra-venta.
           </p>
-          {/* 
-          <a href="#contacto">
-            <button className="text-green-vibrant text-sm font-bold border border-green-muted/30 px-5 py-2.5 rounded-md hover:bg-green-subtle hover:border-green-muted/50 transition-all shrink-0">
-              Solicitar muestra →
-            </button>
-          </a>
-          */}
         </motion.div>
       </div>
     </section>

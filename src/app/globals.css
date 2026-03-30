@@ -5,7 +5,62 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* ── Surface Elevation System ── */
+  /* ── Surface Elevation System (Light Mode) ── */
+  --bg-main: #FFFFFF;
+  --bg-alt: #F8FAFC;
+  --bg-elevated: #F1F5F9;
+  --bg-surface: #E2E8F0;
+
+  /* ── Blues — Structural (Adapted) ── */
+  --blue-struct: #0F172A;
+  --blue-mid: #0A4D99;
+  --blue-light: #1A6DBF;
+  --blue-glow: #2E8BFF;
+
+  /* ── Greens — Action / Success (Darkened for Light Mode) ── */
+  --green-vibrant: #409916; 
+  --green-mid: #357B12;
+  --green-muted: #27590C;
+  --green-subtle: rgba(64, 153, 22, 0.08);
+
+  /* ── Neutrals — Type Hierarchy (Light Mode) ── */
+  --text-main: #020617;
+  --text-sec: #475569;
+  --text-ter: #64748B;
+  --divider: rgba(15, 23, 42, 0.08);
+  --divider-strong: rgba(15, 23, 42, 0.15);
+
+  /* ── Accent ── */
+  --gold-seal: #B8860B;
+  --gold-light: #C9A96E;
+
+  /* ── Semantic ── */
+  --red-danger: #D00000;
+  --red-subtle: rgba(208, 0, 0, 0.04);
+  
+  --background: var(--bg-main);
+  --foreground: var(--text-main);
+  --card: var(--bg-alt);
+  --card-foreground: var(--text-main);
+  --popover: var(--bg-main);
+  --popover-foreground: var(--text-main);
+  --primary: var(--blue-mid);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--bg-elevated);
+  --secondary-foreground: var(--text-main);
+  --muted: var(--bg-elevated);
+  --muted-foreground: var(--text-sec);
+  --accent: var(--blue-glow);
+  --accent-foreground: #FFFFFF;
+  --destructive: #D00000;
+  --border: var(--divider);
+  --input: var(--divider-strong);
+  --ring: var(--blue-mid);
+  --radius: 0.625rem;
+}
+
+.dark-theme-override {
+  /* ── Surface Elevation System (Original Dark Mode) ── */
   --bg-main: #020C1B;
   --bg-alt: #05142E;
   --bg-elevated: #081B3A;
@@ -37,38 +92,6 @@
   /* ── Semantic ── */
   --red-danger: #FF4444;
   --red-subtle: rgba(255, 68, 68, 0.06);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
 @theme {
@@ -182,8 +205,8 @@ body {
   .bg-grid {
     background-size: 60px 60px;
     background-image: 
-      linear-gradient(to right, rgba(10, 77, 153, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(10, 77, 153, 0.06) 1px, transparent 1px);
+      linear-gradient(to right, rgba(0, 51, 102, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 51, 102, 0.04) 1px, transparent 1px);
   }
 
   /* ── Noise Texture Overlay ── */
@@ -201,27 +224,34 @@ body {
 
   /* ── Glass Surfaces ── */
   .glass-blue {
-    background: rgba(5, 20, 46, 0.6);
-    backdrop-filter: blur(20px) saturate(1.4);
-    -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(1.8);
+    -webkit-backdrop-filter: blur(20px) saturate(1.8);
+    border: 1px solid rgba(10, 77, 153, 0.08);
   }
 
   .glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(24px) saturate(1.8);
+    -webkit-backdrop-filter: blur(24px) saturate(1.8);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .glass-nav-dark {
     background: rgba(2, 12, 27, 0.8);
-    backdrop-filter: blur(24px) saturate(1.6);
-    -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    backdrop-filter: blur(24px) saturate(1.8);
+    -webkit-backdrop-filter: blur(24px) saturate(1.8);
     border-bottom: 1px solid rgba(10, 77, 153, 0.2);
   }
 
   .glass-premium {
-    background: linear-gradient(135deg, rgba(5, 20, 46, 0.7), rgba(8, 27, 58, 0.5));
-    backdrop-filter: blur(24px) saturate(1.5);
-    -webkit-backdrop-filter: blur(24px) saturate(1.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.6));
+    backdrop-filter: blur(24px) saturate(1.6);
+    -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    border: 1px solid rgba(15, 23, 42, 0.08);
     box-shadow: 
-      0 4px 24px -1px rgba(0, 0, 0, 0.2),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+      0 4px 24px -1px rgba(15, 23, 42, 0.05),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
   }
 
   /* ── Bento Grid Utilities ── */
@@ -232,14 +262,14 @@ body {
   }
 
   .bento-item {
-    background: linear-gradient(135deg, rgba(5, 20, 46, 0.7), rgba(8, 27, 58, 0.5));
-    backdrop-filter: blur(24px) saturate(1.5);
-    -webkit-backdrop-filter: blur(24px) saturate(1.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.6));
+    backdrop-filter: blur(24px) saturate(1.6);
+    -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    border: 1px solid rgba(15, 23, 42, 0.08);
     box-shadow: 
-      0 4px 24px -1px rgba(0, 0, 0, 0.2),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
-    @apply rounded-3xl p-8 relative overflow-hidden transition-all duration-500 hover:border-blue-mid/40;
+      0 4px 24px -1px rgba(15, 23, 42, 0.05),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+    @apply rounded-3xl p-8 relative overflow-hidden transition-all duration-500 hover:border-blue-mid/20 hover:shadow-xl;
   }
 
   /* ── Light Blobs (Atmospheric) ── */
@@ -379,9 +409,9 @@ body {
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(10, 77, 153, 0.4) 20%,
-      rgba(102, 204, 51, 0.2) 50%,
-      rgba(10, 77, 153, 0.4) 80%,
+      rgba(15, 23, 42, 0.08) 20%,
+      rgba(64, 153, 22, 0.15) 50%,
+      rgba(15, 23, 42, 0.08) 80%,
       transparent
     );
   }
@@ -511,35 +541,56 @@ body {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* ── Surface Elevation System (Original Dark Mode) ── */
+  --bg-main: #020C1B;
+  --bg-alt: #05142E;
+  --bg-elevated: #081B3A;
+  --bg-surface: #0B2244;
+
+  /* ── Blues — Structural ── */
+  --blue-struct: #003366;
+  --blue-mid: #0A4D99;
+  --blue-light: #1A6DBF;
+  --blue-glow: #2E8BFF;
+
+  /* ── Greens — Action / Success ── */
+  --green-vibrant: #66CC33;
+  --green-mid: #4DA826;
+  --green-muted: #2D6B18;
+  --green-subtle: rgba(102, 204, 51, 0.08);
+
+  /* ── Neutrals — Type Hierarchy ── */
+  --text-main: #F0EDE8;
+  --text-sec: #8A9BB5;
+  --text-ter: #5A6E85;
+  --divider: rgba(10, 77, 153, 0.25);
+  --divider-strong: rgba(10, 77, 153, 0.5);
+
+  /* ── Accent ── */
+  --gold-seal: #C9A96E;
+  --gold-light: #E0C98D;
+
+  /* ── Semantic ── */
+  --red-danger: #FF4444;
+  --red-subtle: rgba(255, 68, 68, 0.06);
+
+  /* Shadcn Overrides for Dark Mode */
+  --background: var(--bg-main);
+  --foreground: var(--text-main);
+  --card: var(--bg-alt);
+  --card-foreground: var(--text-main);
+  --popover: var(--bg-main);
+  --popover-foreground: var(--text-main);
+  --primary: var(--blue-light);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--bg-elevated);
+  --secondary-foreground: var(--text-main);
+  --muted: var(--bg-elevated);
+  --muted-foreground: var(--text-sec);
+  --accent: var(--blue-glow);
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF4444;
+  --border: var(--divider);
+  --input: var(--divider-strong);
+  --ring: var(--blue-glow);
 }
