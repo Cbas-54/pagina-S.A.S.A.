@@ -73,8 +73,8 @@ const cardVariants = {
 
 const Pilares = () => {
   return (
-    <section id="pilares" className="relative py-40 px-6 overflow-hidden bg-white">
-      <div className="absolute inset-0 -z-10 bg-white" />
+    <section id="pilares" className="relative py-40 px-6 overflow-hidden bg-transparent">
+      <div className="absolute inset-0 -z-10 bg-transparent" />
       <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-divider to-transparent" />
       
       {/* Decorative background grid */}

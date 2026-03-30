@@ -74,7 +74,7 @@ const Beneficios = () => {
   const xRight = useTransform(scrollYProgress, [0, 1], ["-25%", "0%"]);
 
   return (
-    <section ref={containerRef} id="beneficios" className="relative py-48 px-6 bg-white overflow-hidden">
+    <section ref={containerRef} id="beneficios" className="relative py-48 px-6 bg-transparent overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-mid/[0.015] rounded-full blur-[140px] -z-10 translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-green-vibrant/[0.01] rounded-full blur-[120px] -z-10 -translate-x-1/2 translate-y-1/2" />

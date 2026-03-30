@@ -26,41 +26,38 @@ export default function Home() {
       </div>
 
       {/* ── Light Sections ── */}
-      <div className="relative z-10 bg-bg-main">
-        <SectionDivider />
-        <section id="metodologia">
-          <Stats />
-        </section>
-        
-        <SectionDivider />
-        <Slogan />
-        
-        <SectionDivider />
+      {/* ── Dark Section: Stats ── */}
+      <section id="metodologia" className="bg-[#050B1B] dark">
+        <Stats />
+      </section>
+
+      <Slogan />
+
+      <section id="problema" className="bg-bg-main">
         <ProblemSolution />
-        
-        <SectionDivider />
-        <section id="pilares">
-          <Pilares />
-        </section>
-        
-        <SectionDivider />
-        <section id="auditoria">
-          <AuditDetails />
-        </section>
-        
-        <SectionDivider />
+      </section>
+
+      {/* ── Soft Depth Section: Pilares ── */}
+      <section id="pilares" className="bg-slate-50">
+        <Pilares />
+      </section>
+
+      {/* ── Dark Section: AuditDetails ── */}
+      <section id="auditoria" className="bg-[#050B1B] dark">
+        <AuditDetails />
+      </section>
+
+      <section id="sello" className="bg-bg-main">
         <SelloSASA />
-        
-        <SectionDivider />
+      </section>
+
+      <section id="beneficios" className="bg-slate-50">
         <Beneficios />
-        
-        <SectionDivider />
-        <section id="procesos">
-          <Estrategia />
-        </section>
-        
-        <SectionDivider />
-      </div>
+      </section>
+
+      <section id="procesos" className="bg-bg-main">
+        <Estrategia />
+      </section>
 
       {/* ── Dark Section: Cierre & Footer ── */}
       <div className="dark bg-bg-main">

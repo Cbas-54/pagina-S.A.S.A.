@@ -59,9 +59,8 @@ const itemVariants = {
 
 const AuditDetails = () => {
   return (
-    <section id="auditoria" className="relative py-40 px-6 bg-white overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-white" />
-      <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1200px] h-[1200px] bg-blue-mid/[0.015] rounded-full blur-[160px] pointer-events-none" />
+    <section id="auditoria" className="relative py-40 px-6 bg-transparent overflow-hidden">
+      <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1200px] h-[1200px] bg-blue-mid/[0.05] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -76,13 +75,13 @@ const AuditDetails = () => {
                 Process Audit Standard
               </span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-bold font-serif text-text-main leading-[1.05] tracking-tight">
+            <h2 className="text-5xl md:text-8xl font-bold font-serif text-white leading-[1.05] tracking-tight">
               Protocolo de
               <br />
               <span className="font-light italic text-blue-mid/80">Certificación Técnica</span>
             </h2>
           </div>
-          <p className="text-text-sec text-lg max-w-sm font-medium leading-relaxed opacity-80 decoration-blue-mid/20 underline underline-offset-8">
+          <p className="text-white/60 text-lg max-w-sm font-medium leading-relaxed decoration-blue-mid/20 underline underline-offset-8">
             15 puntos críticos auditados bajo normas nacionales por ingenieros matriculados.
           </p>
         </motion.div>
@@ -95,7 +94,7 @@ const AuditDetails = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: catIndex * 0.15, duration: 0.8 }}
-              className="p-10 md:p-14 bg-bg-alt/40 border border-divider/10 relative overflow-hidden rounded-[3rem] shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_30px_60px_rgba(10,77,153,0.06)] hover:bg-white"
+              className="p-10 md:p-14 bg-white/[0.03] border border-white/10 relative overflow-hidden rounded-[3rem] shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)] hover:bg-white/[0.05] hover:border-white/20"
             >
               {/* Subtle top accent */}
               <div
@@ -112,7 +111,7 @@ const AuditDetails = () => {
                     {category.title}
                   </h3>
                   <span
-                    className={`text-[11px] font-black px-3 py-1 border ${category.borderColor} ${category.color} rounded-full bg-white shadow-sm`}
+                    className={`text-[11px] font-black px-3 py-1 border ${category.borderColor} ${category.color} rounded-full bg-[#050B1B] shadow-sm`}
                   >
                     {category.badge}
                   </span>
@@ -143,7 +142,7 @@ const AuditDetails = () => {
                           className={`${category.color}`}
                         />
                       </div>
-                      <span className="text-text-sec text-[15px] font-medium group-hover/item:text-text-main transition-colors duration-300">
+                      <span className="text-white/80 text-[15px] font-medium group-hover/item:text-white transition-colors duration-300">
                         {item}
                       </span>
                     </motion.li>
@@ -159,17 +158,17 @@ const AuditDetails = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 p-8 glass-premium flex flex-col md:flex-row items-center justify-center gap-6 rounded-[2.5rem] border border-green-vibrant/10 shadow-[0_20px_50px_rgba(102,204,51,0.05)] overflow-hidden group"
+          className="mt-12 p-8 bg-white/[0.04] border border-white/10 flex flex-col md:flex-row items-center justify-center gap-6 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden group"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-vibrant/[0.02] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
           <div className="flex items-center gap-3">
              <div className="w-2.5 h-2.5 rounded-full bg-green-vibrant animate-pulse" />
-             <p className="text-text-main text-base font-bold tracking-tight">
+             <p className="text-white text-base font-bold tracking-tight">
                Firma técnica profesional habilitada en cada reporte.
              </p>
           </div>
-          <div className="hidden md:block h-6 w-px bg-divider/10" />
-          <p className="text-text-sec text-base font-medium opacity-80">
+          <div className="hidden md:block h-6 w-px bg-white/10" />
+          <p className="text-white/60 text-base font-medium">
             Documentación lista para anexar al boleto de compra-venta.
           </p>
         </motion.div>

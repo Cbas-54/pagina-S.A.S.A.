@@ -16,9 +16,9 @@ const Slogan = () => {
   const text = "Transformamos incertidumbre técnica en rentabilidad inmediata.";
 
   return (
-    <section ref={containerRef} className="relative z-20 py-60 px-6 bg-white overflow-hidden flex items-center justify-center">
+    <section ref={containerRef} className="relative z-20 py-60 px-6 bg-slate-50 overflow-hidden flex items-center justify-center">
       {/* Decorative background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[400px] bg-blue-mid/[0.02] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[400px] bg-blue-mid/[0.05] rounded-full blur-[120px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto text-center relative">
         {/* Background Text (Ultra subtle stroke/dimmed) */}
