@@ -90,7 +90,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         boxShadow: visible
           ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
-        width: visible ? "40%" : "100%",
+        width: visible ? "450px" : "100%",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -99,7 +99,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         damping: 50,
       }}
       style={{
-        minWidth: "800px",
+        width: visible ? "fit-content" : "100%",
       }}
       className={cn(
         "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex backdrop-blur-none transition-all duration-300",
@@ -124,7 +124,7 @@ export const NavItems = ({
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition duration-200 lg:flex lg:space-x-2",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition-all duration-300 lg:flex lg:space-x-2",
         visible ? "text-white" : "text-black",
         className,
       )}
@@ -136,7 +136,7 @@ export const NavItems = ({
           className={cn(
             "relative px-4 py-2 transition-colors duration-200",
             visible
-              ? "text-white/90 hover:text-white"
+              ? "text-white hover:text-white/80"
               : "text-neutral-600 hover:text-black",
           )}
           key={`link-${idx}`}
