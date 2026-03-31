@@ -28,7 +28,7 @@ const SERVICES_DATA = [
 
 const ServiceGallery = React.memo(() => {
   return (
-    <section id="servicios" className="py-24 px-6 bg-[#F4F4F5]">
+    <section id="servicios" className="pt-12 pb-24 md:pt-16 md:pb-24 px-6 bg-[#F4F4F5]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl">

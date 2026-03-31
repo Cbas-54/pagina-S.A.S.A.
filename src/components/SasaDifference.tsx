@@ -44,7 +44,7 @@ const DIFFERENCES_DATA = [
 
 const SasaDifference = React.memo(() => {
   return (
-    <section id="la-diferencia" className="relative pt-12 pb-32 md:pt-16 md:pb-56 px-6 bg-white">
+    <section id="la-diferencia" className="relative pt-12 pb-16 md:pt-16 md:pb-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
         
         {/* Left Side: Sticky Title (Lewis Style) */}
