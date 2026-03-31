@@ -14,7 +14,11 @@ const FEATURES_DATA = [
 
 const SelloSASA = React.memo(() => {
   return (
-    <section id="sello" className="relative py-48 px-6 bg-[#020C1B] overflow-hidden">
+    <section id="sello" className="relative py-32 md:py-40 px-6 bg-[#020C1B] overflow-hidden border-t border-gold-seal/5">
+      {/* Top transition glow (Gold Leak) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-gold-seal/30 to-transparent blur-[1px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-24 bg-gold-seal/5 blur-[80px] -translate-y-1/2 rounded-full" />
+      
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_30%,rgba(201,169,110,0.05)_0%,transparent_50%)]" />
       
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-20 lg:gap-32 items-center">

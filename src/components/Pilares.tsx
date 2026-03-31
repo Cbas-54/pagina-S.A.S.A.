@@ -74,16 +74,6 @@ const Pilares = React.memo(() => {
         </svg>
       </div>
 
-      {/* 📐 DIAGONAL INFERIOR (Invertida: Baja \ ) */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="relative block w-[calc(100%+1.3px)] h-[120px] fill-white"
-        >
-          <path d="M1200,120 L1200,0 L0,120 Z"></path>
-        </svg>
-      </div>
 
       {/* Technical Background Foundation */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 -z-10" />
