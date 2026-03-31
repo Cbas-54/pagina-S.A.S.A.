@@ -54,7 +54,7 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
   const refs = [card1Ref, card2Ref, card3Ref];
 
   return (
-    <section className="relative py-24 md:py-32 bg-[#0A0A0A] overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-[#020C1B] overflow-hidden">
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[120px] fill-white">
           <path d="M0,0 L0,120 L1200,0 Z"></path>

@@ -1,60 +1,23 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { SealCheck, Check } from "@phosphor-icons/react";
-import { AnimatedBeam } from "@/components/ui/animated-beam";
 
 interface SelloSASAProps {
-  sharedContainerRef: React.RefObject<HTMLDivElement | null>;
-  card1Ref: React.RefObject<HTMLDivElement | null>;
-  card2Ref: React.RefObject<HTMLDivElement | null>;
-  card3Ref: React.RefObject<HTMLDivElement | null>;
+  sealRef: React.RefObject<HTMLDivElement | null>;
 }
 
-const SelloSASA = React.memo(({ sharedContainerRef, card1Ref, card2Ref, card3Ref }: SelloSASAProps) => {
-  const sealRef = useRef<HTMLDivElement>(null);
-
+const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
   return (
-    <section id="sello" className="relative py-32 md:py-48 px-6 bg-[#0A0A0A] overflow-hidden">
-      {/* 📐 DIAGONAL SUPERIOR (Conexión fluida) */}
-      <div className="absolute top-0 left-0 w-full h-[120px] bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
+    <section id="sello" className="relative py-32 md:py-48 px-6 bg-[#020C1B] overflow-hidden">
+      {/* 📐 DIAGONAL SUPERIOR (Conexión fluida desde Pilares) */}
+      <div className="absolute top-0 left-0 w-full h-[150px] bg-gradient-to-b from-[#02152b] to-transparent pointer-events-none opacity-50" />
 
-      {/* Animated Beams (Conexión desde Pilares de arriba hacia el Sello de abajo) */}
-      <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
-        <AnimatedBeam
-          containerRef={sharedContainerRef}
-          fromRef={card1Ref}
-          toRef={sealRef}
-          duration={4}
-          curvature={50}
-          pathColor="rgba(201,169,110,0.3)"
-          gradientStartColor="#C9A96E"
-          gradientStopColor="#C9A96E"
-        />
-        <AnimatedBeam
-          containerRef={sharedContainerRef}
-          fromRef={card2Ref}
-          toRef={sealRef}
-          duration={4}
-          delay={1}
-          curvature={20}
-          pathColor="rgba(201,169,110,0.3)"
-          gradientStartColor="#C9A96E"
-          gradientStopColor="#C9A96E"
-        />
-        <AnimatedBeam
-          containerRef={sharedContainerRef}
-          fromRef={card3Ref}
-          toRef={sealRef}
-          duration={4}
-          delay={0.5}
-          curvature={-50}
-          pathColor="rgba(201,169,110,0.3)"
-          gradientStartColor="#C9A96E"
-          gradientStopColor="#C9A96E"
-        />
-      </div>
+      {/* 
+          Nota: Los AnimatedBeams han sido movidos a page.tsx 
+          para asegurar una alineación perfecta entre secciones.
+      */}
       
       <div className="max-w-7xl mx-auto relative z-20">
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-32">
