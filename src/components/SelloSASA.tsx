@@ -46,7 +46,7 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
                 <div className="w-[85%] h-[85%] rounded-full border border-gold-seal/20 flex items-center justify-center relative bg-gradient-to-br from-white/5 to-transparent">
                   <div className="relative z-10 w-full h-full flex items-center justify-center p-8 transition-transform duration-700 group-hover:scale-105">
                     <Image 
-                      src="/images/logo sasa borde blanco.png" 
+                      src="/logo sasa borde blanco.png" 
                       alt="Logo Oficial SASA" 
                       width={280} 
                       height={280} 
