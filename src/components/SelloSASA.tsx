@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { SealCheck, Check } from "@phosphor-icons/react";
+import { SealCheck, Check, ShieldCheck, Heartbeat, Users } from "@phosphor-icons/react";
+import { AnimatedBeam } from "@/components/ui/animated-beam";
 
 const FEATURES_DATA = [
   "Firmado por profesional matriculado con responsabilidad civil",
@@ -13,15 +14,56 @@ const FEATURES_DATA = [
 ];
 
 const SelloSASA = React.memo(() => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const sealRef = useRef<HTMLDivElement>(null);
+  const item1Ref = useRef<HTMLDivElement>(null);
+  const item2Ref = useRef<HTMLDivElement>(null);
+  const item3Ref = useRef<HTMLDivElement>(null);
+
   return (
-    <section id="sello" className="relative py-32 md:py-40 px-6 bg-[#020C1B] overflow-hidden border-t border-gold-seal/5">
+    <section id="sello" className="relative py-32 md:py-40 px-6 bg-[#0A0A0A] overflow-hidden border-t border-gold-seal/5">
       {/* Top transition glow (Gold Leak) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-gold-seal/30 to-transparent blur-[1px]" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-24 bg-gold-seal/5 blur-[80px] -translate-y-1/2 rounded-full" />
       
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_30%,rgba(201,169,110,0.05)_0%,transparent_50%)]" />
       
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-20 lg:gap-32 items-center">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1fr] gap-20 lg:gap-32 items-center relative" ref={containerRef}>
+        {/* Animated Beams (Desktop only for clarity) */}
+        <div className="hidden lg:block">
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={item1Ref}
+            toRef={sealRef}
+            duration={3}
+            curvature={20}
+            pathColor="rgba(201,169,110,0.2)"
+            gradientStartColor="#C9A96E"
+            gradientStopColor="#C9A96E"
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={item2Ref}
+            toRef={sealRef}
+            duration={3}
+            delay={1}
+            curvature={0}
+            pathColor="rgba(201,169,110,0.2)"
+            gradientStartColor="#C9A96E"
+            gradientStopColor="#C9A96E"
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={item3Ref}
+            toRef={sealRef}
+            duration={3}
+            delay={0.5}
+            curvature={-20}
+            pathColor="rgba(201,169,110,0.2)"
+            gradientStartColor="#C9A96E"
+            gradientStopColor="#C9A96E"
+          />
+        </div>
         {/* Left: Seal Visual */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -43,9 +85,10 @@ const SelloSASA = React.memo(() => {
 
             {/* Main Outer Seal Container */}
             <motion.div
+               ref={sealRef}
                animate={{ y: [0, -15, 0] }}
                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-               className="relative"
+               className="relative z-20"
             >
               {/* Outer textured ring */}
               <div className="w-80 h-80 md:w-96 md:h-96 rounded-full border border-gold-seal/30 flex items-center justify-center bg-white/[0.03] shadow-[0_30px_100px_rgba(0,0,0,0.5),0_0_40px_rgba(201,169,110,0.1)] backdrop-blur-md relative overflow-hidden">
@@ -135,21 +178,26 @@ const SelloSASA = React.memo(() => {
             El reporte SASA es una declaración de fe técnica. No solo informa, sino que legitima el valor de su propiedad ante los ojos del comprador más exigente.
           </p>
 
-          <div className="grid gap-4">
-            {FEATURES_DATA.map((f, i) => (
+          <div className="grid gap-6">
+            {[
+              { text: "Seguridad Antisiniestral Certificada", icon: <ShieldCheck size={20} weight="bold" />, ref: item1Ref },
+              { text: "Habitabilidad y Salud Ambiental", icon: <Heartbeat size={20} weight="bold" />, ref: item2Ref },
+              { text: "Accesibilidad e Inclusión Real", icon: <Users size={20} weight="bold" />, ref: item3Ref },
+            ].map((item, i) => (
               <motion.div
                 key={i}
+                ref={item.ref}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="flex items-center gap-6 group/item bg-white/[0.03] p-5 rounded-3xl border border-white/5 hover:border-gold-seal/20 hover:bg-white/[0.07] transition-all duration-500"
+                className="flex items-center gap-6 group/item bg-white/[0.03] p-6 rounded-3xl border border-white/5 hover:border-gold-seal/20 hover:bg-white/[0.07] transition-all duration-500"
               >
-                <div className="w-10 h-10 rounded-xl border border-gold-seal/30 bg-gold-seal/5 flex items-center justify-center shrink-0 shadow-inner group-hover/item:scale-110 transition-transform">
-                  <Check size={18} weight="bold" className="text-gold-seal" />
+                <div className="w-12 h-12 rounded-xl border border-gold-seal/30 bg-gold-seal/5 flex items-center justify-center shrink-0 shadow-inner group-hover/item:scale-110 transition-transform relative z-30">
+                  <div className="text-gold-seal">{item.icon}</div>
                 </div>
-                <span className="text-white/70 text-base font-semibold group-hover/item:text-white transition-colors">
-                  {f}
+                <span className="text-white/70 text-lg font-bold group-hover/item:text-white transition-colors tracking-tight">
+                  {item.text}
                 </span>
               </motion.div>
             ))}

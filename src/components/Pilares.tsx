@@ -61,7 +61,7 @@ const cardVariants = {
 
 const Pilares = React.memo(() => {
   return (
-    <section id="pilares" className="relative py-24 md:py-32 bg-[#020C1B] overflow-hidden">
+    <section id="pilares" className="relative py-24 md:py-32 bg-[#0A0A0A] overflow-hidden">
       
       {/* 📐 DIAGONAL SUPERIOR (Invertida: Sube / ) */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">

@@ -541,14 +541,14 @@ body {
 }
 
 .dark {
-  /* ── Surface Elevation System (Original Dark Blue) ── */
-  --bg-main: #020C1B;
-  --bg-alt: #05142E;
-  --bg-elevated: #081B3A;
-  --bg-surface: #0B2244;
+  /* ── Surface Elevation System (Deep Onyx Style) ── */
+  --bg-main: #0A0A0A;
+  --bg-alt: #0D0D0D;
+  --bg-elevated: #121212;
+  --bg-surface: #18181B;
 
   /* ── Blues — Structural ── */
-  --blue-struct: #003366;
+  --blue-struct: #0F172A;
   --blue-mid: #0A4D99;
   --blue-light: #1A6DBF;
   --blue-glow: #2E8BFF;
@@ -563,8 +563,8 @@ body {
   --text-main: #F0EDE8;
   --text-sec: #8A9BB5;
   --text-ter: #5A6E85;
-  --divider: rgba(10, 77, 153, 0.25);
-  --divider-strong: rgba(10, 77, 153, 0.5);
+  --divider: rgba(201, 169, 110, 0.1); /* Gold tint divider */
+  --divider-strong: rgba(201, 169, 110, 0.2);
 
   /* ── Accent ── */
   --gold-seal: #C9A96E;

@@ -92,7 +92,7 @@ const STATS_DATA: StatItem[] = [
 
 const Stats = React.memo(() => {
   return (
-    <section id="stats" className="relative z-20 pt-32 pb-40 px-6 bg-[#020C1B] overflow-hidden">
+    <section id="stats" className="relative z-20 pt-32 pb-40 px-6 bg-[#0A0A0A] overflow-hidden">
       {/* Subtle Gradient Glows */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gold-seal/5 rounded-full blur-[120px] -translate-y-1/2" />
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-mid/5 rounded-full blur-[150px] translate-y-1/2" />
