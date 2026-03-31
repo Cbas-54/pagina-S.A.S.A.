@@ -20,7 +20,7 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
           para asegurar una alineación perfecta entre secciones.
       */}
       
-      <div className="max-w-7xl mx-auto relative z-20">
+      <div className="max-w-7xl mx-auto relative z-30">
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-32">
           
           {/* Visual: El Sello Nuclear (Logo Oficial) */}

@@ -43,7 +43,7 @@ export default function Home() {
         <div ref={containerRef} className="relative">
           
           {/* Animated Beams (Movidos al padre para alineación perfecta) */}
-          <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
+          <div className="hidden lg:block absolute inset-0 z-20 pointer-events-none">
             <AnimatedBeam
               containerRef={containerRef}
               fromRef={card1Ref}
