@@ -43,7 +43,7 @@ export default function Home() {
         <div ref={containerRef} className="relative">
           
           {/* Animated Beams (Movidos al padre para alineación perfecta) */}
-          <div className="hidden lg:block absolute inset-0 z-20 pointer-events-none">
+          <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
             <AnimatedBeam
               containerRef={containerRef}
               fromRef={card1Ref}
@@ -61,7 +61,7 @@ export default function Home() {
               fromRef={card2Ref}
               toRef={sealRef}
               duration={5}
-              delay={1.5}
+              delay={0}
               curvature={70}
               pathColor="rgba(201,169,110,0.25)"
               gradientStartColor="#C9A96E"
@@ -74,7 +74,7 @@ export default function Home() {
               fromRef={card3Ref}
               toRef={sealRef}
               duration={5}
-              delay={0.8}
+              delay={0}
               curvature={-140}
               pathColor="rgba(201,169,110,0.25)"
               gradientStartColor="#C9A96E"
