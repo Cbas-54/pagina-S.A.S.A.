@@ -16,10 +16,9 @@ const PILARES_DATA = [
       "Red de incendio y extintores",
       "Detección de riesgos estructurales",
     ],
-    icon: <ShieldCheck size={42} weight="duotone" />,
+    icon: <ShieldCheck size={48} weight="duotone" />,
     accent: "border-[#020C1B]",
     textColor: "text-[#020C1B]",
-    iconBg: "bg-[#020C1B]/5",
   },
   {
     ref: "REF: SASA-02",
@@ -32,10 +31,9 @@ const PILARES_DATA = [
       "Ventilación cruzada verificada",
       "Instalaciones de gas certificadas",
     ],
-    icon: <Heart size={42} weight="duotone" />,
+    icon: <Heart size={48} weight="duotone" />,
     accent: "border-[#059669]",
     textColor: "text-[#059669]",
-    iconBg: "bg-[#059669]/5",
   },
   {
     ref: "REF: SASA-03",
@@ -48,117 +46,137 @@ const PILARES_DATA = [
       "Ascensores y escaleras seguras",
       "Señalización y circulación",
     ],
-    icon: <Wheelchair size={42} weight="duotone" />,
+    icon: <Wheelchair size={48} weight="duotone" />,
     accent: "border-[#2563eb]",
     textColor: "text-[#2563eb]",
-    iconBg: "bg-[#2563eb]/5",
   },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.2 } },
+  show: { opacity: 1, transition: { staggerChildren: 0.15 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 const Pilares = React.memo(() => {
   return (
-    <section id="pilares" className="relative py-40 px-6 overflow-hidden bg-[#fdfdfd]">
-      <div className="absolute inset-0 -z-10 bg-[#fdfdfd]" />
-      
-      {/* Subtle Technical Grid Background */}
-      <div className="absolute inset-x-0 top-0 h-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] -z-10 opacity-50" />
+    <section id="pilares" className="relative py-40 px-6 overflow-hidden bg-[#020C1B]">
+      {/* Background Technical Foundation */}
+      <div className="absolute inset-0 -z-10 bg-[#020C1B]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808010_1px,transparent_1px),linear-gradient(to_bottom,#80808010_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-blue-glow/10 blur-[140px] -z-10 opacity-30" />
 
       <div className="max-w-7xl mx-auto">
-        {/* High Contrast Header Block */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative mb-24 p-12 md:p-20 bg-[#020C1B] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl border border-white/5"
-        >
-          {/* Decorative Internal Glow */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-mid/10 rounded-full blur-[120px] -mr-40 -mt-40" />
+        {/* Integrated Section Header */}
+        <div className="text-center mb-28 relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-glow/5 border border-white/10 mb-10"
+          >
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-glow animate-pulse" />
+            <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-blue-glow">
+              Auditoría Pericial Integral
+            </span>
+          </motion.div>
           
-          <div className="relative z-10 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-glow/10 border border-blue-glow/20 mb-8">
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-blue-glow">
-                El ADN de la Propiedad
-              </span>
-            </div>
-            <h2 className="text-5xl md:text-8xl font-bold font-serif text-white mb-8 leading-[1.1] tracking-tight">
-              Los Tres Pilares
-              <br />
-              <span className="font-light italic text-blue-light/60">de la confianza definitiva</span>
-            </h2>
-            <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
-              Auditamos cada activo en tres dimensiones críticas para asegurar 
-              una transacción sin fricciones y con absoluta transparencia física.
-            </p>
-          </div>
-        </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-6xl md:text-8xl font-bold font-serif text-white mb-8 tracking-tight leading-[1.05]"
+          >
+            Los Tres Pilares
+            <br />
+            <span className="font-light italic text-blue-light/50">fundamentales de SASA</span>
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto font-medium"
+          >
+            Procesos de inspección técnica diseñados para garantizar la transparencia, 
+            seguridad y rentabilidad de cada activo inmobiliario.
+          </motion.p>
+        </div>
 
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid md:grid-cols-3 gap-8"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-3 gap-10"
         >
           {PILARES_DATA.map((pilar) => (
             <motion.div
               key={pilar.title}
               variants={cardVariants}
-              whileHover={{ y: -10 }}
-              className={`relative group bg-white p-10 md:p-12 border-t-8 ${pilar.accent} border-x border-b border-divider/10 rounded-2xl transition-all duration-500 overflow-hidden cursor-default shadow-sm hover:shadow-2xl`}
+              whileHover={{ y: -15, scale: 1.02 }}
+              className={`relative group bg-white p-12 lg:p-14 border-t-[10px] ${pilar.accent} border-x border-b border-divider/5 rounded-3xl transition-all duration-700 overflow-hidden cursor-default shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]`}
             >
+              {/* Corner Watermark */}
+              <div className="absolute top-0 right-0 p-6 opacity-[0.03] select-none pointer-events-none group-hover:opacity-[0.08] transition-opacity duration-500">
+                <p className="text-[6rem] font-serif font-black leading-none">{pilar.title.charAt(0)}</p>
+              </div>
+
               <div className="relative z-10">
-                {/* Reference ID Detail */}
-                <div className="flex justify-between items-start mb-10">
-                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-text-ter/50">
-                    {pilar.ref}
-                  </span>
-                  <div className={`w-14 h-14 rounded-2xl ${pilar.iconBg} flex items-center justify-center ${pilar.textColor} transition-transform duration-500 group-hover:scale-110`}>
+                {/* Header Row: ID & Icon */}
+                <div className="flex justify-between items-center mb-14">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[10px] font-black tracking-[0.4em] uppercase text-text-ter/40">
+                      IDENTIFICADOR
+                    </span>
+                    <span className="text-[13px] font-bold text-text-ter/70 font-mono">
+                      {pilar.ref}
+                    </span>
+                  </div>
+                  <div className={`${pilar.textColor} transition-all duration-500 group-hover:scale-110 group-hover:rotate-6`}>
                     {pilar.icon}
                   </div>
                 </div>
 
-                {/* Titles */}
-                <p className={`text-[11px] font-black tracking-[0.3em] uppercase ${pilar.textColor} mb-3 flex items-center gap-2`}>
-                  <span className={`w-1.5 h-1.5 rounded-full ${pilar.textColor.replace('text', 'bg')}`} />
+                {/* Content Block */}
+                <p className={`text-[11px] font-black tracking-[0.3em] uppercase ${pilar.textColor} mb-4 flex items-center gap-2.5`}>
+                  <div className={`w-2 h-2 rounded-full ${pilar.textColor.replace('text', 'bg')}`} />
                   {pilar.subtitle}
                 </p>
-                <h3 className="text-3xl md:text-4xl font-serif font-bold text-text-main mb-6 tracking-tight">
+                <h3 className="text-4xl md:text-5xl font-serif font-bold text-text-main mb-8 tracking-tight">
                   {pilar.title}
                 </h3>
-                <p className="text-text-sec leading-relaxed mb-10 text-[15px] font-medium opacity-80">
+                <p className="text-text-sec leading-relaxed mb-12 text-[16px] font-medium opacity-90">
                   {pilar.description}
                 </p>
 
-                {/* Checklist Style Bullets */}
-                <ul className="space-y-4 border-t border-divider/10 pt-8">
-                  {pilar.bullets.map((b, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center gap-3.5 text-text-main text-[13px] font-bold group-hover:translate-x-1 transition-transform duration-300"
-                    >
-                      <span className={`${pilar.textColor} opacity-60 font-serif font-black`}>
-                        {i + 1}.
-                      </span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+                {/* Audit Checklist */}
+                <div className="border-t border-divider/10 pt-10">
+                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-text-ter/50 mb-6">
+                    PUNTOS DE INSPECCIÓN
+                  </p>
+                  <ul className="space-y-5">
+                    {pilar.bullets.map((b, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-4 text-text-main text-[14px] font-bold group/item hover:translate-x-2 transition-transform duration-300"
+                      >
+                        <span className={`${pilar.textColor} font-serif font-black opacity-40 text-[16px] leading-none`}>
+                          0{i + 1}
+                        </span>
+                        <span className="leading-tight">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              {/* Decorative Stamp Element */}
-              <div className="absolute -bottom-6 -right-6 text-[8rem] font-serif font-black text-divider/5 select-none pointer-events-none group-hover:scale-110 transition-transform duration-700">
-                {pilar.title.charAt(0)}
-              </div>
+              {/* Physical Edge Highlight (Top left paper corner feel) */}
+              <div className="absolute top-0 left-0 w-full h-full pointer-events-none border-l border-white/10 opacity-30" />
             </motion.div>
           ))}
         </motion.div>
