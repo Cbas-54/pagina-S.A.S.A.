@@ -44,12 +44,12 @@ const DIFFERENCES_DATA = [
 
 const SasaDifference = React.memo(() => {
   return (
-    <section id="la-diferencia" className="relative py-32 md:py-56 px-6 bg-white overflow-hidden">
+    <section id="la-diferencia" className="relative pt-12 pb-32 md:pt-16 md:pb-56 px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
         
         {/* Left Side: Sticky Title (Lewis Style) */}
-        <div className="relative">
-          <div className="lg:sticky lg:top-32 h-fit">
+        <div className="relative h-full">
+          <div className="lg:sticky lg:top-36 self-start transform-gpu">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
