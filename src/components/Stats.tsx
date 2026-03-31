@@ -92,7 +92,7 @@ const STATS_DATA: StatItem[] = [
 
 const Stats = React.memo(() => {
   return (
-    <section id="stats" className="relative z-20 pt-24 pb-[72px] px-6 bg-white border-y border-divider">
+    <section id="stats" className="relative z-20 pt-24 pb-[88px] px-6 bg-white border-y border-divider">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {STATS_DATA.map((stat, i) => (
