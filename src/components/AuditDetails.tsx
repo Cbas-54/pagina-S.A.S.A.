@@ -40,7 +40,7 @@ const AuditDetails = React.memo(() => {
         {/* Left: Image Side (Conor Style: Large Architecture) */}
         <div className="lg:col-span-7 relative h-[500px] md:h-[800px] rounded-[40px] overflow-hidden group">
           <Image
-            src="/images/service-1.png"
+            src="/images/service-obra-nueva.png"
             alt="Auditoría SASA"
             fill
             className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"

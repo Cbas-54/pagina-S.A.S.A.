@@ -9,19 +9,19 @@ const SERVICES_DATA = [
   {
     title: "Inspección de Obra Nueva",
     desc: "Antes de recibir la llave, verificamos que cada detalle cumpla con los estándares de calidad prometidos. Protegemos su inversión desde el día cero.",
-    image: "/images/service-1.png",
+    image: "/images/service-obra-nueva.png",
     icon: <House size={48} weight="duotone" className="text-blue-mid" />
   },
   {
     title: "Auditoría de Reventa",
     desc: "Identificamos vicios ocultos y problemas estructurales en propiedades usadas. Compre con la tranquilidad de un informe pericial completo.",
-    image: "/images/service-2.png",
+    image: "/images/service-reventa.png",
     icon: <Buildings size={48} weight="duotone" className="text-green-vibrant" />
   },
   {
     title: "Certificación de Seguridad",
     desc: "Evaluación integral de sistemas eléctricos, gas e instalaciones críticas. El sello SASA es garantía de habitabilidad segura.",
-    image: "/images/service-3.png",
+    image: "/images/service-seguridad.png",
     icon: <ShieldCheck size={48} weight="duotone" className="text-blue-mid" />
   }
 ];
