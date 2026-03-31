@@ -58,7 +58,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   const [visible, setVisible] = useState<boolean>(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 100) {
+    if (latest > 80) {
       setVisible(true);
     } else {
       setVisible(false);
@@ -95,8 +95,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       transition={{
         type: "spring",
-        stiffness: 200,
-        damping: 50,
+        stiffness: 400,
+        damping: 30,
       }}
       style={{
         width: visible ? "fit-content" : "100%",
@@ -183,8 +183,8 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       }}
       transition={{
         type: "spring",
-        stiffness: 200,
-        damping: 50,
+        stiffness: 400,
+        damping: 30,
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden transition-all duration-300",
