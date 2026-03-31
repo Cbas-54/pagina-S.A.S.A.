@@ -4,68 +4,51 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
-import ProblemSolution from "@/components/ProblemSolution";
-import Pilares from "@/components/Pilares";
+import SasaDifference from "@/components/SasaDifference";
+import ServiceGallery from "@/components/ServiceGallery";
 import AuditDetails from "@/components/AuditDetails";
-import Beneficios from "@/components/Beneficios";
+import Pilares from "@/components/Pilares";
 import SelloSASA from "@/components/SelloSASA";
 import Estrategia from "@/components/Estrategia";
 import Cierre from "@/components/Cierre";
-// Se eliminó Slogan de las importaciones
-
-function SectionDivider() {
-  return <div className="section-divider w-full" />;
-}
 
 export default function Home() {
   return (
-    <main className="bg-bg-main text-text-main font-sans min-h-screen">
+    <main className="bg-bg-main text-text-main font-sans min-h-screen selection:bg-blue-mid/10">
       <Navbar />
 
-      {/* ── SECTION 1: Dark Identity - Hero ── */}
-      <div className="dark">
+      {/* ── SECTION 1: Hero ── */}
+      <section id="inicio">
         <Hero />
-      </div>
+      </section>
 
-      {/* ── SECTION 2: The Technical Core (Uniform Dark Block) ── */}
-      {/* This block establishes technical authority through metrics, risks, and process detail */}
-      <div className="bg-[#050B1B] dark">
-        <section id="metodologia">
-          <Stats />
-        </section>
+      {/* ── SECTION 2: Authority Metrics ── */}
+      <Stats />
 
-        <section id="problema">
-          <ProblemSolution />
-        </section>
+      {/* ── SECTION 3: The Lewis Difference (Sticky Scroll) ── */}
+      <SasaDifference />
 
-        <section id="auditoria">
-          <AuditDetails />
-        </section>
-      </div>
+      {/* ── SECTION 4: Service Gallery (Hill Home Style) ── */}
+      <ServiceGallery />
 
-      {/* ── SECTION 3: The Foundations (Light/Clear Transition) ── */}
-      {/* Transition to clarity and structural pillars */}
-      <section id="pilares" className="bg-slate-50">
+      {/* ── SECTION 5: Audit Portfolio (Conor Style) ── */}
+      <AuditDetails />
+
+      {/* ── SECTION 6: Foundations & Strategy ── */}
+      <section id="pilares">
         <Pilares />
       </section>
 
-      <section id="sello" className="bg-bg-main">
+      <section id="sello">
         <SelloSASA />
       </section>
 
-      {/* ── SECTION 4: Benefits & Implementation (Light / Action Oriented) ── */}
-      <section id="beneficios" className="bg-slate-50">
-        <Beneficios />
-      </section>
-
-      <section id="procesos" className="bg-bg-main">
+      <section id="procesos">
         <Estrategia />
       </section>
 
-      {/* ── SECTION 5: Dark Section: Final Message & Footer ── */}
-      <div className="dark">
-        <Cierre />
-      </div>
+      {/* ── SECTION 7: Footer & Closing ── */}
+      <Cierre />
     </main>
   );
 }

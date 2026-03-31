@@ -1,178 +1,143 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Check } from "@phosphor-icons/react";
+import { 
+  CheckCircle, 
+  Files, 
+  MapPin, 
+  Camera,
+  DeviceMobile,
+  Buildings,
+  ArrowRight,
+  Lightning
+} from "@phosphor-icons/react";
 
-const categories = [
+const auditPoints = [
   {
-    title: "Seguridad Antisiniestral",
-    badge: "05 ítems",
-    color: "text-blue-mid",
-    borderColor: "border-blue-mid/15",
-    dotColor: "bg-blue-mid",
-    accentGlow: "rgba(10, 77, 153, 0.05)",
-    items: [
-      "Extintores",
-      "Detectores de humo",
-      "Red de incendio",
-      "Tableros eléctricos",
-      "Puertas cortafuego",
-    ],
+    title: "Mapeo Higrotérmico",
+    desc: "Uso de cámaras infrarrojas para detectar puentes térmicos y filtraciones no visibles.",
+    icon: <Camera size={24} weight="duotone" />
   },
   {
-    title: "Salud / Habitabilidad",
-    badge: "05 ítems",
-    color: "text-green-vibrant",
-    borderColor: "border-green-vibrant/20",
-    dotColor: "bg-green-vibrant",
-    accentGlow: "rgba(102, 204, 51, 0.05)",
-    items: [
-      "Humedad capilar/cimientos",
-      "Ventilación cruzada",
-      "Estado de paredes",
-      "Calidad del aire",
-      "Instalaciones de gas",
-    ],
+    title: "Peritaje Eléctrico",
+    desc: "Certificación de tableros, puesta a tierra y protección magnetotérmica.",
+    icon: <DeviceMobile size={24} weight="duotone" />
   },
   {
-    title: "Accesibilidad Inclusiva",
-    badge: "05 ítems",
-    color: "text-blue-light",
-    borderColor: "border-blue-light/25",
-    dotColor: "bg-blue-light",
-    accentGlow: "rgba(46, 139, 255, 0.05)",
-    items: [
-      "Rampas de acceso",
-      "Ascensores adaptados",
-      "Escaleras seguras",
-      "Pasillos de circulación",
-      "Señalización clara",
-    ],
-  },
+    title: "Análisis de Estructura",
+    desc: "Inspección de fisuras, asentamientos y vicios ocultos en vigas y columnas.",
+    icon: <Buildings size={24} weight="duotone" />
+  }
 ];
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -10 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const } },
-};
 
 const AuditDetails = () => {
   return (
-    <section id="auditoria" className="relative py-40 px-6 bg-transparent overflow-hidden">
-      <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1200px] h-[1200px] bg-blue-mid/[0.05] rounded-full blur-[160px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-24 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10"
-        >
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-mid/[0.04] border border-blue-mid/10 mb-6">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-mid/70">
-                Process Audit Standard
+    <section id="auditoria" className="relative py-24 md:py-48 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
+        
+        {/* Left: Image Side (Conor Style: Large Architecture) */}
+        <div className="lg:col-span-7 relative h-[500px] md:h-[800px] rounded-[40px] overflow-hidden group">
+          <Image
+            src="/images/service-1.png"
+            alt="Auditoría SASA"
+            fill
+            className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+          />
+          <div className="absolute inset-0 bg-blue-mid/10 mix-blend-multiply" />
+          
+          {/* Overlapping Technical Box (Conor Portfolio Style) */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="absolute top-1/2 -translate-y-1/2 -right-10 lg:-right-20 p-10 md:p-16 bg-[#0A252E] text-white rounded-[40px] shadow-2xl max-w-lg hidden md:block"
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                <Files size={24} className="text-white" />
+              </div>
+              <span className="font-bold tracking-widest text-[11px] uppercase opacity-60">
+                Protocolo Certificado
               </span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-bold font-serif text-white leading-[1.05] tracking-tight">
-              Protocolo de
-              <br />
-              <span className="font-light italic text-blue-mid/80">Certificación Técnica</span>
-            </h2>
-          </div>
-          <p className="text-white/60 text-lg max-w-sm font-medium leading-relaxed decoration-blue-mid/20 underline underline-offset-8">
-            15 puntos críticos auditados bajo normas nacionales por ingenieros matriculados.
-          </p>
-        </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 rounded-[3rem] overflow-hidden">
-          {categories.map((category, catIndex) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: catIndex * 0.15, duration: 0.8 }}
-              className="p-10 md:p-14 bg-white/[0.03] border border-white/10 relative overflow-hidden rounded-[3rem] shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)] hover:bg-white/[0.05] hover:border-white/20"
-            >
-              {/* Subtle top accent */}
-              <div
-                className="absolute top-0 inset-x-0 h-32 opacity-30"
-                style={{
-                  background: `linear-gradient(to bottom, ${category.accentGlow}, transparent)`,
-                }}
-              />
+            <h3 className="text-4xl font-serif font-bold mb-8 leading-tight">
+              Reporte de <br />
+              <span className="text-blue-glow font-light italic">Puntos Críticos</span>
+            </h3>
 
-              <div className="relative z-10">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-12 pb-8 border-b border-divider/10">
-                  <h3 className={`text-xl font-bold font-serif ${category.color} tracking-tight`}>
-                    {category.title}
-                  </h3>
-                  <span
-                    className={`text-[11px] font-black px-3 py-1 border ${category.borderColor} ${category.color} rounded-full bg-[#050B1B] shadow-sm`}
-                  >
-                    {category.badge}
-                  </span>
+            <p className="text-white/70 text-lg leading-relaxed mb-10">
+              Cada inspección concluye con un informe pericial que documenta con rigor fotográfico e instrumental cada métrica de la propiedad.
+            </p>
+
+            <div className="space-y-6">
+              {auditPoints.map((point, idx) => (
+                <div key={idx} className="flex items-start gap-4">
+                  <div className="mt-1 text-blue-glow">
+                    <CheckCircle size={20} weight="fill" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm uppercase tracking-wide mb-1">{point.title}</h4>
+                    <p className="text-white/50 text-sm">{point.desc}</p>
+                  </div>
                 </div>
-
-                <motion.ul
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{
-                    staggerChildren: 0.08,
-                    delayChildren: catIndex * 0.2,
-                  }}
-                  className="space-y-6"
-                >
-                  {category.items.map((item, i) => (
-                    <motion.li
-                      key={i}
-                      variants={itemVariants}
-                      className="group/item flex items-center gap-4 hover:translate-x-1.5 transition-transform duration-300"
-                    >
-                      <div
-                        className={`w-7 h-7 rounded-lg ${category.dotColor}/[0.06] border ${category.borderColor} flex items-center justify-center shrink-0 transition-all duration-300 group-hover/item:${category.dotColor}/20 group-hover/item:scale-110 shadow-sm`}
-                      >
-                        <Check
-                          size={13}
-                          weight="bold"
-                          className={`${category.color}`}
-                        />
-                      </div>
-                      <span className="text-white/80 text-[15px] font-medium group-hover/item:text-white transition-colors duration-300">
-                        {item}
-                      </span>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </div>
-            </motion.div>
-          ))}
+              ))}
+            </div>
+          </motion.div>
         </div>
 
-        {/* Summary horizontal card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 p-8 bg-white/[0.04] border border-white/10 flex flex-col md:flex-row items-center justify-center gap-6 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden group"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-vibrant/[0.02] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
-          <div className="flex items-center gap-3">
-             <div className="w-2.5 h-2.5 rounded-full bg-green-vibrant animate-pulse" />
-             <p className="text-white text-base font-bold tracking-tight">
-               Firma técnica profesional habilitada en cada reporte.
-             </p>
-          </div>
-          <div className="hidden md:block h-6 w-px bg-white/10" />
-          <p className="text-white/60 text-base font-medium">
-            Documentación lista para anexar al boleto de compra-venta.
-          </p>
-        </motion.div>
+        {/* Right: Complementary Content */}
+        <div className="lg:col-span-5 lg:pl-32 py-20 md:py-0">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-blue-mid font-bold tracking-[0.3em] uppercase text-[11px] mb-6">
+              Rigor Metodológico
+            </p>
+            <h2 className="text-5xl md:text-7xl font-serif text-text-main font-bold mb-10 leading-tight tracking-tight">
+              Donde Otros Ven <br />
+              <span className="font-light italic text-blue-mid/80">Estética,</span> <br />
+              SASA Ve Datos.
+            </h2>
+            
+            <p className="text-text-sec text-xl leading-relaxed mb-12 opacity-80">
+              No permitimos que un acabado superficial oculte fallos estructurales o instalaciones obsoletas. Auditamos para proteger su patrimonio.
+            </p>
+
+            <ul className="space-y-8 mb-12">
+              <li className="flex items-center gap-6 group">
+                <div className="w-14 h-14 rounded-2xl bg-bg-alt flex items-center justify-center text-blue-mid group-hover:bg-blue-mid group-hover:text-white transition-all duration-500">
+                  <MapPin size={24} weight="duotone" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-text-main">Cobertura Nacional</h4>
+                  <p className="text-text-ter text-sm">Inspecciones en todo el territorio.</p>
+                </div>
+              </li>
+              <li className="flex items-center gap-6 group">
+                <div className="w-14 h-14 rounded-2xl bg-bg-alt flex items-center justify-center text-blue-mid group-hover:bg-blue-mid group-hover:text-white transition-all duration-500">
+                  <Lightning size={24} weight="duotone" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-text-main">Reporte Express</h4>
+                  <p className="text-text-ter text-sm">Informe preliminar en 24hs hábiles.</p>
+                </div>
+              </li>
+            </ul>
+
+            <button className="flex items-center gap-2 text-sm font-bold text-text-main hover:text-blue-mid transition-colors link-underline">
+              Explorar ejemplo de reporte <ArrowRight size={16} />
+            </button>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Background Decorative Element */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-bg-alt -z-10" />
     </section>
   );
 };

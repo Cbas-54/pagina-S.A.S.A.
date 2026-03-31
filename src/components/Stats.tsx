@@ -92,12 +92,9 @@ const Stats = () => {
   ];
 
   return (
-    <section id="stats" className="relative z-20 py-32 px-6 overflow-hidden bg-transparent">
-      {/* Cinematic Background Atmosphere (Dark Mode) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-glow/10 rounded-full blur-[140px] opacity-40" />
-      
+    <section id="stats" className="relative z-20 py-24 px-6 bg-white border-y border-divider">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
@@ -105,28 +102,31 @@ const Stats = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.8 }}
-              className="group relative z-10 glass-premium-dark rounded-3xl p-8 md:p-10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-white/20 bg-white/[0.03] border border-white/10"
+              className="group relative flex flex-col items-center text-center"
             >
-              <div className="relative z-10 flex flex-col items-center text-center">
-                <div className={`${stat.color} mb-8 bg-white/[0.05] p-4 rounded-2xl border border-white/10 group-hover:scale-110 group-hover:shadow-lg transition-all duration-500`}>
-                  {stat.icon}
-                </div>
-                
-                <h3 className="text-5xl md:text-6xl font-bold font-serif text-white leading-none mb-4 tracking-tighter">
-                  <AnimatedCounter
-                    value={stat.value}
-                    suffix={stat.suffix}
-                    prefix={stat.prefix}
-                  />
-                </h3>
-                
-                <p className="text-white font-bold text-xs mb-2 uppercase tracking-[0.2em]">
-                  {stat.label}
-                </p>
-                <p className="text-white/60 text-xs leading-relaxed max-w-[160px]">
-                  {stat.sublabel}
-                </p>
+              <div className={`${stat.color} mb-8 bg-bg-alt p-5 rounded-2xl border border-divider group-hover:scale-110 group-hover:shadow-md transition-all duration-500`}>
+                {stat.icon}
               </div>
+              
+              <h3 className="text-5xl md:text-6xl font-bold font-serif text-text-main leading-none mb-4 tracking-tighter">
+                <AnimatedCounter
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  prefix={stat.prefix}
+                />
+              </h3>
+              
+              <p className="text-text-main font-bold text-xs mb-2 uppercase tracking-[0.2em] opacity-80">
+                {stat.label}
+              </p>
+              <p className="text-text-ter text-[13px] leading-relaxed max-w-[180px] font-medium">
+                {stat.sublabel}
+              </p>
+              
+              {/* Divider for mobile */}
+              {i < stats.length - 1 && (
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-20 bg-divider hidden lg:block" />
+              )}
             </motion.div>
           ))}
         </div>

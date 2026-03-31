@@ -5,30 +5,30 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* ── Surface Elevation System (Light Mode) ── */
-  --bg-main: #FFFFFF;
-  --bg-alt: #F8FAFC;
-  --bg-elevated: #F1F5F9;
-  --bg-surface: #E2E8F0;
+  /* ── Surface Elevation System (Light Premium - Lewis Style) ── */
+  --bg-main: #FAFAFA;
+  --bg-alt: #F4F4F5;
+  --bg-elevated: #ECECEE;
+  --bg-surface: #E4E4E7;
 
-  /* ── Blues — Structural (Adapted) ── */
-  --blue-struct: #0F172A;
+  /* ── Blues — Structural ── */
+  --blue-struct: #1A1A1B;
   --blue-mid: #0A4D99;
   --blue-light: #1A6DBF;
   --blue-glow: #2E8BFF;
 
-  /* ── Greens — Action / Success (Darkened for Light Mode) ── */
+  /* ── Greens — Action / Success ── */
   --green-vibrant: #409916; 
   --green-mid: #357B12;
   --green-muted: #27590C;
   --green-subtle: rgba(64, 153, 22, 0.08);
 
-  /* ── Neutrals — Type Hierarchy (Light Mode) ── */
-  --text-main: #020617;
-  --text-sec: #475569;
-  --text-ter: #64748B;
-  --divider: rgba(15, 23, 42, 0.08);
-  --divider-strong: rgba(15, 23, 42, 0.15);
+  /* ── Neutrals — Type Hierarchy (Institutional Gray/Black) ── */
+  --text-main: #1A1A1B;
+  --text-sec: #3F3F46;
+  --text-ter: #71717A;
+  --divider: rgba(24, 24, 27, 0.08);
+  --divider-strong: rgba(24, 24, 27, 0.15);
 
   /* ── Accent ── */
   --gold-seal: #B8860B;

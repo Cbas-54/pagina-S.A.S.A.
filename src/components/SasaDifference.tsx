@@ -1,0 +1,134 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { 
+  ShieldCheck, 
+  Lightning, 
+  Wind, 
+  Detective,
+  ChartLineUp,
+  ArrowRight
+} from "@phosphor-icons/react";
+
+const differences = [
+  {
+    id: "01",
+    title: "Seguridad Eléctrica Certificada",
+    desc: "No adivinamos. Utilizamos instrumental de precisión para detectar fugas, sobrecargas y tableros fuera de norma que las inmobiliarias tradicionales ignoran.",
+    detail: "Protocolo bajo normativa IRAM 2183.",
+    icon: <Lightning size={32} weight="duotone" className="text-blue-mid" />
+  },
+  {
+    id: "02",
+    title: "Habitabilidad Real",
+    desc: "Evaluamos vicios de humedad y ventilación que impactan directamente en el valor de reventa y la salud de los habitantes.",
+    detail: "Mapeo de humedad por termografía.",
+    icon: <Wind size={32} weight="duotone" className="text-green-vibrant" />
+  },
+  {
+    id: "03",
+    title: "Blindaje Transaccional",
+    desc: "Eliminamos el miedo del comprador entregando un reporte técnico inobjetable, acelerando el cierre de la operación.",
+    detail: "Certificación de Terceros Independiente.",
+    icon: <ShieldCheck size={32} weight="duotone" className="text-blue-light" />
+  },
+  {
+    id: "04",
+    title: "Integridad del Valor",
+    desc: "Defendemos el precio de su activo con evidencia física, evitando regateos basados en supuestas deficiencias técnicas.",
+    detail: "Evidencia fotográfica y pericial.",
+    icon: <ChartLineUp size={32} weight="duotone" className="text-blue-mid" />
+  }
+];
+
+const SasaDifference = () => {
+  return (
+    <section id="la-diferencia" className="relative py-32 md:py-56 px-6 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+        
+        {/* Left Side: Sticky Title (Lewis Style) */}
+        <div className="relative">
+          <div className="lg:sticky lg:top-32 h-fit">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 mb-8"
+            >
+              <div className="w-12 h-[1px] bg-blue-mid" />
+              <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-blue-mid">
+                The SASA Standard
+              </span>
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl md:text-8xl font-serif text-text-main font-bold leading-[1.05] tracking-tight mb-8"
+            >
+              La Diferencia <br />
+              <span className="font-light italic text-blue-mid/80 text-6xl md:text-7xl">S.A.S.A.</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-text-sec text-xl font-medium leading-relaxed max-w-md opacity-80"
+            >
+              Transformamos la incertidumbre técnica en una ventaja competitiva inalcanzable para el mercado tradicional.
+            </motion.p>
+          </div>
+        </div>
+
+        {/* Right Side: Scrolling Content */}
+        <div className="space-y-32">
+          {differences.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="group"
+            >
+              <div className="flex items-center gap-6 mb-8">
+                <span className="text-4xl font-serif italic text-blue-mid/20 font-black tracking-tighter">
+                  {item.id}
+                </span>
+                <div className="w-16 h-16 rounded-2xl bg-bg-alt flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm border border-divider">
+                  {item.icon}
+                </div>
+              </div>
+
+              <h3 className="text-3xl md:text-4xl font-serif text-text-main font-bold mb-6 tracking-tight">
+                {item.title}
+              </h3>
+              
+              <p className="text-text-sec text-lg md:text-xl leading-relaxed mb-8 opacity-80">
+                {item.desc}
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <span className="px-4 py-1.5 rounded-full bg-blue-mid/[0.04] border border-blue-mid/10 text-[11px] font-bold text-blue-mid uppercase tracking-widest">
+                  {item.detail}
+                </span>
+                <button className="flex items-center gap-2 text-sm font-bold text-text-main group-hover:text-blue-mid transition-colors link-underline">
+                  Saber más <ArrowRight size={16} />
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Atmospheric Background Element */}
+      <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-blue-mid/[0.02] rounded-full blur-[150px] -z-10" />
+    </section>
+  );
+};
+
+export default SasaDifference;
