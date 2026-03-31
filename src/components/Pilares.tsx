@@ -64,17 +64,34 @@ const cardVariants = {
 
 const Pilares = React.memo(() => {
   return (
-    <section id="pilares" className="relative py-44 px-6 overflow-hidden bg-[#020C1B]">
-      {/* Top Fade (White to Blue) */}
-      <div className="absolute top-0 inset-x-0 h-44 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+    <section id="pilares" className="relative py-48 md:py-64 bg-[#020C1B] overflow-hidden">
       
-      {/* Bottom Fade (Blue to White) */}
-      <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+      {/* 📐 DIAGONAL SUPERIOR (Descendente) */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-[calc(100%+1.3px)] h-[120px] fill-white"
+        >
+          <path d="M0,0 L1200,120 V0 Z"></path>
+        </svg>
+      </div>
+
+      {/* 📐 DIAGONAL INFERIOR (Ascendente / Simétrica) */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-[calc(100%+1.3px)] h-[120px] fill-white"
+        >
+          <path d="M0,120 L1200,0 V120 Z"></path>
+        </svg>
+      </div>
 
       {/* Technical Background Foundation */}
-      <div className="absolute inset-x-0 top-44 bottom-44 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 -z-10" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 -z-10" />
 
-      <div className="max-w-7xl mx-auto relative z-20">
+      <div className="max-w-7xl mx-auto relative z-30 px-6">
         {/* Integrated Section Header */}
         <div className="text-center mb-28">
           <motion.div
