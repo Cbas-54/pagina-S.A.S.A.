@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Quotes } from "@phosphor-icons/react";
 
-const Cierre = () => {
+const Cierre = React.memo(() => {
   return (
     <section className="relative py-32 md:py-40 px-6 overflow-hidden noise-overlay">
       {/* Dramatic gradients */}
@@ -69,6 +69,8 @@ const Cierre = () => {
       </div>
     </section>
   );
-};
+});
+
+Cierre.displayName = "Cierre";
 
 export default Cierre;

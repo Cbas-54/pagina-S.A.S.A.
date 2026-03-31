@@ -11,7 +11,7 @@ import {
   ArrowRight
 } from "@phosphor-icons/react";
 
-const differences = [
+const DIFFERENCES_DATA = [
   {
     id: "01",
     title: "Seguridad Eléctrica Certificada",
@@ -42,7 +42,7 @@ const differences = [
   }
 ];
 
-const SasaDifference = () => {
+const SasaDifference = React.memo(() => {
   return (
     <section id="la-diferencia" className="relative py-32 md:py-56 px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -86,7 +86,7 @@ const SasaDifference = () => {
 
         {/* Right Side: Scrolling Content */}
         <div className="space-y-32">
-          {differences.map((item, idx) => (
+          {DIFFERENCES_DATA.map((item, idx) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 40 }}
@@ -129,6 +129,8 @@ const SasaDifference = () => {
       <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-blue-mid/[0.02] rounded-full blur-[150px] -z-10" />
     </section>
   );
-};
+});
+
+SasaDifference.displayName = "SasaDifference";
 
 export default SasaDifference;

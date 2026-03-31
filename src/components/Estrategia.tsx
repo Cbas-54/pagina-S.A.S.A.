@@ -11,7 +11,7 @@ import {
   ShieldCheck,
 } from "@phosphor-icons/react";
 
-const steps = [
+const STEPS_DATA = [
   {
     num: "01",
     title: "Diagnóstico Inicial",
@@ -49,7 +49,7 @@ const steps = [
   },
 ];
 
-const Estrategia = () => {
+const Estrategia = React.memo(() => {
   const containerRef = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -118,7 +118,7 @@ const Estrategia = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-6 relative z-10">
-            {steps.map((step, i) => (
+            {STEPS_DATA.map((step, i) => (
               <motion.div
                 key={step.num}
                 initial={{ opacity: 0, y: 30 }}
@@ -161,7 +161,7 @@ const Estrategia = () => {
                 </p>
                 
                 {/* Mobile Connector */}
-                {i < steps.length - 1 && (
+                {i < STEPS_DATA.length - 1 && (
                   <div className="lg:hidden h-12 w-px bg-gradient-to-b from-divider to-transparent mt-10" />
                 )}
               </motion.div>
@@ -171,6 +171,8 @@ const Estrategia = () => {
       </div>
     </section>
   );
-};
+});
+
+Estrategia.displayName = "Estrategia";
 
 export default Estrategia;

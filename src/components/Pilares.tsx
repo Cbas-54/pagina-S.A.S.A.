@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Heart, Wheelchair } from "@phosphor-icons/react";
 
-const pilares = [
+const PILARES_DATA = [
   {
     num: "01",
     title: "Seguridad",
@@ -71,7 +71,7 @@ const cardVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
-const Pilares = () => {
+const Pilares = React.memo(() => {
   return (
     <section id="pilares" className="relative py-40 px-6 overflow-hidden bg-transparent">
       <div className="absolute inset-0 -z-10 bg-transparent" />
@@ -110,7 +110,7 @@ const Pilares = () => {
           viewport={{ once: true, margin: "-60px" }}
           className="grid md:grid-cols-3 gap-8"
         >
-          {pilares.map((pilar) => (
+          {PILARES_DATA.map((pilar) => (
             <motion.div
               key={pilar.title}
               variants={cardVariants}
@@ -173,6 +173,8 @@ const Pilares = () => {
       </div>
     </section>
   );
-};
+});
+
+Pilares.displayName = "Pilares";
 
 export default Pilares;

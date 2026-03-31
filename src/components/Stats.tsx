@@ -54,48 +54,48 @@ function AnimatedCounter({
   );
 }
 
-const Stats = () => {
-  const stats: StatItem[] = [
-    {
-      value: 70,
-      suffix: "%",
-      label: "Menos Objeciones",
-      sublabel: "técnicas resueltas preventivamente",
-      icon: <CheckCircle size={28} weight="duotone" />,
-      color: "text-green-vibrant",
-    },
-    {
-      value: 3,
-      suffix: "x",
-      label: "Más Velocidad",
-      sublabel: "en el tiempo promedio de cierre",
-      icon: <Timer size={28} weight="duotone" />,
-      color: "text-blue-mid",
-    },
-    {
-      value: 15,
-      suffix: "%",
-      prefix: "+",
-      label: "Valor Percibido",
-      sublabel: "de venta superior al mercado",
-      icon: <CurrencyDollar size={28} weight="duotone" />,
-      color: "text-gold-seal",
-    },
-    {
-      value: 100,
-      suffix: "%",
-      label: "Rigurosidad",
-      sublabel: "certificada por matriculados",
-      icon: <TrendUp size={28} weight="duotone" />,
-      color: "text-green-mid",
-    },
-  ];
+const STATS_DATA: StatItem[] = [
+  {
+    value: 70,
+    suffix: "%",
+    label: "Menos Objeciones",
+    sublabel: "técnicas resueltas preventivamente",
+    icon: <CheckCircle size={28} weight="duotone" />,
+    color: "text-green-vibrant",
+  },
+  {
+    value: 3,
+    suffix: "x",
+    label: "Más Velocidad",
+    sublabel: "en el tiempo promedio de cierre",
+    icon: <Timer size={28} weight="duotone" />,
+    color: "text-blue-mid",
+  },
+  {
+    value: 15,
+    suffix: "%",
+    prefix: "+",
+    label: "Valor Percibido",
+    sublabel: "de venta superior al mercado",
+    icon: <CurrencyDollar size={28} weight="duotone" />,
+    color: "text-gold-seal",
+  },
+  {
+    value: 100,
+    suffix: "%",
+    label: "Rigurosidad",
+    sublabel: "certificada por matriculados",
+    icon: <TrendUp size={28} weight="duotone" />,
+    color: "text-green-mid",
+  },
+];
 
+const Stats = React.memo(() => {
   return (
     <section id="stats" className="relative z-20 py-24 px-6 bg-white border-y border-divider">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          {stats.map((stat, i) => (
+          {STATS_DATA.map((stat, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -124,15 +124,17 @@ const Stats = () => {
               </p>
               
               {/* Divider for mobile */}
-              {i < stats.length - 1 && (
+              {i < STATS_DATA.length - 1 ? (
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-20 bg-divider hidden lg:block" />
-              )}
+              ) : null}
             </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
-};
+});
+
+Stats.displayName = "Stats";
 
 export default Stats;

@@ -14,7 +14,7 @@ import {
   Lightning
 } from "@phosphor-icons/react";
 
-const auditPoints = [
+const AUDIT_POINTS_DATA = [
   {
     title: "Mapeo Higrotérmico",
     desc: "Uso de cámaras infrarrojas para detectar puentes térmicos y filtraciones no visibles.",
@@ -32,7 +32,7 @@ const auditPoints = [
   }
 ];
 
-const AuditDetails = () => {
+const AuditDetails = React.memo(() => {
   return (
     <section id="auditoria" className="relative py-24 md:py-48 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
@@ -73,7 +73,7 @@ const AuditDetails = () => {
             </p>
 
             <div className="space-y-6">
-              {auditPoints.map((point, idx) => (
+              {AUDIT_POINTS_DATA.map((point, idx) => (
                 <div key={idx} className="flex items-start gap-4">
                   <div className="mt-1 text-blue-glow">
                     <CheckCircle size={20} weight="fill" />
@@ -140,6 +140,8 @@ const AuditDetails = () => {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-bg-alt -z-10" />
     </section>
   );
-};
+});
+
+AuditDetails.displayName = "AuditDetails";
 
 export default AuditDetails;

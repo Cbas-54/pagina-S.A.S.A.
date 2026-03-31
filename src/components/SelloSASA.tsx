@@ -4,15 +4,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { SealCheck, Check } from "@phosphor-icons/react";
 
-const SelloSASA = () => {
-  const features = [
-    "Firmado por profesional matriculado con responsabilidad civil",
-    "Resultado entregado en brochure visual para el comprador",
-    "Código QR verificable por cualquier interesado",
-    "Válido como documentación complementaria en escritura",
-    "Reproduce la tranquilidad técnica que el comprador necesita",
-  ];
+const FEATURES_DATA = [
+  "Firmado por profesional matriculado con responsabilidad civil",
+  "Resultado entregado en brochure visual para el comprador",
+  "Código QR verificable por cualquier interesado",
+  "Válido como documentación complementaria en escritura",
+  "Reproduce la tranquilidad técnica que el comprador necesita",
+];
 
+const SelloSASA = React.memo(() => {
   return (
     <section id="sello" className="relative py-48 px-6 bg-white overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_30%,rgba(201,169,110,0.03)_0%,transparent_50%)]" />
@@ -131,7 +131,7 @@ const SelloSASA = () => {
           </p>
 
           <div className="grid sm:grid-cols-1 gap-6">
-            {features.map((f, i) => (
+            {FEATURES_DATA.map((f, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: 20 }}
@@ -163,6 +163,8 @@ const SelloSASA = () => {
       </div>
     </section>
   );
-};
+});
+
+SelloSASA.displayName = "SelloSASA";
 
 export default SelloSASA;

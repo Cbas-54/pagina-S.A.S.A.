@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, House, Buildings, ShieldCheck } from "@phosphor-icons/react";
 
-const services = [
+const SERVICES_DATA = [
   {
     title: "Inspección de Obra Nueva",
     desc: "Antes de recibir la llave, verificamos que cada detalle cumpla con los estándares de calidad prometidos. Protegemos su inversión desde el día cero.",
@@ -26,7 +26,7 @@ const services = [
   }
 ];
 
-const ServiceGallery = () => {
+const ServiceGallery = React.memo(() => {
   return (
     <section id="servicios" className="py-24 px-6 bg-[#F4F4F5]">
       <div className="max-w-7xl mx-auto">
@@ -54,7 +54,7 @@ const ServiceGallery = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {services.map((service, idx) => (
+          {SERVICES_DATA.map((service, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -94,6 +94,8 @@ const ServiceGallery = () => {
       </div>
     </section>
   );
-};
+});
+
+ServiceGallery.displayName = "ServiceGallery";
 
 export default ServiceGallery;

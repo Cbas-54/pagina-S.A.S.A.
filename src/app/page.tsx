@@ -1,16 +1,17 @@
-"use client";
-
-import React from "react";
+import React, { Suspense } from "react";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import SasaDifference from "@/components/SasaDifference";
-import ServiceGallery from "@/components/ServiceGallery";
-import AuditDetails from "@/components/AuditDetails";
-import Pilares from "@/components/Pilares";
-import SelloSASA from "@/components/SelloSASA";
-import Estrategia from "@/components/Estrategia";
-import Cierre from "@/components/Cierre";
+
+// Dinámicamente cargados para optimizar el bundle inicial (Code Splitting)
+const Stats = dynamic(() => import("@/components/Stats"));
+const SasaDifference = dynamic(() => import("@/components/SasaDifference"));
+const ServiceGallery = dynamic(() => import("@/components/ServiceGallery"));
+const AuditDetails = dynamic(() => import("@/components/AuditDetails"));
+const Pilares = dynamic(() => import("@/components/Pilares"));
+const SelloSASA = dynamic(() => import("@/components/SelloSASA"));
+const Estrategia = dynamic(() => import("@/components/Estrategia"));
+const Cierre = dynamic(() => import("@/components/Cierre"));
 
 export default function Home() {
   return (
@@ -22,33 +23,23 @@ export default function Home() {
         <Hero />
       </section>
 
-      {/* ── SECTION 2: Authority Metrics ── */}
-      <Stats />
-
-      {/* ── SECTION 3: The Lewis Difference (Sticky Scroll) ── */}
-      <SasaDifference />
-
-      {/* ── SECTION 4: Service Gallery (Hill Home Style) ── */}
-      <ServiceGallery />
-
-      {/* ── SECTION 5: Audit Portfolio (Conor Style) ── */}
-      <AuditDetails />
-
-      {/* ── SECTION 6: Foundations & Strategy ── */}
-      <section id="pilares">
-        <Pilares />
-      </section>
-
-      <section id="sello">
-        <SelloSASA />
-      </section>
-
-      <section id="procesos">
-        <Estrategia />
-      </section>
-
-      {/* ── SECTION 7: Footer & Closing ── */}
-      <Cierre />
+      {/* ── SECTION 2-7: Contenido Dinámico con Streaming ── */}
+      <Suspense fallback={null}>
+        <Stats />
+        <SasaDifference />
+        <ServiceGallery />
+        <AuditDetails />
+        <section id="pilares">
+          <Pilares />
+        </section>
+        <section id="sello">
+          <SelloSASA />
+        </section>
+        <section id="procesos">
+          <Estrategia />
+        </section>
+        <Cierre />
+      </Suspense>
     </main>
   );
 }
