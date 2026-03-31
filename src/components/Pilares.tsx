@@ -6,7 +6,6 @@ import { ShieldCheck, Heart, Wheelchair } from "@phosphor-icons/react";
 
 const PILARES_DATA = [
   {
-    ref: "REF: SASA-01",
     title: "Seguridad",
     subtitle: "Antisiniestral",
     description:
@@ -21,7 +20,6 @@ const PILARES_DATA = [
     textColor: "text-[#020C1B]",
   },
   {
-    ref: "REF: SASA-02",
     title: "Salud",
     subtitle: "Habitabilidad",
     description:
@@ -36,7 +34,6 @@ const PILARES_DATA = [
     textColor: "text-[#059669]",
   },
   {
-    ref: "REF: SASA-03",
     title: "Accesibilidad",
     subtitle: "Inclusión real",
     description:
@@ -64,27 +61,27 @@ const cardVariants = {
 
 const Pilares = React.memo(() => {
   return (
-    <section id="pilares" className="relative py-48 md:py-64 bg-[#020C1B] overflow-hidden">
+    <section id="pilares" className="relative py-24 md:py-32 bg-[#020C1B] overflow-hidden">
       
-      {/* 📐 DIAGONAL SUPERIOR (Descendente) */}
+      {/* 📐 DIAGONAL SUPERIOR (Invertida: Sube / ) */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
           className="relative block w-[calc(100%+1.3px)] h-[120px] fill-white"
         >
-          <path d="M0,0 L1200,120 V0 Z"></path>
+          <path d="M0,0 L0,120 L1200,0 Z"></path>
         </svg>
       </div>
 
-      {/* 📐 DIAGONAL INFERIOR (Ascendente / Simétrica) */}
+      {/* 📐 DIAGONAL INFERIOR (Invertida: Baja \ ) */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
           className="relative block w-[calc(100%+1.3px)] h-[120px] fill-white"
         >
-          <path d="M0,120 L1200,0 V120 Z"></path>
+          <path d="M1200,120 L1200,0 L0,120 Z"></path>
         </svg>
       </div>
 
@@ -140,16 +137,8 @@ const Pilares = React.memo(() => {
               className={`relative group bg-white p-12 lg:p-14 border-t-[10px] ${pilar.accent} border-x border-b border-divider/5 rounded-3xl transition-all duration-500 overflow-hidden cursor-default shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]`}
             >
               <div className="relative z-10">
-                {/* Header Row: ID & Icon */}
-                <div className="flex justify-between items-start mb-14">
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[10px] font-black tracking-[0.3em] uppercase text-text-ter/30">
-                      ID AUDITORÍA
-                    </span>
-                    <span className="text-[12px] font-bold text-text-ter/60 font-mono">
-                      {pilar.ref}
-                    </span>
-                  </div>
+                {/* Header Row: Icon Only */}
+                <div className="flex justify-end items-start mb-14">
                   <div className={`${pilar.textColor} transition-all duration-500 group-hover:scale-110`}>
                     {pilar.icon}
                   </div>
