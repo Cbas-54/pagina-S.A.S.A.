@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { SealCheck, Check } from "@phosphor-icons/react";
+import { Check } from "@phosphor-icons/react";
 
 interface SelloSASAProps {
   sealRef: React.RefObject<HTMLDivElement | null>;
@@ -22,7 +23,7 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
       <div className="max-w-7xl mx-auto relative z-20">
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-32">
           
-          {/* Visual: El Sello Nuclear */}
+          {/* Visual: El Sello Nuclear (Logo Oficial) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -43,10 +44,14 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
                 <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/leather.png')] pointer-events-none invert" />
                 
                 <div className="w-[85%] h-[85%] rounded-full border border-gold-seal/20 flex items-center justify-center relative bg-gradient-to-br from-white/5 to-transparent">
-                  <div className="flex flex-col items-center gap-4 relative z-10 text-center">
-                    <SealCheck size={88} weight="fill" className="text-gold-seal drop-shadow-[0_8px_25px_rgba(201,169,110,0.5)] transition-transform duration-700 group-hover:scale-110" />
-                    <span className="block text-4xl font-black tracking-[0.25em] text-gold-seal font-serif mb-1 uppercase">S.A.S.A.</span>
-                    <span className="block text-[12px] tracking-[0.4em] text-white/40 uppercase font-black">Ingeniería Preventiva</span>
+                  <div className="relative z-10 w-full h-full flex items-center justify-center p-8 transition-transform duration-700 group-hover:scale-105">
+                    <Image 
+                      src="/images/logo sasa borde blanco.png" 
+                      alt="Logo Oficial SASA" 
+                      width={280} 
+                      height={280} 
+                      className="object-contain drop-shadow-[0_0_30px_rgba(201,169,110,0.4)]"
+                    />
                   </div>
                 </div>
               </div>

@@ -76,12 +76,12 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
             <motion.div
               key={pilar.title}
               variants={cardVariants}
-              className={`relative bg-white p-12 border-t-[10px] ${pilar.accent} border-x border-b border-divider/5 rounded-3xl overflow-hidden shadow-2xl`}
+              className={`relative bg-white p-12 border-t-[10px] ${pilar.accent} border-x border-b border-gold-seal/20 rounded-3xl overflow-hidden shadow-2xl shadow-[inset_0_0_25px_rgba(201,169,110,0.1)]`}
             >
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex justify-between items-start mb-10">
                    <h3 className="text-4xl font-serif font-bold text-text-main">{pilar.title}</h3>
-                   <div ref={refs[i]} className={`${pilar.textColor} bg-white/50 p-2 rounded-xl`}>
+                   <div className={`${pilar.textColor} bg-white/50 p-2 rounded-xl`}>
                      {pilar.icon}
                    </div>
                 </div>
@@ -94,6 +94,9 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
                     </li>
                   ))}
                 </ul>
+                
+                {/* Punto de Conexión para AnimatedBeam (Borde Inferior) */}
+                <div ref={refs[i]} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 pointer-events-none" />
               </div>
             </motion.div>
           ))}

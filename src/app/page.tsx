@@ -48,36 +48,39 @@ export default function Home() {
               containerRef={containerRef}
               fromRef={card1Ref}
               toRef={sealRef}
-              duration={4}
-              curvature={120}
-              pathColor="rgba(201,169,110,0.3)"
+              duration={5}
+              curvature={140}
+              pathColor="rgba(201,169,110,0.25)"
               gradientStartColor="#C9A96E"
               gradientStopColor="#C9A96E"
               reverse={false}
+              startYOffset={5}
             />
             <AnimatedBeam
               containerRef={containerRef}
               fromRef={card2Ref}
               toRef={sealRef}
-              duration={4}
-              delay={1}
-              curvature={60}
-              pathColor="rgba(201,169,110,0.3)"
+              duration={5}
+              delay={1.5}
+              curvature={70}
+              pathColor="rgba(201,169,110,0.25)"
               gradientStartColor="#C9A96E"
               gradientStopColor="#C9A96E"
               reverse={false}
+              startYOffset={5}
             />
             <AnimatedBeam
               containerRef={containerRef}
               fromRef={card3Ref}
               toRef={sealRef}
-              duration={4}
-              delay={0.5}
-              curvature={-120}
-              pathColor="rgba(201,169,110,0.3)"
+              duration={5}
+              delay={0.8}
+              curvature={-140}
+              pathColor="rgba(201,169,110,0.25)"
               gradientStartColor="#C9A96E"
               gradientStopColor="#C9A96E"
               reverse={false}
+              startYOffset={5}
             />
           </div>
 
