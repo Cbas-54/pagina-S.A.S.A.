@@ -44,12 +44,12 @@ const DIFFERENCES_DATA = [
 
 const SasaDifference = React.memo(() => {
   return (
-    <section id="la-diferencia" className="relative pt-12 pb-32 md:pt-16 md:pb-56 px-6 bg-white overflow-hidden">
+    <section id="la-diferencia" className="relative pt-12 pb-32 md:pt-16 md:pb-56 px-6 bg-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
         
         {/* Left Side: Sticky Title (Lewis Style) */}
         <div className="relative h-full">
-          <div className="lg:sticky lg:top-36 self-start transform-gpu">
+          <div className="lg:sticky lg:top-40 self-start transform-gpu">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -126,7 +126,9 @@ const SasaDifference = React.memo(() => {
       </div>
 
       {/* Atmospheric Background Element */}
-      <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-blue-mid/[0.02] rounded-full blur-[150px] -z-10" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-blue-mid/[0.02] rounded-full blur-[150px]" />
+      </div>
     </section>
   );
 });
