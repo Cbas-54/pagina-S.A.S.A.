@@ -1,0 +1,155 @@
+<h2>Muestra de Diseño: Pilar de Seguridad (Blueprint SASA)</h2>
+<p class="subtitle">Este será el look final de cada tarjeta, adaptado con los datos reales de S.A.S.A.</p>
+
+<style>
+  .pilar-preview {
+    background: #020C1B;
+    border: 1px solid #1e3a8a;
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    color: #64ffda;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .grid-bg-hd {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(#1e3a8a 1px, transparent 1px),
+      linear-gradient(90deg, #1e3a8a 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .corner-decor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: #64ffda;
+    border-style: solid;
+    opacity: 0.5;
+  }
+  .top-left { top: 15px; left: 15px; border-width: 2px 0 0 2px; }
+  .top-right { top: 15px; right: 15px; border-width: 2px 2px 0 0; }
+  .bottom-left { bottom: 15px; left: 15px; border-width: 0 0 2px 2px; }
+  .bottom-right { bottom: 15px; right: 15px; border-width: 0 2px 2px 0; }
+
+  .label-pilar {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #3b82f6;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .label-pilar::before { content: ""; width: 8px; height: 8px; background: #3b82f6; border-radius: 1px; }
+
+  .title-pilar-hd {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    font-family: serif;
+    letter-spacing: -0.5px;
+  }
+
+  .desc-pilar-hd {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 30px;
+  }
+
+  .bullet-list {
+    border-top: 1px solid rgba(30,58,138,0.5);
+    padding-top: 25px;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .bullet-item {
+    font-size: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #64ffda;
+    font-weight: bold;
+  }
+  .bullet-item span { color: #3b82f6; opacity: 0.5; }
+
+  .blueprint-axis {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 10px;
+    color: #1e3a8a;
+    letter-spacing: 5px;
+    white-space: nowrap;
+  }
+</style>
+
+<div class="mockup">
+  <div class="mockup-header">CARD-TYPE: P01-SEC-BLUEPRINT</div>
+  <div class="mockup-body" style="background:#010409; padding:60px;">
+    
+    <div class="pilar-preview">
+      <div class="grid-bg-hd"></div>
+      <div class="corner-decor top-left"></div>
+      <div class="corner-decor top-right"></div>
+      <div class="corner-decor bottom-left"></div>
+      <div class="corner-decor bottom-right"></div>
+      <div class="blueprint-axis">SCALE 1:100 | CALIBRATION: OK</div>
+
+      <div class="label-pilar">P01 // ANTISINIESTRAL</div>
+      <h3 class="title-pilar-hd">Seguridad</h3>
+      <p class="desc-pilar-hd">
+        Evaluación rigurosa de instalaciones eléctricas, sistemas contra incendios y riesgos estructurales ocultos que pueden costar millones.
+      </p>
+
+      <ul class="bullet-list">
+        <li class="bullet-item"><span>01.</span> TABLEROS ELÉCTRICOS</li>
+        <li class="bullet-item"><span>02.</span> RED DE INCENDIO</li>
+        <li class="bullet-item"><span>03.</span> DETECCIÓN DE RIESGOS</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="pros-cons">
+  <div class="pros">
+    <h4>¿Por qué este diseño?</h4>
+    <ul>
+      <li><strong>Jerarquía Técnica</strong>: El uso de tipografía "mono" refuerza que es un documento pericial.</li>
+      <li><strong>Identidad</strong>: Los elementos de CAD (ejes de escala, coordenadas) lo separan de cualquier landing page común.</li>
+      <li><strong>Estética SASA</strong>: Mantenemos el azul profundo y el brillo cian de alta tecnología.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>¡Me encanta!</h3>
+      <p>Procedé con este diseño para los 3 pilares.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="adjust" onclick="toggleSelect(this)">
+    <div class="letter">✎</div>
+    <div class="content">
+      <h3>Ajustar algo</h3>
+      <p>Decime qué le cambiarías (colores, fuentes, etc.)</p>
+    </div>
+  </div>
+</div>

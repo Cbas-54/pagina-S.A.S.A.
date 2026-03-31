@@ -1,0 +1,139 @@
+<style>
+  :root {
+    --blueprint-bg: #0a192f;
+    --blueprint-line: #1e3a8a;
+    --blueprint-text: #64ffda;
+    --vellum-bg: #f5f5f0;
+    --vellum-line: #d1d5db;
+    --vellum-text: #1f2937;
+    --draft-bg: #020C1B;
+    --draft-line: #0A2647;
+    --draft-text: #ffffff;
+  }
+
+  .mockup-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .blueprint-card {
+    border: 2px solid var(--line-color);
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    transition: all 0.3s ease;
+  }
+
+  .blueprint-card:hover {
+    transform: scale(1.02);
+    border-color: var(--text-color);
+  }
+
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(var(--line-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cad-line {
+    height: 1px;
+    background: var(--text-color);
+    width: 40px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+  }
+
+  .title-pilar {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+
+  .num-pilar {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 60px;
+    font-weight: 900;
+    opacity: 0.1;
+  }
+
+  /* Version Themes */
+  .theme-classic { --bg-color: var(--blueprint-bg); --line-color: var(--blueprint-line); --text-color: var(--blueprint-text); }
+  .theme-vellum { --bg-color: var(--vellum-bg); --line-color: var(--vellum-line); --text-color: var(--vellum-text); }
+  .theme-draft   { --bg-color: var(--draft-bg); --line-color: var(--draft-line); --text-color: var(--draft-text); }
+</style>
+
+<h2>Comparativa Visual: Estilo Blueprint</h2>
+<p class="subtitle">Elegí la combinación de colores y "clima" que mejor encaje con la identidad de SASA.</p>
+
+<div class="mockup-container">
+  <!-- Option A: Classic Blueprint -->
+  <div class="option" data-choice="classic" onclick="toggleSelect(this)" style="padding:0; background:transparent;">
+    <div class="blueprint-card theme-classic">
+      <div class="grid-bg"></div>
+      <div class="card-content">
+        <div class="cad-line"></div>
+        <div class="title-pilar">01. SEGURIDAD</div>
+        <p>Análisis técnico con rigor de ingeniería. Instalaciones certificadas.</p>
+        <div class="num-pilar">CAD</div>
+      </div>
+    </div>
+    <div style="padding:15px; background:white;">
+      <h3>A: Blueprint Clásico</h3>
+      <p>Azul marino profundo, líneas técnicas y colores cian de monitor antiguo. Muy "Ingeniería".</p>
+    </div>
+  </div>
+
+  <!-- Option B: Architectural Vellum -->
+  <div class="option" data-choice="vellum" onclick="toggleSelect(this)" style="padding:0; background:transparent;">
+    <div class="blueprint-card theme-vellum">
+      <div class="grid-bg"></div>
+      <div class="card-content">
+        <div class="cad-line"></div>
+        <div class="title-pilar">02. SALUD</div>
+        <p>Ventilación, habitabilidad y peritaje de gas. El sello de confianza.</p>
+        <div class="num-pilar">DWG</div>
+      </div>
+    </div>
+    <div style="padding:15px; background:white;">
+      <h3>B: Vellum Arquitectónico</h3>
+      <p>Tonos crema y gris suave. Se siente como papel de plano real, orgánico y profesional.</p>
+    </div>
+  </div>
+
+  <!-- Option C: High-Contrast Draft -->
+  <div class="option" data-choice="draft" onclick="toggleSelect(this)" style="padding:0; background:transparent;">
+    <div class="blueprint-card theme-draft">
+      <div class="grid-bg"></div>
+      <div class="card-content">
+        <div class="cad-line"></div>
+        <div class="title-pilar">03. ACCESIBILIDAD</div>
+        <p>Análisis de inclusión y movilidad. Valor de mercado asegurado.</p>
+        <div class="num-pilar">ISO</div>
+      </div>
+    </div>
+    <div style="padding:15px; background:white;">
+      <h3>C: Draft Moderno</h3>
+      <p>Alto contraste (fondo casi negro), líneas sutiles y tipografía blanca. Muy elegante y "Premium".</p>
+    </div>
+  </div>
+</div>

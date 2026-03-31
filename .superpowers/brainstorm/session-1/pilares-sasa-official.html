@@ -1,0 +1,142 @@
+<style>
+  .sasa-final-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 30px;
+    background: #fdfdfd;
+  }
+
+  .pilar-card-sasa {
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    border-top: 8px solid #020C1B;
+    transition: all 0.4s ease;
+  }
+
+  .pilar-card-sasa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    border-top-color: var(--pilar-color);
+  }
+
+  .icon-box-sasa {
+    width: 60px;
+    height: 60px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: var(--pilar-color);
+  }
+
+  .title-sasa {
+    font-family: serif; /* Simulando la fuente original */
+    font-size: 34px;
+    font-weight: 700;
+    color: #020C1B;
+    margin-bottom: 8px;
+  }
+
+  .subtitle-sasa {
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--pilar-color);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .bullets-sasa {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 25px;
+    margin-top: 25px;
+  }
+
+  .bullet-sasa {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .bullet-sasa::before {
+    content: "→";
+    color: var(--pilar-color);
+    font-weight: bold;
+    opacity: 0.5;
+  }
+
+  /* Colores Punchy */
+  .pilar-1 { --pilar-color: #020C1B; } /* Seguridad: Azul profundo */
+  .pilar-2 { --pilar-color: #059669; } /* Salud: Verde Vibrante */
+  .pilar-3 { --pilar-color: #2563eb; } /* Accesibilidad: Azul Light */
+</style>
+
+<h2>SASA PILARES // VERSIÓN FINAL</h2>
+<p class="subtitle">Recuperamos los iconos y el verde potente, aplicados al estilo Reporte Profesional.</p>
+
+<div class="sasa-final-container">
+  
+  <!-- Pilar 1 -->
+  <div class="pilar-card-sasa pilar-1">
+    <div class="icon-box-sasa">🛡️</div>
+    <h3 class="title-sasa">Seguridad</h3>
+    <span class="subtitle-sasa">Antisiniestral</span>
+    <p style="font-size:14px; color:#64748b;">Análisis preventivo de riesgos estructurales y cumplimiento de normativas de seguridad.</p>
+    <ul class="bullets-sasa">
+      <li class="bullet-sasa">Tableros eléctricos</li>
+      <li class="bullet-sasa">Red de incendio</li>
+      <li class="bullet-sasa">Riesgos estructurales</li>
+    </ul>
+  </div>
+
+  <!-- Pilar 2 -->
+  <div class="pilar-card-sasa pilar-2">
+    <div class="icon-box-sasa">❤️</div>
+    <h3 class="title-sasa">Salud</h3>
+    <span class="subtitle-sasa">Habitabilidad</span>
+    <p style="font-size:14px; color:#64748b;">Control de humedad, ventilación y factores que afectan el bienestar en el hogar.</p>
+    <ul class="bullets-sasa">
+      <li class="bullet-sasa">Humedad y cimientos</li>
+      <li class="bullet-sasa">Ventilación cruzada</li>
+      <li class="bullet-sasa">Instalaciones de gas</li>
+    </ul>
+  </div>
+
+  <!-- Pilar 3 -->
+  <div class="pilar-card-sasa pilar-3">
+    <div class="icon-box-sasa">♿</div>
+    <h3 class="title-sasa">Accesibilidad</h3>
+    <span class="subtitle-sasa">Inclusión Real</span>
+    <p style="font-size:14px; color:#64748b;">Eliminación de barreras arquitectónicas y optimización de la circulación fluida.</p>
+    <ul class="bullets-sasa">
+      <li class="bullet-sasa">Rampas y accesos</li>
+      <li class="bullet-sasa">Ascensores seguros</li>
+      <li class="bullet-sasa">Señalización</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="options">
+  <div class="option" data-choice="implement" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>¡Perfecto! Así está perfecto.</h3>
+      <p>Mandale mecha con el código.</p>
+    </div>
+  </div>
+</div>

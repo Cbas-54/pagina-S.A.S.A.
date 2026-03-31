@@ -1,0 +1,152 @@
+<style>
+  .final-report-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 30px;
+    background: #fdfdfd;
+  }
+
+  .pilar-card-report {
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 40px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 10px 10px 40px rgba(0,0,0,0.03);
+    border-top: 6px solid #020C1B;
+    transition: all 0.4s ease;
+  }
+
+  .pilar-card-report:hover {
+    transform: translateY(-8px);
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.08);
+  }
+
+  .report-id {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #94a3b8;
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .report-title-final {
+    font-family: serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: #020C1B;
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+
+  .report-subtitle-final {
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #059669; /* Verde SASA */
+    margin-bottom: 25px;
+    display: block;
+  }
+
+  .report-body-final {
+    font-family: serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 30px;
+  }
+
+  .report-list-final {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 25px;
+  }
+
+  .report-item-final {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .report-item-final span { color: #cbd5e1; font-weight: normal; }
+
+  .stamp-sasa {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.05;
+    transform: rotate(-10deg);
+  }
+</style>
+
+<h2>PROTOTIPO FINAL: Los Pilares del Reporte S.A.S.A.</h2>
+<p class="subtitle">Este diseño transmite la autoridad de un "Certificado" o "Peritaje" profesional.</p>
+
+<div class="final-report-container">
+  
+  <!-- Pilar 1 -->
+  <div class="pilar-card-report">
+    <span class="report-id">Ref. SASA // P.01</span>
+    <h3 class="report-title-final">Seguridad</h3>
+    <span class="report-subtitle-final">Antisiniestral</span>
+    <p class="report-body-final">Evaluación profunda de riesgos estructurales e instalaciones que podrían comprometer la inversión.</p>
+    <ul class="report-list-final">
+      <li class="report-item-final"><span>[ ]</span> TABLEROS ELÉCTRICOS</li>
+      <li class="report-item-final"><span>[ ]</span> RED DE INCENDIO</li>
+      <li class="report-item-final"><span>[ ]</span> CÁLCULO ESTRUCTURAL</li>
+    </ul>
+    <div class="stamp-sasa"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Signature_of_Christopher_Wren.svg" width="100"></div>
+  </div>
+
+  <!-- Pilar 2 -->
+  <div class="pilar-card-report">
+    <span class="report-id">Ref. SASA // P.02</span>
+    <h3 class="report-title-final">Salud</h3>
+    <span class="report-subtitle-final">Habitabilidad</span>
+    <p class="report-body-final">Análisis exhaustivo de humedad, ventilación y salubridad para garantizar un activo sano.</p>
+    <ul class="report-list-final">
+      <li class="report-item-final"><span>[ ]</span> HUMEDAD CAPILAR</li>
+      <li class="report-item-final"><span>[ ]</span> VENTILACIÓN CRUZADA</li>
+      <li class="report-item-final"><span>[ ]</span> INSTALACIONES DE GAS</li>
+    </ul>
+  </div>
+
+  <!-- Pilar 3 -->
+  <div class="pilar-card-report">
+    <span class="report-id">Ref. SASA // P.03</span>
+    <h3 class="report-title-final">Accesibilidad</h3>
+    <span class="report-subtitle-final">Inclusión Real</span>
+    <p class="report-body-final">Verificación de normativa de movilidad, rampas y circulaciones interiores sin barreras.</p>
+    <ul class="report-list-final">
+      <li class="report-item-final"><span>[ ]</span> RAMPAS DE ACCESO</li>
+      <li class="report-item-final"><span>[ ]</span> CIRCULACIÓN INTERNA</li>
+      <li class="report-item-final"><span>[ ]</span> ASCENSORES Y ESCALERAS</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:40px;">
+  <h3>¿Confirmamos este Estilo "Reporte Peridical"?</h3>
+  <p>Transmite mucha más seriedad y realismo que la versión tecnológica anterior.</p>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="confirm" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>¡Aprobado!</h3>
+      <p>Este es el alma de SASA. Procedé con la implementación.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,168 @@
+<style>
+  :root {
+    --report-bg: #ffffff;
+    --report-accent: #020C1B;
+    --editorial-bg: #f8f9fa;
+    --editorial-accent: #059669; /* Verde SASA */
+  }
+
+  .new-mockup-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .card-style {
+    display: flex;
+    gap: 30px;
+    background: white;
+    padding: 40px;
+    border-radius: 4px; /* Más cuadrado = más serio */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    align-items: center;
+  }
+
+  .style-info {
+    flex: 1;
+  }
+
+  .visual-sample {
+    flex: 1;
+    min-height: 250px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Version 1: Reporte Peridical */
+  .sample-report {
+    background: #fff;
+    border-left: 10px solid #020C1B;
+    padding: 30px;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.02);
+  }
+  .report-header {
+    border-bottom: 2px solid #020C1B;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-family: serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .report-title {
+    font-family: serif;
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    color: #020C1B;
+  }
+  .report-stamp {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border: 3px double rgba(5, 150, 105, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(5, 150, 105, 0.4);
+    font-weight: bold;
+    font-size: 10px;
+    transform: rotate(-15deg);
+    text-align: center;
+  }
+
+  /* Version 2: Arq Editorial */
+  .sample-editorial {
+    background: #020C1B;
+    color: white;
+    padding: 30px;
+  }
+  .editorial-num {
+    font-size: 120px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: -20px;
+    opacity: 0.1;
+    font-family: 'Inter', sans-serif;
+  }
+  .editorial-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .editorial-line {
+    width: 60px;
+    height: 4px;
+    background: #059669;
+    margin-bottom: 20px;
+  }
+</style>
+
+<h2>NUEVO ENFOQUE: Identidad Profesional vs Identidad Editorial</h2>
+<p class="subtitle">Nos alejamos de lo "tecnológico" para buscar un estilo que respire autoridad y calidad física.</p>
+
+<div class="new-mockup-container">
+  
+  <!-- Estilo A: Reporte Pericial Premium -->
+  <div class="option" data-choice="report" onclick="toggleSelect(this)" style="padding:0; background:transparent;">
+    <div class="card-style">
+      <div class="style-info">
+        <h3>A: Estilo "Informe Pericial"</h3>
+        <p>Se siente oficial, solemne y riguroso. Usa tipografías con serifas (estilo diario o libro), bordes definidos y elementos que parecen sellos de aprobación.</p>
+        <ul style="font-size:13px; color:#666; margin-top:10px;">
+          <li>✓ Identidad de "Documento"</li>
+          <li>✓ Máxima confianza técnica</li>
+          <li>✓ Elegancia clásica</li>
+        </ul>
+      </div>
+      <div class="visual-sample sample-report">
+        <div class="report-stamp">CERTIFICADO<br>SASA</div>
+        <div style="width:100%">
+          <div class="report-header">AUDITORÍA TÉCNICA // P.01</div>
+          <div class="report-title">Seguridad</div>
+          <p style="font-family:serif; color:#444;">Inspección de estructuras y tableros bajo normativa ISO-9001.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estilo B: Arquitectura Editorial -->
+  <div class="option" data-choice="editorial" onclick="toggleSelect(this)" style="padding:0; background:transparent;">
+    <div class="card-style" style="border-left: 10px solid #059669;">
+      <div class="style-info">
+        <h3>B: Estilo "Revista de Arquitectura"</h3>
+        <p>Moderno, audaz y limpio. Usa tipografías bold sans-serif, grandes números minimalistas y acentos de color vibrantes (verde SASA).</p>
+        <ul style="font-size:13px; color:#666; margin-top:10px;">
+          <li>✓ Identidad de "Diseño"</li>
+          <li>✓ Muy dinámico y visual</li>
+          <li>✓ Se siente sofisticado</li>
+        </ul>
+      </div>
+      <div class="visual-sample sample-editorial">
+        <div style="width:100%">
+          <div class="editorial-num">01</div>
+          <div class="editorial-title">Seguridad</div>
+          <div class="editorial-line"></div>
+          <p style="font-size:14px; opacity:0.8;">Evaluación de riesgos estructurales y siniestralidad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:40px; text-align:center;">
+  <h3>¿Cuál de estos "climas" se siente más como el alma de SASA?</h3>
+  <p>Hacé clic en el título de la opción que prefieras.</p>
+</div>
