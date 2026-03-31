@@ -134,7 +134,8 @@ const Pilares = React.memo(() => {
               key={pilar.title}
               variants={cardVariants}
               whileHover={{ y: -10, scale: 1.01 }}
-              className={`relative group bg-white p-12 lg:p-14 border-t-[10px] ${pilar.accent} border-x border-b border-divider/5 rounded-3xl transition-all duration-500 overflow-hidden cursor-default shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]`}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              className={`relative group bg-white p-12 lg:p-14 border-t-[10px] ${pilar.accent} border-x border-b border-divider/5 rounded-3xl overflow-hidden cursor-default shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] transition-shadow duration-300`}
             >
               <div className="relative z-10">
                 {/* Header Row: Icon Only */}
@@ -173,7 +174,7 @@ const Pilares = React.memo(() => {
               </div>
 
               {/* Decorative Stamp Element */}
-              <div className="absolute -bottom-6 -right-6 text-[8rem] font-serif font-black text-divider/5 select-none pointer-events-none group-hover:opacity-[0.08] transition-opacity duration-700">
+              <div className="absolute -bottom-6 -right-6 text-[8rem] font-serif font-black text-divider/5 select-none pointer-events-none group-hover:opacity-[0.08] transition-opacity duration-300">
                 {pilar.title.charAt(0)}
               </div>
             </motion.div>
