@@ -73,34 +73,47 @@ const cardVariants = {
 
 const Pilares = React.memo(() => {
   return (
-    <section id="pilares" className="relative py-40 px-6 overflow-hidden bg-transparent">
-      <div className="absolute inset-0 -z-10 bg-transparent" />
+    <section id="pilares" className="relative py-40 px-6 overflow-hidden bg-bg-main">
+      <div className="absolute inset-0 -z-10 bg-bg-main" />
       <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-divider to-transparent" />
       
+      {/* Massive Technical Watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none select-none -z-10 overflow-hidden">
+        <span className="text-[18vw] font-black font-serif text-blue-mid/[0.02] tracking-tighter uppercase whitespace-nowrap">
+          DNA TÉCNICO & RIGOR
+        </span>
+      </div>
+
       {/* Decorative background grid */}
-      <div className="absolute inset-x-0 top-0 h-[500px] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+      <div className="absolute inset-x-0 top-0 h-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       <div className="max-w-7xl mx-auto">
+        {/* Redesigned Header: High Contrast Dark Block */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-24"
+          className="relative mb-24 p-12 md:p-20 bg-[#020C1B] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl border border-white/5"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-mid/[0.04] border border-blue-mid/10 mb-6">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-mid/80">
-              El ADN de la Propiedad
-            </span>
+          {/* Internal Glow for Header */}
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-mid/20 rounded-full blur-[120px] -mr-40 -mt-40" />
+          
+          <div className="relative z-10 text-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-glow/10 border border-blue-glow/20 mb-8">
+              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-blue-glow">
+                El ADN de la Propiedad
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-8xl font-bold font-serif text-white mb-8 leading-[1.1] tracking-tight">
+              Los Tres Pilares
+              <br />
+              <span className="font-light italic text-blue-glow/80">de la confianza definitiva</span>
+            </h2>
+            <p className="text-blue-light/60 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+              Auditamos cada activo en tres dimensiones críticas para asegurar 
+              una transacción sin fricciones y un valor de mercado superior.
+            </p>
           </div>
-          <h2 className="text-5xl md:text-8xl font-bold font-serif text-text-main mb-8 leading-[1.1] tracking-tight">
-            Los Tres Pilares
-            <br />
-            <span className="font-light italic text-blue-mid/80">de la confianza definitiva</span>
-          </h2>
-          <p className="text-text-sec text-lg max-w-2xl mx-auto font-medium leading-relaxed opacity-80">
-            Auditamos cada activo en tres dimensiones críticas para asegurar 
-            una transacción sin fricciones y un valor de mercado superior.
-          </p>
         </motion.div>
 
         <motion.div
@@ -114,11 +127,8 @@ const Pilares = React.memo(() => {
             <motion.div
               key={pilar.title}
               variants={cardVariants}
-              className={`relative group p-12 bg-white border border-divider/15 ${pilar.borderHover} rounded-[2.5rem] transition-all duration-500 overflow-hidden cursor-default shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(10,77,153,0.08)]`}
-              style={{
-                // @ts-expect-error css custom property
-                "--glow": pilar.glowColor,
-              }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className={`relative group p-10 md:p-12 glass-premium border border-divider/15 ${pilar.borderHover} rounded-[2.5rem] transition-all duration-500 overflow-hidden cursor-default shadow-sm hover:shadow-2xl`}
             >
               {/* Internal glow */}
               <div
@@ -129,26 +139,27 @@ const Pilares = React.memo(() => {
               />
 
               {/* Watermark number */}
-              <div className="absolute top-10 right-10 text-[9rem] leading-none font-black font-serif select-none pointer-events-none opacity-[0.02] group-hover:opacity-[0.05] transition-all duration-700 text-text-main group-hover:scale-110">
+              <div className="absolute top-10 right-10 text-[9rem] leading-none font-black font-serif select-none pointer-events-none opacity-[0.03] group-hover:opacity-[0.06] transition-all duration-700 text-blue-mid group-hover:scale-110">
                 {pilar.num}
               </div>
 
               <div className="relative z-10">
-                {/* Icon */}
-                <div
-                  className={`${pilar.iconColor} mb-10 transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_8px_15px_var(--glow)]`}
-                >
-                  {pilar.icon}
+                {/* Icon Container */}
+                <div className="mb-10 w-16 h-16 rounded-2xl bg-bg-main border border-divider/10 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_8px_30px_rgba(10,77,153,0.15)]">
+                  <div className={`${pilar.iconColor}`}>
+                    {pilar.icon}
+                  </div>
                 </div>
 
                 {/* Titles */}
-                <p className="text-[11px] font-black tracking-[0.25em] uppercase text-text-ter mb-2 group-hover:text-blue-mid transition-colors">
+                <p className="text-[11px] font-black tracking-[0.3em] uppercase text-text-ter mb-3 group-hover:text-blue-mid transition-colors flex items-center gap-2">
+                  <span className={`w-1.5 h-1.5 rounded-full ${pilar.dotColor}`} />
                   {pilar.subtitle}
                 </p>
-                <h3 className="text-4xl font-serif font-bold text-text-main mb-6 tracking-tight">
+                <h3 className="text-3xl md:text-4xl font-serif font-bold text-text-main mb-6 tracking-tight">
                   {pilar.title}
                 </h3>
-                <p className="text-text-sec leading-relaxed mb-10 text-[15px] font-medium opacity-80 decoration-blue-mid/20">
+                <p className="text-text-sec leading-relaxed mb-10 text-[15px] font-medium opacity-80">
                   {pilar.description}
                 </p>
 
@@ -157,11 +168,11 @@ const Pilares = React.memo(() => {
                   {pilar.bullets.map((b, i) => (
                     <li
                       key={i}
-                      className="flex items-center gap-3.5 text-text-main text-sm font-bold"
+                      className="flex items-center gap-3.5 text-text-main text-[13px] font-bold group-hover:translate-x-1 transition-transform duration-300"
                     >
-                      <span
-                        className={`w-2 h-2 rounded-full ${pilar.dotColor} shrink-0 shadow-sm`}
-                      />
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${pilar.iconColor} opacity-50`}>
+                        <path d="M4.5 9L7.5 6L4.5 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                       {b}
                     </li>
                   ))}
