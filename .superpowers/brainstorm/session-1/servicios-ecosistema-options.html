@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASA Service Ecosystem Proposals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #fdfdfd; color: #020C1B; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .bg-blue-mid { background-color: #020C1B; }
+        .text-blue-mid { color: #020C1B; }
+        .border-blue-mid { border-color: #020C1B; }
+        .gold-seal { color: #C9A96E; }
+        .bg-gold { background-color: #C9A96E; }
+        
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(0,0,0,0.05); }
+        .bento-card { transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+        .bento-card:hover { transform: translateY(-5px); box-shadow: 0 30px 60px -12px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="p-8 md:p-16">
+
+    <div class="max-w-6xl mx-auto space-y-32">
+        
+        <!-- Header -->
+        <header class="text-center space-y-4">
+            <h1 class="text-5xl font-serif font-bold">Propuestas: Ecosistema de Servicios</h1>
+            <p class="text-gray-500 max-w-2xl mx-auto">Basado en la sección "Servicios Incluidos" de la documentación oficial.</p>
+        </header>
+
+        <!-- Option 1: Bento Grid (Strategic & Technical) -->
+        <section class="space-y-12">
+            <div class="flex items-center gap-4">
+                <span class="px-4 py-1 bg-black text-white text-xs font-bold rounded-full">OPCIÓN 1</span>
+                <h2 class="text-3xl font-serif">Bento Grid Premium</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-auto md:h-[800px]">
+                <!-- Main Service: Auditoría -->
+                <div class="md:col-span-2 md:row-span-2 bg-[#020C1B] rounded-[40px] p-10 text-white relative overflow-hidden bento-card">
+                    <div class="absolute top-0 right-0 p-8 opacity-20"><i data-lucide="shield-check" size="120"></i></div>
+                    <span class="text-[10px] tracking-[0.4em] uppercase opacity-60">Core Process</span>
+                    <h3 class="text-4xl font-serif font-bold mt-4 mb-6">Auditoría Técnica <br/><span class="italic font-light text-blue-300">Completa</span></h3>
+                    <p class="text-white/60 text-lg">Inspección exhaustiva de 48 a 72 puntos críticos del inmueble.</p>
+                    <div class="mt-8 flex gap-2">
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-[10px]">PROFESIONAL MATRICULADO</span>
+                    </div>
+                </div>
+
+                <!-- Commercial Cluster -->
+                <div class="md:col-span-2 bg-white border border-gray-100 rounded-[40px] p-8 bento-card shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Brochure & Marketing</h3>
+                        <p class="text-gray-500">Materiales comerciales listos para portales y redes sociales.</p>
+                    </div>
+                    <div class="flex gap-4 mt-6">
+                        <div class="w-12 h-12 bg-gray-50 rounded-xl border border-gray-100 p-3"><i data-lucide="file-text" class="text-blue-mid"></i></div>
+                        <div class="w-12 h-12 bg-gray-50 rounded-xl border border-gray-100 p-3"><i data-lucide="share-2" class="text-blue-mid"></i></div>
+                    </div>
+                </div>
+
+                <!-- Checklist -->
+                <div class="md:col-span-1 bg-gray-50 rounded-[40px] p-8 bento-card flex flex-col justify-center text-center">
+                    <div class="mx-auto w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg mb-4 text-green-600"><i data-lucide="check-circle"></i></div>
+                    <h4 class="font-bold text-sm">Checklist Visual</h4>
+                    <p class="text-[11px] text-gray-400 mt-2">Entregable profesional para el comprador.</p>
+                </div>
+
+                <!-- Sales Training -->
+                <div class="md:col-span-1 bg-white border border-gray-100 rounded-[40px] p-8 bento-card shadow-sm flex flex-col items-center justify-center text-center">
+                    <i data-lucide="users" class="text-blue-mid mb-4"></i>
+                    <h4 class="font-bold text-sm uppercase">Capacitación</h4>
+                    <p class="text-[11px] text-gray-400">Equipo de ventas inmobiliario.</p>
+                </div>
+
+                <!-- Strategic & Legal -->
+                <div class="md:col-span-2 bg-[#F8F9FA] rounded-[40px] p-10 bento-card border border-gray-100">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold mb-2">Asesoramiento Estratégico</h3>
+                            <p class="text-gray-500 text-sm">Actualización permanente ante cambios legislativos.</p>
+                        </div>
+                        <i data-lucide="scale" class="text-gray-300"></i>
+                    </div>
+                    <div class="mt-8 flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm">
+                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                        <span class="text-xs font-bold opacity-70">INTEGRACIÓN CON IDENTIDAD VISUAL</span>
+                    </div>
+                </div>
+
+                <!-- Official Seal -->
+                <div class="md:col-span-2 bg-gradient-to-br from-gray-50 to-white rounded-[40px] p-10 bento-card border border-gray-200 flex items-center gap-8">
+                   <div class="w-20 h-20 bg-[#020C1B] rounded-full flex items-center justify-center flex-shrink-0 shadow-xl border-4 border-white">
+                       <span class="text-white font-serif font-bold">SASA</span>
+                   </div>
+                   <div>
+                       <h3 class="text-xl font-serif font-bold">Certificación Oficial</h3>
+                       <p class="text-gray-400 text-sm">Garantía pericial absoluta.</p>
+                   </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <p class="text-gray-400 italic text-sm">"Este diseño prioriza la jerarquía visual de lo técnico sobre lo comercial."</p>
+            </div>
+        </section>
+
+        <hr class="border-gray-100"/>
+
+        <!-- Option 2: The Service List (Clean Editorial) -->
+        <section class="space-y-12">
+            <div class="flex items-center gap-4">
+                <span class="px-4 py-1 bg-black text-white text-xs font-bold rounded-full">OPCIÓN 2</span>
+                <h2 class="text-3xl font-serif">Lista Editorial Minimalista</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
+                <!-- Item 1 -->
+                <div class="group border-b border-gray-100 pb-8 flex justify-between items-start hover:border-blue-mid transition-all">
+                    <div class="space-y-2">
+                        <span class="text-[10px] text-gray-400 font-bold">01</span>
+                        <h3 class="text-2xl font-serif group-hover:text-blue-mid transition-colors">Auditoría Técnica Completa</h3>
+                        <p class="text-gray-400 text-sm">Inspección estructural, eléctrica y de incendios.</p>
+                    </div>
+                    <i data-lucide="plus" class="text-gray-200 group-hover:text-blue-mid transition-all rotate-0 group-hover:rotate-45"></i>
+                </div>
+                 <!-- Item 2 -->
+                 <div class="group border-b border-gray-100 pb-8 flex justify-between items-start hover:border-blue-mid transition-all">
+                    <div class="space-y-2">
+                        <span class="text-[10px] text-gray-400 font-bold">02</span>
+                        <h3 class="text-2xl font-serif group-hover:text-blue-mid transition-colors">Brochure Comercial Optimizado</h3>
+                        <p class="text-gray-400 text-sm">Diseño de alta gama para portales inmobiliarios.</p>
+                    </div>
+                    <i data-lucide="plus" class="text-gray-200 group-hover:text-blue-mid transition-all rotate-0 group-hover:rotate-45"></i>
+                </div>
+                 <!-- Item 3 -->
+                 <div class="group border-b border-gray-100 pb-8 flex justify-between items-start hover:border-blue-mid transition-all">
+                    <div class="space-y-2">
+                        <span class="text-[10px] text-gray-400 font-bold">03</span>
+                        <h3 class="text-2xl font-serif group-hover:text-blue-mid transition-colors">Capacitación de Ventas</h3>
+                        <p class="text-gray-400 text-sm">Alineación estratégica para el cierre de operaciones.</p>
+                    </div>
+                    <i data-lucide="plus" class="text-gray-200 group-hover:text-blue-mid transition-all rotate-0 group-hover:rotate-45"></i>
+                </div>
+                 <!-- Item 4 -->
+                 <div class="group border-b border-gray-100 pb-8 flex justify-between items-start hover:border-blue-mid transition-all">
+                    <div class="space-y-2">
+                        <span class="text-[10px] text-gray-400 font-bold">04</span>
+                        <h3 class="text-2xl font-serif group-hover:text-blue-mid transition-colors">Asesoramiento Estratégico</h3>
+                        <p class="text-gray-400 text-sm">Respaldo legal y normativo permanente.</p>
+                    </div>
+                    <i data-lucide="plus" class="text-gray-200 group-hover:text-blue-mid transition-all rotate-0 group-hover:rotate-45"></i>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-gray-400 italic text-sm">"Ideal si queremos destacar el rigor y la elegancia sin saturar la vista."</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
