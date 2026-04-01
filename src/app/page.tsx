@@ -10,7 +10,7 @@ import { AnimatedBeam } from "@/components/ui/animated-beam";
 const Stats = dynamic(() => import("@/components/Stats"));
 const SasaDifference = dynamic(() => import("@/components/SasaDifference"));
 const ServiceGallery = dynamic(() => import("@/components/ServiceGallery"));
-const AuditDetails = dynamic(() => import("@/components/AuditDetails"));
+
 const Pilares = dynamic(() => import("@/components/Pilares"));
 const SelloSASA = dynamic(() => import("@/components/SelloSASA"));
 const Estrategia = dynamic(() => import("@/components/Estrategia"));
@@ -37,7 +37,7 @@ export default function Home() {
         <Stats />
         <SasaDifference />
         <ServiceGallery />
-        <AuditDetails />
+
         
         {/* Contenedor Compartido para Animated Beams entre secciones */}
         <div ref={containerRef} className="relative">
