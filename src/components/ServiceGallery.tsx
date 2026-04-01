@@ -27,6 +27,7 @@ const ECOSYSTEM_DATA = [
     bg: "bg-white",
     textColor: "text-text-main",
     icon: <Certificate size={40} weight="duotone" className="text-blue-mid" />,
+    image: "/images/service-official-seal.png",
     details: ["Sello oficial matriculado", "Co-branding corporativo"]
   },
   {
@@ -38,6 +39,7 @@ const ECOSYSTEM_DATA = [
     bg: "bg-white",
     textColor: "text-text-main",
     icon: <Megaphone size={40} weight="duotone" className="text-blue-mid" />,
+    image: "/images/service-marketing.png",
     details: ["Brochure premium PDF", "Assets para redes sociales", "Diferenciación en portales"]
   },
   {
@@ -46,9 +48,10 @@ const ECOSYSTEM_DATA = [
     title: "Alianza & Respaldo",
     desc: "Capacitación al equipo de ventas, asesoramiento estratégico y actualización permanente ante cambios legislativos.",
     size: "md:col-span-6",
-    bg: "bg-[#0A252E]",
+    bg: "bg-[#0A2B1A]", // SASA Deep Green
     textColor: "text-white",
-    icon: <UsersThree size={40} weight="duotone" className="text-blue-200" />,
+    icon: <UsersThree size={40} weight="duotone" className="text-green-200" />,
+    image: "/images/service-strategy.png",
     details: ["Capacitación de equipos", "Asesoramiento legal/técnico", "Actualización normativa"]
   }
 ];
