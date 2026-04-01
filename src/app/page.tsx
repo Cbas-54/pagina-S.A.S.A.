@@ -24,7 +24,7 @@ export default function Home() {
   const sealRef = useRef<HTMLDivElement>(null);
 
   return (
-    <main className="bg-bg-main text-text-main font-sans min-h-screen selection:bg-blue-mid/10 overflow-x-hidden">
+    <main className="bg-bg-main text-text-main font-sans min-h-screen selection:bg-blue-mid/10">
       <Navbar />
 
       {/* ── SECTION 1: Hero ── */}

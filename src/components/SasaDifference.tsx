@@ -44,20 +44,20 @@ const DIFFERENCES_DATA = [
 
 const SasaDifference = React.memo(() => {
   return (
-    <section id="la-diferencia" className="relative pt-12 pb-16 md:pt-16 md:pb-24 px-6 bg-white">
+    <section id="la-diferencia" className="relative pt-12 pb-16 md:pt-16 md:pb-24 px-6 bg-bg-main border-y border-white/[0.03]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
         
         {/* Left Side: Sticky Title (Lewis Style) */}
-        <div className="lg:h-full">
-          <div className="lg:sticky lg:top-32 self-start pt-4">
+        <div className="relative">
+          <div className="lg:sticky lg:top-40 lg:self-start pt-4">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-8"
             >
-              <div className="w-12 h-[1px] bg-blue-mid" />
-              <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-blue-mid">
+              <div className="w-12 h-[1px] bg-gold-seal" />
+              <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-gold-seal">
                 The SASA Standard
               </span>
             </motion.div>
@@ -66,10 +66,10 @@ const SasaDifference = React.memo(() => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-8xl font-serif text-text-main font-bold leading-[1.05] tracking-tight mb-8"
+              className="text-5xl md:text-8xl font-serif text-white font-bold leading-[1.05] tracking-tight mb-8"
             >
               La Diferencia <br />
-              <span className="font-light italic text-blue-mid/80 text-6xl md:text-7xl">S.A.S.A.</span>
+              <span className="font-light italic text-gold-seal/80 text-6xl md:text-7xl">S.A.S.A.</span>
             </motion.h2>
 
             <motion.p
@@ -77,7 +77,7 @@ const SasaDifference = React.memo(() => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-text-sec text-xl font-medium leading-relaxed max-w-md opacity-80"
+              className="text-white/60 text-xl font-medium leading-relaxed max-w-md"
             >
               Transformamos la incertidumbre técnica en una ventaja competitiva inalcanzable para el mercado tradicional.
             </motion.p>
@@ -96,27 +96,27 @@ const SasaDifference = React.memo(() => {
               className="group"
             >
               <div className="flex items-center gap-6 mb-8">
-                <span className="text-4xl font-serif italic text-blue-mid/20 font-black tracking-tighter">
+                <span className="text-4xl font-serif italic text-white/10 font-black tracking-tighter">
                   {item.id}
                 </span>
-                <div className="w-16 h-16 rounded-2xl bg-bg-alt flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm border border-divider">
+                <div className="w-16 h-16 rounded-2xl bg-white/[0.03] flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm border border-white/5 group-hover:border-gold-seal/30">
                   {item.icon}
                 </div>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-serif text-text-main font-bold mb-6 tracking-tight">
+              <h3 className="text-3xl md:text-4xl font-serif text-white font-bold mb-6 tracking-tight group-hover:text-gold-seal transition-colors duration-500">
                 {item.title}
               </h3>
               
-              <p className="text-text-sec text-lg md:text-xl leading-relaxed mb-8 opacity-80">
+              <p className="text-white/50 text-lg md:text-xl leading-relaxed mb-8 font-medium">
                 {item.desc}
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
-                <span className="px-4 py-1.5 rounded-full bg-blue-mid/[0.04] border border-blue-mid/10 text-[11px] font-bold text-blue-mid uppercase tracking-widest">
+                <span className="px-4 py-1.5 rounded-full bg-gold-seal/[0.04] border border-gold-seal/20 text-[11px] font-bold text-gold-seal uppercase tracking-widest">
                   {item.detail}
                 </span>
-                <button className="flex items-center gap-2 text-sm font-bold text-text-main group-hover:text-blue-mid transition-colors link-underline">
+                <button className="flex items-center gap-2 text-sm font-bold text-white/80 group-hover:text-gold-seal transition-colors link-underline">
                   Saber más <ArrowRight size={16} />
                 </button>
               </div>
@@ -127,7 +127,7 @@ const SasaDifference = React.memo(() => {
 
       {/* Atmospheric Background Element */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-blue-mid/[0.02] rounded-full blur-[150px]" />
+        <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-gold-seal/[0.02] rounded-full blur-[150px]" />
       </div>
     </section>
   );
