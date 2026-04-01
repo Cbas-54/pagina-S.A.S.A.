@@ -111,9 +111,9 @@ const ServiceGallery = React.memo(() => {
               {item.image && (
                 <div className="absolute inset-0 opacity-25 grayscale group-hover:opacity-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
                    <Image src={item.image} alt={item.title} fill className="object-cover" />
-                   {/* Overlay más sutil para asegurar legibilidad en tarjetas blancas */}
+                   {/* Overlay gris suave para una integración más natural en tarjetas blancas */}
                    {item.bg === 'bg-white' && (
-                     <div className="absolute inset-0 bg-white/20" />
+                     <div className="absolute inset-0 bg-[#F4F4F5]/30" />
                    )}
                 </div>
               )}
