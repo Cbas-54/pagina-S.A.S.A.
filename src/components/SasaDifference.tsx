@@ -48,8 +48,8 @@ const SasaDifference = React.memo(() => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
         
         {/* Left Side: Sticky Title (Lewis Style) */}
-        <div className="relative h-full">
-          <div className="lg:sticky lg:top-40 self-start transform-gpu">
+        <div className="lg:h-full">
+          <div className="lg:sticky lg:top-32 self-start pt-4">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}

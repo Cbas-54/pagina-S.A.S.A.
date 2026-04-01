@@ -6,37 +6,32 @@ import { TrendUp, Timer, CurrencyDollar, CheckCircle, ShieldWarning } from "@pho
 
 const STATS_DATA = [
   {
-    value: "Máxima",
     label: "Confianza",
     sublabel: "Aumentar la confianza del comprador.",
     icon: <CheckCircle size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
   {
-    value: "Superior",
     label: "Eficacia",
     sublabel: "Reducir objeciones y acelerar la venta.",
     icon: <Timer size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
   {
-    value: "Total",
     label: "Reputación",
     sublabel: "Elevar el profesionalismo de la inmobiliaria.",
     icon: <TrendUp size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
   {
-    value: "Única",
     label: "Exclusividad",
     sublabel: "Generar exclusividad en la cartera.",
     icon: <CurrencyDollar size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
   {
-    value: "High-End",
-    label: "Valor",
-    sublabel: "Convertir cada propiedad en un producto premium.",
+    label: "Valor Premium",
+    sublabel: "Convertir cada propiedad en un producto de alta gama.",
     icon: <ShieldWarning size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
@@ -85,14 +80,11 @@ const Stats = React.memo(() => {
               </div>
               
               <h3 className="text-4xl md:text-5xl font-bold font-serif text-white leading-none mb-10 tracking-tighter group-hover:text-gold-seal transition-colors duration-500">
-                {stat.value}
+                {stat.label}
               </h3>
               
               <div className="space-y-5">
-                <p className="text-gold-seal/95 font-bold text-[14px] uppercase tracking-[0.3em] min-h-[3rem] flex items-center justify-center border-t border-white/5 pt-4">
-                  {stat.label}
-                </p>
-                <p className="text-white/40 text-sm md:text-base leading-relaxed max-w-[200px] font-medium italic group-hover:text-white/70 transition-colors duration-500">
+                <p className="text-white/40 text-sm md:text-base leading-relaxed max-w-[200px] font-medium italic group-hover:text-white/70 transition-colors duration-500 border-t border-white/5 pt-6">
                   {stat.sublabel}
                 </p>
               </div>
