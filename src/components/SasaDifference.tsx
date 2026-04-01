@@ -50,17 +50,7 @@ const SasaDifference = React.memo(() => {
         {/* Left Side: Sticky Title (Lewis Style) */}
         <div className="relative">
           <div className="lg:sticky lg:top-40 lg:self-start pt-4">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-8"
-            >
-              <div className="w-12 h-[1px] bg-blue-mid" />
-              <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-blue-mid">
-                The SASA Standard
-              </span>
-            </motion.div>
+            {/* Removed: The SASA Standard */}
             
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -116,9 +106,7 @@ const SasaDifference = React.memo(() => {
                 <span className="px-4 py-1.5 rounded-full bg-blue-mid/[0.04] border border-blue-mid/10 text-[11px] font-bold text-blue-mid uppercase tracking-widest">
                   {item.detail}
                 </span>
-                <button className="flex items-center gap-2 text-sm font-bold text-text-main group-hover:text-blue-mid transition-colors link-underline">
-                  Saber más <ArrowRight size={16} />
-                </button>
+                {/* Removed: Saber más button */}
               </div>
             </motion.div>
           ))}
