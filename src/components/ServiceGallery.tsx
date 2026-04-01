@@ -107,10 +107,14 @@ const ServiceGallery = React.memo(() => {
               transition={{ delay: idx * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className={`${item.size} group relative rounded-[40px] p-10 md:p-12 overflow-hidden flex flex-col justify-between transition-all duration-700 hover:shadow-2xl hover:shadow-blue-mid/5 border border-divider ${item.bg} ${item.textColor}`}
             >
-              {/* Background Image para la tarjeta principal */}
+              {/* Background Image con opacidad optimizada */}
               {item.image && (
-                <div className="absolute inset-0 opacity-10 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
+                <div className="absolute inset-0 opacity-25 grayscale group-hover:opacity-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
                    <Image src={item.image} alt={item.title} fill className="object-cover" />
+                   {/* Overlay para asegurar legibilidad en tarjetas blancas */}
+                   {item.bg === 'bg-white' && (
+                     <div className="absolute inset-0 bg-white/40" />
+                   )}
                 </div>
               )}
 
