@@ -44,12 +44,8 @@ const Hero = () => {
               </div>
             </div>
 
-            <div>
-              <p className="text-[19px] text-black max-w-[45rem] leading-[1.5] font-light mb-10 mt-2 opacity-90">
-                S.A.S.A. es el sistema profesional de auditoría y certificación técnica que está redefiniendo la comercialización de activos inmobiliarios en Argentina. Aportamos las certezas y la transparencia que el mercado moderno exige, transformando la seguridad y la salud en potentes argumentos de venta.
-              </p>
-
-              <button className="px-6 py-3 bg-green-vibrant text-white font-semibold text-[14px] rounded-[4px] shadow-lg shadow-green-vibrant/10 hover:bg-green-vibrant/90 hover:scale-105 transition-all tracking-wide">
+            <div className="pt-6">
+              <button className="px-10 py-4 bg-green-vibrant text-white font-bold text-[15px] rounded-[4px] shadow-xl shadow-green-vibrant/20 hover:bg-green-vibrant/90 hover:scale-105 active:scale-95 transition-all tracking-wider uppercase">
                 Descubrir más
               </button>
             </div>

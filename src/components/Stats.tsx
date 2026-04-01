@@ -50,6 +50,25 @@ const Stats = React.memo(() => {
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-mid/5 rounded-full blur-[150px] translate-y-1/2" />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
+        {/* Intro Text reubicado del Hero */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-3xl mb-24"
+        >
+          <h2 className="text-gold-seal font-bold text-xs uppercase tracking-[0.3em] mb-4">
+            Impacto Estratégico
+          </h2>
+          <p className="text-2xl md:text-3xl text-white font-serif font-light leading-[1.4] opacity-90">
+            S.A.S.A. es el sistema profesional de auditoría y certificación técnica que está <span className="text-gold-seal italic">redefiniendo la comercialización</span> de activos inmobiliarios en Argentina.
+          </p>
+          <p className="text-white/50 text-base mt-6 leading-relaxed max-w-2xl font-medium">
+            Aportamos las certezas y la transparencia que el mercado moderno exige, transformando la seguridad y la salud en potentes argumentos de venta.
+          </p>
+        </motion.div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 xl:gap-8">
           {STATS_DATA.map((stat, i) => (
             <motion.div
@@ -58,28 +77,28 @@ const Stats = React.memo(() => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative flex flex-col items-center text-center p-8 lg:p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/10 hover:border-gold-seal/40 transition-all duration-700 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] cursor-default"
+              className="group relative flex flex-col items-center text-center p-10 lg:p-12 rounded-[3rem] bg-white/[0.03] border border-white/10 hover:border-gold-seal/40 transition-all duration-700 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] cursor-default"
             >
-              <div className={`${stat.color} mb-8 p-6 rounded-2xl bg-white/[0.05] border border-white/5 group-hover:scale-110 group-hover:bg-gold-seal/10 group-hover:border-gold-seal/20 transition-all duration-500 relative`}>
+              <div className={`${stat.color} mb-10 p-7 rounded-2xl bg-white/[0.05] border border-white/5 group-hover:scale-110 group-hover:bg-gold-seal/10 group-hover:border-gold-seal/20 transition-all duration-500 relative`}>
                 <div className="absolute inset-0 bg-gold-seal/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full" />
                 <div className="relative z-10">{stat.icon}</div>
               </div>
               
-              <h3 className="text-4xl md:text-5xl font-bold font-serif text-white leading-none mb-6 tracking-tighter">
+              <h3 className="text-5xl md:text-6xl font-bold font-serif text-white leading-none mb-8 tracking-tighter">
                 {stat.value}
               </h3>
               
-              <div className="space-y-3">
-                <p className="text-gold-seal/90 font-bold text-[10px] uppercase tracking-[0.25em] min-h-[3rem] flex items-center justify-center">
+              <div className="space-y-4">
+                <p className="text-gold-seal/95 font-bold text-[13px] uppercase tracking-[0.25em] min-h-[3rem] flex items-center justify-center">
                   {stat.label}
                 </p>
-                <p className="text-white/40 text-xs leading-relaxed max-w-[160px] font-medium italic">
+                <p className="text-white/50 text-sm md:text-base leading-relaxed max-w-[180px] font-medium italic">
                   {stat.sublabel}
                 </p>
               </div>
 
               {/* Decorative Glass Light Leak */}
-              <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-white/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-white/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             </motion.div>
           ))}
         </div>
