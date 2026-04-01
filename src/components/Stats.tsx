@@ -7,36 +7,36 @@ import { TrendUp, Timer, CurrencyDollar, CheckCircle, ShieldWarning } from "@pho
 const STATS_DATA = [
   {
     value: "Máxima",
-    label: "Tasa de Cierre",
-    sublabel: "Aumento directo en la conversión de visitas a ventas.",
-    icon: <TrendUp size={32} weight="duotone" />,
-    color: "text-gold-seal",
-  },
-  {
-    value: "Mínimo",
-    label: "Tiempo de Venta",
-    sublabel: "Reducción del tiempo de publicación por cada propiedad.",
-    icon: <Timer size={32} weight="duotone" />,
-    color: "text-gold-seal",
-  },
-  {
-    value: "Superior",
-    label: "Valor Percibido",
-    sublabel: "Aumento del valor por unidad comercializada.",
-    icon: <CurrencyDollar size={32} weight="duotone" />,
-    color: "text-gold-seal",
-  },
-  {
-    value: "Total",
-    label: "Confianza Cliente",
-    sublabel: "Transparencia técnica demostrable desde el primer contacto.",
+    label: "Confianza",
+    sublabel: "Aumentar la confianza del comprador.",
     icon: <CheckCircle size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
   {
-    value: "Mínimos",
-    label: "Riesgos Legales",
-    sublabel: "Reducción de riesgos legales en cada operación.",
+    value: "Superior",
+    label: "Eficacia",
+    sublabel: "Reducir objeciones y acelerar la venta.",
+    icon: <Timer size={32} weight="duotone" />,
+    color: "text-gold-seal",
+  },
+  {
+    value: "Total",
+    label: "Reputación",
+    sublabel: "Elevar el profesionalismo de la inmobiliaria.",
+    icon: <TrendUp size={32} weight="duotone" />,
+    color: "text-gold-seal",
+  },
+  {
+    value: "Única",
+    label: "Exclusividad",
+    sublabel: "Generar exclusividad en la cartera.",
+    icon: <CurrencyDollar size={32} weight="duotone" />,
+    color: "text-gold-seal",
+  },
+  {
+    value: "High-End",
+    label: "Valor",
+    sublabel: "Convertir cada propiedad en un producto premium.",
     icon: <ShieldWarning size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
@@ -50,22 +50,22 @@ const Stats = React.memo(() => {
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-mid/5 rounded-full blur-[150px] translate-y-1/2" />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
-        {/* Intro Text reubicado del Hero */}
+        {/* Intro Text alineado al documento oficial */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mb-24"
+          className="max-w-4xl mb-24 cursor-default"
         >
           <h2 className="text-gold-seal font-bold text-xs uppercase tracking-[0.3em] mb-4">
-            Impacto Estratégico
+            Objetivos Estratégicos
           </h2>
-          <p className="text-2xl md:text-3xl text-white font-serif font-light leading-[1.4] opacity-90">
-            S.A.S.A. es el sistema profesional de auditoría y certificación técnica que está <span className="text-gold-seal italic">redefiniendo la comercialización</span> de activos inmobiliarios en Argentina.
+          <p className="text-2xl md:text-4xl text-white font-serif font-light leading-[1.3] opacity-95">
+            S.A.S.A. es un sistema profesional de certificación <span className="text-gold-seal italic underline decoration-gold-seal/30 underline-offset-8">pre venta</span> para viviendas multifamiliares, complejos de viviendas, complejos comerciales o de oficinas.
           </p>
-          <p className="text-white/50 text-base mt-6 leading-relaxed max-w-2xl font-medium">
-            Aportamos las certezas y la transparencia que el mercado moderno exige, transformando la seguridad y la salud en potentes argumentos de venta.
+          <p className="text-white/50 text-base md:text-lg mt-8 leading-relaxed max-w-3xl font-medium border-l-2 border-gold-seal/30 pl-8 italic">
+            "Aportamos la transparencia técnica que el mercado inmobiliario exige, transformando la seguridad en un activo comercial."
           </p>
         </motion.div>
 
@@ -77,28 +77,28 @@ const Stats = React.memo(() => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative flex flex-col items-center text-center p-10 lg:p-12 rounded-[3rem] bg-white/[0.03] border border-white/10 hover:border-gold-seal/40 transition-all duration-700 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] cursor-default"
+              className="group relative flex flex-col items-center text-center p-10 lg:p-12 rounded-[3.5rem] bg-white/[0.03] border border-white/10 hover:border-gold-seal/40 transition-all duration-700 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] cursor-default overflow-hidden"
             >
-              <div className={`${stat.color} mb-10 p-7 rounded-2xl bg-white/[0.05] border border-white/5 group-hover:scale-110 group-hover:bg-gold-seal/10 group-hover:border-gold-seal/20 transition-all duration-500 relative`}>
-                <div className="absolute inset-0 bg-gold-seal/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full" />
+              <div className={`${stat.color} mb-12 p-8 rounded-3xl bg-white/[0.05] border border-white/5 group-hover:scale-110 group-hover:bg-gold-seal/10 group-hover:border-gold-seal/20 transition-all duration-700 relative`}>
+                <div className="absolute inset-0 bg-gold-seal/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full" />
                 <div className="relative z-10">{stat.icon}</div>
               </div>
               
-              <h3 className="text-5xl md:text-6xl font-bold font-serif text-white leading-none mb-8 tracking-tighter">
+              <h3 className="text-4xl md:text-5xl font-bold font-serif text-white leading-none mb-10 tracking-tighter group-hover:text-gold-seal transition-colors duration-500">
                 {stat.value}
               </h3>
               
-              <div className="space-y-4">
-                <p className="text-gold-seal/95 font-bold text-[13px] uppercase tracking-[0.25em] min-h-[3rem] flex items-center justify-center">
+              <div className="space-y-5">
+                <p className="text-gold-seal/95 font-bold text-[14px] uppercase tracking-[0.3em] min-h-[3rem] flex items-center justify-center border-t border-white/5 pt-4">
                   {stat.label}
                 </p>
-                <p className="text-white/50 text-sm md:text-base leading-relaxed max-w-[180px] font-medium italic">
+                <p className="text-white/40 text-sm md:text-base leading-relaxed max-w-[200px] font-medium italic group-hover:text-white/70 transition-colors duration-500">
                   {stat.sublabel}
                 </p>
               </div>
 
               {/* Decorative Glass Light Leak */}
-              <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-white/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute inset-0 rounded-[3.5rem] bg-gradient-to-br from-gold-seal/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             </motion.div>
           ))}
         </div>
