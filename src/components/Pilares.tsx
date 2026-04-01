@@ -8,8 +8,8 @@ const PILARES_DATA = [
   {
     title: "Seguridad",
     subtitle: "Antisiniestral",
-    description: "Evaluación rigurosa de instalaciones eléctricas, sistemas contra incendios y riesgos estructurales ocultos.",
-    bullets: ["Tableros eléctricos", "Red de incendio", "Riesgos estructurales"],
+    description: "Evaluación rigurosa de instalaciones, sistemas contra incendios y riesgos operativos certificados por profesionales matriculados.",
+    bullets: ["Instalaciones Eléctricas y Gas Certificadas", "Sistemas de Detección y Extintores", "Red de Incendio y Puertas Cortafuego", "Tableros Eléctricos y Alarmas"],
     icon: <ShieldCheck size={48} weight="duotone" />,
     accent: "border-[#C9A96E]/40",
     textColor: "text-[#C9A96E]",
@@ -17,17 +17,17 @@ const PILARES_DATA = [
   {
     title: "Salud",
     subtitle: "Habitabilidad",
-    description: "Control exhaustivo de humedad, ventilación cruzada y calidad del aire interior para un hogar sano.",
-    bullets: ["Humedad y cimientos", "Ventilación cruzada", "Instalaciones de gas"],
+    description: "Control exhaustivo de parámetros de salubridad y calidad estructural para garantizar un entorno de vida sano y protegido.",
+    bullets: ["Control de Humedad en Cimientos", "Ventilación Cruzada y Calidad del Aire", "Estado de Paredes, Techos y Estructura", "Instalaciones de Gas bajo Norma"],
     icon: <Heart size={48} weight="duotone" />,
     accent: "border-[#059669]/40",
     textColor: "text-[#059669]",
   },
   {
     title: "Accesibilidad",
-    subtitle: "Inclusión real",
-    description: "Análisis de rampas, ascensores y movilidad interna para ampliar el mercado potencial.",
-    bullets: ["Rampas y accesos", "Ascensores y escaleras", "Señalización"],
+    subtitle: "Inclusión Real",
+    description: "Análisis técnico de movilidad e infraestructura inclusiva para ampliar el mercado potencial y cumplir estándares modernos.",
+    bullets: ["Rampas y Accesos Exteriores", "Ascensores y Escaleras Seguras", "Señalización y Circulación Interna", "Infraestructura de Inclusión Verificada"],
     icon: <Wheelchair size={48} weight="duotone" />,
     accent: "border-[#2563eb]/40",
     textColor: "text-[#2563eb]",
@@ -54,7 +54,7 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
   const refs = [card1Ref, card2Ref, card3Ref];
 
   return (
-    <section className="relative py-24 md:py-32 bg-[#020C1B] overflow-hidden">
+    <section id="pilares" className="relative py-24 md:py-32 bg-[#020C1B] overflow-hidden">
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[120px] fill-white">
           <path d="M0,0 L0,120 L1200,0 Z"></path>

@@ -14,31 +14,31 @@ import {
 const DIFFERENCES_DATA = [
   {
     id: "01",
-    title: "Seguridad Eléctrica Certificada",
-    desc: "No adivinamos. Utilizamos instrumental de precisión para detectar fugas, sobrecargas y tableros fuera de norma que las inmobiliarias tradicionales ignoran.",
-    detail: "Protocolo bajo normativa IRAM 2183.",
-    icon: <Lightning size={32} weight="duotone" className="text-blue-mid" />
+    title: "Transparencia Absoluta",
+    desc: "Ofrecemos un diagnóstico honesto y técnico del activo, permitiendo una negociación basada en realidades físicas verificables, no en supuestos comerciales.",
+    detail: "Eliminación de la Incertidumbre",
+    icon: <Detective size={32} weight="duotone" className="text-blue-mid" />
   },
   {
     id: "02",
-    title: "Habitabilidad Real",
-    desc: "Evaluamos vicios de humedad y ventilación que impactan directamente en el valor de reventa y la salud de los habitantes.",
-    detail: "Mapeo de humedad por termografía.",
-    icon: <Wind size={32} weight="duotone" className="text-green-vibrant" />
+    title: "Celeridad en el Cierre",
+    desc: "Acortamos drásticamente los plazos de venta al despejar todas las dudas técnicas del comprador potencial desde el primer contacto.",
+    detail: "Aceleración de la Venta",
+    icon: <Lightning size={32} weight="duotone" className="text-green-vibrant" />
   },
   {
     id: "03",
-    title: "Blindaje Transaccional",
-    desc: "Eliminamos el miedo del comprador entregando un reporte técnico inobjetable, acelerando el cierre de la operación.",
-    detail: "Certificación de Terceros Independiente.",
-    icon: <ShieldCheck size={32} weight="duotone" className="text-blue-light" />
+    title: "Anulación de Objeciones",
+    desc: "El reporte SASA responde preventivamente a las inquietudes comunes sobre seguridad y habitabilidad, desactivando barreras de compra antes de que surjan.",
+    detail: "Respuesta Proactiva",
+    icon: <Wind size={32} weight="duotone" className="text-blue-light" />
   },
   {
     id: "04",
-    title: "Integridad del Valor",
-    desc: "Defendemos el precio de su activo con evidencia física, evitando regateos basados en supuestas deficiencias técnicas.",
-    detail: "Evidencia fotográfica y pericial.",
-    icon: <ChartLineUp size={32} weight="duotone" className="text-blue-mid" />
+    title: "Protección Multilateral",
+    desc: "Blindamos legamente al vendedor ante futuros reclamos por vicios ocultos y garantizamos la seguridad física y emocional del comprador.",
+    detail: "Seguridad Legal y Física",
+    icon: <ShieldCheck size={32} weight="duotone" className="text-blue-mid" />
   }
 ];
 

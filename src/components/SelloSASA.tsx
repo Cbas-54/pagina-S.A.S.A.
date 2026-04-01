@@ -87,10 +87,11 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
 
             <div className="grid gap-6">
               {[
-                "Reporte técnico unificado de 360°",
-                "Código QR de verificación inmediata",
-                "Firma de ingeniero perito matriculado",
-                "Válido ante bancos y aseguradoras"
+                "Propiedad Certificada: Auditoría integral superada.",
+                "Apta comercialización: Estado técnico validado.",
+                "Calidad Habitacional: Garantía de salud y seguridad.",
+                "Valor Agregado: Diferencial técnico que protege la inversión.",
+                "Reducción de Riesgos: Mitigación de vicios ocultos."
               ].map((text, i) => (
                 <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-gold-seal/20 transition-all">
                    <div className="w-8 h-8 rounded-full bg-gold-seal/10 flex items-center justify-center text-gold-seal">

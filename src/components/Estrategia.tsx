@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
+  Buildings,
   MagnifyingGlass,
   ClipboardText,
   SealCheck,
@@ -14,37 +15,37 @@ import {
 const STEPS_DATA = [
   {
     num: "01",
-    title: "Diagnóstico Inicial",
-    text: "Relevamiento exhaustivo de la propiedad: tipología, antigüedad y estado técnico base.",
+    title: "Relevamiento Técnico",
+    text: "Inspección exhaustiva in situ de cada componente de la propiedad utilizando instrumental de precisión.",
     icon: <MagnifyingGlass size={30} weight="duotone" />,
     color: "from-blue-mid to-blue-light",
   },
   {
     num: "02",
-    title: "Auditoría in situ",
-    text: "Evaluación técnica de 15 puntos críticos realizada por profesionales matriculados.",
-    icon: <ClipboardText size={30} weight="duotone" />,
+    title: "Verificación Perimetral",
+    text: "Análisis del entorno inmediato, fachadas y accesos para garantizar la seguridad exterior.",
+    icon: <Buildings size={30} weight="duotone" />,
     color: "from-blue-light to-green-vibrant",
   },
   {
     num: "03",
-    title: "Certificación S.A.S.A.",
-    text: "Emisión del Sello verificado con código QR único para validación inmediata.",
-    icon: <SealCheck size={30} weight="duotone" />,
+    title: "Áreas Exclusivas",
+    text: "Auditoría interna profunda de las áreas comunes y exclusivas de la propiedad.",
+    icon: <ShieldCheck size={30} weight="duotone" />,
     color: "from-green-vibrant to-blue-light",
   },
   {
     num: "04",
-    title: "Material de Venta",
-    text: "Entrega de brochure técnico premium diseñado para disolver dudas del comprador.",
+    title: "Circulaciones",
+    text: "Verificación de escaleras, ascensores y pasillos bajo normativas de accesibilidad y seguridad.",
     icon: <PresentationChart size={30} weight="duotone" />,
     color: "from-blue-light to-blue-mid",
   },
   {
     num: "05",
-    title: "Cierre Garantizado",
-    text: "Soporte técnico continuo durante la negociación final para asegurar el éxito.",
-    icon: <Handshake size={30} weight="duotone" />,
+    title: "Informe & Firma",
+    text: "Emisión de informe pericial detallado con el respaldo y firma de profesional matriculado.",
+    icon: <ClipboardText size={30} weight="duotone" />,
     color: "from-blue-mid to-blue-struct",
   },
 ];

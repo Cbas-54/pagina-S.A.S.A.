@@ -54,38 +54,33 @@ function AnimatedCounter({
   );
 }
 
-const STATS_DATA: StatItem[] = [
+const STATS_DATA: any[] = [
   {
-    value: 70,
-    suffix: "%",
-    label: "Menos Objeciones",
-    sublabel: "técnicas resueltas preventivamente",
-    icon: <CheckCircle size={32} weight="duotone" />,
+    value: "Máxima",
+    label: "Tasa de Cierre",
+    sublabel: "Incremento directo en la conversión de visitas a ventas reales.",
+    icon: <TrendUp size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
   {
-    value: 3,
-    suffix: "x",
-    label: "Más Velocidad",
-    sublabel: "en el tiempo promedio de cierre",
+    value: "Mínimo",
+    label: "Tiempo de Venta",
+    sublabel: "Aceleración comprobada del proceso de comercialización.",
     icon: <Timer size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
   {
-    value: 15,
-    suffix: "%",
-    prefix: "+",
+    value: "Superior",
     label: "Valor Percibido",
-    sublabel: "de venta superior al mercado",
+    sublabel: "Mejora del posicionamiento de precio frente a la competencia.",
     icon: <CurrencyDollar size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
   {
-    value: 100,
-    suffix: "%",
-    label: "Rigurosidad",
-    sublabel: "certificada por matriculados",
-    icon: <TrendUp size={32} weight="duotone" />,
+    value: "100%",
+    label: "Certeza Técnica",
+    sublabel: "Auditoría integral respaldada por profesionales matriculados.",
+    icon: <CheckCircle size={32} weight="duotone" />,
     color: "text-gold-seal",
   },
 ];
@@ -114,12 +109,8 @@ const Stats = React.memo(() => {
                 <div className="relative z-10">{stat.icon}</div>
               </div>
               
-              <h3 className="text-6xl md:text-7xl font-bold font-serif text-white leading-none mb-6 tracking-tighter">
-                <AnimatedCounter
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  prefix={stat.prefix}
-                />
+              <h3 className="text-5xl md:text-6xl font-bold font-serif text-white leading-none mb-6 tracking-tighter">
+                {stat.value}
               </h3>
               
               <div className="space-y-2">

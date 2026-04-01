@@ -7,20 +7,20 @@ import { ArrowRight, House, Buildings, ShieldCheck } from "@phosphor-icons/react
 
 const SERVICES_DATA = [
   {
-    title: "Inspección de Obra Nueva",
-    desc: "Antes de recibir la llave, verificamos que cada detalle cumpla con los estándares de calidad prometidos. Protegemos su inversión desde el día cero.",
+    title: "Complejos Multifamiliares",
+    desc: "Auditoría técnica preventiva en edificios residenciales. Garantizamos que cada unidad y área común cumpla con los estándares de seguridad y habitabilidad más exigentes.",
     image: "/images/service-obra-nueva.png",
-    icon: <House size={48} weight="duotone" className="text-blue-mid" />
+    icon: <Buildings size={48} weight="duotone" className="text-blue-mid" />
   },
   {
-    title: "Auditoría de Reventa",
-    desc: "Identificamos vicios ocultos y problemas estructurales en propiedades usadas. Compre con la tranquilidad de un informe pericial completo.",
+    title: "Complejos Comerciales",
+    desc: "Validación de seguridad antisiniestral y operativa para locales, galerías y centros comerciales. Protegemos la continuidad del negocio y la integridad de los clientes.",
     image: "/images/service-reventa.png",
-    icon: <Buildings size={48} weight="duotone" className="text-green-vibrant" />
+    icon: <House size={48} weight="duotone" className="text-green-vibrant" />
   },
   {
-    title: "Certificación de Seguridad",
-    desc: "Evaluación integral de sistemas eléctricos, gas e instalaciones críticas. El sello SASA es garantía de habitabilidad segura.",
+    title: "Oficinas y Corporativos",
+    desc: "Certificación de estatus técnico para entornos de trabajo públicos y privados. Fomentamos espacios productivos, seguros y accesibles bajo normativa vigente.",
     image: "/images/service-seguridad.png",
     icon: <ShieldCheck size={48} weight="duotone" className="text-blue-mid" />
   }

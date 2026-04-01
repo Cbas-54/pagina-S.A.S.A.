@@ -45,15 +45,15 @@ const Cierre = React.memo(() => {
 
           {/* Author */}
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full border border-gold-seal/20 bg-gold-seal/5 flex items-center justify-center">
-              <span className="text-gold-seal text-sm font-serif font-bold">S</span>
+            <div className="w-12 h-12 rounded-full border border-gold-seal/20 bg-gold-seal/5 flex items-center justify-center overflow-hidden">
+               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Maximiliano" alt="Lic. Maximiliano Ovelar" />
             </div>
             <div className="text-left">
-              <p className="text-text-main text-sm font-bold">
-                Equipo S.A.S.A.
+              <p className="text-text-main text-base font-bold">
+                Lic. Maximiliano Martín Ovelar
               </p>
-              <p className="text-text-ter text-xs">
-                Seguridad Antisiniestral, Salud y Accesibilidad
+              <p className="text-text-ter text-xs uppercase tracking-widest font-medium">
+                Matrícula LHS-007462 PBA · Especialista SASA
               </p>
             </div>
           </div>

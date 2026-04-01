@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { 
+  ShieldCheck,
   CheckCircle, 
   Files, 
   MapPin, 
@@ -16,19 +17,19 @@ import {
 
 const AUDIT_POINTS_DATA = [
   {
-    title: "Mapeo Higrotérmico",
-    desc: "Uso de cámaras infrarrojas para detectar puentes térmicos y filtraciones no visibles.",
-    icon: <Camera size={24} weight="duotone" />
+    title: "Certeza Técnica",
+    desc: "Eliminamos la incertidumbre con auditorías de 48 a 72 ítems rigurosamente verificados.",
+    icon: <ShieldCheck size={24} weight="duotone" />
   },
   {
-    title: "Peritaje Eléctrico",
-    desc: "Certificación de tableros, puesta a tierra y protección magnetotérmica.",
-    icon: <DeviceMobile size={24} weight="duotone" />
+    title: "Protección Legal",
+    desc: "Evitamos reclamos post-venta y vicios ocultos mediante informes periciales detallados.",
+    icon: <Files size={24} weight="duotone" />
   },
   {
-    title: "Análisis de Estructura",
-    desc: "Inspección de fisuras, asentamientos y vicios ocultos en vigas y columnas.",
-    icon: <Buildings size={24} weight="duotone" />
+    title: "Diferencial de Venta",
+    desc: "Transformamos la seguridad en un argumento comercial que acelera el cierre de la operación.",
+    icon: <Lightning size={24} weight="duotone" />
   }
 ];
 
@@ -69,7 +70,7 @@ const AuditDetails = React.memo(() => {
             </h3>
 
             <p className="text-white/70 text-lg leading-relaxed mb-10">
-              Cada inspección concluye con un informe pericial que documenta con rigor fotográfico e instrumental cada métrica de la propiedad.
+              Cada inspección concluye con un informe pericial que documenta con rigor fotográfico e instrumental cada métrica de la propiedad, garantizando transparencia absoluta.
             </p>
 
             <div className="space-y-6">
@@ -100,12 +101,12 @@ const AuditDetails = React.memo(() => {
             </p>
             <h2 className="text-5xl md:text-7xl font-serif text-text-main font-bold mb-10 leading-tight tracking-tight">
               Donde Otros Ven <br />
-              <span className="font-light italic text-blue-mid/80">Estética,</span> <br />
-              SASA Ve Datos.
+              <span className="font-light italic text-blue-mid/80">Incertidumbre,</span> <br />
+              SASA Aporta Certeza.
             </h2>
             
             <p className="text-text-sec text-xl leading-relaxed mb-12 opacity-80">
-              No permitimos que un acabado superficial oculte fallos estructurales o instalaciones obsoletas. Auditamos para proteger su patrimonio.
+              No permitimos que un acabado superficial oculte riesgos estructurales o instalaciones obsoletas. Auditamos para que usted venda con la tranquilidad de entregar un producto seguro y certificado.
             </p>
 
             <ul className="space-y-8 mb-12">

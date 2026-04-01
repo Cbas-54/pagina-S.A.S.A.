@@ -31,22 +31,22 @@ const Hero = () => {
             <div className="flex flex-col mb-6">
               {/* ── Subtitle: "presentando SASA" (Vibrant Green) ── */}
               <div className="overflow-hidden">
-                <h2 className="text-[21px] font-medium text-green-vibrant mb-2 tracking-normal">
-                  presentando SASA
+                <h2 className="text-[14px] font-black text-green-vibrant mb-2 tracking-[0.3em] uppercase">
+                  S.A.S.A. Seguridad Antisiniestral, Salud y Accesibilidad
                 </h2>
               </div>
 
               {/* ── "Tu ventaja comprobada en cada cierre." (Pure Black) ── */}
               <div className="overflow-hidden pb-4">
-                <h1 className="text-[45px] font-bold text-black leading-[1.1] tracking-tighter">
-                  tu ventaja comprobada en cada cierre.
+                <h1 className="text-[45px] font-bold text-black leading-[1.1] tracking-tighter uppercase">
+                  El sistema que transforma propiedades en productos irresistibles.
                 </h1>
               </div>
             </div>
 
             <div>
-              <p className="text-[21px] text-black max-w-[45rem] leading-[1.4] font-light mb-10 mt-2 opacity-90">
-                Auditorías técnicas exhaustivas donde la seguridad y legalidad se integran en la operación inmobiliaria, para acelerar estrategias de venta. Funcionando sobre cualquier propiedad, SASA eleva las garantías, destraba negociaciones y asegura valor de mercado inmediato.
+              <p className="text-[19px] text-black max-w-[45rem] leading-[1.5] font-light mb-10 mt-2 opacity-90">
+                S.A.S.A. es el sistema profesional de auditoría y certificación técnica que está redefiniendo la comercialización de activos inmobiliarios en Argentina. Aportamos las certezas y la transparencia que el mercado moderno exige, transformando la seguridad y la salud en potentes argumentos de venta.
               </p>
 
               <button className="px-6 py-3 bg-green-vibrant text-white font-semibold text-[14px] rounded-[4px] shadow-lg shadow-green-vibrant/10 hover:bg-green-vibrant/90 hover:scale-105 transition-all tracking-wide">
@@ -76,8 +76,8 @@ const Hero = () => {
             </div>
             
             <div className="flex items-center gap-3 mt-4 ml-4 whitespace-nowrap">
-              <span className="text-[1.3rem] text-black font-normal tracking-title">Garantías invisibles</span>
-              <span className="px-1.5 py-0 bg-black text-white font-bold text-[1.3rem] rounded-[2px] shadow-sm">para ventas tangibles</span>
+              <span className="text-[1.1rem] text-black font-black tracking-widest uppercase opacity-40">Confianza Auditable</span>
+              <span className="px-3 py-1 bg-black text-white font-bold text-[1.1rem] rounded-[2px] shadow-sm uppercase tracking-tighter">Cierres Garantizados</span>
             </div>
           </div>
         </div>
