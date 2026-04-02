@@ -39,10 +39,17 @@ const STATS_DATA = [
 
 const Stats = React.memo(() => {
   return (
-    <section id="stats" className="relative z-20 pt-32 pb-40 px-6 bg-[#0A0A0A] overflow-hidden">
-      {/* Subtle Gradient Glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gold-seal/5 rounded-full blur-[120px] -translate-y-1/2" />
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-mid/5 rounded-full blur-[150px] translate-y-1/2" />
+    <section id="stats" className="relative z-20 pt-40 pb-48 px-6 bg-[#020C1B] overflow-hidden">
+      {/* ── Top Transition: Smooth Gradient (Hero to Stats) ── */}
+      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+
+      {/* ── Bottom Transition: Smooth Gradient (Stats to SasaDifference) ── */}
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+
+      {/* Subtle Gradient Glows (Enhanced for Hierarchy) */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gold-seal/10 rounded-full blur-[140px] -translate-y-1/2" />
+      <div className="absolute bottom-0 right-1/4 w-[800px] h-[800px] bg-blue-mid/10 rounded-full blur-[180px] translate-y-1/2" />
+      <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-green-vibrant/5 rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2" />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         {/* Intro Text alineado al documento oficial */}
