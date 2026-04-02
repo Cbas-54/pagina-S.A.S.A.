@@ -7,27 +7,42 @@ import { ShieldCheck, Heart, Wheelchair } from "@phosphor-icons/react";
 const PILARES_DATA = [
   {
     title: "Seguridad",
-    subtitle: "Antisiniestral",
-    description: "Evaluación rigurosa de instalaciones, sistemas contra incendios y riesgos operativos certificados por profesionales matriculados.",
-    bullets: ["Instalaciones Eléctricas y Gas Certificadas", "Sistemas de Detección y Extintores", "Red de Incendio y Puertas Cortafuego", "Tableros Eléctricos y Alarmas"],
+    subtitle: "Confianza Técnica Certificada",
+    description: "Evaluación rigurosa de instalaciones, sistemas contra incendios y riesgos operativos respaldada por especialistas matriculados.",
+    bullets: [
+      "Instalaciones Eléctricas y Gas certificadas",
+      "Sistemas de Detección, Extintores y Alarma",
+      "Red de Incendio y Puertas Cortafuego",
+      "Escalera Presurizada y Tableros Eléctricos"
+    ],
     icon: <ShieldCheck size={48} weight="duotone" />,
     accent: "border-[#C9A96E]/40",
     textColor: "text-[#C9A96E]",
   },
   {
     title: "Salud",
-    subtitle: "Habitabilidad",
-    description: "Control exhaustivo de parámetros de salubridad y calidad estructural para garantizar un entorno de vida sano y protegido.",
-    bullets: ["Control de Humedad en Cimientos", "Ventilación Cruzada y Calidad del Aire", "Estado de Paredes, Techos y Estructura", "Instalaciones de Gas bajo Norma"],
+    subtitle: "Calidad de Vida Garantizada",
+    description: "Auditoría de parámetros de salubridad y calidad estructural para asegurar un entorno de vida sano, libre de riesgos ocultos.",
+    bullets: [
+      "Control de Humedad y Microfiltraciones",
+      "Ventilación Cruzada y Calidad del Aire",
+      "Estado de Paredes, Techos y Estructuras",
+      "Verificación de Parámetros de Salubridad"
+    ],
     icon: <Heart size={48} weight="duotone" />,
     accent: "border-[#059669]/40",
     textColor: "text-[#059669]",
   },
   {
     title: "Accesibilidad",
-    subtitle: "Inclusión Real",
+    subtitle: "Inclusión Verificada",
     description: "Análisis técnico de movilidad e infraestructura inclusiva para ampliar el mercado potencial y cumplir estándares modernos.",
-    bullets: ["Rampas y Accesos Exteriores", "Ascensores y Escaleras Seguras", "Señalización y Circulación Interna", "Infraestructura de Inclusión Verificada"],
+    bullets: [
+      "Rampas y Accesos Exteriores Normalizados",
+      "Ascensores Accesibles y Escaleras Seguras",
+      "Señalización y Circulación Interna",
+      "Infraestructura de Inclusión Verificada"
+    ],
     icon: <Wheelchair size={48} weight="duotone" />,
     accent: "border-[#2563eb]/40",
     textColor: "text-[#2563eb]",
