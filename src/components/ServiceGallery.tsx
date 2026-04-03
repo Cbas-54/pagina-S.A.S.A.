@@ -14,9 +14,10 @@ const ECOSYSTEM_DATA = [
     size: "md:col-span-8",
     bg: "bg-[#020C1B]",
     textColor: "text-white",
-    icon: <ShieldCheck size={40} weight="duotone" className="text-blue-200" />,
+    icon: <ShieldCheck size={40} weight="duotone" className="text-green-vibrant" />,
     image: "/images/service-obra-nueva.png",
-    details: ["48-72 puntos auditados", "Checklist visual profesional", "Rigor pericial independiente"]
+    details: ["48-72 puntos auditados", "Checklist visual profesional", "Rigor pericial independiente"],
+    titleColor: "text-green-vibrant"
   },
   {
     id: "02",
@@ -26,9 +27,10 @@ const ECOSYSTEM_DATA = [
     size: "md:col-span-4",
     bg: "bg-white",
     textColor: "text-text-main",
-    icon: <Certificate size={40} weight="duotone" className="text-blue-mid" />,
+    icon: <Certificate size={40} weight="duotone" className="text-text-main" />,
     image: "/images/service-official-seal.png",
-    details: ["Sello oficial matriculado", "Co-branding corporativo"]
+    details: ["Sello oficial matriculado", "Co-branding corporativo"],
+    mistColor: "from-blue-mid/[0.15]"
   },
   {
     id: "03",
@@ -38,9 +40,10 @@ const ECOSYSTEM_DATA = [
     size: "md:col-span-6",
     bg: "bg-white",
     textColor: "text-text-main",
-    icon: <Megaphone size={40} weight="duotone" className="text-blue-mid" />,
+    icon: <Megaphone size={40} weight="duotone" className="text-text-main" />,
     image: "/images/service-marketing.png",
-    details: ["Brochure premium PDF", "Assets para redes sociales", "Diferenciación en portales"]
+    details: ["Brochure premium PDF", "Assets para redes sociales", "Diferenciación en portales"],
+    mistColor: "from-green-vibrant/[0.15]"
   },
   {
     id: "04",
@@ -50,9 +53,10 @@ const ECOSYSTEM_DATA = [
     size: "md:col-span-6",
     bg: "bg-[#0A2B1A]", // SASA Deep Green
     textColor: "text-white",
-    icon: <UsersThree size={40} weight="duotone" className="text-green-200" />,
+    icon: <UsersThree size={40} weight="duotone" className="text-blue-200" />,
     image: "/images/service-strategy.png",
-    details: ["Capacitación de equipos", "Asesoramiento legal/técnico", "Actualización normativa"]
+    details: ["Capacitación de equipos", "Asesoramiento legal/técnico", "Actualización normativa"],
+    titleColor: "text-blue-200"
   }
 ];
 
@@ -107,7 +111,7 @@ const ServiceGallery = React.memo(() => {
               transition={{ delay: idx * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className={`${item.size} group relative rounded-[40px] p-10 md:p-12 overflow-hidden flex flex-col justify-between transition-all duration-700 hover:shadow-2xl hover:shadow-blue-mid/5 border border-divider ${item.bg} ${item.textColor}`}
             >
-              {/* Background Image con visibilidad potenciada para tarjetas claras */}
+              {/* Background Image Layer */}
               {item.image && (
                 <div className={`
                   absolute inset-0 transition-all duration-1000
@@ -117,28 +121,26 @@ const ServiceGallery = React.memo(() => {
                   group-hover:scale-105
                 `}>
                    <Image src={item.image} alt={item.title} fill className="object-cover" />
-                   {/* Overlay mínimo para legibilidad de texto en tarjetas blancas */}
-                   {item.bg === 'bg-white' && (
-                     <div className="absolute inset-0 bg-white/10" />
+                   {/* Custom Mist Overlay (Expert Color Assignment) */}
+                   {item.mistColor && (
+                     <div className={`absolute inset-0 bg-gradient-to-br ${item.mistColor} to-transparent`} />
                    )}
                 </div>
               )}
 
+              {/* Main Content Layer */}
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-12">
-                   <div className={`p-4 rounded-2xl ${item.bg === 'bg-white' ? 'bg-bg-alt' : 'bg-white/10'} backdrop-blur-sm border border-white/5`}>
+                   <div className="p-0 transition-transform duration-500 group-hover:scale-110">
                       {item.icon}
                    </div>
-                   <span className="text-4xl font-serif font-black italic opacity-10 tracking-tighter">
-                      {item.id}
-                   </span>
                 </div>
 
                 <span className={`text-[10px] font-black tracking-[0.3em] uppercase mb-4 block ${item.bg === 'bg-white' ? 'text-blue-mid/60' : 'text-blue-200/60'}`}>
                    {item.category}
                 </span>
                 
-                <h3 className="text-3xl md:text-4xl font-serif font-bold mb-6 tracking-tight leading-tight">
+                <h3 className={`text-3xl md:text-4xl font-serif font-bold mb-6 tracking-tight leading-tight ${item.titleColor || ''}`}>
                    {item.title}
                 </h3>
                 
@@ -147,6 +149,7 @@ const ServiceGallery = React.memo(() => {
                 </p>
               </div>
 
+              {/* Footer Details */}
               <div className="relative z-10 pt-8 border-t border-current/10 flex flex-wrap gap-3">
                  {item.details.map((detail, i) => (
                     <span 
