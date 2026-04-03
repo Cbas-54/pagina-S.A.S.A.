@@ -17,7 +17,7 @@ const DIFFERENCES_DATA = [
     title: "Transparencia Absoluta",
     desc: "Ofrecemos un diagnóstico honesto y técnico del activo, permitiendo una negociación basada en realidades físicas verificables, no en supuestos comerciales.",
     detail: "Eliminación de la Incertidumbre",
-    icon: <Detective size={32} weight="duotone" className="text-blue-mid" />
+    icon: <Detective size={32} weight="duotone" className="text-green-vibrant" />
   },
   {
     id: "02",
@@ -44,11 +44,23 @@ const DIFFERENCES_DATA = [
 
 const SasaDifference = React.memo(() => {
   return (
-    <section id="la-diferencia" className="relative pt-12 pb-16 md:pt-16 md:pb-24 px-6 bg-white">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <section id="la-diferencia" className="relative pt-12 pb-16 md:pt-20 md:pb-24 px-6 bg-[#DDE1E7]">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 relative">
         
+        {/* Animated Vertical Divider (Expert Addition - High Visibility) */}
+        <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[2.5px] -translate-x-1/2 pointer-events-none z-20">
+          <motion.div 
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            style={{ originY: 0 }}
+            className="w-full h-full bg-gradient-to-b from-green-vibrant via-blue-mid to-blue-mid shadow-[0_0_15px_rgba(34,197,94,0.3)]"
+          />
+        </div>
+
         {/* Left Side: Sticky Title (Lewis Style) */}
-        <div className="relative">
+        <div className="relative z-10">
           <div className="lg:sticky lg:top-40 lg:self-start pt-4">
             {/* Removed: The SASA Standard */}
             
@@ -75,7 +87,7 @@ const SasaDifference = React.memo(() => {
         </div>
 
         {/* Right Side: Scrolling Content */}
-        <div className="space-y-32">
+        <div className="space-y-32 z-10">
           {DIFFERENCES_DATA.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -113,9 +125,16 @@ const SasaDifference = React.memo(() => {
         </div>
       </div>
 
-      {/* Atmospheric Background Element */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-blue-mid/[0.02] rounded-full blur-[150px]" />
+      {/* Atmospheric Background Elements - Redesigned for Invisible Transition (Fixed Layering) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Seam Melting Transition (Expert addition to hide the physical edge) */}
+        <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-[#020C1B] to-transparent opacity-30 z-10" />
+
+        {/* Top white glow (Moved down slightly to avoid highlighting the seam) */}
+        <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[1400px] h-[500px] bg-white opacity-80 blur-[130px]" />
+        
+        {/* Subtle detail glow */}
+        <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-blue-mid/[0.03] rounded-full blur-[150px]" />
       </div>
     </section>
   );
