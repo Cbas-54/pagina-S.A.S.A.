@@ -13,39 +13,39 @@ import {
 
 const DIFFERENCES_DATA = [
   {
-    id: "01",
-    title: "Transparencia Absoluta",
-    desc: "Ofrecemos un diagnóstico honesto y técnico del activo, permitiendo una negociación basada en realidades físicas verificables, no en supuestos comerciales.",
-    detail: "Eliminación de la Incertidumbre",
+    category: "Módulo de Auditoría",
+    title: "Transparencia Técnico-Legal",
+    desc: "Diagnóstico honesto y auditable de instalaciones eléctricas, gas y seguridad activa. El Sello S.A.S.A. permite una negociación basada en realidades físicas verificables, eliminando la incertidumbre técnica que frena las operaciones.",
+    outcome: "Eliminación de la Incertidumbre",
     icon: <Detective size={32} weight="duotone" className="text-green-vibrant" />
   },
   {
-    id: "02",
-    title: "Celeridad en el Cierre",
-    desc: "Acortamos drásticamente los plazos de venta al despejar todas las dudas técnicas del comprador potencial desde el primer contacto.",
-    detail: "Aceleración de la Venta",
+    category: "Celeridad de Cierre",
+    title: "Acelerador de Ciclo Comercial",
+    desc: "Acortamos drásticamente los plazos de venta al despejar todas las dudas técnicas del comprador potencial desde el primer contacto. Menos objeciones significan mayor velocidad y menor presión sobre el precio final.",
+    outcome: "Optimización del Tiempo de Venta",
     icon: <Lightning size={32} weight="duotone" className="text-green-vibrant" />
   },
   {
-    id: "03",
-    title: "Anulación de Objeciones",
-    desc: "El reporte SASA responde preventivamente a las inquietudes comunes sobre seguridad y habitabilidad, desactivando barreras de compra antes de que surjan.",
-    detail: "Respuesta Proactiva",
-    icon: <Wind size={32} weight="duotone" className="text-blue-light" />
+    category: "Respuesta Preventiva",
+    title: "Protocolo Anti-Objeciones",
+    desc: "Un reporte profesional que responde de forma preventiva a las inquietudes comunes sobre seguridad y habitabilidad. Desactivamos barreras de compra antes de que surjan, elevando el valor percibido del activo.",
+    outcome: "Incremento del Valor Percibido",
+    icon: <Wind size={32} weight="duotone" className="text-blue-mid" />
   },
   {
-    id: "04",
-    title: "Protección Multilateral",
-    desc: "Blindamos legamente al vendedor ante futuros reclamos por vicios ocultos y garantizamos la seguridad física y emocional del comprador.",
-    detail: "Seguridad Legal y Física",
+    category: "Protección Técnica",
+    title: "Blindaje de Reputación Multilateral",
+    desc: "Certificación oficial emitida por profesional matriculado y especializado. Blindamos legalmente al vendedor ante futuros reclamos por vicios ocultos y garantizamos su seguridad física y emocional.",
+    outcome: "Seguridad Legal y Física Total",
     icon: <ShieldCheck size={32} weight="duotone" className="text-blue-mid" />
   }
 ];
 
 const SasaDifference = React.memo(() => {
   return (
-    <section id="la-diferencia" className="relative pt-12 pb-16 md:pt-20 md:pb-24 px-6 bg-[#DDE1E7]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 relative">
+    <section id="la-diferencia" className="relative pt-12 pb-8 md:pt-20 md:pb-12 px-6 bg-[#DDE1E7]">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 relative">
         
         {/* Animated Vertical Divider (Expert Addition - High Visibility) */}
         <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[2.5px] -translate-x-1/2 pointer-events-none z-20">
@@ -62,8 +62,6 @@ const SasaDifference = React.memo(() => {
         {/* Left Side: Sticky Title (Lewis Style) */}
         <div className="relative z-10">
           <div className="lg:sticky lg:top-40 lg:self-start pt-4">
-            {/* Removed: The SASA Standard */}
-            
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -81,45 +79,48 @@ const SasaDifference = React.memo(() => {
               transition={{ delay: 0.1 }}
               className="text-text-sec text-xl font-medium leading-relaxed max-w-md opacity-80"
             >
-              Transformamos la incertidumbre técnica en una ventaja competitiva inalcanzable para el mercado tradicional.
+              Transformamos tres conceptos técnicos — seguridad, salud y accesibilidad — en argumentos de venta de alto impacto.
             </motion.p>
           </div>
         </div>
 
-        {/* Right Side: Scrolling Content */}
-        <div className="space-y-32 z-10">
+        {/* Right Side: Scrolling Content (High Density Expert Design) */}
+        <div className="space-y-12 lg:space-y-16 z-10 pt-8 lg:pt-0">
           {DIFFERENCES_DATA.map((item, idx) => (
             <motion.div
-              key={item.id}
+              key={item.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="group"
+              className="group relative p-8 rounded-3xl bg-white/40 border border-white/20 hover:border-green-vibrant/30 transition-all duration-500 overflow-hidden"
             >
-              <div className="flex items-center gap-6 mb-8">
-                <span className="text-4xl font-serif italic text-blue-mid/20 font-black tracking-tighter">
-                  {item.id}
-                </span>
-                <div className="w-16 h-16 rounded-2xl bg-bg-alt flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm border border-divider">
+              {/* Technical Category Label */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-white/60 flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm border border-white/40">
                   {item.icon}
                 </div>
+                <span className="text-[10px] font-bold text-blue-mid tracking-[0.2em] uppercase opacity-60">
+                  {item.category}
+                </span>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-serif text-text-main font-bold mb-6 tracking-tight">
+              <h3 className="text-2xl md:text-3xl font-serif text-text-main font-bold mb-4 tracking-tight">
                 {item.title}
               </h3>
               
-              <p className="text-text-sec text-lg md:text-xl leading-relaxed mb-8 opacity-80">
+              <p className="text-text-sec text-lg leading-relaxed mb-6 opacity-80">
                 {item.desc}
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
-                <span className="px-4 py-1.5 rounded-full bg-blue-mid/[0.04] border border-blue-mid/10 text-[11px] font-bold text-blue-mid uppercase tracking-widest">
-                  {item.detail}
+                <span className="px-5 py-2 rounded-lg bg-green-vibrant/[0.06] border border-green-vibrant/10 text-[11px] font-bold text-green-vibrant uppercase tracking-widest">
+                  Resultado: {item.outcome}
                 </span>
-                {/* Removed: Saber más button */}
               </div>
+
+              {/* Decorative Glass Glow */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-vibrant/5 blur-[50px] rounded-full -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.div>
           ))}
         </div>
@@ -127,10 +128,10 @@ const SasaDifference = React.memo(() => {
 
       {/* Atmospheric Background Elements - Redesigned for Invisible Transition (Fixed Layering) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {/* Seam Melting Transition (Expert addition to hide the physical edge) */}
+        {/* Seam Melting Transition */}
         <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-[#020C1B] to-transparent opacity-30 z-10" />
 
-        {/* Top white glow (Moved down slightly to avoid highlighting the seam) */}
+        {/* Top white glow (Mist effect) */}
         <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[1400px] h-[500px] bg-white opacity-80 blur-[130px]" />
         
         {/* Subtle detail glow */}
