@@ -39,9 +39,9 @@ const STATS_DATA = [
 
 const Stats = React.memo(() => {
   return (
-    <section id="stats" className="relative z-20 pt-64 pb-72 px-6 bg-[#020C1B] overflow-hidden">
+    <section id="stats" className="relative z-20 pt-12 pb-72 px-6 bg-[#020C1B]">
       {/* ── Top Transition: Multi-Layered Natural Waves (Overlap into Hero) ── */}
-      <div className="absolute top-0 left-0 w-full z-10 pointer-events-none translate-y-[-99%]">
+      <div className="absolute top-0 left-0 w-full z-[100] pointer-events-none translate-y-[-99.5%] overflow-visible">
         {/* Layer 1: Back Wave (Tallest, subtle opacity) */}
         <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="absolute bottom-0 w-full h-[220px] fill-[#020C1B]/10">
           <path d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,149.3C672,160,768,224,864,250.7C960,277,1056,267,1152,234.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -59,8 +59,8 @@ const Stats = React.memo(() => {
       {/* ── Bottom Transition: Smooth Gradient (Stats to SasaDifference) ── */}
       <div className="absolute bottom-0 left-0 w-full h-56 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
-      {/* Subtle Gradient Glows (Enhanced for Hierarchy) */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gold-seal/10 rounded-full blur-[140px] -translate-y-1/2" />
+      {/* Subtle Gradient Glows (Enhanced for Hierarchy) - Expert Relocation to avoid transition artifacts */}
+      <div className="absolute top-48 left-1/4 w-[600px] h-[600px] bg-gold-seal/10 rounded-full blur-[140px]" />
       <div className="absolute bottom-0 right-1/4 w-[800px] h-[800px] bg-blue-mid/10 rounded-full blur-[180px] translate-y-1/2" />
       <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-green-vibrant/5 rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2" />
 

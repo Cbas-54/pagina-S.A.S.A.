@@ -44,11 +44,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="pt-6">
-              <button className="px-10 py-4 bg-green-vibrant text-white font-bold text-[15px] rounded-[4px] shadow-xl shadow-green-vibrant/20 hover:bg-green-vibrant/90 hover:scale-105 active:scale-95 transition-all tracking-wider uppercase">
-                Descubrir más
-              </button>
-            </div>
+
           </div>
 
           {/* RIGHT: SASA Logo Area */}

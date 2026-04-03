@@ -71,7 +71,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       className={cn("fixed inset-x-0 top-0 z-[100] w-full", className)}
     >
       {React.Children.map(children, (child) =>
-        React.isValidElement(child)
+        React.isValidElement(child) && typeof child.type !== "string"
           ? React.cloneElement(
               child as React.ReactElement<{ visible?: boolean }>,
               { visible },
@@ -109,7 +109,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       )}
     >
       {React.Children.map(children, (child) =>
-        React.isValidElement(child)
+        React.isValidElement(child) && typeof child.type !== "string"
           ? React.cloneElement(
             child as React.ReactElement<{ visible?: boolean }>,
             { visible },
@@ -195,7 +195,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       )}
     >
       {React.Children.map(children, (child) =>
-        React.isValidElement(child)
+        React.isValidElement(child) && typeof child.type !== "string"
           ? React.cloneElement(
             child as React.ReactElement<{ visible?: boolean }>,
             { visible },
