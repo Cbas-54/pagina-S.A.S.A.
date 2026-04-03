@@ -62,7 +62,7 @@ const ECOSYSTEM_DATA = [
 
 const ServiceGallery = React.memo(() => {
   return (
-    <section id="servicios" className="pt-12 pb-24 md:pt-20 md:pb-32 px-6 bg-[#F4F4F5] overflow-hidden">
+    <section id="servicios" className="pt-12 pb-20 md:pt-20 md:pb-20 px-6 bg-[#F4F4F5] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Seccional */}

@@ -11,15 +11,10 @@ interface SelloSASAProps {
 
 const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
   return (
-    <section id="sello" className="relative py-32 md:py-48 px-6 bg-[#020C1B] overflow-hidden">
-      {/* 📐 DIAGONAL SUPERIOR (Conexión fluida desde Pilares) */}
-      <div className="absolute top-0 left-0 w-full h-[150px] bg-gradient-to-b from-[#02152b] to-transparent pointer-events-none opacity-50" />
+    <section id="sello" className="relative pt-12 md:pt-16 pb-24 md:pb-32 px-6 bg-[#020C1B] overflow-hidden">
+      {/* ── SEAMLESS MIDNIGHT TRANSITION (Melted Flow) ── */}
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#020C1B] to-transparent z-10 pointer-events-none" />
 
-      {/* 
-          Nota: Los AnimatedBeams han sido movidos a page.tsx 
-          para asegurar una alineación perfecta entre secciones.
-      */}
-      
       <div className="max-w-7xl mx-auto relative z-30">
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-32">
           
@@ -75,13 +70,12 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
             className="lg:w-1/2 space-y-12"
           >
             <div className="space-y-6">
-              <span className="text-[11px] font-black tracking-[0.4em] uppercase text-gold-seal block mb-4">Technical Synthesis</span>
               <h2 className="text-5xl md:text-7xl font-bold font-serif text-white tracking-tight leading-tight">
                 La Síntesis de<br />
-                <span className="text-gold-seal italic font-light">la Excelencia</span>
+                <span className="text-gold-seal italic font-light uppercase tracking-wide">LA EXCELENCIA</span>
               </h2>
               <p className="text-white/60 text-xl leading-relaxed italic border-l-2 border-gold-seal/30 pl-8">
-                El sello SASA no es solo una marca, es la representación visual de que su propiedad ha superado la auditoría más exigente del mercado.
+                El sello S.A.S.A. no es solo una marca, es la representación visual de que su propiedad ha superado la auditoría más exigente del mercado.
               </p>
             </div>
 
@@ -103,9 +97,6 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
             </div>
             
             <div className="p-8 rounded-3xl bg-gold-seal/[0.05] border border-gold-seal/10 flex items-center gap-6">
-               <div className="w-14 h-14 rounded-full border border-gold-seal/30 overflow-hidden">
-                 <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Professional" alt="Validator" />
-               </div>
                <div>
                   <p className="text-[10px] font-black text-gold-seal uppercase tracking-widest mb-1">Validación por Auditoría</p>
                   <p className="text-white/40 text-sm italic">"Garantizamos la fe técnica en cada metro cuadrado."</p>

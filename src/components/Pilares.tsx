@@ -7,45 +7,48 @@ import { ShieldCheck, Heart, Wheelchair } from "@phosphor-icons/react";
 const PILARES_DATA = [
   {
     title: "Seguridad",
-    subtitle: "Confianza Técnica Certificada",
-    description: "Evaluación rigurosa de instalaciones, sistemas contra incendios y riesgos operativos respaldada por especialistas matriculados.",
+    subtitle: "Rigor Pericial Certificado",
+    description: "Auditoría de infraestructuras críticas y sistemas de protección activa bajo estándares internacionales de seguridad física.",
     bullets: [
-      "Instalaciones Eléctricas y Gas certificadas",
-      "Sistemas de Detección, Extintores y Alarma",
-      "Red de Incendio y Puertas Cortafuego",
-      "Escalera Presurizada y Tableros Eléctricos"
+      "Sistemas de Detección e Incendio (Normas IRAM)",
+      "Certificación de Redes de Gas y Electricidad",
+      "Validación de Sistemas de Extinción Activos",
+      "Protocolo de Fe Técnica en Estructuras"
     ],
-    icon: <ShieldCheck size={48} weight="duotone" />,
-    accent: "border-[#C9A96E]/40",
-    textColor: "text-[#C9A96E]",
+    icon: <ShieldCheck size={48} weight="duotone" className="text-blue-400" />,
+    accent: "border-blue-400/30",
+    textColor: "text-blue-400",
+    glow: "shadow-[0_0_40px_rgba(37,99,235,0.1)]"
   },
   {
     title: "Salud",
-    subtitle: "Calidad de Vida Garantizada",
-    description: "Auditoría de parámetros de salubridad y calidad estructural para asegurar un entorno de vida sano, libre de riesgos ocultos.",
+    subtitle: "Ambientes Saludables",
+    description: "Garantía de salubridad estructural mediante la detección de patologías biológicas y vicios ocultos de habitabilidad.",
     bullets: [
-      "Control de Humedad y Microfiltraciones",
-      "Ventilación Cruzada y Calidad del Aire",
-      "Estado de Paredes, Techos y Estructuras",
-      "Verificación de Parámetros de Salubridad"
+      "Protocolos de Muestreo de Humedad Crítica",
+      "Control Químico de Vicios Ocultos Biológicos",
+      "Auditoría de Calidad de Aire y Ventilación",
+      "Certificación de Materiales No Tóxicos"
     ],
-    icon: <Heart size={48} weight="duotone" />,
-    accent: "border-[#059669]/40",
-    textColor: "text-[#059669]",
+    icon: <Heart size={48} weight="duotone" className="text-green-vibrant" />,
+    accent: "border-green-vibrant/30",
+    textColor: "text-green-vibrant",
+    glow: "shadow-[0_0_40px_rgba(34,197,94,0.1)]"
   },
   {
     title: "Accesibilidad",
-    subtitle: "Inclusión Verificada",
-    description: "Análisis técnico de movilidad e infraestructura inclusiva para ampliar el mercado potencial y cumplir estándares modernos.",
+    subtitle: "Inclusión & Movilidad",
+    description: "Análisis técnico de infraestructura inclusiva para asegurar la eliminación de barreras y cumplimiento operativo legal.",
     bullets: [
-      "Rampas y Accesos Exteriores Normalizados",
-      "Ascensores Accesibles y Escaleras Seguras",
-      "Señalización y Circulación Interna",
-      "Infraestructura de Inclusión Verificada"
+      "Certificación de Circulación Universal",
+      "Protocolo de Adaptación de Ascensores",
+      "Normalización de Rampas y Accesos (ADA)",
+      "Señalización de Seguridad Háptica/Visual"
     ],
-    icon: <Wheelchair size={48} weight="duotone" />,
-    accent: "border-[#2563eb]/40",
-    textColor: "text-[#2563eb]",
+    icon: <Wheelchair size={48} weight="duotone" className="text-white/40" />,
+    accent: "border-white/10",
+    textColor: "text-white/40",
+    glow: "shadow-[0_0_40px_rgba(255,255,255,0.02)]"
   },
 ];
 
@@ -69,20 +72,19 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
   const refs = [card1Ref, card2Ref, card3Ref];
 
   return (
-    <section id="pilares" className="relative py-24 md:py-32 bg-[#020C1B] overflow-hidden">
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[120px] fill-white">
-          <path d="M0,0 L0,120 L1200,0 Z"></path>
-        </svg>
+    <section id="pilares" className="relative pb-12 md:pb-16 bg-[#020C1B] overflow-hidden">
+      {/* ── MINIMALIST PROFESSIONAL SEAM ── */}
+      <div className="absolute top-0 left-0 w-full z-20">
+        <div className="h-[1px] w-full bg-blue-mid/20" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-30 px-6">
+      <div className="max-w-7xl mx-auto relative z-30 px-6 pt-14">
         <div className="text-center mb-28">
-          <motion.h2 className="text-6xl md:text-8xl font-bold font-serif text-white mb-8 tracking-tight">
+          <motion.h2 className="text-6xl md:text-8xl font-bold font-serif text-gold-seal mb-8 tracking-tight drop-shadow-[0_0_20px_rgba(201,169,110,0.3)]">
             Nuestros Tres Pilares
           </motion.h2>
-          <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto">
-            Garantizamos transparencia, seguridad y rentabilidad definitiva.
+          <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto italic font-light">
+            Garantizamos transparencia pericial, seguridad física y rentabilidad definitiva mediante tres dimensiones de rigor estructural.
           </p>
         </div>
 
@@ -91,26 +93,32 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
             <motion.div
               key={pilar.title}
               variants={cardVariants}
-              className={`relative bg-white p-12 border-t-[10px] ${pilar.accent} border-x border-b border-gold-seal/20 rounded-3xl overflow-hidden shadow-2xl shadow-[inset_0_0_25px_rgba(201,169,110,0.1)]`}
+              className={`group relative bg-white/[0.03] backdrop-blur-xl p-12 border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/[0.05] hover:border-gold-seal/20 ${pilar.glow}`}
             >
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex justify-between items-start mb-10">
-                   <h3 className="text-4xl font-serif font-bold text-text-main">{pilar.title}</h3>
-                   <div className={`${pilar.textColor} bg-white/50 p-2 rounded-xl`}>
-                     {pilar.icon}
+                   <h3 className="text-4xl font-serif font-bold text-gold-seal drop-shadow-[0_0_15px_rgba(201,169,110,0.3)]">
+                     {pilar.title}
+                   </h3>
+                   <div className="p-0 transition-transform duration-500 group-hover:scale-110">
+                      {pilar.icon}
                    </div>
                 </div>
-                <p className="text-text-sec text-base mb-10 opacity-80">{pilar.description}</p>
-                <ul className="space-y-3 mt-auto pt-6 border-t border-divider/10">
+                
+                <p className="text-white/60 text-base mb-10 opacity-80 leading-relaxed font-medium italic border-l border-white/10 pl-6">
+                  {pilar.description}
+                </p>
+
+                <ul className="space-y-4 mt-auto pt-8 border-t border-white/5">
                   {pilar.bullets.map((b, idx) => (
-                    <li key={idx} className="flex items-center gap-3 text-sm font-bold text-text-main">
-                      <span className={`${pilar.textColor} opacity-40 font-serif`}>0{idx + 1}</span>
+                    <li key={idx} className="flex items-start gap-4 text-sm font-bold text-white/40 transition-colors duration-300 group-hover:text-white/70">
+                      <div className={`mt-1.5 w-1.5 h-1.5 rounded-full ${pilar.textColor} opacity-60 flex-shrink-0 group-hover:scale-125 transition-transform`} />
                       {b}
                     </li>
                   ))}
                 </ul>
                 
-                {/* Punto de Conexión para AnimatedBeam (Borde Inferior) */}
+                {/* Punto de Conexión para AnimatedBeam */}
                 <div ref={refs[i]} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 pointer-events-none" />
               </div>
             </motion.div>
