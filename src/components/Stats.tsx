@@ -40,10 +40,19 @@ const STATS_DATA = [
 const Stats = React.memo(() => {
   return (
     <section id="stats" className="relative z-20 pt-64 pb-72 px-6 bg-[#020C1B] overflow-hidden">
-      {/* ── Top Transition: Natural Blue Wave (Overlap into Hero) ── */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-10 pointer-events-none translate-y-[-99%]">
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="relative block w-full h-[180px] fill-[#020C1B]">
-          <path d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,143.3C672,139,768,203,864,224C960,245,1056,224,1152,192C1248,160,1344,117,1392,96L1440,75L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      {/* ── Top Transition: Multi-Layered Natural Waves (Overlap into Hero) ── */}
+      <div className="absolute top-0 left-0 w-full z-10 pointer-events-none translate-y-[-99%]">
+        {/* Layer 1: Back Wave (Tallest, subtle opacity) */}
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="absolute bottom-0 w-full h-[220px] fill-[#020C1B]/10">
+          <path d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,149.3C672,160,768,224,864,250.7C960,277,1056,267,1152,234.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+        {/* Layer 2: Middle Wave (Softer curves, medium opacity) */}
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="absolute bottom-0 w-full h-[180px] fill-[#020C1B]/30">
+          <path d="M0,192L48,176C96,160,192,128,288,149.3C384,171,480,245,576,245.3C672,245,768,171,864,154.7C960,139,1056,181,1152,192C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+        {/* Layer 3: Front Wave (Strongest, 100% opacity) */}
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="absolute bottom-0 w-full h-[140px] fill-[#020C1B]">
+          <path d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,149.3C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
       </div>
 
