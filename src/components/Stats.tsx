@@ -39,12 +39,16 @@ const STATS_DATA = [
 
 const Stats = React.memo(() => {
   return (
-    <section id="stats" className="relative z-20 pt-40 pb-48 px-6 bg-[#020C1B] overflow-hidden">
-      {/* ── Top Transition: Smooth Gradient (Hero to Stats) ── */}
-      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+    <section id="stats" className="relative z-20 pt-64 pb-72 px-6 bg-[#020C1B] overflow-hidden">
+      {/* ── Top Transition: Natural Blue Wave (Overlap into Hero) ── */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-10 pointer-events-none translate-y-[-99%]">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="relative block w-full h-[180px] fill-[#020C1B]">
+          <path d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,143.3C672,139,768,203,864,224C960,245,1056,224,1152,192C1248,160,1344,117,1392,96L1440,75L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
 
       {/* ── Bottom Transition: Smooth Gradient (Stats to SasaDifference) ── */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-56 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
       {/* Subtle Gradient Glows (Enhanced for Hierarchy) */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gold-seal/10 rounded-full blur-[140px] -translate-y-1/2" />
