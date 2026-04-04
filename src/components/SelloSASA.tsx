@@ -75,7 +75,7 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
                 <span className="text-gold-seal italic font-light uppercase tracking-wide">LA EXCELENCIA</span>
               </h2>
               <p className="text-white/60 text-xl leading-relaxed italic border-l-2 border-gold-seal/30 pl-8">
-                El sello S.A.S.A. no es solo una marca, es la representación visual de que su propiedad ha superado la auditoría más exigente del mercado.
+                El sello S.A.S.A. no es solo una marca, es la representación visual de que su propiedad ha superado la auditoría más distinguida del mercado.
               </p>
             </div>
 
@@ -85,7 +85,7 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
                 "Apta para comercialización segura, saludable e inclusiva",
                 "Cumple con estándares profesionales de calidad habitacional",
                 "Aporta valor agregado verificable y auditable",
-                "Reduce riesgos legales y comerciales para la inmobiliaria"
+                "Minimiza la recurrencia de consultas técnicas"
               ].map((text, i) => (
                 <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-gold-seal/20 transition-all">
                    <div className="w-8 h-8 rounded-full bg-gold-seal/10 flex items-center justify-center text-gold-seal">

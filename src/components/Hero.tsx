@@ -39,37 +39,40 @@ const Hero = () => {
               {/* ── "Tu ventaja comprobada en cada cierre." (Pure Black) ── */}
               <div className="overflow-hidden pb-4">
                 <h1 className="text-[45px] font-bold text-black leading-[1.1] tracking-tighter uppercase">
-                  El sistema que transforma propiedades en productos irresistibles.
+                  El sistema que transforma propiedades en ventas irresistibles.
                 </h1>
               </div>
             </div>
 
-
           </div>
 
           {/* RIGHT: SASA Logo Area */}
-          <div className="hidden lg:flex flex-col justify-center items-center relative h-full mt-4 ml-auto lg:mr-10">
+          <div className="hidden lg:flex flex-col justify-center items-center relative h-full mt-4 ml-auto lg:mr-0 translate-x-4">
+            {/* Logo Group: Centered */}
             <div className="flex items-center justify-center">
-              <div className="w-[55px] flex justify-center mr-2">
-                <span className="text-[160px] font-bold text-black leading-none tracking-tighter">S</span>
-              </div>
-              <div className="relative w-[130px] h-[130px] flex items-center justify-center z-10">
-                <Image
-                  src="/logo-new.png"
-                  alt="S.A.S.A. Logo shield"
-                  fill
-                  className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"
-                  priority
-                />
-              </div>
-              <div className="w-[55px] flex justify-center ml-[-1px]">
-                <span className="text-[160px] font-bold text-black leading-none tracking-tighter">A</span>
+              <div className="flex items-center">
+                <div className="w-[55px] flex justify-center">
+                  <span className="text-[160px] font-bold text-black leading-none tracking-tighter">S</span>
+                </div>
+                <div className="relative w-[130px] h-[130px] flex items-center justify-center z-10 mx-[-5px]">
+                  <Image
+                    src="/logo-new.png"
+                    alt="S.A.S.A. Logo shield"
+                    fill
+                    className="object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.6)] hover:scale-105 transition-transform duration-700"
+                    priority
+                  />
+                </div>
+                <div className="w-[55px] flex justify-center">
+                  <span className="text-[160px] font-bold text-black leading-none tracking-tighter">A</span>
+                </div>
               </div>
             </div>
             
-            <div className="flex items-center gap-3 mt-4 ml-4 whitespace-nowrap">
-              <span className="text-[1.1rem] text-black font-black tracking-widest uppercase opacity-40">Confianza Auditable</span>
-              <span className="px-3 py-1 bg-black text-white font-bold text-[1.1rem] rounded-[2px] shadow-sm uppercase tracking-tighter">Cierres Garantizados</span>
+            {/* Subtitle Group: Centered with Logo above */}
+            <div className="flex items-center gap-3 mt-4 whitespace-nowrap drop-shadow-sm opacity-30">
+              <span className="text-[1.1rem] text-black font-black tracking-widest uppercase">Confianza Auditable</span>
+              <span className="text-[1.1rem] text-black font-black tracking-widest uppercase">Cierres Garantizados</span>
             </div>
           </div>
         </div>

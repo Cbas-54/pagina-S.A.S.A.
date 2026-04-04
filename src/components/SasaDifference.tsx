@@ -15,14 +15,14 @@ const DIFFERENCES_DATA = [
   {
     category: "Módulo de Auditoría",
     title: "Transparencia Técnico-Legal",
-    desc: "Diagnóstico honesto y auditable de instalaciones eléctricas, gas y seguridad activa. El Sello S.A.S.A. permite una negociación basada en realidades físicas verificables, eliminando la incertidumbre técnica que frena las operaciones.",
+    desc: "Diagnóstico honesto, control de documentación de instalación eléctrica, gas y auditoría de seguridad y salud activa. El Sello S.A.S.A. permite una negociación basada en realidades físicas verificables, eliminando la incertidumbre técnica que frena las operaciones.",
     outcome: "Eliminación de la Incertidumbre",
     icon: <Detective size={32} weight="duotone" className="text-green-vibrant" />
   },
   {
     category: "Celeridad de Cierre",
     title: "Acelerador de Ciclo Comercial",
-    desc: "Acortamos drásticamente los plazos de venta al despejar todas las dudas técnicas del comprador potencial desde el primer contacto. Menos objeciones significan mayor velocidad y menor presión sobre el precio final.",
+    desc: "Acortamos considerablemente los plazos de venta al despejar todas las dudas técnicas del comprador potencial desde el primer contacto. Menos objeciones significan mayor velocidad y menor presión sobre el precio final.",
     outcome: "Optimización del Tiempo de Venta",
     icon: <Lightning size={32} weight="duotone" className="text-green-vibrant" />
   },
@@ -35,9 +35,9 @@ const DIFFERENCES_DATA = [
   },
   {
     category: "Protección Técnica",
-    title: "Blindaje de Reputación Multilateral",
-    desc: "Certificación oficial emitida por profesional matriculado y especializado. Blindamos legalmente al vendedor ante futuros reclamos por vicios ocultos y garantizamos su seguridad física y emocional.",
-    outcome: "Seguridad Legal y Física Total",
+    title: "Certificado preventa multilateral",
+    desc: "Brindándole al representante de ventas mayor exclusividad y confiabilidad al momento de cerrar operaciones.",
+    outcome: "POTENCIAL AUMENTO EN LA CARTERA DE CLIENTES",
     icon: <ShieldCheck size={32} weight="duotone" className="text-blue-mid" />
   }
 ];
