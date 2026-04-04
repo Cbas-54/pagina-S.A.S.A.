@@ -36,7 +36,7 @@ const ECOSYSTEM_DATA = [
     id: "03",
     category: "Consultoría Comercial",
     title: "Aceleración Comercial",
-    desc: "Asesoramiento en la presentación comercial del inmueble, con lineamientos para materiales de marketing optimizados para portales y redes sociales.",
+    desc: "Asistencia al sector de diseño y marketing para la realización de brochure comercial.",
     size: "md:col-span-6",
     bg: "bg-white",
     textColor: "text-text-main",
@@ -85,8 +85,7 @@ const ServiceGallery = React.memo(() => {
             viewport={{ once: true }}
             className="text-5xl md:text-7xl font-serif text-text-main font-bold tracking-tight leading-[1.1] mb-8"
           >
-            Servicios Incluidos en <br />
-            <span className="italic font-light text-blue-mid/80">Cada Contrato Oficial</span>
+            Asesoramientos Otorgados.
           </motion.h2>
           
           <motion.p
