@@ -82,9 +82,22 @@ const Stats = React.memo(() => {
         </svg>
       </div>
 
-      {/* Subtle Gradient Glows (Enhanced for Hierarchy) - Expert Relocation to avoid transition artifacts */}
-      <div className="absolute top-48 left-1/4 w-[600px] h-[600px] bg-gold-seal/10 rounded-full blur-[140px] -z-10 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-green-vibrant/5 rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none" />
+      {/* ── Atmosfera de Fondo (Glows) ── */}
+      {/* Usamos gradientes radiales en lugar de filtros de blur para garantizar compatibilidad total y evitar esferas sólidas en navegadores antiguos/Safari */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10" aria-hidden="true">
+        <div 
+          className="absolute top-[-10%] left-[-10%] w-full h-full opacity-[0.08]"
+          style={{
+            background: `radial-gradient(circle at 20% 30%, var(--gold-seal) 0%, transparent 50%)`
+          }}
+        />
+        <div 
+          className="absolute bottom-[-20%] right-[-10%] w-full h-full opacity-[0.05]"
+          style={{
+            background: `radial-gradient(circle at 80% 70%, var(--green-vibrant) 0%, transparent 50%)`
+          }}
+        />
+      </div>
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         {/* Intro Text alineado al documento oficial */}
