@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Quotes } from "@phosphor-icons/react";
 
@@ -46,7 +47,13 @@ const Cierre = React.memo(() => {
           {/* Author */}
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full border border-gold-seal/20 bg-gold-seal/5 flex items-center justify-center overflow-hidden">
-               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Maximiliano" alt="Lic. Maximiliano Ovelar" />
+               <Image 
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Maximiliano" 
+                  alt="Lic. Maximiliano Ovelar" 
+                  width={48} 
+                  height={48} 
+                  unoptimized // Necesario porque Dicebear devuelve SVG
+               />
             </div>
             <div className="text-left">
               <p className="text-text-main text-base font-bold">

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Navbar as AcerNavbar,
   NavBody,
@@ -48,14 +49,14 @@ export default function Navbar() {
             className="mt-4"
           >
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-lg font-medium py-2 border-b border-gray-100 last:border-0 hover:text-green-vibrant transition-colors"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </MobileNavMenu>
         </MobileNav>
@@ -66,7 +67,7 @@ export default function Navbar() {
 
 const SasaLogo = ({ small = false }: { small?: boolean }) => {
   return (
-    <a href="#inicio" className="flex items-center gap-3 group z-50">
+    <Link href="#inicio" className="flex items-center gap-3 group z-50">
       <div className="relative transition-transform duration-300 group-hover:scale-110">
         <Image
           src="/logo-new.png"
@@ -77,6 +78,6 @@ const SasaLogo = ({ small = false }: { small?: boolean }) => {
           priority
         />
       </div>
-    </a>
+    </Link>
   );
 };
