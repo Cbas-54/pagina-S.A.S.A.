@@ -13,12 +13,12 @@ const Hero = () => {
         {/* ── Background: Architectural Facade ── */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
           {/* Escudo de Legibilidad: Gradiente horizontal mejorado */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-white/10 z-10" />
           <Image
-            src="/hero-opt-3.png"
+            src="/hero-buildings.jpg"
             alt="SASA Clean Architectural Perspective"
             fill
-            className="object-cover object-center"
+            className="object-cover object-right-bottom"
             priority
             sizes="100vw"
           />
