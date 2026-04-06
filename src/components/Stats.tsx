@@ -83,8 +83,8 @@ const Stats = React.memo(() => {
       </div>
 
       {/* Subtle Gradient Glows (Enhanced for Hierarchy) - Expert Relocation to avoid transition artifacts */}
-      <div className="absolute top-48 left-1/4 w-[600px] h-[600px] bg-gold-seal/10 rounded-full blur-[140px]" />
-      <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-green-vibrant/5 rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-48 left-1/4 w-[600px] h-[600px] bg-gold-seal/10 rounded-full blur-[140px] -z-10 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-green-vibrant/5 rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         {/* Intro Text alineado al documento oficial */}
