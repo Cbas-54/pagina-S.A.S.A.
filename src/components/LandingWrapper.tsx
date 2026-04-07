@@ -28,17 +28,19 @@ export default function LandingWrapper() {
     <>
       <Navbar />
 
-      {/* ── SECTION 1: Hero ── */}
-      <section id="inicio">
-        <Hero />
-      </section>
+      {/* ── UNIFIED HERO & STATS SECTION (White to #222222) ── */}
+      <div className="relative bg-gradient-to-b from-white to-[#222222] overflow-hidden">
+        <section id="inicio">
+          <Hero />
+        </section>
 
-      {/* ── SECTION 2-7: Contenido Dinámico con Streaming ── */}
-      <Suspense fallback={null}>
-        {/* 1. Resultados y Objetivos Estratégicos */}
+        {/* Resultados y Objetivos Estratégicos */}
         <Stats />
+      </div>
 
-        {/* 2. Introducción Visual */}
+      {/* ── SECTION 3-7: Contenido Dinámico Restante ── */}
+      <Suspense fallback={null}>
+        {/* Introducción Visual */}
         <VideoDemo />
 
         {/* 3. El Concepto / La Diferencia */}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASA | Transición Arquitectónica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@300;400&display=swap');
+        
+        :root {
+            --sasa-blue: #020C1B;
+            --sasa-gold: #C9A96E;
+            --sasa-white: #F4F4F5;
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: white; margin: 0; overflow-x: hidden; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+
+        .section-preview { height: 100vh; position: relative; border: 2px solid rgba(255,255,255,0.1); overflow: hidden; margin-bottom: 2rem; border-radius: 1rem; }
+        .label { position: absolute; top: 1rem; left: 1rem; background: var(--sasa-gold); color: black; padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.75rem; font-weight: bold; z-index: 50; }
+
+        /* Option 1: THE GRID */
+        .grid-line { position: absolute; background: rgba(201,169,110, 0.1); z-index: 10; }
+        .grid-line-v { width: 1px; height: 100%; top: 0; }
+        .grid-line-h { height: 1px; width: 100%; left: 0; transition: all 1s ease; }
+        .grid-node { position: absolute; width: 4px; height: 4px; background: var(--sasa-gold); border-radius: 50%; z-index: 15; opacity: 0; transform: scale(0); }
+
+        .grid-active .grid-line-h { background: var(--sasa-gold); opacity: 0.4; }
+        .grid-active .grid-node { opacity: 0.8; transform: scale(1); transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+        /* Option 2: THE SCANLINE */
+        .scanline { position: absolute; height: 1px; width: 100%; background: var(--sasa-gold); box-shadow: 0 0 15px var(--sasa-gold); z-index: 40; transition: top 3s ease-in-out; }
+        .digital-noise { position: absolute; color: var(--sasa-gold); font-size: 8px; opacity: 0.4; pointer-events: none; z-index: 35; }
+
+        /* Option 3: SLICES */
+        .slice { position: absolute; height: 100%; background-size: cover; background-position: center; transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); overflow: hidden; }
+        .slice-content { position: absolute; width: 100vw; height: 100%; }
+
+        .mock-services { background: var(--sasa-white); color: #000; }
+        .mock-pilares { background: var(--sasa-blue); color: #fff; }
+
+        .btn-play { background: var(--sasa-gold); color: #000; padding: 0.5rem 1.5rem; border-radius: 99px; font-weight: bold; margin-top: 1rem; cursor: pointer; transition: transform 0.2s; }
+        .btn-play:hover { transform: scale(1.05); }
+
+        .blueprint-bg { position: absolute; inset: 0; background-image: radial-gradient(rgba(201,169,110,0.1) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.5; z-index: 0; }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-12 border-b border-white/10 pb-8">
+            <h1 class="text-4xl font-serif font-bold text-gold-seal">Brainstorming: Transición Arquitectónica</h1>
+            <p class="text-white/50 mt-2 font-light">Explorando 3 direcciones artísticas para conectar Servicios -> Pilares.</p>
+        </header>
+
+        <!-- OPTION 1: THE ARCHITECTURAL GRID -->
+        <div class="mb-20">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm">1</span>
+                The Structural Grid
+            </h2>
+            <p class="text-white/50 mb-6 max-w-2xl">La pantalla se fragmenta en una rejilla técnica. Las líneas de construcción (doradas) "mapean" el espacio antes de que el bloque azul de pilares se materialice.</p>
+            
+            <div id="grid-preview" class="section-preview mock-services group">
+                <div class="label">SASA Transition 01</div>
+                <div class="blueprint-bg"></div>
+                
+                <!-- Vertical Lines -->
+                <div class="grid-line grid-line-v" style="left: 20%"></div>
+                <div class="grid-line grid-line-v" style="left: 40%"></div>
+                <div class="grid-line grid-line-v" style="left: 60%"></div>
+                <div class="grid-line grid-line-v" style="left: 80%"></div>
+
+                <!-- Horizontal Lines -->
+                <div id="h-line-1" class="grid-line grid-line-h" style="top: 25%"></div>
+                <div id="h-line-2" class="grid-line grid-line-h" style="top: 50%"></div>
+                <div id="h-line-3" class="grid-line grid-line-h" style="top: 75%"></div>
+
+                <!-- Nodes -->
+                <div class="grid-node" style="top: 25%; left: 20%"></div>
+                <div class="grid-node" style="top: 50%; left: 40%"></div>
+                <div class="grid-node" style="top: 75%; left: 60%"></div>
+                <div class="grid-node" style="top: 25%; left: 80%"></div>
+
+                <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none transition-all duration-1000 group-[.grid-active]:opacity-0">
+                    <span class="text-[10px] font-mono uppercase tracking-[0.4em] mb-4 text-blue-mid/40">Technical Surface</span>
+                    <h3 class="text-5xl font-serif font-bold text-text-main">Servicios Actuales</h3>
+                </div>
+
+                <div class="absolute inset-0 bg-sasa-blue opacity-0 translate-y-full transition-all duration-1000 group-[.grid-active]:translate-y-0 group-[.grid-active]:opacity-100 flex items-center justify-center z-20">
+                    <h3 class="text-5xl font-serif font-bold text-gold-seal">Nuevos Pilares</h3>
+                </div>
+
+                <div class="absolute bottom-4 right-4 z-50">
+                    <button class="btn-play" onclick="document.getElementById('grid-preview').classList.toggle('grid-active')">Ejecutar Transición</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 2: THE TECHNICAL SCANLINE -->
+        <div class="mb-20">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm">2</span>
+                The Precision Scan
+            </h2>
+            <p class="text-white/50 mb-6 max-w-2xl">Un "láser" dorado recorre la pantalla de arriba a abajo. A medida que pasa, "digitaliza" la sección de servicios y revela la base técnica de los pilares tras de sí.</p>
+            
+            <div id="scan-preview" class="section-preview mock-services overflow-hidden">
+                <div class="label">SASA Transition 02</div>
+                <div id="scan-bar" class="scanline" style="top: -10px;"></div>
+                
+                <div class="digital-noise" style="top: 10%; left: 5%;">X: 12.342 | Y: 98.221</div>
+                <div class="digital-noise" style="top: 50%; right: 10%;">STATUS: SCANNING...</div>
+                <div class="digital-noise" style="bottom: 10%; left: 40%;">STRUCTURAL INTEGRITY: 99.8%</div>
+
+                <div class="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700" id="scan-content-white">
+                    <h3 class="text-5xl font-serif font-bold text-text-main">Visualización Exterior</h3>
+                </div>
+
+                <div class="absolute inset-0 bg-sasa-blue flex items-center justify-center transition-all duration-700" id="scan-content-blue" style="clip-path: inset(0 0 100% 0);">
+                    <h3 class="text-5xl font-serif font-bold text-gold-seal italic">Estructura Interna</h3>
+                </div>
+
+                <div class="absolute bottom-4 right-4 z-50">
+                    <button class="btn-play" onclick="startScan()">Activar Escáner</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 3: THE BLUEPRINT SLICES -->
+        <div class="mb-20">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm">3</span>
+                Architectural Slices
+            </h2>
+            <p class="text-white/50 mb-6 max-w-2xl">La pantalla se divide en paneles verticales que rotan o se deslizan a diferentes velocidades, mostrando planos técnicos en sus "costados" durante el giro.</p>
+            
+            <div id="slice-preview" class="section-preview bg-white">
+                <div class="label">SASA Transition 03</div>
+                
+                <div class="slice" style="width: 20%; left: 0; background: #eee; z-index: 5;">
+                    <div class="slice-content flex items-center justify-center"><h4 class="text-2xl font-bold opacity-10">P-01</h4></div>
+                </div>
+                <div class="slice" style="width: 20%; left: 20%; background: #ddd; z-index: 4;">
+                    <div class="slice-content flex items-center justify-center"><h4 class="text-2xl font-bold opacity-10">P-02</h4></div>
+                </div>
+                <div class="slice" style="width: 20%; left: 40%; background: #ccc; z-index: 3;">
+                    <div class="slice-content flex items-center justify-center"><h4 class="text-2xl font-bold opacity-10">P-03</h4></div>
+                </div>
+                <div class="slice" style="width: 20%; left: 60%; background: #bbb; z-index: 2;">
+                    <div class="slice-content flex items-center justify-center"><h4 class="text-2xl font-bold opacity-10">P-04</h4></div>
+                </div>
+                <div class="slice" style="width: 20%; left: 80%; background: #aaa; z-index: 1;">
+                    <div class="slice-content flex items-center justify-center"><h4 class="text-2xl font-bold opacity-10">P-05</h4></div>
+                </div>
+
+                <div class="absolute bottom-4 right-4 z-50">
+                    <button class="btn-play" onclick="triggerSlices()">Alternar Paneles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function startScan() {
+            const bar = document.getElementById('scan-bar');
+            const blue = document.getElementById('scan-content-blue');
+            const white = document.getElementById('scan-content-white');
+            
+            bar.style.top = '100%';
+            blue.style.clipPath = 'inset(0 0 0 0)';
+            white.style.opacity = '0';
+            
+            setTimeout(() => {
+                bar.style.top = '-10px';
+                blue.style.clipPath = 'inset(0 0 100% 0)';
+                white.style.opacity = '1';
+                bar.style.transition = 'none';
+                setTimeout(() => bar.style.transition = 'top 3s ease-in-out', 50);
+            }, 3500);
+        }
+
+        let sliceState = false;
+        function triggerSlices() {
+            const slices = document.querySelectorAll('.slice');
+            sliceState = !sliceState;
+            
+            slices.forEach((s, i) => {
+                setTimeout(() => {
+                    s.style.transform = sliceState ? 'translateY(100%)' : 'translateY(0)';
+                    s.style.backgroundColor = sliceState ? '#020C1B' : (i % 2 === 0 ? '#eee' : '#ddd');
+                }, i * 100);
+            });
+        }
+    </script>
+</body>
+</html>
