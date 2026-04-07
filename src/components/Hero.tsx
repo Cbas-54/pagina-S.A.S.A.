@@ -7,18 +7,22 @@ const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div id="inicio" ref={containerRef} className="relative h-screen bg-transparent overflow-hidden">
-      <section className="h-full w-full pt-20 overflow-hidden flex items-center">
+    <div id="inicio" ref={containerRef} className="relative min-h-[90vh] bg-transparent overflow-hidden">
+      <section className="h-full w-full pt-32 pb-20 overflow-hidden flex items-center">
         
         {/* ── Background: Architectural Facade ── */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
-          {/* Escudo de Legibilidad: Gradiente horizontal suavizado para el flujo vertical */}
+          {/* Escudo de Legibilidad: Gradiente horizontal */}
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+          
+          {/* Máscara de Fusión Vertical: Para unir con la sección Stats */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white z-10" />
+
           <Image
             src="/hero-building.png"
             alt="SASA Architectural Perspective"
             fill
-            className="object-cover object-right-bottom"
+            className="object-cover object-right-bottom opacity-90"
             priority
             sizes="100vw"
           />

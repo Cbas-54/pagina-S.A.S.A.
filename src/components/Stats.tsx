@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TrendUp, Timer, CurrencyDollar, CheckCircle, ShieldWarning } from "@phosphor-icons/react";
 
-// --- HOISTING estático de datos ---
+// --- Datos de Objetivos (Siguen iguales) ---
 const STATS_DATA = [
   {
     label: "Confianza",
@@ -48,40 +48,19 @@ const STATS_DATA = [
   },
 ];
 
-// --- HOISTING de JSX Estático Decorativo (Background Waves & Glows) ---
-
-const BottomWaves = () => (
-  <div className="absolute bottom-0 left-0 w-full z-[100] pointer-events-none translate-y-[98%] overflow-visible rotate-180">
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="absolute bottom-0 w-full h-[100px] fill-[#171717]/10">
-      <path d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,149.3C672,160,768,224,864,250.7C960,277,1056,267,1152,234.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    </svg>
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="absolute bottom-0 w-full h-[70px] fill-[#171717]/30">
-      <path d="M0,192L48,176C96,160,192,128,288,149.3C384,171,480,245,576,245.3C672,245,768,171,864,154.7C960,139,1056,181,1152,192C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    </svg>
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="absolute bottom-0 w-full h-[40px] fill-[#171717]">
-      <path d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,149.3C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    </svg>
-  </div>
-);
-
+// --- Fondo: Brillos sutiles para el modo claro ---
 const BackgroundGlows = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10" aria-hidden="true">
     <div 
-      className="absolute top-[-10%] left-[-10%] w-full h-full opacity-[0.08]"
+      className="absolute top-0 right-0 w-[600px] h-[600px] opacity-[0.05]"
       style={{
-        background: `radial-gradient(circle at 20% 30%, var(--gold-seal) 0%, transparent 50%)`
-      }}
-    />
-    <div 
-      className="absolute bottom-[-20%] right-[-10%] w-full h-full opacity-[0.05]"
-      style={{
-        background: `radial-gradient(circle at 80% 70%, var(--green-vibrant) 0%, transparent 50%)`
+        background: `radial-gradient(circle at center, var(--gold-seal) 0%, transparent 70%)`
       }}
     />
   </div>
 );
 
-// --- MEMOIZATION de los items ---
+// --- StatCard: Rediseño Light Glass ---
 interface StatCardProps {
   stat: typeof STATS_DATA[0];
   index: number;
@@ -93,33 +72,37 @@ const StatCard = React.memo(({ stat, index }: StatCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-col items-start text-left p-8 rounded-[2rem] bg-white/[0.02] border border-white/5 hover:border-gold-seal/30 transition-all duration-700 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.4)] cursor-default overflow-hidden"
+      className="group relative flex flex-col items-start text-left p-8 rounded-[2rem] 
+                 bg-white/40 backdrop-blur-md border border-white 
+                 hover:border-gold-seal/30 transition-all duration-700 
+                 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.1)] cursor-default overflow-hidden"
     >
-      <div className={`${stat.color} mb-6 p-4 rounded-2xl bg-white/[0.04] border border-white/5 group-hover:scale-110 group-hover:bg-gold-seal/10 transition-all duration-700 relative`}>
-        <div className="absolute inset-0 bg-gold-seal/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full" />
+      {/* Icon Icon Container */}
+      <div className={`${stat.color} mb-6 p-4 rounded-2xl bg-slate-100/50 border border-slate-200/50 
+                      group-hover:scale-110 group-hover:bg-gold-seal/10 transition-all duration-700 relative`}>
         <div className="relative z-10">{stat.icon}</div>
       </div>
       
-      <h4 className="text-gold-seal font-bold text-[10px] uppercase tracking-widest mb-2 opacity-60">
+      <h4 className="text-gold-seal font-bold text-[10px] uppercase tracking-widest mb-2 opacity-80">
         {stat.label}
       </h4>
       
-      <h3 className="text-xl md:text-2xl font-bold font-serif text-white leading-tight mb-4 tracking-tight group-hover:text-gold-seal transition-colors duration-500 min-h-[3rem]">
+      <h3 className="text-xl md:text-2xl font-bold font-serif text-slate-900 leading-tight mb-4 tracking-tight group-hover:text-gold-seal transition-colors duration-500 min-h-[3rem]">
         {stat.title}
       </h3>
       
       <div className="space-y-4 w-full">
-        <p className="text-white/50 text-[13px] leading-relaxed font-light italic group-hover:text-white/80 transition-colors duration-500">
+        <p className="text-slate-600/80 text-[13px] leading-relaxed font-light italic group-hover:text-slate-900 transition-colors duration-500">
           {stat.sublabel}
         </p>
-        <div className="pt-4 border-t border-white/5">
-          <span className="text-[11px] font-bold text-white/30 uppercase tracking-tighter group-hover:text-gold-seal/60 transition-colors duration-500">
+        <div className="pt-4 border-t border-slate-200/50">
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-tighter group-hover:text-gold-seal/60 transition-colors duration-500">
             {stat.outcome}
           </span>
         </div>
       </div>
 
-      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-gold-seal/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-gold-seal/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
     </motion.div>
   );
 });
@@ -127,13 +110,10 @@ StatCard.displayName = "StatCard";
 
 const Stats = React.memo(() => {
   return (
-    // Aplicamos content-visibility: auto para mejorar el rendimiento de inicialización
     <section 
       id="stats" 
-      className="relative z-20 pt-12 pb-8 px-6 bg-transparent"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 800px' }}
+      className="relative z-20 pt-16 pb-24 px-6 bg-transparent"
     >
-      <BottomWaves />
       <BackgroundGlows />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
@@ -144,17 +124,25 @@ const Stats = React.memo(() => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mb-16 cursor-default"
         >
-          <h2 className="text-gold-seal font-bold text-xs uppercase tracking-[0.3em] mb-4">
-            Objetivos Estratégicos
-          </h2>
-          <p className="text-2xl md:text-3xl lg:text-4xl text-white font-serif font-light leading-[1.3] opacity-95">
-            S.A.S.A. es un sistema profesional de certificación <span className="text-gold-seal italic underline decoration-gold-seal/30 underline-offset-8">PRE VENTA</span> para viviendas multifamiliares, complejos de viviendas, complejos comerciales o de oficinas.
+          <div className="flex items-center gap-4 mb-6">
+            <h2 className="text-gold-seal font-bold text-xs uppercase tracking-[0.4em]">
+              Objetivos Estratégicos
+            </h2>
+            <div className="h-[1px] flex-grow bg-gold-seal/20" />
+          </div>
+
+          <p className="text-3xl md:text-4xl lg:text-5xl text-slate-900 font-serif font-light leading-[1.2] tracking-tight">
+            S.A.S.A. es un sistema profesional de certificación <span className="text-gold-seal italic font-medium underline decoration-gold-seal/30 underline-offset-[12px]">PRE VENTA</span> para activos inmobiliarios de alta gama.
           </p>
-          <p className="text-white/50 text-base md:text-lg mt-8 leading-relaxed max-w-3xl font-medium border-l-2 border-gold-seal/30 pl-8 italic">
-            "Aportamos la transparencia técnica que el mercado inmobiliario exige, transformando la seguridad en un activo comercial."
-          </p>
+          
+          <div className="mt-12 flex flex-col md:flex-row gap-8 items-start md:items-center">
+            <p className="text-slate-500 text-lg leading-relaxed max-w-2xl font-light italic border-l-4 border-gold-seal/40 pl-8">
+              "Aportamos la transparencia técnica que el mercado inmobiliario exige, transformando la seguridad en un activo comercial de alto valor."
+            </p>
+          </div>
         </motion.div>
 
+        {/* Grid de Tarjetas */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 xl:gap-6">
           {STATS_DATA.map((stat, i) => (
             <StatCard key={i} stat={stat} index={i} />

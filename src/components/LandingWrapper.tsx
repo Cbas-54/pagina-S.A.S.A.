@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
+import TechnicalGrid from "@/components/ui/TechnicalGrid";
 
 // Dinámicamente cargados para optimizar el bundle inicial (Code Splitting)
 const VideoDemo = dynamic(() => import("@/components/VideoDemo"));
@@ -28,14 +29,18 @@ export default function LandingWrapper() {
     <>
       <Navbar />
 
-      {/* ── UNIFIED HERO & STATS SECTION (White to #222222) ── */}
-      <div className="relative bg-gradient-to-b from-white to-[#222222] overflow-hidden">
-        <section id="inicio">
+      {/* ── UNIFIED MONOLITHIC CANVAS (Hero & Stats) ── */}
+      <div className="relative bg-white overflow-hidden">
+        <TechnicalGrid />
+        
+        <section id="inicio" className="relative z-10">
           <Hero />
         </section>
 
         {/* Resultados y Objetivos Estratégicos */}
-        <Stats />
+        <section className="relative z-10">
+          <Stats />
+        </section>
       </div>
 
       {/* ── SECTION 3-7: Contenido Dinámico Restante ── */}
