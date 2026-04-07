@@ -8,13 +8,7 @@ const PILARES_DATA = [
   {
     title: "Seguridad",
     subtitle: "Rigor Pericial Certificado",
-    description: "Auditoría de infraestructuras críticas y sistemas de protección activa bajo estándares internacionales de seguridad física.",
-    bullets: [
-      "Sistemas de Detección e Incendio (Normas IRAM)",
-      "Certificación de Redes de Gas y Electricidad",
-      "Validación de Sistemas de Extinción Activos",
-      "Protocolo de Fe Técnica en Estructuras"
-    ],
+    description: "Auditoría de infraestructuras críticas y sistemas de protección activa bajo estándares internacionales de seguridad física e industrial (antisiniestral).",
     icon: <ShieldCheck size={48} weight="duotone" className="text-blue-400" />,
     accent: "border-blue-400/30",
     textColor: "text-blue-400",
@@ -24,12 +18,6 @@ const PILARES_DATA = [
     title: "Salud",
     subtitle: "Ambientes Saludables",
     description: "Garantía de salubridad estructural mediante la detección de patologías biológicas y vicios ocultos de habitabilidad.",
-    bullets: [
-      "Protocolos de Muestreo de Humedad Crítica",
-      "Control Químico de Vicios Ocultos Biológicos",
-      "Auditoría de Calidad de Aire y Ventilación",
-      "Certificación de Materiales No Tóxicos"
-    ],
     icon: <Heart size={48} weight="duotone" className="text-green-vibrant" />,
     accent: "border-green-vibrant/30",
     textColor: "text-green-vibrant",
@@ -38,13 +26,7 @@ const PILARES_DATA = [
   {
     title: "Accesibilidad",
     subtitle: "Inclusión & Movilidad",
-    description: "Análisis técnico de infraestructura inclusiva para asegurar la eliminación de barreras y cumplimiento operativo legal.",
-    bullets: [
-      "Certificación de Circulación Universal",
-      "Protocolo de Adaptación de Ascensores",
-      "Normalización de Rampas y Accesos (ADA)",
-      "Señalización de Seguridad Háptica/Visual"
-    ],
+    description: "Auditoría técnica para el entorno accesible e inclusivo, asegurando la movilidad segura de todas las personas.",
     icon: <Wheelchair size={48} weight="duotone" className="text-white/40" />,
     accent: "border-white/10",
     textColor: "text-white/40",
@@ -84,7 +66,7 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
             Nuestros Tres Pilares
           </motion.h2>
           <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto italic font-light">
-            Garantizamos transparencia pericial, seguridad física y rentabilidad definitiva mediante tres dimensiones de rigor estructural.
+            Garantizamos transparencia profesional, seguridad y rentabilidad mediante tres dimensiones de rigor estructural.
           </p>
         </div>
 
@@ -109,14 +91,11 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
                   {pilar.description}
                 </p>
 
-                <ul className="space-y-4 mt-auto pt-8 border-t border-white/5">
-                  {pilar.bullets.map((b, idx) => (
-                    <li key={idx} className="flex items-start gap-4 text-sm font-bold text-white/40 transition-colors duration-300 group-hover:text-white/70">
-                      <div className={`mt-1.5 w-1.5 h-1.5 rounded-full ${pilar.textColor} opacity-60 flex-shrink-0 group-hover:scale-125 transition-transform`} />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-auto pt-8 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <span className="text-[10px] font-bold text-gold-seal uppercase tracking-[0.2em]">
+                    Auditoría Verificada
+                  </span>
+                </div>
                 
                 {/* Punto de Conexión para AnimatedBeam */}
                 <div ref={refs[i]} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 pointer-events-none" />

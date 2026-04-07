@@ -13,6 +13,7 @@ const ServiceGallery = dynamic(() => import("@/components/ServiceGallery"));
 const Pilares = dynamic(() => import("@/components/Pilares"));
 const SelloSASA = dynamic(() => import("@/components/SelloSASA"));
 const Stats = dynamic(() => import("@/components/Stats")); // Objetivos Estratégicos
+const IdentidadEquipo = dynamic(() => import("@/components/IdentidadEquipo"));
 const Cierre = dynamic(() => import("@/components/Cierre"));
 
 export default function LandingWrapper() {
@@ -105,7 +106,10 @@ export default function LandingWrapper() {
         {/* 5. Resultados y Objetivos Estratégicos */}
         <Stats />
 
-        {/* 6. Cierre Final Maestro */}
+        {/* 6. Identidad de Equipo */}
+        <IdentidadEquipo />
+
+        {/* 7. Cierre Final Maestro */}
         <Cierre />
       </Suspense>
     </>

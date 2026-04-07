@@ -162,7 +162,7 @@ const Stats = React.memo(() => {
             Objetivos Estratégicos
           </h2>
           <p className="text-2xl md:text-3xl lg:text-4xl text-white font-serif font-light leading-[1.3] opacity-95">
-            S.A.S.A. es un sistema profesional de certificación <span className="text-gold-seal italic underline decoration-gold-seal/30 underline-offset-8">pre venta</span> para viviendas multifamiliares, complejos de viviendas, complejos comerciales o de oficinas.
+            S.A.S.A. es un sistema profesional de certificación <span className="text-gold-seal italic underline decoration-gold-seal/30 underline-offset-8">PRE VENTA</span> para viviendas multifamiliares, complejos de viviendas, complejos comerciales o de oficinas.
           </p>
           <p className="text-white/50 text-base md:text-lg mt-8 leading-relaxed max-w-3xl font-medium border-l-2 border-gold-seal/30 pl-8 italic">
             "Aportamos la transparencia técnica que el mercado inmobiliario exige, transformando la seguridad en un activo comercial."

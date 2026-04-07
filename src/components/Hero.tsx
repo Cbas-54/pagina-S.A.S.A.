@@ -25,7 +25,7 @@ const Hero = () => {
         </div>
 
         {/* ── Content grid ── */}
-        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-8 lg:px-16 xl:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full pt-10 lg:pt-0">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-8 lg:px-24 xl:pl-48 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full pt-10 lg:pt-0">
           {/* LEFT: Text */}
           <div className="flex flex-col items-start justify-center pt-20 lg:pt-0">
             <div className="flex flex-col mb-6">
@@ -39,7 +39,7 @@ const Hero = () => {
               {/* ── "Tu ventaja comprobada en cada cierre." (Pure Black) ── */}
               <div className="overflow-hidden pb-4">
                 <h1 className="text-[45px] font-bold text-black leading-[1.1] tracking-tighter uppercase">
-                  El sistema que transforma propiedades en productos irresistibles.
+                  El sistema que transforma propiedades en ventas irresistibles.
                 </h1>
               </div>
             </div>
@@ -48,7 +48,7 @@ const Hero = () => {
           </div>
 
           {/* RIGHT: SASA Logo Area */}
-          <div className="hidden lg:flex flex-col justify-center items-center relative h-full mt-4 ml-auto lg:mr-10">
+          <div className="hidden lg:flex flex-col justify-center items-center relative h-full mt-4 ml-auto lg:mr-20">
             <div className="flex items-center justify-center">
               <div className="w-[55px] flex justify-center mr-2">
                 <span className="text-[160px] font-bold text-black leading-none tracking-tighter">S</span>
@@ -68,8 +68,9 @@ const Hero = () => {
             </div>
             
             <div className="flex items-center gap-3 mt-4 ml-4 whitespace-nowrap">
-              <span className="text-[1.1rem] text-black font-black tracking-widest uppercase opacity-40">Confianza Auditable</span>
-              <span className="px-3 py-1 bg-black text-white font-bold text-[1.1rem] rounded-[2px] shadow-sm uppercase tracking-tighter">Cierres Garantizados</span>
+              <span className="text-[1.1rem] text-neutral-500 font-bold tracking-widest uppercase">Confianza Auditable</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
+              <span className="text-neutral-500 font-bold text-[1.1rem] uppercase tracking-tighter">Cierres Garantizados</span>
             </div>
           </div>
         </div>
