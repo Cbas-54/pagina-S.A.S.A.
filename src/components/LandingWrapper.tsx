@@ -10,7 +10,7 @@ import { AnimatedBeam } from "@/components/ui/animated-beam";
 const VideoDemo = dynamic(() => import("@/components/VideoDemo"));
 const SasaDifference = dynamic(() => import("@/components/SasaDifference"));
 const ServiceGallery = dynamic(() => import("@/components/ServiceGallery"));
-const GradientTransition = dynamic(() => import("@/components/GradientTransition"));
+const StructuralGridTransition = dynamic(() => import("@/components/StructuralGridTransition"));
 const Pilares = dynamic(() => import("@/components/Pilares"));
 const SelloSASA = dynamic(() => import("@/components/SelloSASA"));
 const Stats = dynamic(() => import("@/components/Stats")); // Objetivos Estratégicos
@@ -44,8 +44,8 @@ export default function LandingWrapper() {
         {/* 3. El Detalle del Producto (Ecosistema) - Simplificado */}
         <ServiceGallery />
 
-        {/* Transición de Gradiente Minimalista */}
-        <GradientTransition />
+        {/* Transición de Rejilla Estructural (Opción 1) */}
+        <StructuralGridTransition />
 
         {/* 4. La Filosofía y el Sello (Conexión Visual) */}
         <div ref={containerRef} className="relative z-10 bg-[#020C1B]">

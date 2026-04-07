@@ -13,7 +13,7 @@ const ECOSYSTEM_DATA = [
     title: "Auditoría Técnica Integral",
     desc: "Inspección exhaustiva de puntos críticos. Incluye checklist visual profesional entregable al comprador para eliminar objeciones de inmediato.",
     size: "md:col-span-8",
-    bg: "#020C1B",
+    bg: "bg-[#020C1B]",
     textColor: "text-white",
     icon: <ShieldCheck size={40} weight="duotone" className="text-green-vibrant" />,
     image: "/images/service-obra-nueva.png",
