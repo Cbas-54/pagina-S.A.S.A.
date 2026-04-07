@@ -175,9 +175,6 @@ ServiceCard.displayName = "ServiceCard";
 // --- HOISTING estático de decoraciones ---
 const BackgroundDecorations = React.memo(() => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-    {/* Solo el degrade inferior para dar el efecto de inmersión bajo la siguiente sección */}
-    <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-[#020C1B] to-transparent opacity-30 z-10" />
-    
     <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[1400px] h-[500px] bg-white opacity-80 blur-[130px]" />
     <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-blue-mid/[0.03] rounded-full blur-[150px]" />
   </div>
@@ -188,7 +185,7 @@ const ServiceGallery = React.memo(() => {
   return (
     <section 
       id="servicios" 
-      className="relative pt-12 pb-20 md:pt-20 md:pb-20 px-6 bg-[#F4F4F5] overflow-hidden"
+      className="relative pt-12 pb-12 md:pt-20 md:pb-12 px-6 bg-[#F4F4F5] overflow-hidden"
       style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1200px' }}
     >
       <BackgroundDecorations />

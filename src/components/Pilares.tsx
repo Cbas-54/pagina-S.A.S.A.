@@ -55,11 +55,6 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
 
   return (
     <section id="pilares" className="relative pb-12 md:pb-16 bg-[#020C1B] overflow-hidden">
-      {/* ── MINIMALIST PROFESSIONAL SEAM ── */}
-      <div className="absolute top-0 left-0 w-full z-20">
-        <div className="h-[1px] w-full bg-blue-mid/20" />
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-30 px-6 pt-14">
         <div className="text-center mb-28">
           <motion.h2 className="text-6xl md:text-8xl font-bold font-serif text-gold-seal mb-8 tracking-tight drop-shadow-[0_0_20px_rgba(201,169,110,0.3)]">

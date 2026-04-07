@@ -10,6 +10,7 @@ import { AnimatedBeam } from "@/components/ui/animated-beam";
 const VideoDemo = dynamic(() => import("@/components/VideoDemo"));
 const SasaDifference = dynamic(() => import("@/components/SasaDifference"));
 const ServiceGallery = dynamic(() => import("@/components/ServiceGallery"));
+const AtmosphericTransition = dynamic(() => import("@/components/AtmosphericTransition"));
 const Pilares = dynamic(() => import("@/components/Pilares"));
 const SelloSASA = dynamic(() => import("@/components/SelloSASA"));
 const Stats = dynamic(() => import("@/components/Stats")); // Objetivos Estratégicos
@@ -42,6 +43,9 @@ export default function LandingWrapper() {
 
         {/* 3. El Detalle del Producto (Ecosistema) */}
         <ServiceGallery />
+
+        {/* Transición Atmosférica */}
+        <AtmosphericTransition />
 
         {/* 4. La Filosofía y el Sello (Conexión Visual) */}
         <div ref={containerRef} className="relative transition-all duration-700">
