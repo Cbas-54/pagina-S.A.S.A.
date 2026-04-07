@@ -44,7 +44,12 @@ const DIFFERENCES_DATA = [
 // --- HOISTING estático de decoraciones ---
 const BackgroundDecorations = React.memo(() => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    {/* Degrade Superior (Sombra de entrada) */}
     <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-[#020C1B] to-transparent opacity-30 z-10" />
+    
+    {/* Degrade Inferior Invertido (Efecto de inmersión solicitado) */}
+    <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#020C1B]/10 to-transparent z-10" />
+    
     <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[1400px] h-[500px] bg-white opacity-80 blur-[130px]" />
     <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-blue-mid/[0.03] rounded-full blur-[150px]" />
   </div>
