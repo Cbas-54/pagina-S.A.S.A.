@@ -11,59 +11,93 @@ const AtmosphericTransition = () => {
     offset: ["start end", "end start"],
   });
 
-  // Optimizaciones Ultra-Fluid:
-  // 1. Eliminar filtros 'blur' por completo (sustituidos por gradientes radiales de múltiples pasos)
-  // 2. Reducir altura para minimizar tiempo de renderización activa
-  const scale = useTransform(scrollYProgress, [0, 0.6], [0.95, 1.1]); 
-  const opacity = useTransform(scrollYProgress, [0, 0.4, 0.8], [0, 1, 1]);
+  // Lógica de "Slice" Técnico:
+  // 1. Una línea de corte diagonal (Lead Line)
+  // 2. Un clip-path que revela el color azul profundo
+  const sliceProgress = useTransform(scrollYProgress, [0, 1], [0, 100]);
   
-  // Movimiento ultra-sutil para evitar re-calculos de pintura innecesarios
-  const textX = useTransform(scrollYProgress, [0, 1], [30, -30]); 
+  // Cálculo del polígono de clip-path para un corte diagonal limpio
+  const clipPath = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [
+      "polygon(0 0, 0 0, 0 0, 0 0)", // Oculto al inicio
+      "polygon(0 0, 100% 0, 100% 100%, 0 100%)" // Totalmente revelado al final (con paso intermedio diagonal)
+    ]
+  );
+
+  // Variante: Usamos una máscara que crece de arriba-izquierda a abajo-derecha
+  const maskWidth = useTransform(scrollYProgress, [0, 0.8], ["0%", "200%"]);
+  const lineOpacity = useTransform(scrollYProgress, [0, 0.1, 0.8, 1], [0, 1, 1, 0]);
 
   return (
     <div 
       ref={containerRef} 
-      className="relative h-[30vh] md:h-[35vh] w-full overflow-hidden bg-[#F4F4F5]"
-      style={{ transform: 'translateZ(0)' }} 
+      className="relative h-[30vh] md:h-[40vh] w-full overflow-hidden bg-[#F4F4F5]"
     >
-      {/* Capa de fondo suave (Fusión de color nativa) */}
+      {/* Fondo de Referencia Técnica (Gris claro) */}
+      <div className="absolute inset-0 bg-[#F4F4F5]" />
+
+      {/* Capa de Revelado (Deep Blue) con Corte Diagonal */}
       <motion.div 
-        style={{ opacity, willChange: 'opacity' }}
-        className="absolute inset-0 bg-gradient-to-b from-[#F4F4F5] via-[#020C1B] to-[#020C1B]"
+        style={{ 
+          clipPath: useTransform(
+            scrollYProgress,
+            [0, 1],
+            [
+              "polygon(0 0, 0 0, 0 100%, 0 100%)",
+              "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+            ]
+          ),
+          width: "100%",
+          height: "100%",
+          willChange: "clip-path"
+        }}
+        className="absolute inset-0 bg-[#020C1B] z-10"
       />
 
-      {/* Luz Radial Multi-pasos (Sustituye al blur) */}
+      {/* Línea Guía de Precisión (Blueprint Lead) */}
       <motion.div
         style={{ 
-          scale, 
-          opacity, 
-          willChange: 'transform, opacity',
-          background: 'radial-gradient(circle, rgba(59,130,246,0.1) 0%, rgba(2,12,27,0.4) 40%, rgba(2,12,27,0.8) 70%, rgba(2,12,27,1) 100%)'
+          left: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+          opacity: lineOpacity,
+          willChange: "left, opacity"
         }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] aspect-square rounded-full z-10"
+        className="absolute top-0 bottom-0 w-[1px] bg-gold-seal z-20 shadow-[0_0_15px_rgba(201,169,110,0.5)]"
       />
 
-      {/* Texto Fantasma Atmosférico (Optimizado) */}
+      {/* Etiquetas de Auditoría (Technical Tags) */}
       <motion.div
-        style={{ x: textX, opacity: useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0, 0.08, 0]), willChange: 'transform, opacity' }}
-        className="absolute top-1/2 left-0 w-full text-center pointer-events-none z-20"
+        style={{ 
+          opacity: useTransform(scrollYProgress, [0.3, 0.6], [0, 0.4]),
+          y: useTransform(scrollYProgress, [0, 1], [20, -20])
+        }}
+        className="absolute top-1/2 left-12 -translate-y-1/2 z-30 pointer-events-none hidden md:block"
       >
-        <span className="text-[10vw] font-serif font-black text-white uppercase tracking-[0.25em] whitespace-nowrap">
-          RIGOR TÉCNICO
-        </span>
+        <div className="flex flex-col gap-2 font-mono text-[10px] text-white/40 uppercase tracking-widest">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-[1px] bg-gold-seal/40" />
+            <span>SEC_AUDIT_START_01</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-[1px] bg-gold-seal/40" />
+            <span>TRANSITION_ACTIVE_45DEG</span>
+          </div>
+        </div>
       </motion.div>
 
-      {/* Partículas de Luz Estáticas (Sin animación, costo cero) */}
-      <div className="absolute inset-0 z-40 pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/5 opacity-20" />
-        <div className="absolute bottom-0 left-1/3 w-[1px] h-full bg-white/5 opacity-10" />
-      </div>
-      
-      {/* Línea de Cota Técnica (Costo mínimo de renderizado) */}
-      <motion.div 
-        style={{ scaleY: scrollYProgress, originY: 0, willChange: 'transform' }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gold-seal/15 z-50"
-      />
+      <motion.div
+        style={{ 
+          opacity: useTransform(scrollYProgress, [0.4, 0.7], [0, 0.4]),
+          y: useTransform(scrollYProgress, [0, 1], [-20, 20])
+        }}
+        className="absolute top-1/4 right-12 z-30 pointer-events-none hidden md:block"
+      >
+        <div className="flex flex-col gap-1 font-mono text-[9px] text-gold-seal/30 uppercase text-right">
+          <span>COORDS: 42.11 / -58.22</span>
+          <span>VAL_PRX: 0.992</span>
+        </div>
+      </motion.div>
     </div>
   );
 };
