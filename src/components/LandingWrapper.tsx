@@ -35,19 +35,22 @@ export default function LandingWrapper() {
 
       {/* ── SECTION 2-7: Contenido Dinámico con Streaming ── */}
       <Suspense fallback={null}>
-        {/* 1. Introducción Visual */}
+        {/* 1. Resultados y Objetivos Estratégicos */}
+        <Stats />
+
+        {/* 2. Introducción Visual */}
         <VideoDemo />
 
-        {/* 2. El Concepto / La Diferencia */}
+        {/* 3. El Concepto / La Diferencia */}
         <SasaDifference />
 
-        {/* 3. El Detalle del Producto (Ecosistema) - Simplificado */}
+        {/* 4. El Detalle del Producto (Ecosistema) - Simplificado */}
         <ServiceGallery />
 
         {/* Transición de Gradiente Minimalista */}
         <GradientTransition />
 
-        {/* 4. La Filosofía y el Sello (Conexión Visual) */}
+        {/* 5. La Filosofía y el Sello (Conexión Visual) */}
         <div ref={containerRef} className="relative z-10 bg-[#020C1B]">
           
           {/* Animated Beams */}
@@ -106,9 +109,6 @@ export default function LandingWrapper() {
             />
           </section>
         </div>
-
-        {/* 5. Resultados y Objetivos Estratégicos */}
-        <Stats />
 
         {/* 6. Identidad de Equipo */}
         <IdentidadEquipo />
