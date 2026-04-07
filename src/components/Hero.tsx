@@ -15,14 +15,14 @@ const Hero = () => {
           {/* Escudo de Legibilidad: Gradiente horizontal */}
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
           
-          {/* Máscara de Fusión Vertical: Para unir con la sección Stats */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white z-10" />
+          {/* Máscara de Fusión Vertical: Suavizada para ver más el edificio */}
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent z-10" />
 
           <Image
             src="/hero-building.png"
             alt="SASA Architectural Perspective"
             fill
-            className="object-cover object-right-bottom opacity-90"
+            className="object-cover object-right-bottom opacity-95"
             priority
             sizes="100vw"
           />

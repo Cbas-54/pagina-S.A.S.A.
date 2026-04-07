@@ -72,37 +72,38 @@ const StatCard = React.memo(({ stat, index }: StatCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-col items-start text-left p-8 rounded-[2rem] 
-                 bg-white/40 backdrop-blur-md border border-white 
-                 hover:border-gold-seal/30 transition-all duration-700 
-                 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.1)] cursor-default overflow-hidden"
+      className="group relative p-[1px] rounded-[2rem] bg-gradient-to-b from-green-500 to-blue-500 overflow-hidden"
     >
-      {/* Icon Icon Container */}
-      <div className={`${stat.color} mb-6 p-4 rounded-2xl bg-slate-100/50 border border-slate-200/50 
-                      group-hover:scale-110 group-hover:bg-gold-seal/10 transition-all duration-700 relative`}>
-        <div className="relative z-10">{stat.icon}</div>
-      </div>
-      
-      <h4 className="text-gold-seal font-bold text-[10px] uppercase tracking-widest mb-2 opacity-80">
-        {stat.label}
-      </h4>
-      
-      <h3 className="text-xl md:text-2xl font-bold font-serif text-slate-900 leading-tight mb-4 tracking-tight group-hover:text-gold-seal transition-colors duration-500 min-h-[3rem]">
-        {stat.title}
-      </h3>
-      
-      <div className="space-y-4 w-full">
-        <p className="text-slate-600/80 text-[13px] leading-relaxed font-light italic group-hover:text-slate-900 transition-colors duration-500">
-          {stat.sublabel}
-        </p>
-        <div className="pt-4 border-t border-slate-200/50">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-tighter group-hover:text-gold-seal/60 transition-colors duration-500">
-            {stat.outcome}
-          </span>
+      <div className="relative flex flex-col items-start text-left p-8 rounded-[1.95rem] 
+                     bg-white/90 backdrop-blur-xl transition-all duration-700 
+                     hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.1)] cursor-default h-full">
+        {/* Icon Icon Container */}
+        <div className={`${stat.color} mb-6 p-4 rounded-2xl bg-slate-100/50 border border-slate-200/50 
+                        group-hover:scale-110 group-hover:bg-gold-seal/10 transition-all duration-700 relative`}>
+          <div className="relative z-10">{stat.icon}</div>
         </div>
-      </div>
+        
+        <h4 className="text-gold-seal font-bold text-[10px] uppercase tracking-widest mb-2 opacity-80">
+          {stat.label}
+        </h4>
+        
+        <h3 className="text-xl md:text-2xl font-bold font-serif text-slate-900 leading-tight mb-4 tracking-tight group-hover:text-gold-seal transition-colors duration-500 min-h-[3rem]">
+          {stat.title}
+        </h3>
+        
+        <div className="space-y-4 w-full">
+          <p className="text-slate-600/80 text-[13px] leading-relaxed font-light italic group-hover:text-slate-900 transition-colors duration-500">
+            {stat.sublabel}
+          </p>
+          <div className="pt-4 border-t border-slate-200/50">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-tighter group-hover:text-gold-seal/60 transition-colors duration-500">
+              {stat.outcome}
+            </span>
+          </div>
+        </div>
 
-      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-gold-seal/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+        <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-gold-seal/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+      </div>
     </motion.div>
   );
 });
@@ -122,21 +123,22 @@ const Stats = React.memo(() => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mb-16 cursor-default"
+          className="max-w-4xl mx-auto mb-16 text-center cursor-default"
         >
-          <div className="flex items-center gap-4 mb-6">
-            <h2 className="text-gold-seal font-bold text-xs uppercase tracking-[0.4em]">
+          <div className="flex items-center justify-center gap-6 mb-6">
+            <div className="h-[1px] w-12 bg-gold-seal/20" />
+            <h2 className="text-gold-seal font-black text-xs uppercase tracking-[0.4em]">
               Objetivos Estratégicos
             </h2>
-            <div className="h-[1px] flex-grow bg-gold-seal/20" />
+            <div className="h-[1px] w-12 bg-gold-seal/20" />
           </div>
 
-          <p className="text-3xl md:text-4xl lg:text-5xl text-slate-900 font-serif font-light leading-[1.2] tracking-tight">
-            S.A.S.A. es un sistema profesional de certificación <span className="text-gold-seal italic font-medium underline decoration-gold-seal/30 underline-offset-[12px]">PRE VENTA</span> para activos inmobiliarios de alta gama.
+          <p className="text-3xl md:text-4xl lg:text-5xl text-slate-900 font-serif font-bold leading-[1.2] tracking-tight">
+            S.A.S.A. es un sistema profesional de certificación <span className="text-gold-seal italic underline decoration-gold-seal/30 underline-offset-[12px]">PRE VENTA</span> para activos inmobiliarios de alta gama.
           </p>
           
-          <div className="mt-12 flex flex-col md:flex-row gap-8 items-start md:items-center">
-            <p className="text-slate-500 text-lg leading-relaxed max-w-2xl font-light italic border-l-4 border-gold-seal/40 pl-8">
+          <div className="mt-12 flex justify-center">
+            <p className="text-slate-500 text-lg leading-relaxed max-w-2xl font-bold italic border-x-2 border-gold-seal/40 px-8">
               "Aportamos la transparencia técnica que el mercado inmobiliario exige, transformando la seguridad en un activo comercial de alto valor."
             </p>
           </div>
