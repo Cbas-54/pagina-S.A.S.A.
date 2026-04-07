@@ -9,7 +9,7 @@ const Cierre = React.memo(() => {
   return (
     <section className="relative py-32 md:py-40 px-6 overflow-hidden noise-overlay">
       {/* Dramatic gradients */}
-      <div className="absolute inset-0 -z-10 bg-black" />
+      <div className="absolute inset-0 -z-10 bg-[#050505]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(0,51,102,0.4)_0%,transparent_70%)]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_40%_40%_at_50%_50%,rgba(34,197,94,0.1)_0%,transparent_70%)]" />
 
