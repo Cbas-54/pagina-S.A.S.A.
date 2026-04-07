@@ -7,13 +7,12 @@ import Hero from "@/components/Hero";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 
 // Dinámicamente cargados para optimizar el bundle inicial (Code Splitting)
-const Stats = dynamic(() => import("@/components/Stats"));
+const VideoDemo = dynamic(() => import("@/components/VideoDemo"));
 const SasaDifference = dynamic(() => import("@/components/SasaDifference"));
 const ServiceGallery = dynamic(() => import("@/components/ServiceGallery"));
-
 const Pilares = dynamic(() => import("@/components/Pilares"));
 const SelloSASA = dynamic(() => import("@/components/SelloSASA"));
-const Estrategia = dynamic(() => import("@/components/Estrategia"));
+const Stats = dynamic(() => import("@/components/Stats")); // Objetivos Estratégicos
 const Cierre = dynamic(() => import("@/components/Cierre"));
 
 export default function LandingWrapper() {
@@ -34,14 +33,19 @@ export default function LandingWrapper() {
 
       {/* ── SECTION 2-7: Contenido Dinámico con Streaming ── */}
       <Suspense fallback={null}>
-        <Stats />
+        {/* 1. Introducción Visual */}
+        <VideoDemo />
+
+        {/* 2. El Concepto / La Diferencia */}
         <SasaDifference />
+
+        {/* 3. El Detalle del Producto (Ecosistema) */}
         <ServiceGallery />
 
-        {/* Contenedor Compartido para Animated Beams entre secciones */}
-        <div ref={containerRef} className="relative">
+        {/* 4. La Filosofía y el Sello (Conexión Visual) */}
+        <div ref={containerRef} className="relative transition-all duration-700">
           
-          {/* Animated Beams (Movidos al padre para alineación perfecta) */}
+          {/* Animated Beams */}
           <div className="hidden lg:block absolute inset-0 z-20 pointer-events-none">
             <AnimatedBeam
               containerRef={containerRef}
@@ -83,7 +87,7 @@ export default function LandingWrapper() {
             />
           </div>
 
-          <section id="pilares" className="relative z-10">
+          <section id="pilares" className="relative z-10 overflow-hidden">
             <Pilares 
               card1Ref={card1Ref} 
               card2Ref={card2Ref} 
@@ -91,16 +95,17 @@ export default function LandingWrapper() {
             />
           </section>
 
-          <section id="sello" className="relative z-10">
+          <section id="sello" className="relative z-10 overflow-hidden">
             <SelloSASA 
               sealRef={sealRef}
             />
           </section>
         </div>
 
-        <section id="procesos">
-          <Estrategia />
-        </section>
+        {/* 5. Resultados y Objetivos Estratégicos */}
+        <Stats />
+
+        {/* 6. Cierre Final Maestro */}
         <Cierre />
       </Suspense>
     </>

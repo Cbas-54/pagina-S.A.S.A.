@@ -9,9 +9,9 @@ const Cierre = React.memo(() => {
   return (
     <section className="relative py-32 md:py-40 px-6 overflow-hidden noise-overlay">
       {/* Dramatic gradients */}
-      <div className="absolute inset-0 -z-10 bg-bg-main" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(0,51,102,0.25)_0%,transparent_70%)]" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_40%_40%_at_50%_50%,rgba(102,204,51,0.05)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 -z-10 bg-black" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(0,51,102,0.4)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_40%_40%_at_50%_50%,rgba(34,197,94,0.1)_0%,transparent_70%)]" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Decorative lines */}
@@ -36,10 +36,10 @@ const Cierre = React.memo(() => {
             className="text-blue-mid/30 mb-8"
           />
 
-          <blockquote className="text-3xl md:text-5xl font-serif font-light text-text-main leading-[1.3] italic mb-10">
+          <blockquote className="text-3xl md:text-5xl font-serif font-light text-white leading-[1.3] italic mb-10">
             &ldquo;No vendemos <span className="text-gradient-green font-medium not-italic">certificaciones</span>.
             <br />
-            Eliminamos la <span className="text-text-sec">incertidumbre</span>
+            Eliminamos la <span className="text-slate-400">incertidumbre</span>
             <br />
             que frena la <span className="text-gradient-gold font-medium not-italic">venta</span>.&rdquo;
           </blockquote>
@@ -56,10 +56,10 @@ const Cierre = React.memo(() => {
                />
             </div>
             <div className="text-left">
-              <p className="text-text-main text-base font-bold">
+              <p className="text-white text-base font-bold">
                 Lic. Maximiliano Martín Ovelar
               </p>
-              <p className="text-text-ter text-xs uppercase tracking-widest font-medium">
+              <p className="text-slate-500 text-xs uppercase tracking-widest font-medium">
                 Matrícula LHS-007462 PBA · Especialista SASA
               </p>
             </div>

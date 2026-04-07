@@ -1,172 +1,143 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Certificate, Megaphone, UsersThree } from "@phosphor-icons/react";
+import { 
+  ShieldCheck, 
+  HouseLine, 
+  Lightning, 
+  Plugs, 
+  Wind, 
+  ThermometerHot,
+  Flame,
+  CheckCircle,
+  Eye,
+  MagnifyingGlass,
+  IdentificationBadge
+} from "@phosphor-icons/react";
 
 // --- HOISTING estático de datos ---
-const ECOSYSTEM_DATA = [
+const SERVICES_DATA = [
   {
-    id: "01",
-    category: "Rigor Técnico",
-    title: "Auditoría Técnica Integral",
-    desc: "Inspección exhaustiva de 48 a 72 puntos críticos. Incluye checklist visual profesional entregable al comprador para eliminar objeciones de inmediato.",
-    size: "md:col-span-8",
-    bg: "bg-[#020C1B]",
-    textColor: "text-white",
-    icon: <ShieldCheck size={40} weight="duotone" className="text-green-vibrant" />,
-    image: "/images/service-obra-nueva.png",
-    details: ["48-72 puntos auditados", "Checklist visual profesional", "Rigor pericial independiente"],
-    titleColor: "text-green-vibrant"
+    icon: <Lightning size={24} weight="duotone" className="text-green-vibrant" />,
+    title: "Seguridad Eléctrica",
+    desc: "Diagnóstico profundo de tableros, cableados, protecciones (térmicas/disyuntores) y puestas a tierra según normativa vigente.",
+    tags: ["Tableros", "Puesta a Tierra"],
+    size: "lg"
   },
   {
-    id: "02",
-    category: "Autoridad",
-    title: "Sello & Identidad",
-    desc: "Certificación oficial con Sello SASA e integración total con la identidad visual de su inmobiliaria.",
-    size: "md:col-span-4",
-    bg: "bg-white",
-    textColor: "text-text-main",
-    icon: <Certificate size={40} weight="duotone" className="text-text-main" />,
-    image: "/images/service-official-seal.png",
-    details: ["Sello oficial matriculado", "Co-branding corporativo"],
-    mistColor: "from-blue-mid/[0.15]"
+    icon: <Flame size={24} weight="duotone" className="text-blue-mid" />,
+    title: "Instalaciones de Gas",
+    desc: "Pruebas de hermeticidad y verificación de ventilaciones reglamentarias para prevenir incidentes críticos.",
+    tags: ["Hermeticidad", "Venteos"],
+    size: "sm"
   },
   {
-    id: "03",
-    category: "Marketing",
-    title: "Aceleración Comercial",
-    desc: "Brochure comercial optimizado para portales y materiales de marketing listos para usar en redes sociales.",
-    size: "md:col-span-6",
-    bg: "bg-white",
-    textColor: "text-text-main",
-    icon: <Megaphone size={40} weight="duotone" className="text-text-main" />,
-    image: "/images/service-marketing.png",
-    details: ["Brochure premium PDF", "Assets para redes sociales", "Diferenciación en portales"],
-    mistColor: "from-green-vibrant/[0.15]"
+    icon: <Wind size={24} weight="duotone" className="text-green-vibrant" />,
+    title: "Gestión de Humedad",
+    desc: "Identificación de filtraciones y patologías constructivas que afectan la salubridad y estructura del activo.",
+    tags: ["Salubridad", "Estructura"],
+    size: "sm"
   },
   {
-    id: "04",
-    category: "Estrategia",
-    title: "Alianza & Respaldo",
-    desc: "Capacitación al equipo de ventas, asesoramiento estratégico y actualización permanente ante cambios legislativos.",
-    size: "md:col-span-6",
-    bg: "bg-[#0A2B1A]", // SASA Deep Green
-    textColor: "text-white",
-    icon: <UsersThree size={40} weight="duotone" className="text-blue-200" />,
-    image: "/images/service-strategy.png",
-    details: ["Capacitación de equipos", "Asesoramiento legal/técnico", "Actualización normativa"],
-    titleColor: "text-blue-200"
+    icon: <ShieldCheck size={24} weight="duotone" className="text-blue-mid" />,
+    title: "Medios de Salida",
+    desc: "Auditoría de rutas de escape, señalización de emergencia y cumplimiento de anchos mínimos de evacuación.",
+    tags: ["Evacuación", "Legal"],
+    size: "lg"
+  },
+  {
+    icon: <IdentificationBadge size={24} weight="duotone" className="text-green-vibrant" />,
+    title: "Accesibilidad (SASA)",
+    desc: "Garantizamos que el activo cumpla con estándares de accesibilidad universal, elevando su valor social y comercial.",
+    tags: ["Inclusión", "Plusvalor"],
+    size: "md"
   }
 ];
 
-// --- HOISTING estático de JSX ---
-const GalleryHeader = React.memo(() => (
-  <div className="max-w-3xl mb-20">
-    <motion.div
-       initial={{ opacity: 0, x: -20 }}
-       whileInView={{ opacity: 1, x: 0 }}
-       viewport={{ once: true }}
-       className="flex items-center gap-3 mb-6"
-    >
-      <div className="w-10 h-[1px] bg-blue-mid/40" />
-      <span className="text-[11px] font-black tracking-[0.4em] uppercase text-blue-mid/60">
-        Ecosistema S.A.S.A.
-      </span>
-    </motion.div>
-    
-    <motion.h2
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-5xl md:text-7xl font-serif text-text-main font-bold tracking-tight leading-[1.1] mb-8"
-    >
-      Servicios Incluidos en <br />
-      <span className="italic font-light text-blue-mid/80">Cada Contrato Oficial</span>
-    </motion.h2>
-    
+const HeaderService = React.memo(() => (
+  <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+    <div className="max-w-2xl">
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="flex items-center gap-3 mb-6"
+      >
+        <div className="w-10 h-[2px] bg-green-vibrant" />
+        <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-green-vibrant">
+          Ecosistema de Certificación
+        </span>
+      </motion.div>
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-5xl md:text-7xl font-serif font-bold text-white leading-[1.1] tracking-tight"
+      >
+        Auditorías <br />
+        <span className="text-slate-400 font-light italic">de Alto Espectro</span>
+      </motion.h2>
+    </div>
     <motion.p
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ delay: 0.1 }}
-      className="text-text-sec text-xl leading-relaxed opacity-70 border-l-2 border-blue-mid/20 pl-8"
+      transition={{ delay: 0.2 }}
+      className="text-slate-400 text-lg max-w-sm font-medium leading-relaxed"
     >
-      Transformamos la gestión técnica en un activo comercial de alto rendimiento, proporcionando un ecosistema completo para asegurar la venta.
+      Un blindaje técnico de 360° que protege al vendedor y enamora al comprador.
     </motion.p>
   </div>
 ));
-GalleryHeader.displayName = "GalleryHeader";
+HeaderService.displayName = "HeaderService";
 
 // --- MEMOIZATION ---
 interface ServiceCardProps {
-  item: typeof ECOSYSTEM_DATA[0];
-  idx: number;
+  service: typeof SERVICES_DATA[0];
+  index: number;
 }
-const ServiceCard = React.memo(({ item, idx }: ServiceCardProps) => {
+const ServiceCard = React.memo(({ service, index }: ServiceCardProps) => {
+  const isLarge = service.size === "lg";
+  
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: idx * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className={`${item.size} group relative rounded-[40px] p-10 md:p-12 overflow-hidden flex flex-col justify-between transition-all duration-700 hover:shadow-2xl hover:shadow-blue-mid/5 border border-divider ${item.bg} ${item.textColor}`}
+      transition={{ delay: index * 0.1, duration: 0.7 }}
+      className={`group relative p-8 rounded-[2.5rem] bg-white/5 border border-white/10 hover:border-green-vibrant/40 transition-all duration-500 flex flex-col justify-between overflow-hidden
+        ${isLarge ? "md:col-span-2 lg:col-span-2" : "md:col-span-1 lg:col-span-1"}`}
     >
-      {/* Background Image Layer */}
-      {item.image && (
-        <div className={`
-          absolute inset-0 transition-all duration-1000
-          ${item.bg === 'bg-white' 
-            ? 'opacity-40 grayscale-0 group-hover:opacity-70' 
-            : 'opacity-25 grayscale group-hover:opacity-50 group-hover:grayscale-0'}
-          group-hover:scale-105
-        `}>
-           <Image src={item.image} alt={item.title} fill className="object-cover" />
-           {/* Custom Mist Overlay */}
-           {item.mistColor && (
-             <div className={`absolute inset-0 bg-gradient-to-br ${item.mistColor} to-transparent`} />
-           )}
-        </div>
-      )}
-
-      {/* Main Content Layer */}
       <div className="relative z-10">
-        <div className="flex items-center justify-between mb-12">
-           <div className="p-0 transition-transform duration-500 group-hover:scale-110">
-              {item.icon}
-           </div>
+        <div className="flex items-center justify-between mb-8">
+          <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-inner">
+            {service.icon}
+          </div>
+          <div className="flex gap-2">
+            {service.tags.map(tag => (
+              <span key={tag} className="text-[9px] font-bold px-3 py-1 rounded-full bg-slate-800 text-slate-400 border border-white/5 uppercase tracking-wider">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <span className={`text-[10px] font-black tracking-[0.3em] uppercase mb-4 block ${item.bg === 'bg-white' ? 'text-blue-mid/60' : 'text-blue-200/60'}`}>
-           {item.category}
-        </span>
-        
-        <h3 className={`text-3xl md:text-4xl font-serif font-bold mb-6 tracking-tight leading-tight ${item.titleColor || ''}`}>
-           {item.title}
+        <h3 className="text-2xl font-serif font-bold text-white mb-4 group-hover:text-green-vibrant transition-colors duration-300 tracking-tight">
+          {service.title}
         </h3>
-        
-        <p className={`text-lg leading-relaxed mb-10 opacity-70 ${item.bg === 'bg-white' ? 'max-w-sm' : ''}`}>
-           {item.desc}
+        <p className="text-slate-400 text-sm leading-relaxed mb-6">
+          {service.desc}
         </p>
       </div>
 
-      {/* Footer Details */}
-      <div className="relative z-10 pt-8 border-t border-current/10 flex flex-wrap gap-3">
-         {item.details.map((detail, i) => (
-            <span 
-              key={i} 
-              className={`text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border ${item.bg === 'bg-white' ? 'border-divider text-text-sec' : 'border-white/10 text-white/60'}`}
-            >
-               {detail}
-            </span>
-         ))}
+      <div className="relative z-10 flex items-center gap-2 text-white/40 text-[10px] font-bold tracking-widest uppercase mt-auto group-hover:text-green-vibrant/60 transition-colors">
+        <CheckCircle size={14} weight="fill" />
+        Protocolo S.A.S.A.
       </div>
 
-      {/* Decorative Corner Icon */}
-      <div className="absolute -bottom-4 -right-4 opacity-5 transition-transform duration-700 group-hover:-translate-x-4 group-hover:-translate-y-4">
-         <ArrowRight size={120} weight="thin" />
-      </div>
+      {/* Decorative Glow */}
+      <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-green-vibrant/5 blur-[60px] rounded-full group-hover:bg-green-vibrant/10 transition-all duration-700" />
     </motion.div>
   );
 });
@@ -175,16 +146,20 @@ ServiceCard.displayName = "ServiceCard";
 const ServiceGallery = React.memo(() => {
   return (
     <section 
-      id="servicios" 
-      className="pt-12 pb-20 md:pt-20 md:pb-20 px-6 bg-[#F4F4F5] overflow-hidden"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1200px' }}
+      id="auditoria" 
+      className="relative py-32 px-6 bg-[#0F172A] overflow-hidden" // Slate 900
+      style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 900px' }}
     >
-      <div className="max-w-7xl mx-auto">
-        <GalleryHeader />
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-vibrant/[0.03] blur-[150px] -z-0" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-mid/[0.03] blur-[150px] -z-0" />
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          {ECOSYSTEM_DATA.map((item, idx) => (
-            <ServiceCard key={item.id} item={item} idx={idx} />
+      <div className="max-w-7xl mx-auto relative z-10">
+        <HeaderService />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {SERVICES_DATA.map((service, i) => (
+            <ServiceCard key={service.title} service={service} index={i} />
           ))}
         </div>
       </div>

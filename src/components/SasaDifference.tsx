@@ -138,7 +138,7 @@ const SasaDifference = React.memo(() => {
   return (
     <section 
       id="la-diferencia" 
-      className="relative pt-12 pb-8 md:pt-20 md:pb-12 px-6 bg-[#DDE1E7]"
+      className="relative pt-12 pb-8 md:pt-20 md:pb-12 px-6 bg-[#E2E8F0]"
       style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 800px' }}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 relative">
