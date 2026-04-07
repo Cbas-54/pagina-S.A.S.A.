@@ -2,7 +2,6 @@
 
 import React, { Suspense, useRef } from "react";
 import dynamic from "next/dynamic";
-import { useScroll, useTransform, motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
@@ -11,7 +10,7 @@ import { AnimatedBeam } from "@/components/ui/animated-beam";
 const VideoDemo = dynamic(() => import("@/components/VideoDemo"));
 const SasaDifference = dynamic(() => import("@/components/SasaDifference"));
 const ServiceGallery = dynamic(() => import("@/components/ServiceGallery"));
-const MonolithicTransition = dynamic(() => import("@/components/MonolithicTransition"));
+const GradientTransition = dynamic(() => import("@/components/GradientTransition"));
 const Pilares = dynamic(() => import("@/components/Pilares"));
 const SelloSASA = dynamic(() => import("@/components/SelloSASA"));
 const Stats = dynamic(() => import("@/components/Stats")); // Objetivos Estratégicos
@@ -20,21 +19,10 @@ const Cierre = dynamic(() => import("@/components/Cierre"));
 
 export default function LandingWrapper() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const serviceSectionRef = useRef<HTMLDivElement>(null);
   const card1Ref = useRef<HTMLDivElement>(null);
   const card2Ref = useRef<HTMLDivElement>(null);
   const card3Ref = useRef<HTMLDivElement>(null);
   const sealRef = useRef<HTMLDivElement>(null);
-
-  // Lógica de Scroll para el efecto "Receding" de Servicios
-  const { scrollYProgress } = useScroll({
-    target: serviceSectionRef,
-    offset: ["start start", "end start"]
-  });
-
-  const serviceScale = useTransform(scrollYProgress, [0.7, 1], [1, 0.9]);
-  const serviceOpacity = useTransform(scrollYProgress, [0.7, 1], [1, 0.4]);
-  const serviceBrightness = useTransform(scrollYProgress, [0.7, 1], ["brightness(100%)", "brightness(40%)"]);
 
   return (
     <>
@@ -53,32 +41,14 @@ export default function LandingWrapper() {
         {/* 2. El Concepto / La Diferencia */}
         <SasaDifference />
 
-        {/* 3. El Detalle del Producto (Ecosistema) */}
-        <section 
-          id="servicios" 
-          ref={serviceSectionRef}
-          className="relative h-[150vh]"
-        >
-          <div className="sticky top-0 h-screen overflow-hidden">
-            <motion.div 
-              style={{ 
-                scale: serviceScale, 
-                opacity: serviceOpacity,
-                filter: serviceBrightness,
-                willChange: "transform, opacity, filter"
-              }}
-              className="h-full w-full"
-            >
-              <ServiceGallery />
-            </motion.div>
-          </div>
-        </section>
+        {/* 3. El Detalle del Producto (Ecosistema) - Simplificado */}
+        <ServiceGallery />
 
-        {/* Transición Monolithic Shift (Opción A) */}
-        <MonolithicTransition />
+        {/* Transición de Gradiente Minimalista */}
+        <GradientTransition />
 
         {/* 4. La Filosofía y el Sello (Conexión Visual) */}
-        <div ref={containerRef} className="relative z-10 bg-[#020C1B] shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+        <div ref={containerRef} className="relative z-10 bg-[#020C1B]">
           
           {/* Animated Beams */}
           <div className="hidden lg:block absolute inset-0 z-20 pointer-events-none">
