@@ -18,7 +18,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Inicio", link: "#inicio" },
     { name: "Pilares", link: "#pilares" },
-    { name: "Auditoría", link: "#auditoria" },
+    { name: "Auditoría", link: "#servicios" },
   ];
 
   return (
