@@ -15,8 +15,8 @@ const Hero = () => {
           {/* Escudo de Legibilidad: Gradiente horizontal mejorado */}
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-white/10 z-10" />
           <Image
-            src="/hero-buildings.jpg"
-            alt="SASA Clean Architectural Perspective"
+            src="/hero-sasa.jpg"
+            alt="SASA Architectural Perspective"
             fill
             className="object-cover object-right-bottom"
             priority
