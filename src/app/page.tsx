@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="bg-[#050505] text-text-main font-sans min-h-screen selection:bg-blue-mid/10">
+    <main className="bg-black text-text-main font-sans min-h-screen selection:bg-blue-mid/10">
       <LandingWrapper />
     </main>
   );
