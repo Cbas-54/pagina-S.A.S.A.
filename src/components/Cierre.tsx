@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Quotes } from "@phosphor-icons/react";
 
 const Cierre = React.memo(() => {
   return (
@@ -30,25 +29,18 @@ const Cierre = React.memo(() => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="flex flex-col items-center"
         >
-          <Quotes
-            size={40}
-            weight="fill"
-            className="text-blue-mid/30 mb-8"
-          />
-
           <blockquote className="text-3xl md:text-5xl font-serif font-light text-white leading-[1.3] italic mb-12">
-            &ldquo;No vendemos <span className="text-gradient-green font-medium not-italic tracking-tight">certificaciones</span>. 
+            &ldquo;Somos tu <span className="text-gradient-green font-medium not-italic tracking-tight">aliado técnico</span> 
             <br />
-            Eliminamos la <span className="text-slate-400">incertidumbre</span> que frena la <span className="text-gradient-gold font-medium not-italic">venta</span>.&rdquo;
+            que eleva tu propuesta
+            <br />
+            por encima de la <span className="text-gradient-gold font-medium not-italic">competencia</span>.&rdquo;
           </blockquote>
 
           {/* Slogans adicionales */}
           <div className="flex flex-col md:flex-row gap-6 mb-16 opacity-40">
              <span className="text-[11px] font-black uppercase tracking-[0.3em] text-white py-2 px-4 border border-white/10 rounded-full">
-               S.A.S.A. es un acelerador de ventas con metodología probada.
-             </span>
-             <span className="text-[11px] font-black uppercase tracking-[0.3em] text-white py-2 px-4 border border-white/10 rounded-full">
-               S.A.S.A. es el sello de confianza que el comprador reconoce y valora.
+               SASA ES UN SISTEMA INNOVADOR PARA EL MERCADO INMOBILIARIO ACTUAL.
              </span>
           </div>
 
@@ -56,9 +48,6 @@ const Cierre = React.memo(() => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-12">
             {/* Maximiliano */}
             <div className="flex items-center gap-4">
-               <div className="w-12 h-12 rounded-full border border-gold-seal/20 bg-white/5 flex items-center justify-center overflow-hidden">
-                  <Image src="https://api.dicebear.com/7.x/avataaars/svg?seed=Maximiliano" alt="Lic. Maximiliano Ovelar" width={48} height={48} unoptimized />
-               </div>
                <div className="text-left">
                  <p className="text-white text-base font-bold leading-tight">Lic. Maximiliano Martín Ovelar</p>
                  <p className="text-slate-500 text-[10px] uppercase tracking-widest font-black mt-1">Matrícula LHS-007462 PBA · Especialista SASA</p>
@@ -69,9 +58,6 @@ const Cierre = React.memo(() => {
 
             {/* Juan Pablo Stock */}
             <div className="flex items-center gap-4">
-               <div className="w-12 h-12 rounded-full border border-blue-mid/20 bg-white/5 flex items-center justify-center overflow-hidden">
-                  <Image src="https://api.dicebear.com/7.x/avataaars/svg?seed=Juan" alt="Juan Pablo Stock" width={48} height={48} unoptimized />
-               </div>
                <div className="text-left">
                  <p className="text-white text-base font-bold leading-tight">Juan Pablo Stock</p>
                  <p className="text-slate-500 text-[10px] uppercase tracking-widest font-black mt-1">Matrícula THS - 011523 - PBA · Resp. Técnico</p>

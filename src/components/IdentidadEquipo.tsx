@@ -29,8 +29,8 @@ const IdentidadEquipo = () => {
           transition={{ duration: 1 }}
           className="text-4xl md:text-7xl font-serif text-white font-bold mb-16 leading-[1.1] tracking-tight"
         >
-          Más de <span className="text-gold-seal italic font-light">25 años</span> de <br />
-          excelencia técnica y comercial.
+          <span className="text-gold-seal italic font-light">+15 años</span> de <br />
+          excelencia comercial.
         </motion.h2>
 
         <div className="grid md:grid-cols-1 gap-12 max-w-4xl mx-auto items-center relative">
@@ -44,12 +44,14 @@ const IdentidadEquipo = () => {
               <UsersThree size={60} weight="thin" className="text-gold-seal/40 mx-auto mb-10" />
               
               <p className="text-xl md:text-3xl text-white/70 font-serif leading-relaxed italic">
-                "Somos un equipo especializado en optimizar entornos de trabajo, liderando la transformación de propiedades en productos de alto rendimiento comercial. Nuestra metodología integra el rigor técnico de la auditoría con una visión estratégica del mercado inmobiliario."
+                "Somos un equipo especializado en optimizar entornos de trabajo, enfocados en la identificación, evaluación y gestión integral de riesgos operativos.
+                <br />
+                Acompañamos a tu marca registrada en la mejora continua de sus procesos, garantizando cumplimiento normativo, eficiencia y tranquilidad en cada etapa de sus operaciones."
               </p>
               
               <div className="mt-12 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-center gap-12">
                  <div className="flex flex-col items-center gap-2">
-                    <span className="text-4xl font-bold text-white tracking-tighter">25+</span>
+                    <span className="text-4xl font-bold text-white tracking-tighter">15+</span>
                     <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Años de Trayectoria</span>
                  </div>
                  <div className="w-px h-12 bg-white/10 hidden md:block" />

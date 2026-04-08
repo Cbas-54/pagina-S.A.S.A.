@@ -72,9 +72,9 @@ const Hero = () => {
             </div>
             
             <div className="flex items-center gap-3 mt-4 ml-4 whitespace-nowrap">
-              <span className="text-[1.1rem] text-neutral-500 font-bold tracking-widest uppercase">Confianza Auditable</span>
-              <div className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
-              <span className="text-neutral-500 font-bold text-[1.1rem] uppercase tracking-tighter">Cierres Garantizados</span>
+              <span className="text-[1.1rem] text-black font-bold tracking-widest uppercase">Confianza auditable</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-black/60" />
+              <span className="text-black font-bold text-[1.1rem] uppercase tracking-tighter">cierre seguro</span>
             </div>
           </div>
         </div>

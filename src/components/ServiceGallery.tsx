@@ -82,10 +82,10 @@ const GalleryHeader = React.memo(() => (
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="text-5xl md:text-7xl font-serif text-text-main font-bold tracking-tight leading-[1.1] mb-8"
+      className="text-5xl md:text-7xl font-serif text-text-main font-bold tracking-tight leading-[1.1] mb-8 uppercase"
     >
-      Servicios Incluidos en <br />
-      <span className="italic font-light text-blue-mid/80">Cada Contrato Oficial</span>
+      ASESORAMIENTOS <br />
+      <span className="italic font-light text-blue-mid/80">INCLUIDOS</span>
     </motion.h2>
     
     <motion.p

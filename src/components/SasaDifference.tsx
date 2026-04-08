@@ -14,7 +14,7 @@ const DIFFERENCES_DATA = [
   {
     category: "Módulo de Auditoría",
     title: "Transparencia Técnico-Legal",
-    desc: "Diagnóstico honesto, control de documentación de instalación eléctrica, gas y auditoría de seguridad y salud activa. El Sello S.A.S.A. permite una negociación basada en realidades físicas verificables, eliminando la incertidumbre técnica que frena las operaciones.",
+    desc: "Diagnóstico honesto, control de documentación de instalación eléctrica, gas y auditoría de seguridad y salud activa. El Sello S.A.S.A. convierte la información técnica en una ventaja para cerrar operaciones.",
     outcome: "Eliminación de la Incertidumbre",
     icon: <Detective size={32} weight="duotone" className="text-green-vibrant" />
   },
@@ -27,14 +27,14 @@ const DIFFERENCES_DATA = [
   },
   {
     category: "Respuesta Preventiva",
-    title: "Protocolo Anti-Objeciones",
-    desc: "Un reporte profesional que responde de forma preventiva a las inquietudes comunes sobre seguridad y habitabilidad. Desactivamos barreras de compra antes de que surjan, elevando el valor percibido del activo.",
+    title: "Marco técnico de respuesta comercial",
+    desc: "Un reporte profesional que responde de forma preventiva a las inquietudes comunes sobre seguridad y habitabilidad. Anticipamos objeciones y fortalecemos la percepción del activo.",
     outcome: "Incremento del Valor Percibido",
     icon: <Wind size={32} weight="duotone" className="text-blue-mid" />
   },
   {
     category: "Certificado preventa multilateral",
-    title: "Blindaje de Reputación Multilateral",
+    title: "La credibilidad como Activo Compartido",
     desc: "Reporte oficial de situación del inmueble, para que el vendedor traslade certeza y confianza al futuro comprador de lo que está adquiriendo. S.A.S.A es un beneficio para el vendedor.",
     outcome: "POTENCIAL AUMENTO EN LA CARTERA DE CLIENTES",
     icon: <ShieldCheck size={32} weight="duotone" className="text-blue-mid" />

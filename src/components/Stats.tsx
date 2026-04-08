@@ -126,14 +126,8 @@ const Stats = React.memo(() => {
           className="max-w-4xl mx-auto mb-16 text-center cursor-default"
         >
           <p className="text-3xl md:text-4xl lg:text-5xl text-black font-serif font-bold leading-[1.2] tracking-tight">
-            S.A.S.A. es un sistema profesional de certificación <span className="text-gold-seal italic underline decoration-gold-seal/30 underline-offset-[12px]">PRE VENTA</span> para activos inmobiliarios de alta gama.
+            S.A.S.A. es un sistema profesional de certificación <span className="text-gold-seal italic underline decoration-gold-seal/30 underline-offset-[12px]">PRE VENTA</span> para viviendas multifamiliares, complejos de viviendas, complejos comerciales o de oficinas.
           </p>
-          
-          <div className="mt-12 flex justify-center">
-            <p className="text-black text-lg leading-relaxed max-w-2xl font-bold italic border-x-2 border-gold-seal/40 px-8">
-              "Aportamos la transparencia técnica que el mercado inmobiliario exige, transformando la seguridad en un activo comercial de alto valor."
-            </p>
-          </div>
         </motion.div>
 
         {/* Grid de Tarjetas */}

@@ -30,7 +30,7 @@ const SelloSASA = React.memo(({ onThemeChange }: SelloSASAProps) => {
       {/* ── BACKGROUND IMAGE WITH TRANSITION ── */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/excelencia.png" 
+          src="/edificio gemini corte.png" 
           alt="Fondo Excelencia" 
           fill 
           priority
@@ -87,7 +87,7 @@ const SelloSASA = React.memo(({ onThemeChange }: SelloSASAProps) => {
             <div className="inline-block p-8 rounded-3xl bg-gold-seal/[0.15] backdrop-blur-xl border border-gold-seal/30 shadow-2xl">
                <div>
                   <p className="text-[10px] font-black text-gold-seal uppercase tracking-widest mb-1">Validación por Auditoría</p>
-                  <p className="text-white/80 text-lg italic">"Garantizamos la fe técnica en cada metro cuadrado."</p>
+                  <p className="text-white/80 text-lg italic">"Respaldamos la calidad técnica en cada metro cuadrado."</p>
                </div>
             </div>
           </motion.div>

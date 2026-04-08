@@ -6,17 +6,17 @@ import { motion } from "framer-motion";
 const PILARES_DATA = [
   {
     title: "Seguridad",
-    description: "Auditoría de infraestructuras críticas y sistemas de protección activa bajo estándares internacionales de seguridad física e industrial.",
+    description: "Auditoria de sistema antisiniestral.",
     image: "/images/pilar_seguridad.png"
   },
   {
     title: "Salud",
-    description: "Garantía de salubridad estructural mediante la detección de patologías biológicas y vicios ocultos de habitabilidad.",
+    description: "Detección de vicios ocultos de habitibilidad.",
     image: "/images/pilar_salud.png"
   },
   {
     title: "Accesibilidad",
-    description: "Auditoría técnica para el entorno accesible e inclusivo, asegurando la movilidad segura de todas las personas.",
+    description: "Auditoría técnica para el entorno accesible e inclusivo.",
     image: "/images/pilar_accesibilidad.png"
   },
 ];
