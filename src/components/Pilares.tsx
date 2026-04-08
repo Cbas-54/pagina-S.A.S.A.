@@ -79,15 +79,9 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref, isDarkTheme }: Pilar
                 <h3 className="text-3xl font-serif font-bold mb-4 text-black transition-colors duration-500 group-hover:text-green-vibrant">
                   {pilar.title}
                 </h3>
-                <p className="text-base leading-relaxed text-black/60 transition-colors duration-500 group-hover:text-white/80">
+                <p className="text-base leading-relaxed font-bold text-black/70 transition-colors duration-500 group-hover:text-white">
                   {pilar.description}
                 </p>
-
-                <div className="mt-8 pt-6 border-t border-black/5 group-hover:border-white/5 transition-colors duration-500">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/40 group-hover:text-green-vibrant/60">
-                    Dimensión Pericial 0{i + 1}
-                  </span>
-                </div>
               </div>
               
               {/* Punto de Conexión para AnimatedBeam */}
