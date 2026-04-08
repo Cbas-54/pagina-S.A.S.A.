@@ -51,13 +51,13 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
 
               {/* Status Badge */}
               <motion.div 
-                className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-[#0A0F1A]/90 backdrop-blur-xl px-8 py-6 rounded-3xl border border-gold-seal/30 shadow-2xl flex flex-col items-center gap-2 w-max text-center min-w-[280px]"
+                className="absolute -bottom-12 left-1/2 -translate-x-1/2 bg-gold-seal/[0.08] backdrop-blur-xl px-10 py-7 rounded-[2rem] border border-gold-seal/30 shadow-[0_20px_50px_rgba(201,169,110,0.15)] flex flex-col items-center gap-3 w-max text-center min-w-[320px]"
               >
                 <div className="flex items-center gap-3 mb-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] animate-pulse" />
-                  <p className="text-[10px] font-black text-gold-seal uppercase tracking-[0.2em]">Validación Técnica</p>
+                  <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] animate-pulse" />
+                  <p className="text-[12px] font-black text-gold-seal uppercase tracking-[0.25em]">Validación Técnica</p>
                 </div>
-                <p className="text-white/80 text-sm font-medium leading-relaxed">
+                <p className="text-white font-medium text-[16px] leading-relaxed">
                   Respaldamos la calidad técnica <br /> en cada metro cuadrado.
                 </p>
               </motion.div>
