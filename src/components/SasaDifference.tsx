@@ -21,7 +21,7 @@ const DIFFERENCES_DATA = [
   {
     category: "Celeridad de Cierre",
     title: "Acelerador de Ciclo Comercial",
-    desc: "Acortamos considerablemente los plazos de venta al despejar todas las dudas técnicas del comprador potencial desde el primer contacto. Menos objeciones significan mayor velocidad y menor presión sobre el precio final.",
+    desc: "Acortamos considerablemente los plazos de venta al despejar todas las dudas técnicas del comprador potencial desde el primer contacto. Menos objeciones significan mayor velocidad y menor presión sobre el precio final. ",
     outcome: "Optimización del Tiempo de Venta",
     icon: <Lightning size={32} weight="duotone" className="text-green-vibrant" />
   },
@@ -35,7 +35,7 @@ const DIFFERENCES_DATA = [
   {
     category: "Certificado Preventa Multilateral",
     title: "La Credibilidad como Activo Compartido",
-    desc: "Reporte oficial de situación del inmueble, para que el vendedor traslade certeza y confianza al futuro comprador de lo que está adquiriendo. S.A.S.A es un beneficio para el vendedor.",
+    desc: "Reporte oficial de situación del inmueble, para que el vendedor traslade certeza y confianza al futuro comprador de lo que está adquiriendo. S.A.S.A es un beneficio para el vendedor. Brindándole al representante de ventas mayor exclusividad y confiabilidad al momento de cerrar operaciones.",
     outcome: "POTENCIAL AUMENTO EN LA CARTERA DE CLIENTES",
     icon: <ShieldCheck size={32} weight="duotone" className="text-blue-mid" />
   }

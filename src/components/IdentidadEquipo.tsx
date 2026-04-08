@@ -29,7 +29,7 @@ const IdentidadEquipo = () => {
           transition={{ duration: 1 }}
           className="text-4xl md:text-7xl font-serif text-white font-bold mb-16 leading-[1.1] tracking-tight"
         >
-          <span className="text-gold-seal italic font-light">+15 AÑOS</span> de <br />
+          MÁS DE <span className="text-gold-seal italic font-light">15 AÑOS</span> DE <br />
           EXCELENCIA COMERCIAL.
         </motion.h2>
 

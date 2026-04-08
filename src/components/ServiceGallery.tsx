@@ -28,10 +28,12 @@ const ECOSYSTEM_DATA = [
     desc: "Certificación oficial con Sello SASA e integración total con la identidad visual de su inmobiliaria.",
     size: "md:col-span-4",
     bg: "bg-white",
-    textColor: "text-text-main",
-    icon: <Certificate size={40} weight="duotone" className="text-text-main" />,
+    textColor: "text-black",
+    icon: <Certificate size={40} weight="duotone" className="text-black" />,
     image: "/images/service-official-seal.png",
     details: ["Sello oficial matriculado", "Co-branding corporativo"],
+    titleColor: "text-black",
+    pillClass: "text-slate-700 border-slate-300 shadow-[0_0_15px_rgba(255,255,255,1)]",
     mistColor: "from-blue-mid/[0.15]"
   },
   {
@@ -41,10 +43,12 @@ const ECOSYSTEM_DATA = [
     desc: "Brochure comercial optimizado y asistencia al sector de diseño y marketing para la realización de piezas técnicas.",
     size: "md:col-span-6",
     bg: "bg-white",
-    textColor: "text-text-main",
-    icon: <Megaphone size={40} weight="duotone" className="text-text-main" />,
+    textColor: "text-black",
+    icon: <Megaphone size={40} weight="duotone" className="text-black" />,
     image: "/images/service-marketing.png",
     details: ["Brochure premium PDF", "Assets para redes sociales", "Asistencia técnica en diseño"],
+    titleColor: "text-black",
+    pillClass: "text-slate-400 border-slate-200 shadow-none",
     mistColor: "from-green-vibrant/[0.15]"
   },
   {
@@ -140,15 +144,15 @@ const ServiceCard = React.memo(({ item, idx }: ServiceCardProps) => {
           </div>
         </div>
 
-        <span className={`text-[10px] font-black tracking-[0.3em] uppercase mb-4 block ${item.bg === 'bg-white' ? 'text-black' : 'text-blue-200'}`}>
+        <span className={`text-[10px] font-black tracking-[0.3em] uppercase mb-4 block ${item.bg === 'bg-white' ? (item.textColor || 'text-black') : 'text-blue-200'}`}>
           {item.category}
         </span>
 
-        <h3 className={`text-3xl md:text-4xl font-serif font-bold mb-6 tracking-tight leading-tight ${item.titleColor || ''} ${item.bg === 'bg-white' ? 'text-black' : ''}`}>
+        <h3 className={`text-3xl md:text-4xl font-serif font-bold mb-6 tracking-tight leading-tight ${item.titleColor || (item.bg === 'bg-white' ? 'text-black' : '')}`}>
           {item.title}
         </h3>
 
-        <p className={`text-lg leading-relaxed mb-10 ${item.bg === 'bg-white' ? 'text-black max-w-sm' : 'text-white'}`}>
+        <p className={`text-lg leading-relaxed mb-10 ${item.bg === 'bg-white' ? (item.textColor || 'text-black') + ' max-w-sm' : 'text-white'}`}>
           {item.desc}
         </p>
       </div>
@@ -158,7 +162,10 @@ const ServiceCard = React.memo(({ item, idx }: ServiceCardProps) => {
         {item.details.map((detail, i) => (
           <span
             key={i}
-            className={`text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border ${item.bg === 'bg-white' ? 'border-black text-black' : 'border-white/10 text-white'}`}
+            className={`text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border transition-all duration-500
+                       ${item.bg === 'bg-white' 
+                          ? (item.pillClass ? item.pillClass : `border-current ${item.textColor || 'text-black'}`) 
+                          : 'border-white/10 text-white'}`}
           >
             {detail}
           </span>
