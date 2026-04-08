@@ -59,7 +59,7 @@ export default function LandingWrapper() {
           className="relative z-10 bg-[#0A0A0A]"
         >
           {/* Transition Gradient from White (Previous Section) to Dark */}
-          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent pointer-events-none z-20" />
+          <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-white to-transparent pointer-events-none z-20" />
 
           {/* Animated Beams (Configuradas para fondo oscuro) */}
           <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
@@ -104,7 +104,7 @@ export default function LandingWrapper() {
             />
           </div>
 
-          <section id="pilares" className="relative z-30 overflow-hidden">
+          <section id="pilares" className="relative z-30 overflow-hidden pt-32">
             <Pilares 
               card1Ref={card1Ref} 
               card2Ref={card2Ref} 

@@ -160,7 +160,7 @@ const ServiceCard = React.memo(({ item, idx }: ServiceCardProps) => {
         {item.details.map((detail, i) => (
           <span
             key={i}
-            className={`text-lg font-bold uppercase tracking-wider px-6 py-2.5 rounded-2xl border transition-all duration-500 
+            className={`text-sm font-bold uppercase tracking-wider px-4 py-1.5 rounded-2xl border transition-all duration-500 
                        bg-white/30 backdrop-blur-lg border-white/20 shadow-sm
                        ${item.id === "03" 
                           ? "text-black" 
