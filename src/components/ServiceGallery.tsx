@@ -40,7 +40,7 @@ const ECOSYSTEM_DATA = [
     id: "03",
     category: "Marketing",
     title: "Aceleración Comercial",
-    desc: "Brochure comercial optimizado y asistencia al sector de diseño y marketing para la realización de piezas técnicas.",
+    desc: "Asistencia al sector de diseño y marketing para la realización de brochure comercial",
     size: "md:col-span-6",
     bg: "bg-white",
     textColor: "text-black",
