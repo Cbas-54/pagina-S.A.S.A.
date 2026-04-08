@@ -2,93 +2,76 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { UsersThree, Certificate, Medal } from "@phosphor-icons/react";
 
 const IdentidadEquipo = () => {
+  const stats = [
+    { label: "Años de Trayectoria", value: "25+", color: "text-gold-seal" },
+    { label: "Proyectos Auditados", value: "500+", color: "text-white" },
+    { label: "Eficacia Operativa", value: "100%", color: "text-gold-seal" },
+  ];
+
   return (
-    <section id="equipo" className="relative pt-32 md:pt-48 pb-0 px-6 bg-[#0A0A0A] overflow-hidden">
-      {/* Elementos decorativos de fondo */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-mid/5 rounded-full blur-[160px] opacity-20" />
+    <section id="identidad" className="relative py-32 px-6 overflow-hidden">
+      {/* Background Atmosphere */}
+      <div className="absolute inset-0 bg-[#0A0A0A]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(201,169,110,0.05)_0%,transparent_70%)]" />
 
-      <div className="max-w-6xl mx-auto relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2 }}
-          className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-white/10 bg-white/5 mb-12"
-        >
-          <Medal size={20} className="text-gold-seal" />
-          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/80">Liderazgo & Experto</span>
-        </motion.div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[3rem] p-12 md:p-20 shadow-2xl relative overflow-hidden">
+          {/* Decorative grid */}
+          <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none" />
 
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="text-4xl md:text-7xl font-serif text-white font-bold mb-16 leading-[1.1] tracking-tight"
-        >
-          MÁS DE <span className="text-gold-seal italic font-light">15 AÑOS</span> DE <br />
-          EXCELENCIA COMERCIAL.
-        </motion.h2>
-
-        <div className="grid md:grid-cols-1 gap-12 max-w-4xl mx-auto items-center relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 1 }}
-            className="relative p-10 md:p-16 rounded-t-[3rem] rounded-b-none bg-white/[0.02] backdrop-blur-sm z-10"
-          >
-            <UsersThree size={60} weight="thin" className="text-gold-seal/40 mx-auto mb-10" />
-
-            <p className="text-xl md:text-3xl text-white/70 font-serif leading-relaxed italic">
-              "Somos un equipo especializado en optimizar entornos de trabajo, enfocados en la identificación, evaluación y gestión integral de riesgos operativos.
-              <br />
-              Acompañamos a tu marca registrada en la mejora continua de sus procesos, garantizando cumplimiento normativo, eficiencia y tranquilidad en cada etapa de sus operaciones."
-            </p>
-
-            <div className="mt-12 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-center gap-12">
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-4xl font-bold text-white tracking-tighter">15+</span>
-                <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Años de Trayectoria</span>
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="space-y-10"
+            >
+              <div className="space-y-4">
+                <h3 className="text-gold-seal font-black uppercase tracking-[0.3em] text-sm">Identidad & Propósito</h3>
+                <h2 className="text-5xl md:text-7xl font-bold font-serif text-white tracking-tight leading-tight">
+                  Más que un equipo,<br />
+                  <span className="italic font-light">una garantía.</span>
+                </h2>
               </div>
-              <div className="w-px h-12 bg-white/10 hidden md:block" />
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-4xl font-bold text-white tracking-tighter">100%</span>
-                <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Eficacia Operativa</span>
-              </div>
-              <div className="w-px h-12 bg-white/10 hidden md:block" />
-              <div className="flex flex-col items-center gap-2">
-                <Certificate size={44} weight="thin" className="text-gold-seal" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Certificación Oficial</span>
-              </div>
-            </div>
-          </motion.div>
+              
+              <p className="text-white/60 text-xl leading-relaxed font-light">
+                En S.A.S.A., fusionamos décadas de experiencia técnica en arquitectura e ingeniería con una visión humana y social. No solo inspeccionamos estructuras; validamos la calidad de vida de quienes las habitan.
+              </p>
 
-          {/* Inverted Corners (Solapa Effect) */}
-          <div className="absolute -bottom-[1px] left-0 w-full h-12 pointer-events-none hidden md:block">
-            {/* Left Inverted Corner */}
-            <div
-              className="absolute left-[-48px] bottom-0 w-[48px] h-[48px] bg-white/[0.02] backdrop-blur-sm"
-              style={{
-                maskImage: 'radial-gradient(circle at 0px 0px, transparent 48px, white 48px)',
-                WebkitMaskImage: 'radial-gradient(circle at 0px 0px, transparent 48px, white 48px)'
-              }}
-            />
-            {/* Right Inverted Corner */}
-            <div
-              className="absolute right-[-48px] bottom-0 w-[48px] h-[48px] bg-white/[0.02] backdrop-blur-sm"
-              style={{
-                maskImage: 'radial-gradient(circle at 48px 0px, transparent 48px, white 48px)',
-                WebkitMaskImage: 'radial-gradient(circle at 48px 0px, transparent 48px, white 48px)'
-              }}
-            />
+              <div className="grid grid-cols-3 gap-8 pt-10 border-t border-white/10">
+                {stats.map((stat, i) => (
+                  <div key={i} className="text-center lg:text-left">
+                    <p className={`text-3xl md:text-4xl font-bold mb-2 ${stat.color}`}>{stat.value}</p>
+                    <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-tight">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2 }}
+              className="relative aspect-square lg:aspect-auto lg:h-[500px] rounded-[2rem] overflow-hidden border border-white/10 group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0A0A0A] via-transparent to-transparent z-10 opacity-60" />
+              <img 
+                src="https://images.unsplash.com/photo-1600607687940-4e200350-9a3d?auto=format&fit=crop&q=80" 
+                alt="SASA Team Vision" 
+                className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 scale-110 group-hover:scale-100"
+              />
+              <div className="absolute bottom-10 left-10 z-20">
+                <p className="text-white font-serif text-3xl italic font-light">"Garantizamos la fe t&eacute;cnica."</p>
+                <div className="w-20 h-[1px] bg-gold-seal mt-4" />
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
-
     </section>
   );
 };

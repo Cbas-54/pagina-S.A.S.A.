@@ -2,34 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-
-const PILARES_DATA = [
-  {
-    title: "Seguridad",
-    description: "Auditoria de sistema antisiniestral.",
-    image: "/images/pilar_seguridad.png"
-  },
-  {
-    title: "Salud",
-    description: "Detección de vicios ocultos de habitibilidad.",
-    image: "/images/pilar_salud.png"
-  },
-  {
-    title: "Accesibilidad",
-    description: "Auditoría técnica para el entorno accesible e inclusivo.",
-    image: "/images/pilar_accesibilidad.png"
-  },
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.2 } },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-};
+import { ShieldCheck, Heart, Wheelchair } from "@phosphor-icons/react";
 
 interface PilaresProps {
   card1Ref?: React.RefObject<HTMLDivElement | null>;
@@ -38,62 +11,104 @@ interface PilaresProps {
   isDarkTheme?: boolean;
 }
 
-const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref, isDarkTheme }: PilaresProps) => {
-  const refs = [card1Ref, card2Ref, card3Ref];
+const Pilares = ({ card1Ref, card2Ref, card3Ref, isDarkTheme }: PilaresProps) => {
+  const pilares = [
+    {
+      title: "Seguridad Técnica",
+      description: "Nuestra prioridad es garantizar la integridad estructural y operativa de cada espacio, aplicando rigurosos protocolos de auditoría.",
+      icon: <ShieldCheck size={48} weight="duotone" />,
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+      ref: card1Ref
+    },
+    {
+      title: "Salud y Bienestar",
+      description: "Auditamos la calidad del aire, iluminación y factores ambientales para asegurar que cada propiedad promueva una vida saludable.",
+      icon: <Heart size={48} weight="duotone" />,
+      color: "text-rose-600",
+      bgColor: "bg-rose-50",
+      borderColor: "border-rose-200",
+      ref: card2Ref
+    },
+    {
+      title: "Accesibilidad Pro",
+      description: "Diseñamos y verificamos la eliminación de barreras arquitectónicas, logrando espacios inclusivos para cualquier perfil de usuario.",
+      icon: <Wheelchair size={48} weight="duotone" />,
+      color: "text-emerald-600",
+      bgColor: "bg-emerald-50",
+      borderColor: "border-emerald-200",
+      ref: card3Ref
+    }
+  ];
 
   return (
-    <section id="pilares" className="relative pb-24 md:pb-32 bg-transparent overflow-hidden transition-colors duration-700">
-      <div className="max-w-7xl mx-auto relative z-30 px-6 pt-20">
-        <div className="text-center mb-20 md:mb-28">
-          <motion.h2
-            className={`text-6xl md:text-8xl font-bold font-serif mb-8 tracking-tight transition-colors duration-700
-                       ${isDarkTheme ? "text-gold-seal drop-shadow-[0_0_20px_rgba(201,169,110,0.3)]" : "text-black"}`}
+    <section className="py-24 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`text-4xl md:text-6xl font-bold font-serif mb-6 tracking-tight transition-colors duration-700 ${isDarkTheme ? "text-white" : "text-slate-900"}`}
           >
-            Nuestros Tres Pilares
+            Nuestros <span className="text-gold-seal italic font-light">PILARES</span>
           </motion.h2>
-          <p className={`text-lg md:text-xl max-w-2xl mx-auto italic font-light transition-colors duration-700
-                       ${isDarkTheme ? "text-white/50" : "text-black/60"}`}>
-            Garantizamos transparencia profesional, seguridad y rentabilidad mediante tres dimensiones de rigor estructural.
-          </p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className={`text-xl max-w-2xl mx-auto font-bold transition-colors duration-700 ${isDarkTheme ? "text-white" : "text-slate-900"}`}
+          >
+            Tres dimensiones fundamentales que definen el estatus y la calidad de una propiedad certificada por S.A.S.A.
+          </motion.p>
         </div>
 
-        <motion.div variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid md:grid-cols-3 gap-8">
-          {PILARES_DATA.map((pilar, i) => (
+        <div className="grid md:grid-cols-3 gap-10">
+          {pilares.map((pilar, index) => (
             <motion.div
-              key={pilar.title}
-              variants={cardVariants}
-              className="group relative flex flex-col h-full bg-white transition-all duration-500 overflow-hidden rounded-3xl"
+              key={index}
+              ref={pilar.ref}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              whileHover={{ y: -10 }}
+              className={`p-10 rounded-3xl border transition-all duration-700 group relative overflow-hidden backdrop-blur-sm
+                        ${isDarkTheme 
+                          ? "bg-white/5 border-white/10 hover:bg-white/10" 
+                          : "bg-white border-slate-100 hover:shadow-2xl shadow-slate-200/50"}`}
             >
-              {/* Contenedor de Imagen */}
-              <div className="relative h-72 md:h-80 overflow-hidden">
-                <img
-                  src={pilar.image}
-                  alt={pilar.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
-              </div>
+              {/* Background accent glow */}
+              <div className={`absolute -right-10 -top-10 w-32 h-32 rounded-full blur-3xl opacity-10 transition-colors duration-700
+                              ${index === 0 ? "bg-blue-500" : index === 1 ? "bg-rose-500" : "bg-emerald-500"}`} />
 
-              {/* Contenedor de Texto Pegado a la Imagen */}
-              <div className="flex-grow p-8 md:p-10 bg-white transition-colors duration-500 group-hover:bg-blue-mid border-x border-b border-black/5 group-hover:border-transparent">
-                <h3 className="text-3xl font-serif font-bold mb-4 text-black transition-colors duration-500 group-hover:text-green-vibrant">
-                  {pilar.title}
-                </h3>
-                <p className="text-base leading-relaxed font-bold text-black/70 transition-colors duration-500 group-hover:text-white">
-                  {pilar.description}
-                </p>
+              <div className={`mb-8 p-4 rounded-2xl w-max transition-colors duration-700 
+                              ${isDarkTheme ? "bg-white/10 text-white" : `${pilar.bgColor} ${pilar.color}`}`}>
+                {pilar.icon}
               </div>
+              
+              <h3 className={`text-2xl font-bold mb-4 tracking-tight transition-colors duration-700 ${isDarkTheme ? "text-white" : "text-slate-900"}`}>
+                {pilar.title}
+              </h3>
+              
+              <p className={`leading-relaxed transition-colors duration-700 ${isDarkTheme ? "text-white/60" : "text-slate-600"}`}>
+                {pilar.description}
+              </p>
 
-              {/* Punto de Conexión para AnimatedBeam */}
-              <div ref={refs[i]} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 pointer-events-none" />
+              <div className="mt-8 flex items-center gap-2 group/btn cursor-pointer">
+                <span className={`text-sm font-bold uppercase tracking-widest transition-colors duration-700 ${isDarkTheme ? "text-gold-seal" : "text-slate-900"}`}>
+                  Ver detalles
+                </span>
+                <div className={`w-8 h-[1px] transition-all duration-300 group-hover/btn:w-12 ${isDarkTheme ? "bg-gold-seal" : "bg-slate-300"}`} />
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
-});
-
-Pilares.displayName = "Pilares";
+};
 
 export default Pilares;
