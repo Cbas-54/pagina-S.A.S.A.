@@ -75,7 +75,7 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref, isDarkTheme }: Pilar
               </div>
 
               {/* Contenedor de Texto Pegado a la Imagen */}
-              <div className="flex-grow p-8 md:p-10 bg-white transition-colors duration-500 group-hover:bg-blue-struct border-x border-b border-black/5 group-hover:border-transparent">
+              <div className="flex-grow p-8 md:p-10 bg-white transition-colors duration-500 group-hover:bg-blue-mid border-x border-b border-black/5 group-hover:border-transparent">
                 <h3 className="text-3xl font-serif font-bold mb-4 text-black transition-colors duration-500 group-hover:text-green-vibrant">
                   {pilar.title}
                 </h3>
