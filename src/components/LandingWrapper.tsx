@@ -23,7 +23,7 @@ export default function LandingWrapper() {
   const card1Ref = useRef<HTMLDivElement>(null);
   const card2Ref = useRef<HTMLDivElement>(null);
   const card3Ref = useRef<HTMLDivElement>(null);
-  
+
   // Estado para el efecto "Lights Off" (Apagón)
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
 
@@ -34,7 +34,7 @@ export default function LandingWrapper() {
       {/* ── UNIFIED MONOLITHIC CANVAS (Hero & Stats) ── */}
       <div className="relative bg-white overflow-hidden">
         <TechnicalGrid />
-        
+
         <section id="inicio" className="relative z-10">
           <Hero />
         </section>
@@ -57,24 +57,24 @@ export default function LandingWrapper() {
         <ServiceGallery />
 
         {/* 5. La Filosofía y el Sello (Conexión Visual) */}
-        <div 
-          ref={containerRef} 
+        <div
+          ref={containerRef}
           className={`relative z-10 transition-colors duration-700 ease-in-out ${isDarkTheme ? "bg-[#0A0A0A]" : "bg-white"}`}
         >
-          
+
 
 
           <section id="pilares" className="relative z-10 overflow-hidden">
-            <Pilares 
-              card1Ref={card1Ref} 
-              card2Ref={card2Ref} 
+            <Pilares
+              card1Ref={card1Ref}
+              card2Ref={card2Ref}
               card3Ref={card3Ref}
               isDarkTheme={isDarkTheme}
             />
           </section>
 
           <section id="sello" className="relative z-10 overflow-hidden">
-            <SelloSASA 
+            <SelloSASA
               onThemeChange={setIsDarkTheme}
             />
           </section>

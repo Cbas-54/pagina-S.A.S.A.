@@ -82,7 +82,7 @@ const Beneficios = () => {
       {/* Parallax Background Typography - Ultra Subtle */}
       <div className="absolute top-[20%] left-0 w-[200vw] overflow-hidden pointer-events-none opacity-[0.03] -z-0">
         <motion.h2 style={{ x: xLeft }} className="text-[14vw] font-serif font-black whitespace-nowrap leading-none tracking-tighter text-blue-mid uppercase">
-          Estrategia · Valor Técnico · Exclusividad · 
+          Estrategia · Valor Técnico · Exclusividad ·
         </motion.h2>
       </div>
       <div className="absolute top-[50%] left-0 w-[200vw] overflow-hidden pointer-events-none opacity-[0.02] -z-0">
@@ -90,7 +90,7 @@ const Beneficios = () => {
           Confianza Absoluta · Resultados SASA
         </motion.h2>
       </div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-28 flex flex-col lg:flex-row lg:items-end justify-between gap-12">
           <div className="max-w-3xl">
@@ -147,12 +147,12 @@ const Beneficios = () => {
             >
               {/* Internal Decoration */}
               <div className={`absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-white to-transparent rounded-full opacity-50 blur-3xl group-hover:from-blue-mid/10 transition-colors duration-1000`} />
-              
+
               <div>
                 <div className={`w-16 h-16 flex items-center justify-center rounded-[1.5rem] bg-white border border-divider/5 shadow-sm ${b.color} mb-12 transition-all duration-700 group-hover:scale-110 group-hover:shadow-xl group-hover:border-blue-mid/10`}>
                   {b.icon}
                 </div>
-                
+
                 <h4 className={`text-text-main font-bold font-serif ${i === 0 || i === 5 ? 'text-3xl lg:text-4xl' : 'text-2xl'} mb-5 tracking-tight`}>
                   {b.title}
                 </h4>

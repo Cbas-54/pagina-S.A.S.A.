@@ -7,7 +7,7 @@ import React from "react";
  */
 export default function GradientTransition() {
   return (
-    <div 
+    <div
       className="relative w-full h-32 md:h-64 pointer-events-none"
       style={{
         background: "linear-gradient(to bottom, #F4F4F5 0%, #020C1B 100%)",

@@ -30,7 +30,7 @@ export default function Navbar() {
             <SasaLogo />
           </div>
           <NavItems items={navItems} />
-          <div className="w-40 flex items-center justify-end" /> 
+          <div className="w-40 flex items-center justify-end" />
         </NavBody>
 
         {/* Mobile Navigation */}

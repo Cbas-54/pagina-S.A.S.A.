@@ -2,10 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  ShieldCheck, 
-  Lightning, 
-  Wind, 
+import {
+  ShieldCheck,
+  Lightning,
+  Wind,
   Detective,
 } from "@phosphor-icons/react";
 
@@ -27,14 +27,14 @@ const DIFFERENCES_DATA = [
   },
   {
     category: "Respuesta Preventiva",
-    title: "Marco técnico de respuesta comercial",
+    title: "Marco Técnico de Respuesta Comercial",
     desc: "Un reporte profesional que responde de forma preventiva a las inquietudes comunes sobre seguridad y habitabilidad. Anticipamos objeciones y fortalecemos la percepción del activo.",
     outcome: "Incremento del Valor Percibido",
     icon: <Wind size={32} weight="duotone" className="text-blue-mid" />
   },
   {
-    category: "Certificado preventa multilateral",
-    title: "La credibilidad como Activo Compartido",
+    category: "Certificado Preventa Multilateral",
+    title: "La Credibilidad como Activo Compartido",
     desc: "Reporte oficial de situación del inmueble, para que el vendedor traslade certeza y confianza al futuro comprador de lo que está adquiriendo. S.A.S.A es un beneficio para el vendedor.",
     outcome: "POTENCIAL AUMENTO EN LA CARTERA DE CLIENTES",
     icon: <ShieldCheck size={32} weight="duotone" className="text-blue-mid" />
@@ -46,10 +46,10 @@ const BackgroundDecorations = React.memo(() => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
     {/* Degrade Superior (Sombra de entrada) */}
     <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-[#020C1B] to-transparent opacity-30 z-10" />
-    
+
     {/* Degrade Inferior (Modo Espejo) */}
     <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-[#020C1B] to-transparent opacity-30 z-10" />
-    
+
     <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[1400px] h-[500px] bg-white opacity-80 blur-[130px]" />
     <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-blue-mid/[0.03] rounded-full blur-[150px]" />
   </div>
@@ -58,7 +58,7 @@ BackgroundDecorations.displayName = "BackgroundDecorations";
 
 const AnimatedDivider = React.memo(() => (
   <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[2.5px] -translate-x-1/2 pointer-events-none z-20">
-    <motion.div 
+    <motion.div
       initial={{ scaleY: 0 }}
       whileInView={{ scaleY: 1 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -73,7 +73,7 @@ AnimatedDivider.displayName = "AnimatedDivider";
 const StickyHeader = React.memo(() => (
   <div className="relative z-10">
     <div className="lg:sticky lg:top-40 lg:self-start pt-4">
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -122,7 +122,7 @@ const DifferenceItem = React.memo(({ item }: DifferenceItemProps) => {
       <h3 className="text-2xl md:text-3xl font-serif text-text-main font-bold mb-4 tracking-tight">
         {item.title}
       </h3>
-      
+
       <p className="text-text-sec text-lg leading-relaxed mb-6 opacity-80">
         {item.desc}
       </p>
@@ -141,8 +141,8 @@ DifferenceItem.displayName = "DifferenceItem";
 
 const SasaDifference = React.memo(() => {
   return (
-    <section 
-      id="la-diferencia" 
+    <section
+      id="la-diferencia"
       className="relative pt-12 pb-8 md:pt-20 md:pb-12 px-6 bg-[#E2E8F0]"
       style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 800px' }}
     >

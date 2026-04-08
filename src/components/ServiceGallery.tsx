@@ -66,10 +66,10 @@ const ECOSYSTEM_DATA = [
 const GalleryHeader = React.memo(() => (
   <div className="max-w-4xl mx-auto mb-20 text-center flex flex-col items-center">
     <motion.div
-       initial={{ opacity: 0, scale: 0.9 }}
-       whileInView={{ opacity: 1, scale: 1 }}
-       viewport={{ once: true }}
-       className="flex items-center gap-3 mb-6"
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="flex items-center gap-3 mb-6"
     >
       <div className="w-10 h-[1px] bg-blue-mid/40" />
       <span className="text-[11px] font-black tracking-[0.4em] uppercase text-blue-mid/60">
@@ -77,7 +77,7 @@ const GalleryHeader = React.memo(() => (
       </span>
       <div className="w-10 h-[1px] bg-blue-mid/40" />
     </motion.div>
-    
+
     <motion.h2
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ const GalleryHeader = React.memo(() => (
       ASESORAMIENTOS <br />
       <span className="italic font-light text-blue-mid/80">INCLUIDOS</span>
     </motion.h2>
-    
+
     <motion.p
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -119,50 +119,50 @@ const ServiceCard = React.memo(({ item, idx }: ServiceCardProps) => {
       {item.image && (
         <div className={`
           absolute inset-0 transition-all duration-1000
-          ${item.bg === 'bg-white' 
-            ? 'opacity-80 grayscale-0 group-hover:opacity-100' 
+          ${item.bg === 'bg-white'
+            ? 'opacity-80 grayscale-0 group-hover:opacity-100'
             : 'opacity-25 grayscale group-hover:opacity-60 group-hover:grayscale-0'}
           group-hover:scale-105
         `}>
-           <Image src={item.image} alt={item.title} fill className="object-cover" />
-           {/* Custom Mist Overlay */}
-           {item.mistColor && (
-             <div className={`absolute inset-0 bg-gradient-to-br ${item.mistColor} to-transparent`} />
-           )}
+          <Image src={item.image} alt={item.title} fill className="object-cover" />
+          {/* Custom Mist Overlay */}
+          {item.mistColor && (
+            <div className={`absolute inset-0 bg-gradient-to-br ${item.mistColor} to-transparent`} />
+          )}
         </div>
       )}
 
       {/* Main Content Layer */}
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-12">
-           <div className="p-0 transition-transform duration-500 group-hover:scale-110">
-              {item.icon}
-           </div>
+          <div className="p-0 transition-transform duration-500 group-hover:scale-110">
+            {item.icon}
+          </div>
         </div>
 
         <span className={`text-[10px] font-black tracking-[0.3em] uppercase mb-4 block ${item.bg === 'bg-white' ? 'text-black' : 'text-blue-200'}`}>
-           {item.category}
+          {item.category}
         </span>
-        
+
         <h3 className={`text-3xl md:text-4xl font-serif font-bold mb-6 tracking-tight leading-tight ${item.titleColor || ''} ${item.bg === 'bg-white' ? 'text-black' : ''}`}>
-           {item.title}
+          {item.title}
         </h3>
-        
+
         <p className={`text-lg leading-relaxed mb-10 ${item.bg === 'bg-white' ? 'text-black max-w-sm' : 'text-white'}`}>
-           {item.desc}
+          {item.desc}
         </p>
       </div>
 
       {/* Footer Details */}
       <div className="relative z-10 pt-8 border-t border-current/10 flex flex-wrap gap-3">
-         {item.details.map((detail, i) => (
-            <span 
-              key={i} 
-              className={`text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border ${item.bg === 'bg-white' ? 'border-black text-black' : 'border-white/10 text-white'}`}
-            >
-               {detail}
-            </span>
-         ))}
+        {item.details.map((detail, i) => (
+          <span
+            key={i}
+            className={`text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border ${item.bg === 'bg-white' ? 'border-black text-black' : 'border-white/10 text-white'}`}
+          >
+            {detail}
+          </span>
+        ))}
       </div>
 
       {/* Decorative Corner Icon Eliminado */}
@@ -182,13 +182,13 @@ BackgroundDecorations.displayName = "BackgroundDecorations";
 
 const ServiceGallery = React.memo(() => {
   return (
-    <section 
-      id="servicios" 
+    <section
+      id="servicios"
       className="relative pt-12 pb-12 md:pt-20 md:pb-12 px-6 bg-[#F4F4F5] overflow-hidden"
       style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1200px' }}
     >
       <BackgroundDecorations />
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         <GalleryHeader />
 

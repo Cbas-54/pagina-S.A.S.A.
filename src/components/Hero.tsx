@@ -9,12 +9,12 @@ const Hero = () => {
   return (
     <div id="inicio" ref={containerRef} className="relative min-h-[90vh] bg-transparent overflow-hidden">
       <section className="h-full w-full pt-32 pb-20 overflow-hidden flex items-center">
-        
+
         {/* ── Background: Architectural Facade ── */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
           {/* Escudo de Legibilidad: Gradiente horizontal muy sutil */}
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-transparent z-10" />
-          
+
           {/* Máscara de Fusión Vertical: Minimalista para unir con Stats */}
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent z-10" />
 
@@ -70,7 +70,7 @@ const Hero = () => {
                 <span className="text-[160px] font-bold text-black leading-none tracking-tighter">A</span>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-3 mt-4 ml-4 whitespace-nowrap">
               <span className="text-[1.1rem] text-black font-bold tracking-widest uppercase">Confianza auditable</span>
               <div className="w-1.5 h-1.5 rounded-full bg-black/60" />

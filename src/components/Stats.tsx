@@ -51,7 +51,7 @@ const STATS_DATA = [
 // --- Fondo: Brillos sutiles para el modo claro ---
 const BackgroundGlows = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10" aria-hidden="true">
-    <div 
+    <div
       className="absolute top-0 right-0 w-[600px] h-[600px] opacity-[0.05]"
       style={{
         background: `radial-gradient(circle at center, var(--gold-seal) 0%, transparent 70%)`
@@ -82,15 +82,15 @@ const StatCard = React.memo(({ stat, index }: StatCardProps) => {
                         group-hover:scale-110 group-hover:bg-gold-seal/10 transition-all duration-700 relative`}>
           <div className="relative z-10">{stat.icon}</div>
         </div>
-        
+
         <h4 className="text-gold-seal font-bold text-[10px] uppercase tracking-widest mb-2 opacity-80">
           {stat.label}
         </h4>
-        
+
         <h3 className="text-xl md:text-2xl font-bold font-serif text-black leading-tight mb-4 tracking-tight group-hover:text-gold-seal transition-colors duration-500 min-h-[3rem]">
           {stat.title}
         </h3>
-        
+
         <div className="space-y-4 w-full">
           <p className="text-black/80 text-[13px] leading-relaxed font-bold italic transition-colors duration-500">
             {stat.sublabel}
@@ -111,14 +111,14 @@ StatCard.displayName = "StatCard";
 
 const Stats = React.memo(() => {
   return (
-    <section 
-      id="stats" 
+    <section
+      id="stats"
       className="relative z-20 pt-16 pb-24 px-6 bg-transparent"
     >
       <BackgroundGlows />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

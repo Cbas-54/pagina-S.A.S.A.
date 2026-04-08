@@ -45,7 +45,7 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref, isDarkTheme }: Pilar
     <section id="pilares" className="relative pb-24 md:pb-32 bg-transparent overflow-hidden transition-colors duration-700">
       <div className="max-w-7xl mx-auto relative z-30 px-6 pt-20">
         <div className="text-center mb-20 md:mb-28">
-          <motion.h2 
+          <motion.h2
             className={`text-6xl md:text-8xl font-bold font-serif mb-8 tracking-tight transition-colors duration-700
                        ${isDarkTheme ? "text-gold-seal drop-shadow-[0_0_20px_rgba(201,169,110,0.3)]" : "text-black"}`}
           >
@@ -66,8 +66,8 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref, isDarkTheme }: Pilar
             >
               {/* Contenedor de Imagen */}
               <div className="relative h-72 md:h-80 overflow-hidden">
-                <img 
-                  src={pilar.image} 
+                <img
+                  src={pilar.image}
                   alt={pilar.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
@@ -83,7 +83,7 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref, isDarkTheme }: Pilar
                   {pilar.description}
                 </p>
               </div>
-              
+
               {/* Punto de Conexión para AnimatedBeam */}
               <div ref={refs[i]} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 pointer-events-none" />
             </motion.div>
