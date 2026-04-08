@@ -14,11 +14,12 @@ const SelloSASA = React.memo(({ sealRef, onThemeChange }: SelloSASAProps) => {
   const titleRef = React.useRef(null);
   
   // Detecta si el título ha asomado por la parte inferior
-  // margin: "100% 0px 0px 0px" significa:
+  // margin: "10000px 0px 0px 0px" significa:
   // - Se activa en cuanto el elemento toca el borde inferior del viewport (0px)
-  // - Permanece activo si el elemento sube por encima del viewport (100%)
+  // - Permanece activo incluso si el elemento sube muchísimo por encima del viewport (10000px)
+  // - Se desactiva solo si el elemento baja por debajo del borde inferior del viewport (scroll up)
   const isExcelenceActive = useInView(titleRef, {
-    margin: "100% 0px 0px 0px" 
+    margin: "10000px 0px 0px 0px" 
   });
 
   React.useEffect(() => {
