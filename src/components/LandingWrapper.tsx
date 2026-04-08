@@ -59,8 +59,8 @@ export default function LandingWrapper() {
           className="relative z-10 bg-[#0A0A0A] -mt-px"
         >
           {/* Transition Gradient from White (Previous Section) to Dark */}
-          {/* Transition Gradient: Desplaza el fade hacia arriba para no tapar el título de Pilares */}
-          <div className="absolute -top-64 left-0 w-full h-64 bg-gradient-to-b from-transparent to-[#0A0A0A] pointer-events-none z-20" />
+          {/* Transition Gradient: Buffer reducido para una transición limpia sin solapamientos */}
+          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#F4F4F5] to-transparent pointer-events-none z-20" />
 
           {/* Animated Beams (Configuradas para fondo oscuro) */}
           <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
