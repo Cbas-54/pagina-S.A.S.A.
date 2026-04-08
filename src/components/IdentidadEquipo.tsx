@@ -39,7 +39,7 @@ const IdentidadEquipo = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 1 }}
-              className="relative p-10 md:p-16 rounded-t-[3rem] rounded-b-none bg-white/[0.02] border-t border-x border-white/5 backdrop-blur-sm z-10"
+              className="relative p-10 md:p-16 rounded-t-[3rem] rounded-b-none bg-white/[0.02] backdrop-blur-sm z-10"
            >
               <UsersThree size={60} weight="thin" className="text-gold-seal/40 mx-auto mb-10" />
               
@@ -69,7 +69,7 @@ const IdentidadEquipo = () => {
            <div className="absolute -bottom-[1px] left-0 w-full h-12 pointer-events-none hidden md:block">
               {/* Left Inverted Corner */}
               <div 
-                className="absolute left-[-48px] bottom-0 w-[48px] h-[48px] bg-white/[0.02] backdrop-blur-sm border-b border-r border-white/5" 
+                className="absolute left-[-48px] bottom-0 w-[48px] h-[48px] bg-white/[0.02] backdrop-blur-sm" 
                 style={{ 
                   maskImage: 'radial-gradient(circle at 0px 0px, transparent 48px, white 48px)',
                   WebkitMaskImage: 'radial-gradient(circle at 0px 0px, transparent 48px, white 48px)'
@@ -77,7 +77,7 @@ const IdentidadEquipo = () => {
               />
               {/* Right Inverted Corner */}
               <div 
-                className="absolute right-[-48px] bottom-0 w-[48px] h-[48px] bg-white/[0.02] backdrop-blur-sm border-b border-l border-white/5"
+                className="absolute right-[-48px] bottom-0 w-[48px] h-[48px] bg-white/[0.02] backdrop-blur-sm"
                 style={{ 
                   maskImage: 'radial-gradient(circle at 48px 0px, transparent 48px, white 48px)',
                   WebkitMaskImage: 'radial-gradient(circle at 48px 0px, transparent 48px, white 48px)'
