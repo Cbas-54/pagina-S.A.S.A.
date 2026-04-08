@@ -27,21 +27,22 @@ const SelloSASA = React.memo(({ onThemeChange }: SelloSASAProps) => {
 
   return (
     <section id="sello" className="relative pt-24 md:pt-32 pb-24 md:pb-32 px-6 overflow-hidden">
-      {/* ── BACKGROUND IMAGE WITH TRANSITION ── */}
-      <div className="absolute inset-0 z-0">
+      {/* ── BACKGROUND WITH OVERLAY AND BLUE GLOW ── */}
+      <div className="absolute inset-0 z-0 bg-[#0A0A0A]">
+        {/* Image kept at very low opacity to remain "underneath" */}
         <Image 
           src="/edificio gemini corte.png" 
           alt="Fondo Excelencia" 
           fill 
           priority
-          className="object-cover opacity-90"
+          className="object-cover opacity-20 filter grayscale brightness-50"
         />
-        {/* Soft blur at the top transition */}
-        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-white via-white/80 to-transparent z-10" />
-        <div className="absolute top-0 left-0 w-full h-32 backdrop-blur-sm z-10" />
         
-        {/* Smooth transition to the dark sections below */}
-        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent z-10" />
+        {/* Blue Glow (Resplandor Azul) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-blue-600/15 blur-[160px] rounded-full pointer-events-none" />
+        
+        {/* Dark overlay to ensure gradients are covered and match the bottom black */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]" />
       </div>
 
       <div className="max-w-4xl mx-auto relative z-30">

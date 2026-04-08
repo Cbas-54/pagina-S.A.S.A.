@@ -30,7 +30,7 @@ const Cierre = React.memo(() => {
           className="flex flex-col items-center"
         >
           <blockquote className="text-3xl md:text-5xl font-serif font-light text-white leading-[1.3] italic mb-12">
-            &ldquo;Somos tu <span className="text-gradient-green font-medium not-italic tracking-tight">aliado técnico</span> 
+            &ldquo;Somos tu <span className="text-gradient-green font-medium not-italic tracking-tight">aliado técnico</span>
             <br />
             que eleva tu propuesta
             <br />
@@ -39,29 +39,29 @@ const Cierre = React.memo(() => {
 
           {/* Slogans adicionales */}
           <div className="flex flex-col md:flex-row gap-6 mb-16 opacity-40">
-             <span className="text-[11px] font-black uppercase tracking-[0.3em] text-white py-2 px-4 border border-white/10 rounded-full">
-               SASA ES UN SISTEMA INNOVADOR PARA EL MERCADO INMOBILIARIO ACTUAL.
-             </span>
+            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-white py-2 px-4 border border-white/10 rounded-full">
+              SASA ES UN SISTEMA INNOVADOR PARA EL MERCADO INMOBILIARIO ACTUAL.
+            </span>
           </div>
 
           {/* Authors / Technical Signatures */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-12">
             {/* Maximiliano */}
             <div className="flex items-center gap-4">
-               <div className="text-left">
-                 <p className="text-white text-base font-bold leading-tight">Lic. Maximiliano Martín Ovelar</p>
-                 <p className="text-slate-500 text-[10px] uppercase tracking-widest font-black mt-1">Matrícula LHS-007462 PBA · Especialista SASA</p>
-               </div>
+              <div className="text-left">
+                <p className="text-white text-base font-bold leading-tight">Lic. Maximiliano Martín Ovelar</p>
+                <p className="text-slate-500 text-[10px] uppercase tracking-widest font-black mt-1">Matrícula LHS-007462 PBA · Especialista SASA</p>
+              </div>
             </div>
 
             <div className="hidden md:block w-px h-8 bg-white/10" />
 
             {/* Juan Pablo Stock */}
             <div className="flex items-center gap-4">
-               <div className="text-left">
-                 <p className="text-white text-base font-bold leading-tight">Juan Pablo Stock</p>
-                 <p className="text-slate-500 text-[10px] uppercase tracking-widest font-black mt-1">Matrícula THS - 011523 - PBA · Resp. Técnico</p>
-               </div>
+              <div className="text-left">
+                <p className="text-white text-base font-bold leading-tight">Tec. Juan Pablo Stock</p>
+                <p className="text-slate-500 text-[10px] uppercase tracking-widest font-black mt-1">Matrícula THS - 011523 - PBA · Resp. Técnico</p>
+              </div>
             </div>
           </div>
         </motion.div>
