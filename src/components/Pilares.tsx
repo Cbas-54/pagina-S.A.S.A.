@@ -75,8 +75,8 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref, isDarkTheme }: Pilar
               </div>
 
               {/* Contenedor de Texto Pegado a la Imagen */}
-              <div className="flex-grow p-8 md:p-10 bg-white transition-colors duration-500 group-hover:bg-[#0A0A0A] border-x border-b border-black/5 group-hover:border-transparent">
-                <h3 className="text-3xl font-serif font-bold mb-4 text-black transition-colors duration-500 group-hover:text-gold-seal">
+              <div className="flex-grow p-8 md:p-10 bg-white transition-colors duration-500 group-hover:bg-blue-struct border-x border-b border-black/5 group-hover:border-transparent">
+                <h3 className="text-3xl font-serif font-bold mb-4 text-black transition-colors duration-500 group-hover:text-green-vibrant">
                   {pilar.title}
                 </h3>
                 <p className="text-base leading-relaxed text-black/60 transition-colors duration-500 group-hover:text-white/80">
@@ -84,7 +84,7 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref, isDarkTheme }: Pilar
                 </p>
 
                 <div className="mt-8 pt-6 border-t border-black/5 group-hover:border-white/5 transition-colors duration-500">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/40 group-hover:text-gold-seal/60">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/40 group-hover:text-green-vibrant/60">
                     Dimensión Pericial 0{i + 1}
                   </span>
                 </div>
