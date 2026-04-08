@@ -48,19 +48,24 @@ interface PilaresProps {
   card1Ref?: React.RefObject<HTMLDivElement | null>;
   card2Ref?: React.RefObject<HTMLDivElement | null>;
   card3Ref?: React.RefObject<HTMLDivElement | null>;
+  isDarkTheme?: boolean;
 }
 
-const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
+const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref, isDarkTheme }: PilaresProps) => {
   const refs = [card1Ref, card2Ref, card3Ref];
 
   return (
-    <section id="pilares" className="relative pb-12 md:pb-16 bg-[#020C1B] overflow-hidden">
+    <section id="pilares" className="relative pb-12 md:pb-16 bg-transparent overflow-hidden transition-colors duration-700">
       <div className="max-w-7xl mx-auto relative z-30 px-6 pt-14">
         <div className="text-center mb-28">
-          <motion.h2 className="text-6xl md:text-8xl font-bold font-serif text-gold-seal mb-8 tracking-tight drop-shadow-[0_0_20px_rgba(201,169,110,0.3)]">
+          <motion.h2 
+            className={`text-6xl md:text-8xl font-bold font-serif mb-8 tracking-tight transition-colors duration-700
+                       ${isDarkTheme ? "text-gold-seal drop-shadow-[0_0_20px_rgba(201,169,110,0.3)]" : "text-black"}`}
+          >
             Nuestros Tres Pilares
           </motion.h2>
-          <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto italic font-light">
+          <p className={`text-lg md:text-xl max-w-2xl mx-auto italic font-light transition-colors duration-700
+                       ${isDarkTheme ? "text-white/50" : "text-black/60"}`}>
             Garantizamos transparencia profesional, seguridad y rentabilidad mediante tres dimensiones de rigor estructural.
           </p>
         </div>
@@ -70,11 +75,15 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
             <motion.div
               key={pilar.title}
               variants={cardVariants}
-              className={`group relative bg-white/[0.03] backdrop-blur-xl p-12 border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/[0.05] hover:border-gold-seal/20 ${pilar.glow}`}
+              className={`group relative backdrop-blur-xl p-12 border rounded-3xl overflow-hidden transition-all duration-700 
+                         ${isDarkTheme 
+                           ? "bg-white/[0.03] border-white/10 hover:bg-white/[0.05] hover:border-gold-seal/20" 
+                           : "bg-white/40 border-slate-200 hover:bg-white/60 hover:border-gold-seal/40"}`}
             >
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex justify-between items-start mb-10">
-                   <h3 className="text-4xl font-serif font-bold text-gold-seal drop-shadow-[0_0_15px_rgba(201,169,110,0.3)]">
+                   <h3 className={`text-4xl font-serif font-bold transition-colors duration-700
+                                 ${isDarkTheme ? "text-gold-seal" : "text-black"}`}>
                      {pilar.title}
                    </h3>
                    <div className="p-0 transition-transform duration-500 group-hover:scale-110">
@@ -82,12 +91,15 @@ const Pilares = React.memo(({ card1Ref, card2Ref, card3Ref }: PilaresProps) => {
                    </div>
                 </div>
                 
-                <p className="text-white/60 text-base mb-10 opacity-80 leading-relaxed font-medium italic border-l border-white/10 pl-6">
+                <p className={`text-base mb-10 opacity-80 leading-relaxed font-medium italic border-l pl-6 transition-colors duration-700
+                              ${isDarkTheme ? "text-white/60 border-white/10" : "text-black/70 border-slate-200"}`}>
                   {pilar.description}
                 </p>
 
-                <div className="mt-auto pt-8 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                  <span className="text-[10px] font-bold text-gold-seal uppercase tracking-[0.2em]">
+                <div className={`mt-auto pt-8 border-t transition-all duration-700
+                               ${isDarkTheme ? "border-white/5" : "border-slate-200"}`}>
+                  <span className={`text-[10px] font-bold uppercase tracking-[0.2em] transition-colors duration-700
+                                   ${isDarkTheme ? "text-gold-seal" : "text-black/40"}`}>
                     Auditoría Verificada
                   </span>
                 </div>

@@ -2,18 +2,31 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Check } from "@phosphor-icons/react";
 
 interface SelloSASAProps {
   sealRef: React.RefObject<HTMLDivElement | null>;
+  onThemeChange: (isDark: boolean) => void;
 }
 
-const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
+const SelloSASA = React.memo(({ sealRef, onThemeChange }: SelloSASAProps) => {
+  const titleRef = React.useRef(null);
+  
+  // Detecta si el título ha llegado a la zona del navbar
+  const isExcelenceActive = useInView(titleRef, {
+    margin: "-120px 0px -100% 0px" 
+  });
+
+  React.useEffect(() => {
+    onThemeChange(isExcelenceActive);
+  }, [isExcelenceActive, onThemeChange]);
+
   return (
-    <section id="sello" className="relative pt-12 md:pt-16 pb-24 md:pb-32 px-6 bg-[#020C1B] overflow-hidden">
+    <section id="sello" className="relative pt-12 md:pt-16 pb-24 md:pb-32 px-6 bg-transparent overflow-hidden">
       {/* ── SEAMLESS MIDNIGHT TRANSITION (Melted Flow) ── */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#020C1B] to-transparent z-10 pointer-events-none" />
+      <div className={`absolute top-0 left-0 w-full h-32 bg-gradient-to-b transition-colors duration-700 pointer-events-none z-10 
+                      ${isExcelenceActive ? "from-[#0A0A0A]" : "from-white"}`} />
 
       <div className="max-w-7xl mx-auto relative z-30">
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-32">
@@ -70,7 +83,10 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
             className="lg:w-1/2 space-y-12"
           >
             <div className="space-y-6">
-              <h2 className="text-5xl md:text-7xl font-bold font-serif text-white tracking-tight leading-tight">
+              <h2 
+                ref={titleRef}
+                className="text-5xl md:text-7xl font-bold font-serif text-white tracking-tight leading-tight"
+              >
                 La Síntesis de<br />
                 <span className="text-gold-seal italic font-light uppercase tracking-wide">LA EXCELENCIA</span>
               </h2>

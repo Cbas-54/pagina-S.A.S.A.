@@ -24,6 +24,9 @@ export default function LandingWrapper() {
   const card2Ref = useRef<HTMLDivElement>(null);
   const card3Ref = useRef<HTMLDivElement>(null);
   const sealRef = useRef<HTMLDivElement>(null);
+  
+  // Estado para el efecto "Lights Off" (Apagón)
+  const [isDarkTheme, setIsDarkTheme] = React.useState(false);
 
   return (
     <>
@@ -58,7 +61,10 @@ export default function LandingWrapper() {
         <GradientTransition />
 
         {/* 5. La Filosofía y el Sello (Conexión Visual) */}
-        <div ref={containerRef} className="relative z-10 bg-[#020C1B]">
+        <div 
+          ref={containerRef} 
+          className={`relative z-10 transition-colors duration-700 ease-in-out ${isDarkTheme ? "bg-[#0A0A0A]" : "bg-white"}`}
+        >
           
           {/* Animated Beams */}
           <div className="hidden lg:block absolute inset-0 z-20 pointer-events-none">
@@ -68,12 +74,13 @@ export default function LandingWrapper() {
               toRef={sealRef}
               duration={5}
               curvature={140}
-              pathColor="rgba(201,169,110,0.25)"
+              pathColor={isDarkTheme ? "rgba(201,169,110,0.25)" : "rgba(37,99,235,0.15)"}
               gradientStartColor="#C9A96E"
               gradientStopColor="#C9A96E"
               reverse={false}
               startYOffset={5}
             />
+            {/* ... rest of the beams will be simplified/updated if needed, but pathColor is key */}
             <AnimatedBeam
               containerRef={containerRef}
               fromRef={card2Ref}
@@ -81,7 +88,7 @@ export default function LandingWrapper() {
               duration={5}
               delay={0}
               curvature={70}
-              pathColor="rgba(201,169,110,0.25)"
+              pathColor={isDarkTheme ? "rgba(201,169,110,0.25)" : "rgba(34,197,94,0.15)"}
               gradientStartColor="#C9A96E"
               gradientStopColor="#C9A96E"
               reverse={false}
@@ -94,7 +101,7 @@ export default function LandingWrapper() {
               duration={5}
               delay={0}
               curvature={-140}
-              pathColor="rgba(201,169,110,0.25)"
+              pathColor={isDarkTheme ? "rgba(201,169,110,0.25)" : "rgba(15,23,42,0.15)"}
               gradientStartColor="#C9A96E"
               gradientStopColor="#C9A96E"
               reverse={false}
@@ -106,13 +113,15 @@ export default function LandingWrapper() {
             <Pilares 
               card1Ref={card1Ref} 
               card2Ref={card2Ref} 
-              card3Ref={card3Ref} 
+              card3Ref={card3Ref}
+              isDarkTheme={isDarkTheme}
             />
           </section>
 
           <section id="sello" className="relative z-10 overflow-hidden">
             <SelloSASA 
               sealRef={sealRef}
+              onThemeChange={setIsDarkTheme}
             />
           </section>
         </div>
