@@ -6,7 +6,7 @@ import { UsersThree, Certificate, Medal } from "@phosphor-icons/react";
 
 const IdentidadEquipo = () => {
   return (
-    <section id="equipo" className="relative py-32 md:py-48 px-6 bg-[#0A0A0A] overflow-hidden">
+    <section id="equipo" className="relative pt-32 md:pt-48 pb-0 px-6 bg-[#0A0A0A] overflow-hidden">
       {/* Elementos decorativos de fondo */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-mid/5 rounded-full blur-[160px] opacity-20" />
       
@@ -67,8 +67,6 @@ const IdentidadEquipo = () => {
         </div>
       </div>
       
-      {/* Divisor Inferior sutil */}
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/5" />
     </section>
   );
 };

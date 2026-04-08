@@ -7,7 +7,7 @@ import { Quotes } from "@phosphor-icons/react";
 
 const Cierre = React.memo(() => {
   return (
-    <section className="relative py-32 md:py-40 px-6 overflow-hidden noise-overlay">
+    <section className="relative pt-12 md:pt-16 pb-32 md:pb-40 px-6 overflow-hidden noise-overlay">
       {/* Dramatic gradients */}
       <div className="absolute inset-0 -z-10 bg-[#0A0A0A]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(0,51,102,0.4)_0%,transparent_70%)]" />
