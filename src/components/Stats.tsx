@@ -87,16 +87,16 @@ const StatCard = React.memo(({ stat, index }: StatCardProps) => {
           {stat.label}
         </h4>
         
-        <h3 className="text-xl md:text-2xl font-bold font-serif text-slate-900 leading-tight mb-4 tracking-tight group-hover:text-gold-seal transition-colors duration-500 min-h-[3rem]">
+        <h3 className="text-xl md:text-2xl font-bold font-serif text-black leading-tight mb-4 tracking-tight group-hover:text-gold-seal transition-colors duration-500 min-h-[3rem]">
           {stat.title}
         </h3>
         
         <div className="space-y-4 w-full">
-          <p className="text-slate-600/80 text-[13px] leading-relaxed font-light italic group-hover:text-slate-900 transition-colors duration-500">
+          <p className="text-black/80 text-[13px] leading-relaxed font-bold italic transition-colors duration-500">
             {stat.sublabel}
           </p>
           <div className="pt-4 border-t border-slate-200/50">
-            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-tighter group-hover:text-gold-seal/60 transition-colors duration-500">
+            <span className="text-[11px] font-bold text-black/40 uppercase tracking-tighter group-hover:text-gold-seal/60 transition-colors duration-500">
               {stat.outcome}
             </span>
           </div>
@@ -125,20 +125,12 @@ const Stats = React.memo(() => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto mb-16 text-center cursor-default"
         >
-          <div className="flex items-center justify-center gap-6 mb-6">
-            <div className="h-[1px] w-12 bg-gold-seal/20" />
-            <h2 className="text-gold-seal font-black text-xs uppercase tracking-[0.4em]">
-              Objetivos Estratégicos
-            </h2>
-            <div className="h-[1px] w-12 bg-gold-seal/20" />
-          </div>
-
-          <p className="text-3xl md:text-4xl lg:text-5xl text-slate-900 font-serif font-bold leading-[1.2] tracking-tight">
+          <p className="text-3xl md:text-4xl lg:text-5xl text-black font-serif font-bold leading-[1.2] tracking-tight">
             S.A.S.A. es un sistema profesional de certificación <span className="text-gold-seal italic underline decoration-gold-seal/30 underline-offset-[12px]">PRE VENTA</span> para activos inmobiliarios de alta gama.
           </p>
           
           <div className="mt-12 flex justify-center">
-            <p className="text-slate-500 text-lg leading-relaxed max-w-2xl font-bold italic border-x-2 border-gold-seal/40 px-8">
+            <p className="text-black text-lg leading-relaxed max-w-2xl font-bold italic border-x-2 border-gold-seal/40 px-8">
               "Aportamos la transparencia técnica que el mercado inmobiliario exige, transformando la seguridad en un activo comercial de alto valor."
             </p>
           </div>

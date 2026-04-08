@@ -12,17 +12,17 @@ const Hero = () => {
         
         {/* ── Background: Architectural Facade ── */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
-          {/* Escudo de Legibilidad: Gradiente horizontal */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+          {/* Escudo de Legibilidad: Gradiente horizontal muy sutil */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-transparent z-10" />
           
-          {/* Máscara de Fusión Vertical: Suavizada para ver más el edificio */}
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent z-10" />
+          {/* Máscara de Fusión Vertical: Minimalista para unir con Stats */}
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent z-10" />
 
           <Image
             src="/hero-building.png"
             alt="SASA Architectural Perspective"
             fill
-            className="object-cover object-right-bottom opacity-95"
+            className="object-cover object-right-bottom"
             priority
             sizes="100vw"
           />
