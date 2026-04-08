@@ -44,25 +44,69 @@ const Cierre = React.memo(() => {
             </span>
           </div>
 
-          {/* Authors / Technical Signatures */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-            {/* Maximiliano */}
-            <div className="flex items-center gap-4">
-              <div className="text-left">
-                <p className="text-white text-base font-bold leading-tight">Lic. Maximiliano Martín Ovelar</p>
-                <p className="text-slate-500 text-[10px] uppercase tracking-widest font-black mt-1">Matrícula LHS-007462 PBA · Especialista SASA</p>
-              </div>
-            </div>
+          {/* Executive Profile Cards */}
+          <div className="flex flex-col md:flex-row items-stretch justify-center gap-6 w-full max-w-5xl mx-auto">
+            {[
+              {
+                name: "Lic. Maximiliano Martín Ovelar",
+                role: "Especialista SASA",
+                credential: "Matrícula LHS-007462 PBA",
+                image: "/Maximiliano Gemini.png"
+              },
+              {
+                name: "Tec. Juan Pablo Stock",
+                role: "Resp. Técnico",
+                credential: "Matrícula THS - 011523 - PBA",
+                image: "/Juan Pablo Gemini.png"
+              }
+            ].map((person, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 + i * 0.2 }}
+                whileHover={{ y: -10 }}
+                className="flex-1 group relative p-10 rounded-[3rem] bg-gradient-to-br from-white/[0.08] to-transparent border border-white/10 hover:border-gold-seal/50 transition-all duration-700 overflow-visible"
+              >
+                {/* Permanent gold glow background */}
+                <div className="absolute inset-0 bg-gold-seal/10 blur-[100px] -z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+                
+                <div className="flex flex-col items-center gap-8 h-full">
+                  {/* Avatar Container - Double Size */}
+                  <div className="relative shrink-0">
+                    {/* Ring glow */}
+                    <div className="absolute inset-0 -m-4 bg-gold-seal/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    
+                    <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border border-white/20 group-hover:border-gold-seal/50 transition-all duration-700 shadow-[0_30px_60px_rgba(0,0,0,0.5)] bg-[#111] aspect-square isolate">
+                      <Image 
+                        src={person.image} 
+                        alt={person.name} 
+                        fill 
+                        className="object-cover object-top rounded-full transition-transform duration-1000 group-hover:scale-105"
+                      />
+                    </div>
+                    {/* Status dot */}
+                    <div className="absolute bottom-2 right-2 w-6 h-6 bg-green-500 border-4 border-[#111] rounded-full shadow-[0_0_20px_rgba(34,197,94,0.6)] z-20" />
+                  </div>
 
-            <div className="hidden md:block w-px h-8 bg-white/10" />
-
-            {/* Juan Pablo Stock */}
-            <div className="flex items-center gap-4">
-              <div className="text-left">
-                <p className="text-white text-base font-bold leading-tight">Tec. Juan Pablo Stock</p>
-                <p className="text-slate-500 text-[10px] uppercase tracking-widest font-black mt-1">Matrícula THS - 011523 - PBA · Resp. Técnico</p>
-              </div>
-            </div>
+                  {/* Info Text - Centered to match big image */}
+                  <div className="text-center space-y-4">
+                    <h4 className="text-white text-2xl md:text-3xl font-bold tracking-tight">
+                      {person.name}
+                    </h4>
+                    <div className="flex flex-col gap-2">
+                      <span className="text-gold-seal text-[12px] font-black uppercase tracking-[0.4em] px-4 py-1.5 rounded-full bg-gold-seal/10 border border-gold-seal/20 inline-block mx-auto">
+                        {person.role}
+                      </span>
+                      <span className="text-white/40 text-[11px] font-medium tracking-widest leading-relaxed uppercase">
+                        {person.credential}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 

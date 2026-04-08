@@ -4,32 +4,22 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Heart, Wheelchair } from "@phosphor-icons/react";
 
-interface PilaresProps {
-  card1Ref?: React.RefObject<HTMLDivElement | null>;
-  card2Ref?: React.RefObject<HTMLDivElement | null>;
-  card3Ref?: React.RefObject<HTMLDivElement | null>;
-  isDarkTheme?: boolean;
-}
-
-const Pilares = ({ card1Ref, card2Ref, card3Ref, isDarkTheme = true }: PilaresProps) => {
+const Pilares = ({ isDarkTheme = true }: { isDarkTheme?: boolean }) => {
   const pilares = [
     {
       title: "Seguridad",
       description: "auditoria de sistema antisiniestral.",
-      icon: <ShieldCheck size={48} weight="duotone" className="text-blue-500" />,
-      ref: card1Ref
+      icon: <ShieldCheck size={48} weight="duotone" className="text-blue-500" />
     },
     {
       title: "Salud",
       description: "detección de vicios ocultos de habitibilidad.",
-      icon: <Heart size={48} weight="duotone" className="text-green-500" />,
-      ref: card2Ref
+      icon: <Heart size={48} weight="duotone" className="text-green-500" />
     },
     {
       title: "Accesibilidad",
       description: "Auditoría técnica para el entorno accesible e inclusivo.",
-      icon: <Wheelchair size={48} weight="duotone" className="text-cyan-500" />,
-      ref: card3Ref
+      icon: <Wheelchair size={48} weight="duotone" className="text-cyan-500" />
     }
   ];
 
@@ -37,15 +27,15 @@ const Pilares = ({ card1Ref, card2Ref, card3Ref, isDarkTheme = true }: PilaresPr
     <section className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className={`text-4xl md:text-6xl font-bold font-serif mb-6 tracking-tight text-white`}
           >
-            Nuestros <span className="text-gold-seal italic font-bold">PILARES</span>
+            Nuestros <span className="text-gold-seal italic font-bold">TRES PILARES</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -60,7 +50,6 @@ const Pilares = ({ card1Ref, card2Ref, card3Ref, isDarkTheme = true }: PilaresPr
           {pilares.map((pilar, index) => (
             <motion.div
               key={index}
-              ref={pilar.ref}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -76,11 +65,11 @@ const Pilares = ({ card1Ref, card2Ref, card3Ref, isDarkTheme = true }: PilaresPr
               <div className={`mb-8 p-4 rounded-2xl w-max transition-all duration-300 bg-white/10`}>
                 {pilar.icon}
               </div>
-              
+
               <h3 className={`text-2xl font-bold mb-4 tracking-tight transition-colors duration-300 text-gold-seal`}>
                 {pilar.title}
               </h3>
-              
+
               <p className={`leading-relaxed transition-colors duration-300 text-white/70`}>
                 {pilar.description}
               </p>
