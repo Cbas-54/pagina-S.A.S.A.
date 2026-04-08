@@ -51,10 +51,15 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
 
               {/* Status Badge */}
               <motion.div 
-                className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-[#0A0F1A] px-10 py-4 rounded-2xl border border-gold-seal/30 shadow-2xl flex items-center gap-4 w-max"
+                className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-[#0A0F1A]/90 backdrop-blur-xl px-8 py-6 rounded-3xl border border-gold-seal/30 shadow-2xl flex flex-col items-center gap-2 w-max text-center min-w-[280px]"
               >
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] animate-pulse" />
-                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/90">Estatus: Certificado Oficial</span>
+                <div className="flex items-center gap-3 mb-1">
+                  <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] animate-pulse" />
+                  <p className="text-[10px] font-black text-gold-seal uppercase tracking-[0.2em]">Validación Técnica</p>
+                </div>
+                <p className="text-white/80 text-sm font-medium leading-relaxed">
+                  Respaldamos la calidad técnica <br /> en cada metro cuadrado.
+                </p>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -94,12 +99,7 @@ const SelloSASA = React.memo(({ sealRef }: SelloSASAProps) => {
               ))}
             </div>
             
-            <div className="p-8 rounded-3xl bg-gold-seal/[0.05] border border-gold-seal/10 flex items-center gap-6">
-               <div>
-                  <p className="text-[10px] font-black text-gold-seal uppercase tracking-widest mb-1">Validación por Auditoría</p>
-                  <p className="text-white/40 text-sm italic">"Garantizamos la fe técnica en cada metro cuadrado."</p>
-               </div>
-            </div>
+
           </motion.div>
 
         </div>

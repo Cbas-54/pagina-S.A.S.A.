@@ -14,7 +14,7 @@ const DIFFERENCES_DATA = [
   {
     category: "Módulo de Auditoría",
     title: "Transparencia Técnico-Legal",
-    desc: "Diagnóstico honesto, control de documentación de instalación eléctrica, gas y auditoría de seguridad y salud activa. El Sello S.A.S.A. convierte la información técnica en una ventaja para cerrar operaciones.",
+    desc: "El Sello S.A.S.A. convierte la información técnica en una ventaja para cerrar operaciones.",
     outcome: "Eliminación de la Incertidumbre",
     icon: <Detective size={32} weight="duotone" className="text-green-vibrant" />
   },

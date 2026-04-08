@@ -14,20 +14,20 @@ interface PilaresProps {
 const Pilares = ({ card1Ref, card2Ref, card3Ref, isDarkTheme = true }: PilaresProps) => {
   const pilares = [
     {
-      title: "Seguridad Técnica",
-      description: "Nuestra prioridad es garantizar la integridad estructural y operativa de cada espacio, aplicando rigurosos protocolos de auditoría.",
+      title: "Seguridad",
+      description: "auditoria de sistema antisiniestral.",
       icon: <ShieldCheck size={48} weight="duotone" className="text-blue-500" />,
       ref: card1Ref
     },
     {
-      title: "Salud y Bienestar",
-      description: "Auditamos la calidad del aire, iluminación y factores ambientales para asegurar que cada propiedad promueva una vida saludable.",
+      title: "Salud",
+      description: "detección de vicios ocultos de habitibilidad.",
       icon: <Heart size={48} weight="duotone" className="text-green-500" />,
       ref: card2Ref
     },
     {
-      title: "Accesibilidad Pro",
-      description: "Diseñamos y verificamos la eliminación de barreras arquitectónicas, logrando espacios inclusivos para cualquier perfil de usuario.",
+      title: "Accesibilidad",
+      description: "Auditoría técnica para el entorno accesible e inclusivo.",
       icon: <Wheelchair size={48} weight="duotone" className="text-cyan-500" />,
       ref: card3Ref
     }
