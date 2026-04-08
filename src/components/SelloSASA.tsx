@@ -13,9 +13,12 @@ interface SelloSASAProps {
 const SelloSASA = React.memo(({ sealRef, onThemeChange }: SelloSASAProps) => {
   const titleRef = React.useRef(null);
   
-  // Detecta si el título ha llegado a la zona del navbar
+  // Detecta si el título ha asomado por la parte inferior
+  // margin: "100% 0px 0px 0px" significa:
+  // - Se activa en cuanto el elemento toca el borde inferior del viewport (0px)
+  // - Permanece activo si el elemento sube por encima del viewport (100%)
   const isExcelenceActive = useInView(titleRef, {
-    margin: "-120px 0px -100% 0px" 
+    margin: "100% 0px 0px 0px" 
   });
 
   React.useEffect(() => {

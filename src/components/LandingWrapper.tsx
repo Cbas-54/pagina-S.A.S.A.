@@ -124,13 +124,13 @@ export default function LandingWrapper() {
               onThemeChange={setIsDarkTheme}
             />
           </section>
+
+          {/* 6. Identidad de Equipo - Ahora dentro del flujo oscuro */}
+          <IdentidadEquipo />
+
+          {/* 7. Cierre Final Maestro - Ahora dentro del flujo oscuro */}
+          <Cierre />
         </div>
-
-        {/* 6. Identidad de Equipo */}
-        <IdentidadEquipo />
-
-        {/* 7. Cierre Final Maestro */}
-        <Cierre />
       </Suspense>
     </>
   );
