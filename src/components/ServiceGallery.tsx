@@ -93,7 +93,7 @@ const GalleryHeader = React.memo(() => (
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 0.1 }}
-      className="text-text-sec text-xl leading-relaxed opacity-70 max-w-2xl"
+      className="text-black text-xl leading-relaxed max-w-2xl"
     >
       Transformamos la gestión técnica en un activo comercial de alto rendimiento, proporcionando un ecosistema completo para asegurar la venta.
     </motion.p>
@@ -140,15 +140,15 @@ const ServiceCard = React.memo(({ item, idx }: ServiceCardProps) => {
            </div>
         </div>
 
-        <span className={`text-[10px] font-black tracking-[0.3em] uppercase mb-4 block ${item.bg === 'bg-white' ? 'text-blue-mid/60' : 'text-blue-200/60'}`}>
+        <span className={`text-[10px] font-black tracking-[0.3em] uppercase mb-4 block ${item.bg === 'bg-white' ? 'text-black' : 'text-blue-200'}`}>
            {item.category}
         </span>
         
-        <h3 className={`text-3xl md:text-4xl font-serif font-bold mb-6 tracking-tight leading-tight ${item.titleColor || ''}`}>
+        <h3 className={`text-3xl md:text-4xl font-serif font-bold mb-6 tracking-tight leading-tight ${item.titleColor || ''} ${item.bg === 'bg-white' ? 'text-black' : ''}`}>
            {item.title}
         </h3>
         
-        <p className={`text-lg leading-relaxed mb-10 opacity-70 ${item.bg === 'bg-white' ? 'max-w-sm' : ''}`}>
+        <p className={`text-lg leading-relaxed mb-10 ${item.bg === 'bg-white' ? 'text-black max-w-sm' : 'text-white'}`}>
            {item.desc}
         </p>
       </div>
@@ -158,17 +158,14 @@ const ServiceCard = React.memo(({ item, idx }: ServiceCardProps) => {
          {item.details.map((detail, i) => (
             <span 
               key={i} 
-              className={`text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border ${item.bg === 'bg-white' ? 'border-divider text-text-sec' : 'border-white/10 text-white/60'}`}
+              className={`text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border ${item.bg === 'bg-white' ? 'border-black text-black' : 'border-white/10 text-white'}`}
             >
                {detail}
             </span>
          ))}
       </div>
 
-      {/* Decorative Corner Icon */}
-      <div className="absolute -bottom-4 -right-4 opacity-5 transition-transform duration-700 group-hover:-translate-x-4 group-hover:-translate-y-4">
-         <ArrowRight size={120} weight="thin" />
-      </div>
+      {/* Decorative Corner Icon Eliminado */}
     </motion.div>
   );
 });

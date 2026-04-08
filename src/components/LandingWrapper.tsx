@@ -57,9 +57,6 @@ export default function LandingWrapper() {
         {/* 4. El Detalle del Producto (Ecosistema) - Simplificado */}
         <ServiceGallery />
 
-        {/* Transición de Gradiente Minimalista */}
-        <GradientTransition />
-
         {/* 5. La Filosofía y el Sello (Conexión Visual) */}
         <div 
           ref={containerRef} 
