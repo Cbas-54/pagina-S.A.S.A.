@@ -13,12 +13,13 @@ const ECOSYSTEM_DATA = [
     title: "Auditoría Técnica Integral",
     desc: "Inspección exhaustiva de puntos críticos. Incluye checklist visual profesional entregable al comprador para eliminar objeciones de inmediato.",
     size: "md:col-span-8",
-    bg: "#020C1B",
+    bg: "bg-[#020C1B]",
     textColor: "text-white",
     icon: <ShieldCheck size={40} weight="duotone" className="text-green-vibrant" />,
     image: "/images/service-obra-nueva.png",
     details: ["Auditoría exhaustiva", "Check list profesional in-situ", "Evaluación profesional objetiva"],
-    titleColor: "text-green-vibrant"
+    titleColor: "text-green-vibrant",
+    mistColor: "from-blue-mid/[0.45]"
   },
   {
     id: "02",
@@ -63,10 +64,10 @@ const ECOSYSTEM_DATA = [
 
 // --- HOISTING estático de JSX ---
 const GalleryHeader = React.memo(() => (
-  <div className="max-w-3xl mb-20">
+  <div className="max-w-4xl mx-auto mb-20 text-center flex flex-col items-center">
     <motion.div
-       initial={{ opacity: 0, x: -20 }}
-       whileInView={{ opacity: 1, x: 0 }}
+       initial={{ opacity: 0, scale: 0.9 }}
+       whileInView={{ opacity: 1, scale: 1 }}
        viewport={{ once: true }}
        className="flex items-center gap-3 mb-6"
     >
@@ -74,6 +75,7 @@ const GalleryHeader = React.memo(() => (
       <span className="text-[11px] font-black tracking-[0.4em] uppercase text-blue-mid/60">
         Ecosistema S.A.S.A.
       </span>
+      <div className="w-10 h-[1px] bg-blue-mid/40" />
     </motion.div>
     
     <motion.h2
@@ -91,7 +93,7 @@ const GalleryHeader = React.memo(() => (
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 0.1 }}
-      className="text-text-sec text-xl leading-relaxed opacity-70 border-l-2 border-blue-mid/20 pl-8"
+      className="text-text-sec text-xl leading-relaxed opacity-70 max-w-2xl"
     >
       Transformamos la gestión técnica en un activo comercial de alto rendimiento, proporcionando un ecosistema completo para asegurar la venta.
     </motion.p>
