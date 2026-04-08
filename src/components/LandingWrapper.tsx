@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useRef, useState } from "react";
+import React, { Suspense, useRef } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -24,8 +24,6 @@ export default function LandingWrapper() {
   const card3Ref = useRef<HTMLDivElement>(null);
   const sealRef = useRef<HTMLDivElement>(null);
   
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-
   return (
     <>
       <Navbar />
@@ -55,12 +53,15 @@ export default function LandingWrapper() {
         {/* 4. El Detalle del Producto (Ecosistema) - Simplificado */}
         <ServiceGallery />
 
-        {/* 5. La Filosofía y el Sello (Conexión Visual) */}
+        {/* 5. La Filosofía y el Sello (Fondo Oscuro Estático) */}
         <div 
           ref={containerRef} 
-          className={`relative z-10 transition-colors duration-1000 ${isDarkTheme ? "bg-[#0A0A0A]" : "bg-white"}`}
+          className="relative z-10 bg-[#0A0A0A]"
         >
-          {/* Animated Beams (Conexión entre Pilares y Sello) */}
+          {/* Transition Gradient from White (Previous Section) to Dark */}
+          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent pointer-events-none z-20" />
+
+          {/* Animated Beams (Configuradas para fondo oscuro) */}
           <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
             <AnimatedBeam
               containerRef={containerRef}
@@ -69,7 +70,7 @@ export default function LandingWrapper() {
               duration={5}
               delay={0}
               curvature={140}
-              pathColor={isDarkTheme ? "rgba(201,169,110,0.25)" : "rgba(15,23,42,0.15)"}
+              pathColor="rgba(201,169,110,0.25)"
               gradientStartColor="#C9A96E"
               gradientStopColor="#C9A96E"
               reverse={false}
@@ -82,7 +83,7 @@ export default function LandingWrapper() {
               duration={5}
               delay={0}
               curvature={0}
-              pathColor={isDarkTheme ? "rgba(201,169,110,0.25)" : "rgba(15,23,42,0.15)"}
+              pathColor="rgba(201,169,110,0.25)"
               gradientStartColor="#C9A96E"
               gradientStopColor="#C9A96E"
               reverse={false}
@@ -95,7 +96,7 @@ export default function LandingWrapper() {
               duration={5}
               delay={0}
               curvature={-140}
-              pathColor={isDarkTheme ? "rgba(201,169,110,0.25)" : "rgba(15,23,42,0.15)"}
+              pathColor="rgba(201,169,110,0.25)"
               gradientStartColor="#C9A96E"
               gradientStopColor="#C9A96E"
               reverse={false}
@@ -103,26 +104,25 @@ export default function LandingWrapper() {
             />
           </div>
 
-          <section id="pilares" className="relative z-10 overflow-hidden">
+          <section id="pilares" className="relative z-30 overflow-hidden">
             <Pilares 
               card1Ref={card1Ref} 
               card2Ref={card2Ref} 
               card3Ref={card3Ref}
-              isDarkTheme={isDarkTheme}
+              isDarkTheme={true}
             />
           </section>
 
-          <section id="sello" className="relative z-10 overflow-hidden">
+          <section id="sello" className="relative z-30 overflow-hidden">
             <SelloSASA 
               sealRef={sealRef}
-              onThemeChange={setIsDarkTheme}
             />
           </section>
 
-          {/* 6. Identidad de Equipo - Ahora dentro del flujo dinámico */}
+          {/* 6. Identidad de Equipo - Ahora dentro del flujo oscuro estático */}
           <IdentidadEquipo />
 
-          {/* 7. Cierre Final Maestro - Ahora dentro del flujo dinámico */}
+          {/* 7. Cierre Final Maestro - Ahora dentro del flujo oscuro estático */}
           <Cierre />
         </div>
       </Suspense>

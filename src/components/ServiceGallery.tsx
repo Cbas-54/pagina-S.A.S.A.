@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Certificate, Megaphone, UsersThree } from "@phosphor-icons/react";
+import { ShieldCheck, Certificate, Megaphone, UsersThree } from "@phosphor-icons/react";
 
 // --- HOISTING estático de datos ---
 const ECOSYSTEM_DATA = [
@@ -33,7 +33,6 @@ const ECOSYSTEM_DATA = [
     image: "/images/service-official-seal.png",
     details: ["Sello oficial matriculado", "Co-branding corporativo"],
     titleColor: "text-black",
-    pillClass: "text-slate-700 border-slate-300 shadow-[0_0_15px_rgba(255,255,255,1)]",
     mistColor: "from-blue-mid/[0.15]"
   },
   {
@@ -48,7 +47,6 @@ const ECOSYSTEM_DATA = [
     image: "/images/service-marketing.png",
     details: ["Brochure premium PDF", "Assets para redes sociales", "Asistencia técnica en diseño"],
     titleColor: "text-black",
-    pillClass: "text-slate-400 border-slate-200 shadow-none",
     mistColor: "from-green-vibrant/[0.15]"
   },
   {
@@ -157,22 +155,21 @@ const ServiceCard = React.memo(({ item, idx }: ServiceCardProps) => {
         </p>
       </div>
 
-      {/* Footer Details */}
-      <div className="relative z-10 pt-8 border-t border-current/10 flex flex-wrap gap-3">
+      {/* Footer Details: Glassmorphism Pills */}
+      <div className="relative z-10 pt-8 border-t border-current/10 flex flex-wrap gap-4">
         {item.details.map((detail, i) => (
           <span
             key={i}
-            className={`text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border transition-all duration-500
-                       ${item.bg === 'bg-white' 
-                          ? (item.pillClass ? item.pillClass : `border-current ${item.textColor || 'text-black'}`) 
-                          : 'border-white/10 text-white'}`}
+            className={`text-lg font-bold uppercase tracking-wider px-6 py-2.5 rounded-2xl border transition-all duration-500 
+                       bg-white/30 backdrop-blur-lg border-white/20 shadow-sm
+                       ${item.id === "03" 
+                          ? "text-black" 
+                          : (item.bg === 'bg-white' ? 'text-black' : 'text-white')}`}
           >
             {detail}
           </span>
         ))}
       </div>
-
-      {/* Decorative Corner Icon Eliminado */}
     </motion.div>
   );
 });
