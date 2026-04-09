@@ -8,12 +8,12 @@ const Pilares = ({ isDarkTheme = true }: { isDarkTheme?: boolean }) => {
   const pilares = [
     {
       title: "Seguridad",
-      description: "auditoria de sistema antisiniestral.",
+      description: "Auditoría de sistema antisiniestral.",
       icon: <ShieldCheck size={48} weight="duotone" className="text-blue-500" />
     },
     {
       title: "Salud",
-      description: "detección de vicios ocultos de habitibilidad.",
+      description: "Detección de vicios ocultos de habitabilidad.",
       icon: <Heart size={48} weight="duotone" className="text-green-500" />
     },
     {
