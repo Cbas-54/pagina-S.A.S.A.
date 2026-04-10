@@ -27,15 +27,16 @@ const DIFFERENCES_DATA = [
   },
   {
     category: "Respuesta Preventiva",
-    title: "Marco Técnico de Respuesta Comercial",
-    desc: "Un reporte profesional que responde de forma preventiva a las inquietudes comunes sobre seguridad y habitabilidad. Anticipamos objeciones y fortalecemos la percepción del activo.",
+    title: "Marco Técnico",
+    desc: "Un reporte profesional que responde de forma preventiva a las inquietudes comunes sobre seguridad y habitabilidad. Transformamos inquietudes y fortalecemos la percepción del activo.",
     outcome: "Incremento del Valor Percibido",
     icon: <Wind size={32} weight="duotone" className="text-blue-mid" />
   },
   {
     category: "Certificado Preventa Multilateral",
     title: "La Credibilidad como Activo Compartido",
-    desc: "Reporte oficial de situación del inmueble, para que el vendedor traslade certeza y confianza al futuro comprador de lo que está adquiriendo. S.A.S.A es un beneficio para el vendedor. Brindándole al representante de ventas mayor exclusividad y confiabilidad al momento de cerrar operaciones.",
+    desc: "Reporte oficial de situación del inmueble, para que el vendedor traslade certeza y confianza al futuro comprador de lo que está adquiriendo.",
+    desc2: "S.A.S.A. es un beneficio que brinda al representante de ventas mayor exclusividad y confiabilidad.",
     outcome: "POTENCIAL AUMENTO EN LA CARTERA DE CLIENTES",
     icon: <ShieldCheck size={32} weight="duotone" className="text-blue-mid" />
   }
@@ -124,7 +125,7 @@ const DifferenceItem = React.memo(({ item }: DifferenceItemProps) => {
       </h3>
 
       <p className="text-text-sec text-lg leading-relaxed mb-6 opacity-80">
-        {item.desc}
+        {item.desc} {item.desc2 && item.desc2}
       </p>
 
       <div className="flex flex-wrap items-center gap-4">
