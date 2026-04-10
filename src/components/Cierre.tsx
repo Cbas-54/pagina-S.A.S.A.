@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Cierre = React.memo(() => {
   return (
-    <section className="relative pt-12 md:pt-16 pb-32 md:pb-40 px-6 overflow-hidden noise-overlay">
+    <section id="contacto" className="relative pt-12 md:pt-16 pb-32 md:pb-40 px-6 overflow-hidden noise-overlay">
       {/* Dramatic gradients */}
       <div className="absolute inset-0 -z-10 bg-[#0A0A0A]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(0,51,102,0.4)_0%,transparent_70%)]" />
@@ -50,6 +50,7 @@ const Cierre = React.memo(() => {
             <div className="flex items-center gap-4">
               <div className="text-left">
                 <p className="text-white text-base font-bold leading-tight">Lic. Maximiliano Martín Ovelar</p>
+                <p className="text-gold-seal text-xs font-bold mt-1">221 643 0905</p>
                 <p className="text-slate-500 text-[10px] uppercase tracking-widest font-black mt-1">Matrícula LHS-007462 PBA · Especialista SASA</p>
               </div>
             </div>
@@ -60,6 +61,7 @@ const Cierre = React.memo(() => {
             <div className="flex items-center gap-4">
               <div className="text-left">
                 <p className="text-white text-base font-bold leading-tight">Tec. Juan Pablo Stock</p>
+                <p className="text-gold-seal text-xs font-bold mt-1">221 639 6832</p>
                 <p className="text-slate-500 text-[10px] uppercase tracking-widest font-black mt-1">Matrícula THS - 011523 - PBA · Resp. Técnico</p>
               </div>
             </div>

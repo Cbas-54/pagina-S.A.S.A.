@@ -52,7 +52,7 @@ const Pilares = ({ card1Ref, card2Ref, card3Ref, isDarkTheme = true }: PilaresPr
             transition={{ delay: 0.1 }}
             className={`text-xl max-w-2xl mx-auto font-bold text-white`}
           >
-            Tres dimensiones fundamentales que definen el estatus y la calidad de una propiedad certificada por S.A.S.A.
+            Tres aspectos escenciales que definen el estatus y la calidad de una propiedad certificada por S.A.S.A
           </motion.p>
         </div>
 
