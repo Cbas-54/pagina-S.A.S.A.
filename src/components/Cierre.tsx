@@ -50,12 +50,14 @@ const Cierre = React.memo(() => {
               {
                 name: "Lic. Maximiliano Martín Ovelar",
                 role: "Especialista SASA",
+                phone: "221 643 0905",
                 credential: "Matrícula LHS-007462 PBA",
                 image: "/Maximiliano Gemini.png"
               },
               {
                 name: "Tec. Juan Pablo Stock",
                 role: "Resp. Técnico",
+                phone: "221 639 6832",
                 credential: "Matrícula THS - 011523 - PBA",
                 image: "/Juan Pablo Gemini.png"
               }
@@ -99,6 +101,7 @@ const Cierre = React.memo(() => {
                       <span className="text-gold-seal text-[12px] font-black uppercase tracking-[0.4em] px-4 py-1.5 rounded-full bg-gold-seal/10 border border-gold-seal/20 inline-block mx-auto">
                         {person.role}
                       </span>
+                      <p className="text-gold-seal text-sm font-bold tracking-widest">{person.phone}</p>
                       <span className="text-white/40 text-[11px] font-medium tracking-widest leading-relaxed uppercase">
                         {person.credential}
                       </span>
