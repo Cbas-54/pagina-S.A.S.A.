@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { WhatsappLogo, Phone } from "@phosphor-icons/react";
 
 const Cierre = React.memo(() => {
   return (
@@ -101,8 +102,27 @@ const Cierre = React.memo(() => {
                       <span className="text-gold-seal text-[12px] font-black uppercase tracking-[0.4em] px-4 py-1.5 rounded-full bg-gold-seal/10 border border-gold-seal/20 inline-block mx-auto">
                         {person.role}
                       </span>
-                      <p className="text-gold-seal text-sm font-bold tracking-widest">{person.phone}</p>
-                      <span className="text-white/40 text-[11px] font-medium tracking-widest leading-relaxed uppercase">
+                      {/* Phone Number - Clickable */}
+                      <a 
+                        href={`tel:${person.phone.replace(/\s+/g, '')}`}
+                        className="flex items-center justify-center gap-2 text-gold-seal hover:text-white transition-colors duration-300"
+                      >
+                        <Phone size={14} weight="fill" />
+                        <span className="text-sm font-bold tracking-widest">{person.phone}</span>
+                      </a>
+                      
+                      {/* WhatsApp Button */}
+                      <a 
+                        href={`https://wa.me/${person.phone.replace(/\s+/g, '')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 mt-2 px-6 py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 hover:bg-[#25D366]/20 hover:border-[#25D366]/40 transition-all duration-300 group/wa"
+                      >
+                        <WhatsappLogo size={20} weight="fill" className="text-[#25D366]" />
+                        <span className="text-[#25D366] text-[11px] font-black uppercase tracking-[0.2em]">Enviar mensaje</span>
+                      </a>
+
+                      <span className="text-white/40 text-[11px] font-medium tracking-widest leading-relaxed uppercase pt-2">
                         {person.credential}
                       </span>
                     </div>
