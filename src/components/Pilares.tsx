@@ -54,9 +54,12 @@ const Pilares = ({ isDarkTheme = true }: { isDarkTheme?: boolean }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05, duration: 0.5 }}
-              whileHover={{ y: -10 }}
-              className={`p-10 rounded-3xl border transition-all duration-300 group relative overflow-hidden backdrop-blur-sm
-                        bg-white/5 border-gold-seal/30 hover:border-gold-seal/60 hover:bg-white/10`}
+              whileHover={{ 
+                y: -10,
+                transition: { type: "spring", stiffness: 400, damping: 25 }
+              }}
+              className={`p-10 rounded-3xl border group relative overflow-hidden backdrop-blur-sm
+                        bg-white/5 border-gold-seal/30 hover:border-gold-seal/60 hover:bg-white/10 transition-colors duration-300`}
             >
               {/* Background accent glow */}
               <div className={`absolute -right-10 -top-10 w-32 h-32 rounded-full blur-3xl opacity-10 transition-colors duration-300

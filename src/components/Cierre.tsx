@@ -69,8 +69,11 @@ const Cierre = React.memo(() => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.4 + i * 0.2 }}
-                whileHover={{ y: -10 }}
-                className="flex-1 group relative p-10 rounded-[3rem] bg-gradient-to-br from-white/[0.08] to-transparent border border-white/10 hover:border-gold-seal/50 transition-all duration-700 overflow-visible"
+                whileHover={{ 
+                  y: -10,
+                  transition: { type: "spring", stiffness: 400, damping: 25 }
+                }}
+                className="flex-1 group relative p-10 rounded-[3rem] bg-gradient-to-br from-white/[0.08] to-transparent border border-white/10 hover:border-gold-seal/50 transition-colors duration-500 overflow-visible"
               >
                 {/* Permanent gold glow background */}
                 <div className="absolute inset-0 bg-gold-seal/10 blur-[100px] -z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
