@@ -19,6 +19,7 @@ export default function Navbar() {
     { name: "Inicio", link: "#inicio" },
     { name: "Servicios", link: "#stats" },
     { name: "Auditoría", link: "#servicios" },
+    { name: "¿Quiénes Somos?", link: "#equipo" },
     { name: "Contacto", link: "#contacto" },
   ];
 
