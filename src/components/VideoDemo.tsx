@@ -36,22 +36,16 @@ const VideoDemo = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="relative aspect-video w-full rounded-[2.5rem] overflow-hidden bg-white/5 border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.8)] group cursor-pointer"
+                    className="relative aspect-video w-full rounded-[2.5rem] overflow-hidden bg-white/5 border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.8)] group"
                 >
-                    {/* Placeholder Background (Simulated Video) */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-black via-[#0D0D0D] to-[#1A1A1A] flex items-center justify-center">
-                        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-                        
-                        {/* Play button with premium gold glow on hover */}
-                        <div className="relative group/btn">
-                            <div className="absolute inset-0 bg-gold-seal/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <Play size={90} weight="fill" className="text-white/20 group-hover:text-gold-seal transition-all duration-500 z-10 scale-100 group-hover:scale-110" />
-                        </div>
-                    </div>
+                    <video 
+                        src="/Video SASA.mp4" 
+                        controls 
+                        className="w-full h-full object-cover"
+                        playsInline
+                    />
 
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />
-
-                    <div className="absolute bottom-10 left-10 z-10 flex items-center gap-4">
+                    <div className="absolute bottom-10 left-10 z-10 flex items-center gap-4 pointer-events-none">
                         <div className="w-12 h-px bg-gold-seal/50" />
                         <p className="text-gold-seal/60 text-xs font-black tracking-[0.3em] uppercase">Video Demostrativo IA (Próximamente)</p>
                     </div>
