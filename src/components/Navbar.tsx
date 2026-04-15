@@ -17,8 +17,8 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Inicio", link: "#inicio" },
-    { name: "Servicios", link: "#stats" },
-    { name: "Auditoría", link: "#servicios" },
+    { name: "Estadísticas", link: "#stats" },
+    { name: "Servicios", link: "#servicios" },
     { name: "¿Quiénes Somos?", link: "#equipo" },
     { name: "Contacto", link: "#contacto" },
   ];
@@ -50,16 +50,21 @@ export default function Navbar() {
             onClose={() => setIsMobileMenuOpen(false)}
             className="mt-4"
           >
-            {navItems.map((item, idx) => (
-              <Link
-                key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium py-2 border-b border-gray-100 last:border-0 hover:text-green-vibrant transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
+            <nav>
+              <ul className="flex flex-col gap-2">
+                {navItems.map((item) => (
+                  <li key={item.link}>
+                    <Link
+                      href={item.link}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block text-lg font-medium py-2 hover:text-green-vibrant hover:pl-2 transition-all duration-300"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </MobileNavMenu>
         </MobileNav>
       </AcerNavbar>
@@ -69,7 +74,7 @@ export default function Navbar() {
 
 const SasaLogo = ({ small = false }: { small?: boolean }) => {
   return (
-    <Link href="#inicio" className="flex items-center gap-3 group z-50">
+    <Link href="#inicio" aria-label="Ir al inicio" className="flex items-center gap-3 group">
       <div className="relative transition-transform duration-300 group-hover:scale-110">
         <Image
           src="/logo-new.png"

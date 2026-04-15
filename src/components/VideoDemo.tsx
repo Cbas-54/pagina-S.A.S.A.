@@ -45,10 +45,6 @@ const VideoDemo = () => {
                         playsInline
                     />
 
-                    <div className="absolute bottom-10 left-10 z-10 flex items-center gap-4 pointer-events-none">
-                        <div className="w-12 h-px bg-gold-seal/50" />
-                        <p className="text-gold-seal/60 text-xs font-black tracking-[0.3em] uppercase">Video Demostrativo IA (Próximamente)</p>
-                    </div>
                 </motion.div>
             </div>
         </section>
