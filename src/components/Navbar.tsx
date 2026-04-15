@@ -17,8 +17,8 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Inicio", link: "#inicio" },
-    { name: "Servicios", link: "#servicios" },
-    { name: "Auditoría", link: "#stats" },
+    { name: "Servicios", link: "#stats" },
+    { name: "Auditoría", link: "#servicios" },
     { name: "¿Quiénes Somos?", link: "#equipo" },
     { name: "Contacto", link: "#contacto" },
   ];
