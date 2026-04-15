@@ -52,12 +52,12 @@ const Cierre = React.memo(() => {
                 name: "Lic. Maximiliano Martín Ovelar",
                 role: "Especialista SASA",
                 phone: "221 643 0905",
-                credential: "Matrícula LHS-007462 PBA",
+                credential: "Matrícula LHS - 007462 - PBA",
                 image: "/Maximiliano Gemini.png"
               },
               {
                 name: "Tec. Juan Pablo Stock",
-                role: "Resp. Técnico",
+                role: "Responsable Técnico",
                 phone: "221 639 6832",
                 credential: "Matrícula THS - 011523 - PBA",
                 image: "/Juan Pablo Gemini.png"
