@@ -119,7 +119,7 @@ const Cierre = React.memo(() => {
                         href={`https://wa.me/${person.phone.replace(/\s+/g, '')}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 mt-2 px-6 py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 hover:bg-[#25D366]/20 hover:border-[#25D366]/40 transition-all duration-300 group/wa"
+                        className="flex items-center justify-center gap-2 mt-2 px-6 py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 hover:bg-[#25D366]/20 hover:border-[#25D366]/40 transition-all duration-300 group/wa w-full min-w-[280px] mx-auto"
                       >
                         <WhatsappLogo size={20} weight="fill" className="text-[#25D366]" />
                         <span className="text-[#25D366] text-[11px] font-black uppercase tracking-[0.2em]">Enviar mensaje</span>
