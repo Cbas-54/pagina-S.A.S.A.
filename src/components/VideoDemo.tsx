@@ -39,13 +39,13 @@ const VideoDemo = () => {
                     className="relative aspect-video w-full rounded-[2.5rem] overflow-hidden bg-white/5 border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.8)] group"
                 >
                     <video 
-                        src="/Video_SASA.mp4" 
+                        src="/Video_SASA_final.mp4" 
                         controls 
                         className="w-full h-full object-cover"
                         playsInline
                         preload="metadata"
                     >
-                        <source src="/Video_SASA.mp4" type="video/mp4" />
+                        <source src="/Video_SASA_final.mp4" type="video/mp4" />
                         Tu navegador no admite el elemento video.
                     </video>
 
